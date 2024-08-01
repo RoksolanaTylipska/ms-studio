@@ -1,0 +1,22 @@
+
+{
+    "translations": {
+        "header": {
+            "about": "About us",
+            "services": "Services",
+            "prices": "Prices",
+            "courses": "Courses",
+            "gallery": "Gallery",
+            "reviews": "Reviews",
+            "contacts": "Contacts"
+        },
+        "services": {
+            "lazer": "Laser epilation",
+            "electroepilation": "Electroepilation",
+            "depilation": "Depilation",
+            "nails": "Nails",
+            "lashes_brows": "Lashes and brows"
+        }
+
+    }
+}

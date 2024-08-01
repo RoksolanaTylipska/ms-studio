@@ -1,0 +1,21 @@
+{
+    "translations": {
+        "header": {
+            "about": "Про нас",
+            "services": "Послуги",
+            "prices": "Ціни",
+            "courses": "Курси",
+            "gallery": "Галерея",
+            "reviews": "Відгуки",
+            "contacts": "Контакти"
+        },
+        "services": {
+            "lazer": "Лазерна епіляція",
+            "electroepilation": "Eлектроепіляція",
+            "depilation": "Депіляція",
+            "nails": "Нігті",
+            "lashes_brows": "Вії та брови"
+        }
+
+    }
+}
