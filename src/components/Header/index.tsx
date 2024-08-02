@@ -11,10 +11,11 @@ import {
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../Button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,6 +53,8 @@ const Header = () => {
                     alt="Logo"
                   />
 
+
+
                   <Box>
                     <Navigation isMobile={isMobile} isMenuOpen={isMenuOpen} />
                   </Box>
@@ -66,11 +69,17 @@ const Header = () => {
               <Navigation isMobile={isMobile} isMenuOpen={isMenuOpen} />
             </Box>
 
-            <PhoneNumber>
-            +38 (098) 030 30 93
-            </PhoneNumber>
+            <div style={{display: "flex", gap: "50px"}}>
+
+            <Button color="skin">
+            <Image alt="phone" src="/assets/icons/call.svg" width={20} height={20}/>
+              <PhoneNumber href="tel:+3809803030930">
+                +38 (098) 030 30 93
+              </PhoneNumber>
+            </Button>
 
             <LanguageSwitcher />
+            </div>
           </>
         )}
       </HeaderContainer>

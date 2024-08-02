@@ -11,13 +11,14 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   background-color: ${palette.beige};
   margin: auto;
   top: 0;
   left: 0;
   right: 0;
-  padding-inline: 20px;
+  padding-inline: 70px;
   z-index: 10;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
@@ -67,7 +68,9 @@ export const MobileMenu = styled.div<HeaderContainerProps>`
   transition: ease-out 0.3s;
 `;
 
-export const PhoneNumber = styled.p`
-  display: flex;
-  align-items: center;
+export const PhoneNumber = styled.a`
+  color: white;
+  border-radius: 5px;
 `;
+
+
