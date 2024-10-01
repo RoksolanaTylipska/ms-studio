@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 
-
 export const NavList = styled.ul`
   display: flex;
   text-transform: uppercase;
@@ -8,8 +7,7 @@ export const NavList = styled.ul`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  row-gap: 20;
+  gap: 40px;
   height: 100%;
   padding: 0;
   font-size: 20px;
@@ -27,13 +25,14 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
   width: max-content;
-  margin: 0;  
+  margin: 0;
   padding: 0;
-  justify-content: center; 
+  font-size: 17px;
+  justify-content: center;
 
   a {
     &:hover {
-      color: #bd903b; 
+      color: '#D9C6A4';
     }
   }
 `;
