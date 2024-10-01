@@ -1,19 +1,24 @@
-import Header from "@/components/Header";
-import { I18nProvider } from "@/I18n/I18nProvider";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import { Montserrat, Playfair_Display } from "next/font/google";
+"use client";
 
-const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '700'] });
+import { I18nProvider } from "@/I18n/I18nProvider";
+import Header from "@/components/Header";
+import { theme } from "@/styles";
+import "@/styles/globals.css";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { ThemeProvider } from "@mui/material/styles";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <I18nProvider>
-      <main className={`${montserrat.className} ${playfair.className}`}>
+      <AppRouterCacheProvider options={{ key: "css" }}>
+        <ThemeProvider theme={theme}>
           <Header />
-          <Component {...pageProps} />
-        </main>
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </ThemeProvider>
+      </AppRouterCacheProvider>
     </I18nProvider>
   );
 }
