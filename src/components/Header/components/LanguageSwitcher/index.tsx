@@ -18,20 +18,11 @@ const LanguageSwitcher = () => {
 
   return (
     <ButtonWrapper>
-      <LanguageButton
-        selectedlanguage="ua"
-        currentLanguage={selectedlanguage}
-        onClick={() => handleLanguage("ua")}
-      >
-        UA
-      </LanguageButton>
-      <LanguageButton
-        selectedlanguage="en"
-        currentLanguage={selectedlanguage}
-        onClick={() => handleLanguage("en")}
-      >
-        EN
-      </LanguageButton>
+      {selectedlanguage === "ua" ? (
+        <LanguageButton onClick={() => handleLanguage("en")}>UA</LanguageButton>
+      ) : (
+        <LanguageButton onClick={() => handleLanguage("ua")}>EN</LanguageButton>
+      )}
     </ButtonWrapper>
   );
 };

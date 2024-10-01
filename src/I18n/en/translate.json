@@ -7,7 +7,6 @@
             "prices": "Prices",
             "courses": "Courses",
             "gallery": "Gallery",
-            "reviews": "Reviews",
             "contacts": "Contacts"
         },
         "services": {
@@ -16,6 +15,18 @@
             "depilation": "Depilation",
             "nails": "Nails",
             "lashes_brows": "Lashes and brows"
+        },
+        "button": {
+            "bookAppointment": "Book now"
+        },
+        "home": {
+            "carousel": {
+              "discount": "Discount on the first procedure",
+              "slogan": "Your territory of <i>smoothness</i>"
+            },
+            "benefits": {
+                "whyUs": "Why choose us??" 
+              }
         }
 
     }

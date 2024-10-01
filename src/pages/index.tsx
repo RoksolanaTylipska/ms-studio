@@ -1,11 +1,16 @@
-import Banner from "./home/components/Banner";
+import Prices from "@/components/Prices";
+import Benefits from "./home/components/Benefits";
+import Carousel from "./home/components/Carousel";
+import { HomeContainer } from "./styled";
 
 function Home() {
   return (
     <>
-    <Banner />
-
-     
+      <Carousel />
+      <HomeContainer>
+        <Benefits />
+        <Prices />
+      </HomeContainer>
     </>
   );
 }

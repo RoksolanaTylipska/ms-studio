@@ -1,21 +1,32 @@
 {
-    "translations": {
-        "header": {
-            "about": "Про нас",
-            "services": "Послуги",
-            "prices": "Ціни",
-            "courses": "Курси",
-            "gallery": "Галерея",
-            "reviews": "Відгуки",
-            "contacts": "Контакти"
-        },
-        "services": {
-            "lazer": "Лазерна епіляція",
-            "electroepilation": "Eлектроепіляція",
-            "depilation": "Депіляція",
-            "nails": "Нігті",
-            "lashes_brows": "Вії та брови"
-        }
-
+  "translations": {
+    "header": {
+      "about": "Про нас",
+      "services": "Послуги",
+      "prices": "Ціни",
+      "courses": "Курси",
+      "gallery": "Галерея",
+      "contacts": "Контакти"
+    },
+    "services": {
+      "lazer": "Лазерна епіляція",
+      "electroepilation": "Eлектроепіляція",
+      "depilation": "Депіляція",
+      "nails": "Нігті",
+      "lashes_brows": "Вії та брови"
+    },
+    "button": {
+      "bookAppointment": "Записатися"
+    },
+    "home": {
+      "carousel": {
+        "discount": "Знижка на першу процедуру",
+        "slogan": "Твоя територія <i>гладкості</i>"
+      },
+      "benefits": {
+        "whyUs": "Чому обирають саме нас?" 
+      }
+      
     }
+  }
 }
