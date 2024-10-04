@@ -1,6 +1,9 @@
 import { createTheme } from '@mui/material/styles';
 import {
   MuiButton,
+  MuiAccordion,
+  MuiAccordionSummary,
+  MuiAccordionDetails,
   MuiIconButton,
   MuiTextField,
   typography,
@@ -17,6 +20,7 @@ declare module '@mui/material/styles' {
       gold: string;
       chocolate: string;
       gray: string;
+      camel: string
     };
   }
   interface PaletteOptions {
@@ -29,6 +33,7 @@ declare module '@mui/material/styles' {
       gold?: string;
       chocolate?: string;
       gray?: string;
+      camel?: string
     };
   }
 }
@@ -54,6 +59,7 @@ export const theme = createTheme({
       gold: "#D9C6A4",
       chocolate: "#35302D",
       gray: '#DBDBD9',
+      camel: "#83694E"
     },
   },
   components: {
@@ -67,18 +73,21 @@ export const theme = createTheme({
         },
       },
     },
-    MuiTypography: {
-      defaultProps: {
-        variantMapping: {
-          headline: 'h1',
-          body: 'h1',
-          subtitle: 'h1',
-          footNote: 'h1',
-        },
-      },
-    },
+    // MuiTypography: {
+    //   defaultProps: {
+    //     variantMapping: {
+    //       headline: 'h2',
+    //       body: 'h1',
+    //       subtitle: 'h1',
+    //       footNote: 'h1',
+    //     },
+    //   },
+    // },
     MuiButton,
     MuiTextField,
     MuiIconButton,
+    MuiAccordion,
+    MuiAccordionSummary,
+    MuiAccordionDetails
   },
 });

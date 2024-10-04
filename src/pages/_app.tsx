@@ -4,6 +4,7 @@ import { I18nProvider } from "@/I18n/I18nProvider";
 import Header from "@/components/Header";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
+
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";

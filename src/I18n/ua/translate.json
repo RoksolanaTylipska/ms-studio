@@ -6,14 +6,33 @@
       "prices": "Ціни",
       "courses": "Курси",
       "gallery": "Галерея",
-      "contacts": "Контакти"
+      "contacts": "Контакти",
+      "services&prices": "Послуги та ціни"
     },
     "services": {
       "lazer": "Лазерна епіляція",
       "electroepilation": "Eлектроепіляція",
-      "depilation": "Депіляція",
-      "nails": "Нігті",
-      "lashes_brows": "Вії та брови"
+      "waxing": "Воскова депіляція / шугаринг",
+      "other": "Інші",
+      "otherList": {
+        "nails": "Нігті",
+        "lashes_brows": "Вії та брови"
+      },
+      "gender": {
+        "women": "Жіноча",
+        "men": "Чоловіча"
+      },
+      "zone": "Окремі зони",
+      "complex": "Комплекс",
+      "complexes": {
+        "mini": "Бікіні + пахви",
+        "midi": "Бікіні + пахви + гомілки",
+        "maxi": "Бікіні + пахви + Ноги Повністю"
+      },
+      "sessions10": "10 сеансів",
+      "sessions5": "5 сеансів",
+      "sessions1": "1 сеанс",
+      "payLess": "Обирай комплекс і плати менше"
     },
     "button": {
       "bookAppointment": "Записатися"
@@ -24,9 +43,70 @@
         "slogan": "Твоя територія <i>гладкості</i>"
       },
       "benefits": {
-        "whyUs": "Чому обирають саме нас?" 
+        "whyUs": "Чому обирають саме нас?"
       }
-      
+    },
+    "zones": {
+      "bikini": "Бікіні",
+      "arms": "Руки",
+      "legs": "Ноги",
+      "face": "Обличчя",
+      "body": "Тіло",
+      "bikiniList": {
+        "deep": "Бікіні глибоке",
+        "average": "Бікіні середнє",
+        "panties": "Бікіні по лінії трусиків",
+        "pubicTriangle": "Бікіні лобковий трикутник"
+      },
+      "armsList": {
+        "groinArea": "Пахові впадини",
+        "halfArms": "Руки половина",
+        "fullArms": "Руки повністю"
+      },
+      "legsList": {
+        "shinsThighs": "Гомілки/Стегна",
+        "fullLegs": "Ніжки повністю"
+      },
+      "faceList": {
+        "upperLip": "Над губою",
+        "foreheadLine": "Лінія чола",
+        "chin": "Підборіддя",
+        "cheeks": "Щоки",
+        "eyebrows": "Брови",
+        "cheeksLine": "Щоки по лінії",
+        "cheeksFully": "Щоки повністю"
+      },
+      "bodyList": {
+        "areola": "Ареол грудей",
+        "stomachLine": "Лінія живота",
+        "fullStomach": "Живіт повністю",
+        "lowerBack": "Поперек",
+        "back": "Спина",
+        "buttocks": "Сідниці",
+        "сhest": "Груди"
+      }
+    },
+    "electroepilation": {
+      "trial": "Пробна процедура + консультація",
+      "trialTime": "45 хв ",
+      "trialPrice": "600 грн",
+      "time": "Час",
+      "master": "Майстер",
+      "expertMaster": "Топ майстер",
+      "oneMaster": "Електро до одного майстра",
+      "twoMasters": "Електро в чотири руки до двох майстрів паралельно",
+      "zones": {
+        "body": "Електро по тілу",
+        "face": "Електро обличчя/пушкове",
+        "bikini": "Електро глибоке бікіні",
+        "upTo30minutes": "Робота до 30хв "
+      },
+      "needle": "Одноразова голка",
+      "anesthesia": "Анестезія",
+      "billedSeparately": "Рахуються окремо і додаються до кожного прайсу майстра"
+    },
+    "general": {
+      "min": "хв"
     }
   }
 }
