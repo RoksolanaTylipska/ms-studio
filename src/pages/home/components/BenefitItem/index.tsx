@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ItemContainer, ItemDescription, ItemImageWrapper } from "./styled";
 import Image from "next/image";
+import { Typography } from "@mui/material";
 
 interface BenefitItemProps {
   benefit: {
@@ -16,7 +17,7 @@ function BenefitItem({ benefit }: BenefitItemProps) {
   return (
     <ItemContainer>
       <span>
-        <h3>{t(benefit.title)}</h3>
+        <Typography variant="h3">{t(benefit.title)}</Typography>
         <ItemDescription>{t(benefit.description)}</ItemDescription>
       </span>
       <ItemImageWrapper>
