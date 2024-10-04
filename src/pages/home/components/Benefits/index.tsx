@@ -1,18 +1,16 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { BenefitsContainer, BenefitsList, TitleContainer } from "./styled";
+import { BenefitsContainer, BenefitsList } from "./styled";
 import BenefitItem from "../BenefitItem";
 import { benefits } from "@/constants/benefits";
+import TitleStars from "@/components/TitleStars";
 
 function Benefits() {
   const { t } = useTranslation();
 
   return (
     <BenefitsContainer>
-      <TitleContainer>
-        <h2>{t("home.benefits.whyUs")}</h2>
-        <Image src="/assets/icons/stars.svg" alt="Stars Icon" width={50} height={50} />
-      </TitleContainer>
+        <TitleStars title={"home.benefits.whyUs"}/>
       <BenefitsList>
         {benefits.map((benefit, index) => (
           <BenefitItem key={index} benefit={benefit} />

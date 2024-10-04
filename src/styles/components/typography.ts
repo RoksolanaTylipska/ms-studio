@@ -7,8 +7,8 @@ declare module '@mui/material/styles' {
     body: React.CSSProperties;
     subtitle: React.CSSProperties;
     footNote: React.CSSProperties;
-    captionBold: React.CSSProperties;
-    bodyBold: React.CSSProperties;
+    bodyComfortaa: React.CSSProperties;
+    bodyCaveat?: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
@@ -17,8 +17,9 @@ declare module '@mui/material/styles' {
     body?: React.CSSProperties;
     subtitle?: React.CSSProperties;
     footNote?: React.CSSProperties;
-    captionBold?: React.CSSProperties;
-    bodyBold?: React.CSSProperties;
+    bodyComfortaa?: React.CSSProperties;
+    bodyCaveat?: React.CSSProperties;
+
   }
 }
 
@@ -30,7 +31,8 @@ declare module '@mui/material/Typography' {
     subtitle: true;
     footNote: true;
     captionBold: true;
-    bodyBold: true;
+    bodyComfortaa: true;
+    bodyCaveat: true;
   }
 }
 
@@ -39,43 +41,29 @@ export const typography: Partial<Theme['typography']> = {
     ', '
   ),
   h1: {
-    fontSize: 52,
+    fontFamily: ['Playfair Display SC', 'sans-serif'].join(', '),
     fontWeight: 400,
-    lineHeight: '64px',
-    fontFamily: 'Gilroy-bold',
   },
   h2: {
-    fontFamily: 'Vollkorn',
+    fontFamily: ["Vollkorn", 'sans-serif'].join(', '),
     fontWeight: 400,
-    color: '#35302D',
-    fontSize: '60px',
-    textAlign: 'center',
+    color: "#35302D",
+    fontSize: "60px",
+    textAlign: "center",
   },
   h3: {
-    fontSize: 32,
+    fontFamily: ["Vollkorn", 'sans-serif'].join(', '),
     fontWeight: 400,
-    lineHeight: '48px',
+    color: "#35302D",
+    fontSize: "25px",
+    textAlign: "center",
   },
-  h4: {
-    fontSize: 24,
-    fontWeight: 600,
-    lineHeight: '32px',
-    fontFamily: 'Gilroy-bold',
-  },
-  headline: {
-    fontFamily: ['Gilroy', 'sans-serif'].join(', '),
-    fontSize: 16,
-    fontWeight: 400,
-    lineHeight: '24px',
-    letterSpacing: '0.64px',
-  },
-  headlineBold: {
-    fontFamily: ['Gilroy-bold', 'sans-serif'].join(', '),
-    fontSize: 16,
-    fontWeight: 600,
-    lineHeight: '24px',
-    letterSpacing: '0.64px',
-  },
+  // h4: {
+  //   fontSize: 24,
+  //   fontWeight: 600,
+  //   lineHeight: '32px',
+  //   fontFamily: 'Gilroy-bold',
+  // },
   body: {
     fontFamily: ['Gilroy', 'sans-serif'].join(', '),
     fontSize: 14,
@@ -83,61 +71,26 @@ export const typography: Partial<Theme['typography']> = {
     lineHeight: '24px',
     letterSpacing: '0.56px;',
   },
-  bodyBold: {
-    fontFamily: ['Gilroy-bold', 'sans-serif'].join(', '),
+  bodyComfortaa: {
+    fontFamily: ['Comfortaa', 'sans-serif'].join(', '),
     fontSize: 14,
-    fontWeight: 600,
-    lineHeight: '24px',
-    letterSpacing: '0.56px;',
-  },
-  subtitle: {
-    fontFamily: ['Gilroy', 'sans-serif'].join(', '),
-    fontSize: 18,
-    fontWeight: 400,
-    lineHeight: '24px',
-    letterSpacing: '0.72px;',
-  },
-  caption: {
-    fontFamily: ['Gilroy', 'sans-serif'].join(', '),
-    fontSize: 12,
-    fontWeight: 400,
-    lineHeight: '16px',
-    letterSpacing: '0.48px;',
-  },
-  captionBold: {
-    fontFamily: ['Gilroy-bold', 'sans-serif'].join(', '),
-    fontSize: 12,
-    fontWeight: 600,
-    lineHeight: '16px',
-    letterSpacing: '0.48px;',
-  },
-  footNote: {
-    fontFamily: ['Gilroy', 'sans-serif'].join(', '),
-    fontSize: 10,
-    fontWeight: 400,
-    lineHeight: '16px',
-    letterSpacing: '0.4px;',
-  },
-
-  h5: {
-    fontSize: 24,
-    fontWeight: 400,
-    lineHeight: '29px',
-  },
-  h6: {
-    fontSize: 12,
-    fontWeight: 700,
-    lineHeight: '15px',
-  },
-  subtitle1: {
-    fontSize: 18,
-    fontWeight: 400,
-    lineHeight: '20px',
-  },
-  subtitle2: {
-    fontSize: 16,
     fontWeight: 400,
   },
+  bodyCaveat: {
+    fontFamily: ['Caveat', 'cursive'].join(', '),
+    fontSize: 20,
+    fontWeight: 400,
+  },
+  // h5: {
+  //   fontSize: 24,
+  //   fontWeight: 400,
+  //   lineHeight: '29px',
+  // },
+  // h6: {
+  //   fontSize: 12,
+  //   fontWeight: 700,
+  //   lineHeight: '15px',
+  // },
   body1: {
     fontSize: 14,
     fontWeight: 400,
@@ -153,10 +106,5 @@ export const typography: Partial<Theme['typography']> = {
     '@media (max-width:1400px)': {
       fontSize: 10,
     },
-  },
-  button: {
-    fontSize: 14,
-    fontWeight: 400,
-    textTransform: 'none',
   },
 };

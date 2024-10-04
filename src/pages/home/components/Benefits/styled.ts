@@ -8,11 +8,6 @@ export const BenefitsContainer = styled(Box)({
   flexDirection: 'column',
 });
 
-export const TitleContainer = styled(Box)({
-  display: 'flex',
-  justifyContent: 'center',
-});
-
 export const BenefitsList = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
