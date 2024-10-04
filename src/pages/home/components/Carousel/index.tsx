@@ -1,5 +1,5 @@
 "use client";
-import { useTranslation } from "react-i18next";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,7 +10,6 @@ import SecondSlide from "../SecondSlide";
 import { SwiperStyled } from "./styled";
 
 function Carousel() {
-  const { t } = useTranslation();
 
   return (
     <SwiperStyled

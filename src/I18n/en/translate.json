@@ -1,33 +1,112 @@
-
 {
-    "translations": {
-        "header": {
-            "about": "About us",
-            "services": "Services",
-            "prices": "Prices",
-            "courses": "Courses",
-            "gallery": "Gallery",
-            "contacts": "Contacts"
-        },
-        "services": {
-            "lazer": "Laser epilation",
-            "electroepilation": "Electroepilation",
-            "depilation": "Depilation",
-            "nails": "Nails",
-            "lashes_brows": "Lashes and brows"
-        },
-        "button": {
-            "bookAppointment": "Book now"
-        },
-        "home": {
-            "carousel": {
-              "discount": "Discount on the first procedure",
-              "slogan": "Your territory of <i>smoothness</i>"
-            },
-            "benefits": {
-                "whyUs": "Why choose us??" 
-              }
-        }
-
+  "translations": {
+    "header": {
+      "about": "About us",
+      "services": "Services",
+      "prices": "Prices",
+      "courses": "Courses",
+      "gallery": "Gallery",
+      "contacts": "Contacts",
+      "services&prices": "Services and prices"
+    },
+    "services": {
+      "lazer": "Laser epilation",
+      "electroepilation": "Electroepilation",
+      "waxing": "Waxing / sugaring",
+      "other": "other",
+      "otherList": {
+        "nails": "Nails",
+        "lashes_brows": "Lashes and brows"
+      },
+      "gender": {
+        "women": "Women's",
+        "men": "Men's"
+      },
+      "zone": "Separate Zones",
+      "complex": "Complex",
+      "complexes": {
+        "mini": "Bikini + Armpits",
+        "midi": "Bikini + Armpits + Shins",
+        "maxi": "Bikini + Armpits + Legs Full"
+      },
+      "sessions10": "10 sessions",
+      "sessions5": "5 sessions",
+      "sessions1": "1 session",
+      "payLess": "Choose complex and pay less"
+    },
+    "button": {
+      "bookAppointment": "Book now"
+    },
+    "home": {
+      "carousel": {
+        "discount": "Discount on the first procedure",
+        "slogan": "Your territory of <i>smoothness</i>"
+      },
+      "benefits": {
+        "whyUs": "Why choose us??"
+      }
+    },
+    "zones": {
+      "bikini": "Bikini",
+      "arms": "Hands",
+      "legs": "Legs",
+      "face": "Face",
+      "body": "Body",
+      "bikiniList": {
+        "deep": "Bikini is deep",
+        "average": "Bikini average",
+        "panties": "Bikini on the line of panties",
+        "pubicTriangle": "Bikini pubic triangle"
+      },
+      "armsList": {
+        "groinArea": "Groin area",
+        "halfArms": "Half arms",
+        "fullArms": "Full arms"
+      },
+      "legsList": {
+        "shinsThighs": "Shins/Thighs",
+        "fullLegs": "Full Legs"
+      },
+      "faceList": {
+        "upperLip": "Upper Lip",
+        "foreheadLine": "Forehead Line",
+        "chin": "Chin",
+        "cheeks": "Cheeks",
+        "eyebrows": "Eyebrows",
+        "cheeksLine": "Cheeks along the line",
+        "cheeksFully": "Cheeks fully"
+      },
+      "bodyList": {
+        "areola": "Areola",
+        "stomachLine": "Stomach Line",
+        "fullStomach": "Full Stomach",
+        "lowerBack": "Lower Back",
+        "back": "Back",
+        "buttocks": "Buttocks",
+        "сhest": "Сhest"
+      }
+    },
+    "electroepilation": {
+      "trial": "Trial procedure + consultation",
+      "trialTime": "45 min ",
+      "trialPrice": "600 uah",
+      "time": "Time",
+      "master": "Master",
+      "expertMaster": "Expert master",
+      "oneMaster": "Electroepilation with one master",
+      "twoMasters": "Electroepilation with four hands by two masters simultaneously",
+      "zones": {
+        "body": "Electroepilation on the body",
+        "face": "Facial electroepilation / vellus hai",
+        "bikini": "Deep bikini electroepilation",
+        "upTo30minutes": "Session up to 30 minutes"
+      },
+      "needle": "Single-use needle",
+      "anesthesia": "Anesthesia",
+      "billedSeparately": "Billed separately and added to each master’s price list"
+    },
+    "general": {
+      "min": "min"
     }
+  }
 }
