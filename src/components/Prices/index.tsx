@@ -6,10 +6,31 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import { useTranslation } from "react-i18next";
-import Electroepilation from "../Electroepilation";
-import LaserEpilation from "../LaserEpilation";
 import TitleStars from "../TitleStars";
+import Electroepilation from "./components/Electroepilation";
+import LaserEpilation from "./components/LaserEpilation";
+import OtherServices from "./components/OtherServices";
+import Waxing from "./components/Waxing";
 import { PricesContainer } from "./styled";
+
+const services = [
+  {
+    title: "services.lazer",
+    Component: LaserEpilation,
+  },
+  {
+    title: "services.electroepilation",
+    Component: Electroepilation,
+  },
+  {
+    title: "services.waxing",
+    Component: Waxing,
+  },
+  {
+    title: "services.other",
+    Component: OtherServices,
+  },
+];
 
 function Prices() {
   const { t } = useTranslation();
@@ -23,32 +44,21 @@ function Prices() {
       />
 
       <Box>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1-content"
-            id="panel1-header"
-          >
-            {t("services.lazer")}
-          </AccordionSummary>
+        {services.map(({ title, Component }) => (
+          <Accordion key={title}>
+            <AccordionSummary
+              expandIcon={<ExpandMore />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              {t(title)}
+            </AccordionSummary>
 
-          <AccordionDetails>
-            <LaserEpilation />
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1-content"
-            id="panel1-header"
-          >
-            {t("services.electroepilation")}
-          </AccordionSummary>
-
-          <AccordionDetails>
-            <Electroepilation />
-          </AccordionDetails>
-        </Accordion>
+            <AccordionDetails>
+              <Component />
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Box>
     </PricesContainer>
   );

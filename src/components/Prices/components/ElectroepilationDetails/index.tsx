@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import {
   FlexContainer,
   LabelContainer,
+  LabelTypography,
   PriceContainer,
   TrialBox,
   ValuesContainer,
@@ -35,15 +36,15 @@ function ElectroepilationDetails() {
           {electroepilation.map((item, i) => (
             <FlexContainer>
               <LabelContainer key={i}>
-                <Typography sx={{ width: "500px" }} variant="bodyComfortaa">
+                <LabelTypography sx={{ width: "300px" }} variant="bodyComfortaa">
                   {t(`${item.masterQnt}`)}
-                </Typography>
+                </LabelTypography>
 
                 <ValuesContainer>
                   {item.values.map((value, i) => (
-                    <Typography variant="bodyComfortaa">
+                    <LabelTypography variant="bodyComfortaa">
                       {t(`${value}`)}
-                    </Typography>
+                    </LabelTypography>
                   ))}
                 </ValuesContainer>
               </LabelContainer>

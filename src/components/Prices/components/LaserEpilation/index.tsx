@@ -7,7 +7,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import { useTranslation } from "react-i18next";
 import LaserComplex from "../LaserComplex";
-import LaserZone from "../LaserZone";
+import LaserZone from "../Zones";
 
 function LaserEpilation() {
   const { t } = useTranslation();
