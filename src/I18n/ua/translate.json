@@ -9,34 +9,6 @@
       "contacts": "Контакти",
       "services&prices": "Послуги та ціни"
     },
-    "services": {
-      "lazer": "Лазерна епіляція",
-      "electroepilation": "Eлектроепіляція",
-      "waxing": "Воскова депіляція / шугаринг",
-      "other": "Інші",
-      "otherList": {
-        "nails": "Нігті",
-        "lashes_brows": "Вії та брови"
-      },
-      "gender": {
-        "women": "Жіноча",
-        "men": "Чоловіча"
-      },
-      "zone": "Окремі зони",
-      "complex": "Комплекс",
-      "complexes": {
-        "mini": "Бікіні + пахви",
-        "midi": "Бікіні + пахви + гомілки",
-        "maxi": "Бікіні + пахви + Ноги Повністю"
-      },
-      "sessions10": "10 сеансів",
-      "sessions5": "5 сеансів",
-      "sessions1": "1 сеанс",
-      "payLess": "Обирай комплекс і плати менше"
-    },
-    "button": {
-      "bookAppointment": "Записатися"
-    },
     "home": {
       "carousel": {
         "discount": "Знижка на першу процедуру",
@@ -44,6 +16,37 @@
       },
       "benefits": {
         "whyUs": "Чому обирають саме нас?"
+      },
+      "masters": "Майстри"
+    },
+    "services": {
+      "lazer": "Лазерна епіляція",
+      "electroepilation": "Eлектроепіляція",
+      "waxing": "Воскова депіляція / шугаринг",
+      "other": "Інші послуги",
+      "otherServices": {
+        "nails": "Манікюр / педікюр",
+        "lashes_brows_makeup": "Вії / брови / макіяж"
+      },
+      "gender": {
+        "women": "Жіноча",
+        "men": "Чоловіча"
+      },
+      "zone": "Окремі зони",
+      "complex": "Комплекс",
+      "sessions10": "10 сеансів",
+      "sessions5": "5 сеансів",
+      "sessions1": "1 сеанс"
+    },
+    "button": {
+      "bookAppointment": "Записатися"
+    },
+    "lazerEpilation": {
+      "payLess": "Обирай комплекс і плати менше",
+      "complexes": {
+        "mini": "Бікіні + пахви",
+        "midi": "Бікіні + пахви + гомілки",
+        "maxi": "Бікіні + пахви + Ноги Повністю"
       }
     },
     "zones": {
@@ -74,10 +77,12 @@
         "cheeks": "Щоки",
         "eyebrows": "Брови",
         "cheeksLine": "Щоки по лінії",
-        "cheeksFully": "Щоки повністю"
+        "cheeksFully": "Щоки повністю",
+        "noseEars": "Ніс / Вуха"
       },
       "bodyList": {
         "areola": "Ареол грудей",
+        "areolaFullChest": "Ареол грудей / груди повністю",
         "stomachLine": "Лінія живота",
         "fullStomach": "Живіт повністю",
         "lowerBack": "Поперек",
@@ -106,7 +111,53 @@
       "billedSeparately": "Рахуються окремо і додаються до кожного прайсу майстра"
     },
     "general": {
-      "min": "хв"
+      "min": "хв",
+      "men": "Чоловіки",
+      "women": "Жінки"
+    },
+    "nails": {
+      "womens_manicure": "Манікюр жіночий",
+      "mens_manicure": "Манікюр чоловічий",
+      "womens_pedicure": "Педикюр жіночий",
+      "mens_pedicure": "Педикюр чоловічий",
+      "removal_cleaning_coating": "Зняття + чистка + покриття",
+      "cleaning_coating": "Чистка + покриття",
+      "removal_cleaning": "Зняття + чистка",
+      "cleaning": "Чистка",
+      "strengthening": "Укріплення",
+      "shape": "Зміна форми",
+      "french": "Французький",
+      "repair": "Ремонт 1 нігтика",
+      "extension": "Нарощення 1 нігтика",
+      "design": "Дизайн",
+      "cleaning_heels_coating": "Чистка + п‘яти + покриття",
+      "cleaning_heels": "Чистка + п‘яти",
+      "unilateral_tamponade": "Тампонада одностороння",
+      "bilateral_tamponade": "Тампонада двостороння",
+      "corn_removal": "Видалення мозоля",
+      "callus_removal": "Видалення натоптишів",
+      "crack_treatment": "Лікування тріщин",
+      "ingrown_toenail_removal": "Видалення врослого нігтя"
+    },
+    "face": {
+      "eyebrow": "Брови",
+      "eyebrow_correction": "Корекція брів",
+      "tinting": "Фарбування брів",
+      "correction_tinting": "Корекція + фарбування брів (фарба/хна)",
+      "lamination": "Ламінування",
+      "lamination_tinting": "Ламінування вій з фарбуванням",
+      "long-lasting_styling": "Довготривала укладка брів",
+      "makeup": "Макіяж",
+      "day": "Денний макіяж",
+      "evening": "Вечірній макіяж",
+      "express": "Експрес макіяж",
+      "complexes": "Комплекси",
+      "lamination_eyebrows": "Ламінування вій+брови (корекція + фарбування)",
+      "eyebrow_eyelash_lamination": "Ламінування брів + Ламінування вій (корекція + фарбування)",
+      "eyebrow_eyelash_lamination_without": "Ламінування брів + Ламінування вій (без корекції та фарбування)",
+      "permanent": "Перманент",
+      "initial_procedure": "Первинна процедура",
+      "correction": "Корекція"
     }
   }
 }

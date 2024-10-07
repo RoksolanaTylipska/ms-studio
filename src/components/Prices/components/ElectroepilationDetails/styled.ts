@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 
 export const TrialBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.gold,
@@ -31,7 +31,7 @@ export const ValuesContainer = styled(Box)({
 
 export const PriceContainer = styled(Box)({
   display: "flex",
-  gap: "100px",
+  gap: "120px",
 });
 
 export const VariantsContainer = styled(Box)({
@@ -41,3 +41,11 @@ export const VariantsContainer = styled(Box)({
   paddingTop: "15px",
   flexDirection: "column",
 });
+
+export const LabelTypography = styled(Typography)(({ theme }) => ({
+  color: theme.palette.colors.camel,
+  fontWeight: 500,
+  fontSize: "18px"
+
+}));
+

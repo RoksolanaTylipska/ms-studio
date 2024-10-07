@@ -1,14 +1,4 @@
-interface Variant {
-  label: string;
-  time: number;
-  price: number[];
-}
-
-interface Master {
-  masterQnt: string;
-  values: string[];
-  variants: Variant[];
-}
+import { Master } from "@/types/electroepilation";
 
 export const electroepilation: Master[] = [
   {

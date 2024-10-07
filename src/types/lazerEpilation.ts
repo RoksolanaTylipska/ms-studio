@@ -1,10 +1,4 @@
-export interface Zone {
-  title: string;
-  variants: {
-    label: string;
-    price: [number, number];
-  }[];
-}
+import { Zones } from "./zones";
 
 export interface Complex {
   type: string;
@@ -19,5 +13,5 @@ export interface LazerEpilation {
   complex: string;
   zone: string;
   complexes: Complex[];
-  zones: Zone[];
+  zones: Zones[];
 }

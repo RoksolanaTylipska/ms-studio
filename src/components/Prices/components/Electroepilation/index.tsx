@@ -13,18 +13,18 @@ function Electroepilation() {
   return (
     <>
       <AccordionDetails>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMore />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              {t("services.gender.women")} / {t("services.gender.men")}
-            </AccordionSummary>
-            <AccordionDetails>
-              <ElectroepilationDetails />
-            </AccordionDetails>
-          </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMore />}
+            aria-controls="panel2-content"
+            id="panel2-header"
+          >
+            {t("services.gender.women")} / {t("services.gender.men")}
+          </AccordionSummary>
+          <AccordionDetails>
+            <ElectroepilationDetails />
+          </AccordionDetails>
+        </Accordion>
       </AccordionDetails>
     </>
   );

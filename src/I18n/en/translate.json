@@ -9,34 +9,6 @@
       "contacts": "Contacts",
       "services&prices": "Services and prices"
     },
-    "services": {
-      "lazer": "Laser epilation",
-      "electroepilation": "Electroepilation",
-      "waxing": "Waxing / sugaring",
-      "other": "other",
-      "otherList": {
-        "nails": "Nails",
-        "lashes_brows": "Lashes and brows"
-      },
-      "gender": {
-        "women": "Women's",
-        "men": "Men's"
-      },
-      "zone": "Separate Zones",
-      "complex": "Complex",
-      "complexes": {
-        "mini": "Bikini + Armpits",
-        "midi": "Bikini + Armpits + Shins",
-        "maxi": "Bikini + Armpits + Legs Full"
-      },
-      "sessions10": "10 sessions",
-      "sessions5": "5 sessions",
-      "sessions1": "1 session",
-      "payLess": "Choose complex and pay less"
-    },
-    "button": {
-      "bookAppointment": "Book now"
-    },
     "home": {
       "carousel": {
         "discount": "Discount on the first procedure",
@@ -44,6 +16,37 @@
       },
       "benefits": {
         "whyUs": "Why choose us??"
+      },
+      "masters": "Masters"
+    },
+    "services": {
+      "lazer": "Laser epilation",
+      "electroepilation": "Electroepilation",
+      "waxing": "Waxing / sugaring",
+      "other": "Other services",
+      "otherServices": {
+        "nails": "Manicure / pedicure",
+        "lashes_brows_makeup": "Lashes / brows / makeup"
+      },
+      "gender": {
+        "women": "Women's",
+        "men": "Men's"
+      },
+      "zone": "Separate Zones",
+      "complex": "Complex",
+      "sessions10": "10 sessions",
+      "sessions5": "5 sessions",
+      "sessions1": "1 session"
+    },
+    "button": {
+      "bookAppointment": "Book now"
+    },
+    "lazerEpilation": {
+      "payLess": "Choose complex and pay less",
+      "complexes": {
+        "mini": "Bikini + Armpits",
+        "midi": "Bikini + Armpits + Shins",
+        "maxi": "Bikini + Armpits + Legs Full"
       }
     },
     "zones": {
@@ -74,10 +77,12 @@
         "cheeks": "Cheeks",
         "eyebrows": "Eyebrows",
         "cheeksLine": "Cheeks along the line",
-        "cheeksFully": "Cheeks fully"
+        "cheeksFully": "Cheeks fully",
+        "noseEars": "Nose / ears"
       },
       "bodyList": {
         "areola": "Areola",
+        "areolaFullChest": "Areola / Full chest",
         "stomachLine": "Stomach Line",
         "fullStomach": "Full Stomach",
         "lowerBack": "Lower Back",
@@ -106,7 +111,53 @@
       "billedSeparately": "Billed separately and added to each master’s price list"
     },
     "general": {
-      "min": "min"
+      "min": "min",
+      "men": "Men",
+      "women": "Women"
+    },
+    "nails": {
+      "womens_manicure": "Women's manicure",
+      "mens_manicure": "Men's manicure",
+      "womens_pedicure": "Women's pedicure",
+      "mens_pedicure": "Men's pedicure",
+      "removal_cleaning_coating": "Removal + cleaning + coating",
+      "cleaning_coating": "Cleaning + coating",
+      "removal_cleaning": "Removal + cleaning",
+      "cleaning": "Cleaning",
+      "strengthening": "Strengthening",
+      "shape": "Shape change",
+      "french": "French manicure",
+      "repair": "Repair of 1 nail",
+      "extension": "Extension of 1 nail",
+      "design": "Design",
+      "cleaning_heels_coating": "Cleaning + heels + coating",
+      "cleaning_heels": "Cleaning + heels",
+      "unilateral_tamponade": "Unilateral tamponade",
+      "bilateral_tamponade": "Bilateral tamponade",
+      "corn_removal": "Corn removal",
+      "callus_removal": "Callus removal",
+      "crack_treatment": "Crack treatment",
+      "ingrown_toenail_removal": "Ingrown toenail removal"
+    },
+    "face": {
+      "eyebrow": "Eyebrows",
+      "eyebrow_correction": "Eyebrow correction",
+      "tinting": "Eyebrow tinting",
+      "correction_tinting": "Eyebrow correction + tinting (dye/henna)",
+      "lamination": "Lamination",
+      "lamination_tinting": "Eyelash lamination with tinting",
+      "long-lasting_styling": "Long-lasting eyebrow styling",
+      "makeup": "Makeup",
+      "day": "Day makeup",
+      "evening": "Evening makeup",
+      "express": "Express makeup",
+      "complexes": "Packages",
+      "lamination_eyebrows": "Eyebrow + eyelash lamination (correction + tinting)",
+      "eyebrow_eyelash_lamination": "Eyebrow + eyelash lamination (correction + tinting)",
+      "eyebrow_eyelash_lamination_without": "Eyebrow + eyelash lamination (without correction or tinting)",
+      "permanent": "Permanent makeup",
+      "initial_procedure": "Initial procedure",
+      "correction": "Correction"
     }
   }
 }

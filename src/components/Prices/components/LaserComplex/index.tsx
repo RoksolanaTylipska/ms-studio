@@ -45,7 +45,7 @@ function LaserComplex({ complexes }: ComplexProps) {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="bodyCaveat" sx={{rotate: ('-4deg')}}>{t("services.payLess")} </Typography>
+          <Typography variant="bodyCaveat" sx={{rotate: ('-4deg')}}>{t("lazerEpilation.payLess")} </Typography>
           <DiscountBox>
             {discountsComplexes.map((discount, i) => (
               <Discounts>
