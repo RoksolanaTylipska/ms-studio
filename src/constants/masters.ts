@@ -1,53 +1,54 @@
 export const masters = [
   {
-    name: "Павельчук Марія",
-    position: "Власниця студії",
+    name: "masters.pavelychuk_maria.name",
+    position: "masters.pavelychuk_maria.position",
     img: "../assets/photos/carousel_1.png"
   },
   {
-    name: "Семак Тетяна",
-    position: "Керівник студії - завжди з Вами на звʼязку",
+    name: "masters.semak_tetiana.name",
+    position: "masters.semak_tetiana.position",
     img: "../assets/photos/carousel_1.png",
-    description: "Підберемо найкращий метод видалення волосся, який підходить саме під Ваш тип шкіри, колір волосини та зони на якій ви хочете його позбутись",
+    description: "masters.semak_tetiana.description",
   },
   {
-    name: "Ший Анастасія",
-    position: "Викладач-технолог курсів по електроепіляції, майстер Лазерної епіляції та депіляції. Працює в MS STUDIO вже понад 3 роки",
+    name: "masters.shy_anastasiia.name",
+    position: "masters.shy_anastasiia.position",
     img: "../assets/photos/carousel_1.png",
-    description: "На сьогодні електроепіляція - є єдиним методом, який забирає волосся назавжди будь-якого типу та кольору.",
+    description: "masters.shy_anastasiia.description",
   },
   {
-    name: "Паламарчук Богдана",
-    position: "Майстер із медичною освітою для чоловіків та жінок лазерної епіляції, електроепіляції та депіляції",
-    description: "Не просто так чоловіча епіляція набирає все більшої популярності, адже саме у чоловіків жорстке та чорне волосся з яким ми допоможемо позбутись!",
+    name: "masters.palamarchuk_bogdana.name",
+    position: "masters.palamarchuk_bogdana.position",
+    description: "masters.palamarchuk_bogdana.description",
     img: "../assets/photos/carousel_1.png",
   },
   {
-    name: "Герич Ніна",
-    position: "Майстер універсал з усіх методів видалення волосся, як для жінок, так і для чоловіків",
+    name: "masters.herich_nina.name",
+    position: "masters.herich_nina.position",
     img: "../assets/photos/carousel_1.png",
-    description: "Я зроблю Вашу процедуру максимально комфортною та приємною",
+    description: "masters.herich_nina.description",
   },
   {
-    name: "Урсалова Анастасія",
-    position: "Майстер натуральних брів та перманентного макіяжу. Досвід роботи більше 3 років",
+    name: "masters.ursalova_anastasiia.name",
+    position: "masters.ursalova_anastasiia.position",
     img: "../assets/photos/carousel_1.png",
-    description: "Я роблю брови не ті, які зараз модно, а ті які підійдуть саме для Вас",
+    description: "masters.ursalova_anastasiia.description",
   },
   {
-    name: "Чекаленко Віра",
-    position: "Майстер манікюру та педикюру",
+    name: "masters.chekalenko_vira.name",
+    position: "masters.chekalenko_vira.position",
     img: "../assets/photos/carousel_1.png"
   },
   {
-    name: "Лілія",
-    position: "Адміністратор СММ",
+    name: "masters.lilia.name",
+    position: "masters.lilia.position",
     img: "../assets/photos/carousel_1.png"
   },
   {
-    name: "Слобода Олена",
-    position: "Викладач Лазерної епіляції, шугарингу та воскової депіляції, майстер електроепіляції. Стаж роботи більше 4х років. ",
+    name: "masters.sloboda_olena.name",
+    position: "masters.sloboda_olena.position",
     img: "../assets/photos/carousel_1.png",
-    slogan: "Я зроблю усе, щоб довести, що видалення волосся це не про страх та біль, а про задоволення та впевненість у собі",
-  },
+    description: "masters.sloboda_olena.description",
+    slogan: "masters.sloboda_olena.slogan",
+  }
 ];

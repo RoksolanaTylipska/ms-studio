@@ -8,6 +8,7 @@ export const MuiAccordion: Components['MuiAccordion'] = {
       boxShadow: 'none',
       fontFamily: ["Vollkorn", 'sans-serif'].join(', '),
       fontWeight: 300,
+      padding: "10px 0px",
       // @ts-ignore
       backgroundColor: theme.palette.colors.caramel,
       
