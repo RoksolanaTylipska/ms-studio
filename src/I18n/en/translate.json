@@ -9,15 +9,21 @@
       "contacts": "Contacts",
       "services&prices": "Services and prices"
     },
+    "footer": {
+      "address": "8 Olena Stepanivna Street, Lviv",
+      "city": "79000, Lviv, Lviv Region",
+      "schedule": "Mon-Fri 9:00-20:00, Sat 10:00-20:00, Sunday - closed",
+      "msStudio": "Салон краси - «MS Studio»",
+      "privacy_policy": "Privacy Policy",
+      "rights": "All rights reserved, 2024"
+    },
     "home": {
       "carousel": {
         "discount": "Discount on the first procedure",
         "slogan": "Your territory of <i>smoothness</i>"
       },
-      "benefits": {
-        "whyUs": "Why choose us??"
-      },
-      "masters": "Masters"
+      "slogan": "Touching your body with care and tenderness",
+      "reviews": "Reviews"
     },
     "services": {
       "lazer": "Laser epilation",
@@ -158,6 +164,118 @@
       "permanent": "Permanent makeup",
       "initial_procedure": "Initial procedure",
       "correction": "Correction"
+    },
+    "benefits": {
+      "title": "Why Choose Us?",
+      "professionalism": "Professionalism",
+      "professionalism_description": "The first mono studio in Lviv specializing in all hair removal methods",
+      "specialization": "Specialization",
+      "specialization_description": "We select the best hair removal method based on your skin type, hair color, and the area of hair growth.",
+      "innovativeness": "Innovativeness",
+      "innovativeness_description": "New diode laser Alvi Prague DL-7000, 2024 model",
+      "experience": "Experience",
+      "experience_description": "Over 10 years of experience in the hair removal industry",
+      "versatility": "Versatility",
+      "versatility_description": "We provide services for both men and women"
+    },
+    "masters": {
+      "title": "Masters",
+      "goToCertificates": "View certificates >",
+      "pavelychuk_maria": {
+        "name": "Maria Pavelychuk",
+        "position": "Studio owner",
+        "description": ""
+      },
+      "semak_tetiana": {
+        "name": "Tetiana Semak",
+        "position": "Studio manager - always in touch with you",
+        "description": "We will choose the best hair removal method that suits your skin type, hair color, and the area you want to treat."
+      },
+      "shy_anastasiia": {
+        "name": "Anastasiia Shy",
+        "position": "Teacher-technologist of electroepilation courses, master of laser epilation and depilation. Has been working at MS STUDIO for more than 3 years.",
+        "description": "Today, electroepilation is the only method that permanently removes hair of any type and color."
+      },
+      "palamarchuk_bogdana": {
+        "name": "Bogdana Palamarchuk",
+        "position": "Master with medical education for men and women in laser epilation, electroepilation, and depilation.",
+        "description": "Men's epilation is gaining popularity because men have coarse, black hair, which we can help to remove!"
+      },
+      "herich_nina": {
+        "name": "Nina Herich",
+        "position": "Universal master of all hair removal methods for both women and men.",
+        "description": "I will make your procedure as comfortable and pleasant as possible."
+      },
+      "ursalova_anastasiia": {
+        "name": "Anastasiia Ursalova",
+        "position": "Master of natural brows and permanent makeup. Over 3 years of experience.",
+        "description": "I create brows not just based on trends but those that will suit you personally."
+      },
+      "chekalenko_vira": {
+        "name": "Vira Chekalenko",
+        "position": "Manicure and pedicure master",
+        "description": ""
+      },
+      "lilia": {
+        "name": "Lilia",
+        "position": "SMM administrator",
+        "description": ""
+      },
+      "sloboda_olena": {
+        "name": "Olena Sloboda",
+        "position": "Teacher of laser epilation, sugaring, and waxing. Electroepilation master with more than 4 years of experience.",
+        "description": "I will do everything to prove that hair removal is not about fear and pain, but about satisfaction and confidence."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": "How should I prepare for laser hair removal?",
+      "answer1": "Here is the answer to question 1...",
+      "question2": "At what age can you start laser hair removal?",
+      "answer2": "Here is the answer to question 2...",
+      "question3": "What are the contraindications for laser hair removal?",
+      "answer3": "Here is the answer to question 3...",
+      "question4": "How should I care for my skin after laser hair removal?",
+      "answer4": "Here is the answer to question 4...",
+      "question5": "Which device do you use for the procedure?",
+      "answer5": "Here is the answer to question 5..."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "intro": "We, MS Studio (hereinafter referred to as the \"Company\", \"we\", \"our\"), are committed to ensuring the confidentiality and protection of the personal data of our clients and users of our website. This Privacy Policy describes how we collect, use, process, and protect your personal information.",
+      "sections": {
+        "dataCollectionTitle": "1. Data Collection and Use",
+        "dataCollection": "We may collect and use the following categories of personal information:",
+        "contactDetails": "Contact details: Name, phone number, email address, postal address.",
+        "bookingInfo": "Booking information: Records of your visits, procedures, and preferences.",
+        "technicalInfo": "Technical information: IP address, browser type, operating system, cookies, and other identifiers.",
+        "paymentInfo": "Payment data: If you make a payment through our website, we collect your card details and process payments through secure payment services.",
+        "purposeTitle": "2. Purpose of Processing Personal Data",
+        "purpose": "We collect your data for the following purposes:",
+        "services": "Providing services, including appointment scheduling and consultations.",
+        "communication": "Communicating with you about bookings, schedule changes, or other important matters.",
+        "payments": "Processing payments for our services.",
+        "promotion": "Sending promotional materials, news, and special offers (with the option to opt out).",
+        "security": "Improving customer service quality and optimizing website performance.",
+        "dataSharingTitle": "3. Data Sharing with Third Parties",
+        "dataSharing": "We do not share your personal data with third parties, except in the following cases:",
+        "serviceProviders": "When necessary to provide services (e.g., processing payments).",
+        "consent": "With your consent.",
+        "legal": "When required by law.",
+        "dataRetentionTitle": "4. Data Retention",
+        "dataRetention": "We retain your personal data for the period necessary to fulfill the purposes outlined in this Privacy Policy or as required by law.",
+        "yourRightsTitle": "5. Your Rights",
+        "yourRights": "You have the following rights regarding your personal data:",
+        "rightToAccess": "Right to access your personal data.",
+        "rightToCorrect": "Right to correct inaccurate or incomplete data.",
+        "rightToDelete": "Right to delete data (\"right to be forgotten\").",
+        "policyChangesTitle": "6. Changes to the Privacy Policy",
+        "policyChanges": "We reserve the right to update this Privacy Policy at any time. Updates will be posted on this page, and we will notify you of significant changes via email or other means.",
+        "usageRightsTitle": "7. Terms of Content Usage",
+        "usageRights": "By browsing the Site, you agree not to copy, download, publish, broadcast, make available for commercial use, or otherwise use the content of the Site, except for personal, non-commercial purposes. You also agree to respect copyright (related) and other intellectual property rights to the content of the Site, not to adapt, modify, or create derivative works from any elements of the Site's content, except for personal, non-commercial purposes (which do not aim to obtain commercial profit). Any other use of the Site's content, except for personal non-commercial purposes, is possible only with the prior consent of the Site Administration.",
+        "contactUsTitle": "8. Contact for Questions",
+        "contactUs": "If you have any questions about the Rules, suggestions, or comments – feel free to contact us"
+      }
     }
   }
 }
