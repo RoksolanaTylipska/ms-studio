@@ -5,8 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
-import FirstSlide from "../FirstSlide";
-import SecondSlide from "../SecondSlide";
+import FirstSlide from "./components/FirstSlide";
+import SecondSlide from "./components/SecondSlide";
 import { SwiperStyled } from "./styled";
 
 function Carousel() {
