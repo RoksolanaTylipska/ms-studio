@@ -1,25 +1,27 @@
 export const benefits = [
   {
-    title: "Профільність",
-    description:
-      "Перша у Львові моно студія по усіх методах видалення волосся: Лазерна епіляція; електроепіляція та депіляція (шугаринг/віск)",
+    title: "benefits.professionalism",
+    description: "benefits.professionalism_description",
     img: "/assets/photos/carousel_1.png",
   },
   {
-    title: "Досвід та Універсальність",
-    description:
-      "Перша у Львові моно студія по усіх методах видалення волосся: Лазерна епіляція; електроепіляція та депіляція (шугаринг/віск)",
+    title: "benefits.specialization",
+    description: "benefits.specialization_description",
     img: "/assets/photos/carousel_1.png",
   },
   {
-    title: "Спеціалізація",
-    description: " Підберемо найкращий метод видалення волосся саме для тебе. В залежності від кольору волосся, типу шкіри та зони на якій ви хочете його позбутись.",   
+    title: "benefits.innovativeness",
+    description: "benefits.innovativeness_description",   
     img: "/assets/photos/carousel_1.png",
   },
   {
-    title: "Профільність",
-    description:
-      "Перша у Львові моно студія по усіх методах видалення волосся: Лазерна епіляція; електроепіляція та депіляція (шугаринг/віск)",
+    title: "benefits.experience",
+    description: "benefits.experience_description",
+    img: "/assets/photos/carousel_1.png",
+  },
+  {
+    title: "benefits.versatility",
+    description: "benefits.versatility_description",
     img: "/assets/photos/carousel_1.png",
   },
 ];

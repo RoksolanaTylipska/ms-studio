@@ -4,9 +4,9 @@ import { styled } from "@mui/material/styles";
 export const ItemContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,  
   height: '400px',
-  maxWidth: '305px',
   borderRadius: '30px',
   padding: '30px 20px',
+  width: "300px",
   display: 'flex',
   flexDirection: 'column',  
   justifyContent: 'space-between',

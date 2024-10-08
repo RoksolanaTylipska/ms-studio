@@ -58,18 +58,23 @@ export const typography: Partial<Theme['typography']> = {
     fontSize: "25px",
     textAlign: "center",
   },
-  // h4: {
-  //   fontSize: 24,
-  //   fontWeight: 600,
-  //   lineHeight: '32px',
-  //   fontFamily: 'Gilroy-bold',
-  // },
+  h4: {
+    fontFamily: ["Vollkorn", 'sans-serif'].join(', '),
+    fontWeight: 300,
+    color: "#35302D",
+    fontSize: "20px",
+  },
+  h5: {
+    fontFamily: ["Comfortaa", 'sans-serif'].join(', '),
+    fontWeight: 500,
+    color: "#35302D",
+    fontSize: "18px",
+  },
   body: {
-    fontFamily: ['Gilroy', 'sans-serif'].join(', '),
-    fontSize: 14,
+    fontFamily: ["Comfortaa", 'sans-serif'].join(', '),
+    fontSize: 13,
     fontWeight: 400,
-    lineHeight: '24px',
-    letterSpacing: '0.56px;',
+    lineHeight: '26px',
   },
   bodyComfortaa: {
     fontFamily: ['Comfortaa', 'sans-serif'].join(', '),
@@ -81,16 +86,6 @@ export const typography: Partial<Theme['typography']> = {
     fontSize: 20,
     fontWeight: 400,
   },
-  // h5: {
-  //   fontSize: 24,
-  //   fontWeight: 400,
-  //   lineHeight: '29px',
-  // },
-  // h6: {
-  //   fontSize: 12,
-  //   fontWeight: 700,
-  //   lineHeight: '15px',
-  // },
   body1: {
     fontSize: 14,
     fontWeight: 400,
