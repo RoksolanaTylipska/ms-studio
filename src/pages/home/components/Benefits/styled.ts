@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const BenefitsContainer = styled(Box)({
-  marginBottom: '70px',
+  padding: '120px 0px',
   display: 'flex',
   gap: '70px',
   flexDirection: 'column',

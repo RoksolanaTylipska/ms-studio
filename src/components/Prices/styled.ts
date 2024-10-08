@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
 export const PricesContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
@@ -7,5 +7,5 @@ export const PricesContainer = styled(Box)(({ theme }) => ({
   gap: "50px",
   height: "auto",
   width: "100%",
-  padding: "80px 75px",
+  padding: "100px 75px 200px",
 }));

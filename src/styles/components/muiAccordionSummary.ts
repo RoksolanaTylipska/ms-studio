@@ -9,7 +9,7 @@ export const MuiAccordionSummary: Components["MuiAccordionSummary"] = {
       fontSize: "30px",
       padding: "0px",
       "&#panel1-header": {
-        fontSize: "30px",
+        fontSize: "25px",
         padding: "0px",
         textTransform: "uppercase",
         borderBottom: "1px solid rgba(0, 0, 0, .125)",

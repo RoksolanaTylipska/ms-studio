@@ -1,16 +1,18 @@
 import Prices from "@/components/Prices";
+import Masters from "@/pages/home/components/Masters";
 import Benefits from "./home/components/Benefits";
 import Carousel from "./home/components/Carousel";
-import { HomeContainer } from "./styled";
+import { Box } from "@mui/material";
 
 function Home() {
   return (
     <>
       <Carousel />
-      <HomeContainer>
+      <Box>
         <Benefits />
         <Prices />
-      </HomeContainer>
+        <Masters />
+      </Box>
     </>
   );
 }

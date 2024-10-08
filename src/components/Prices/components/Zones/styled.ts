@@ -44,7 +44,7 @@ export const ZoneTitle = styled(Typography)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  width: "150px",
+  width: "250px",
   height: "25px",
   backgroundColor: theme.palette.colors.gold,
   borderRadius: "50px"
