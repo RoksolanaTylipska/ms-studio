@@ -17,6 +17,8 @@ export const StyledPrimaryButton = styled.button<ButtonProps>`
         return "150px";
       case "large":
         return "297px";
+      default: 
+      return "100%"
     }
   }};
   padding: ${({ size }) => {

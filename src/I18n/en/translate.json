@@ -276,6 +276,17 @@
         "contactUsTitle": "8. Contact for Questions",
         "contactUs": "If you have any questions about the Rules, suggestions, or comments – feel free to contact us"
       }
+    },
+    "modalWindow": {
+      "title": "Online Appointment",
+      "description": "Fill out the form below, and we will contact you to confirm your appointment",
+      "privatePolicy": "By clicking the button, you agree to the privacy policy",
+      "input": {
+        "name": "Name",
+        "phone": "Phone",
+        "name_required": "Name is required",
+        "phone_required": "Phone is required"
+      }
     }
   }
 }

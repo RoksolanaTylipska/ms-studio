@@ -8,7 +8,7 @@ export interface ButtonProps {
   color?: "light" | "dark"
 }
 
-const Button = ({ children, onClick, type = "primary", size = "medium", color }: ButtonProps) => {
+const Button = ({ children, onClick, type = "primary", size, color }: ButtonProps) => {
   return (
     <>
       {type === "primary" ? (
