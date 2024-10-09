@@ -15,7 +15,6 @@ html,
 body {
   max-width: 1440px;
   margin: auto;
-  overflow-x: hidden;
   background-color: #f1eae5;
 }
 

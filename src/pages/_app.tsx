@@ -3,6 +3,8 @@
 import { I18nProvider } from "@/I18n/I18nProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ModalWindow from "@/components/ModalWindow";
+import { ModalWindowProvider } from "@/context/ModalContext";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
 
@@ -11,10 +13,12 @@ import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
+
   return (
     <I18nProvider>
       <AppRouterCacheProvider options={{ key: "css" }}>
         <ThemeProvider theme={theme}>
+        <ModalWindowProvider>
         <div
             style={{
               display: "flex",
@@ -23,11 +27,13 @@ export default function App({ Component, pageProps }: AppProps) {
             }}
           >
             <Header />
+            <ModalWindow />
             <main style={{ flex: 1 }}> 
               <Component {...pageProps} />
             </main>
             <Footer />
           </div>
+          </ModalWindowProvider>
         </ThemeProvider>
       </AppRouterCacheProvider>
     </I18nProvider>
