@@ -1,6 +1,6 @@
-import { Master } from "@/types/electroepilation";
+import { Electroepilation } from "@/types/electroepilation";
 
-export const electroepilation: Master[] = [
+export const electroepilation: Electroepilation[] = [
   {
     masterQnt: "electroepilation.oneMaster",
     values: [

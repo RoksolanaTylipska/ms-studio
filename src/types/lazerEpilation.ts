@@ -1,4 +1,4 @@
-import { Zones } from "./zones";
+import { Zone } from "./zones";
 
 export interface Complex {
   type: string;
@@ -13,5 +13,5 @@ export interface LazerEpilation {
   complex: string;
   zone: string;
   complexes: Complex[];
-  zones: Zones[];
+  zones: Zone[];
 }

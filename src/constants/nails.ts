@@ -1,6 +1,6 @@
-import { Zones } from "@/types/zones";
+import { Zone } from "@/types/zones";
 
-export const nails: Zones[] = [
+export const nails: Zone[] = [
   {
     title: "nails.womens_manicure",
     variants: [

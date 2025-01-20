@@ -1,4 +1,4 @@
-export interface Zones {
+export interface Zone {
   title: string;
   variants: {
     label: string;

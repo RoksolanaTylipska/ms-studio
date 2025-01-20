@@ -7,6 +7,7 @@ export const MuiTextField: Components["MuiTextField"] = {
         input: {
           color: theme.palette.colors.chocolate,
           fontFamily: "Comfortaa, sans-serif",
+          fontSize: "12px"
         },
         ".MuiFormHelperText-root": {
           color: theme.palette.colors.camel,
@@ -32,7 +33,6 @@ export const MuiTextField: Components["MuiTextField"] = {
           },
           "&.Mui-error": {
             borderColor: theme.palette.colors.chocolate,
-            // color: theme.palette.colors.chocolate,
             fontSize: "12px",
           },
           "&.Mui-warning": {
@@ -45,7 +45,6 @@ export const MuiTextField: Components["MuiTextField"] = {
         },
         "&.Mui-error": {
           borderColor: theme.palette.colors.gold,
-          // color: theme.palette.colors.gold,
         },
       };
     },

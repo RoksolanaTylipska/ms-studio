@@ -1,7 +1,7 @@
 "use client";
 
 import { discountsZones } from "@/constants/lazerEpilation";
-import { Zones } from "@/types/zones";
+import { Zone } from "@/types/zones";
 import { Box, Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -19,7 +19,7 @@ import {
 } from "./styled";
 
 interface ZonesProps {
-  zones: Zones[];
+  zones: Zone[];
   discounts?: boolean;
 }
 function Zones({ zones, discounts = true }: ZonesProps) {

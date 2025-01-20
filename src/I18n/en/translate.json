@@ -180,52 +180,7 @@
     },
     "masters": {
       "title": "Masters",
-      "goToCertificates": "View certificates >",
-      "pavelychuk_maria": {
-        "name": "Maria Pavelychuk",
-        "position": "Studio owner",
-        "description": ""
-      },
-      "semak_tetiana": {
-        "name": "Tetiana Semak",
-        "position": "Studio manager - always in touch with you",
-        "description": "We will choose the best hair removal method that suits your skin type, hair color, and the area you want to treat."
-      },
-      "shy_anastasiia": {
-        "name": "Anastasiia Shy",
-        "position": "Teacher-technologist of electroepilation courses, master of laser epilation and depilation. Has been working at MS STUDIO for more than 3 years.",
-        "description": "Today, electroepilation is the only method that permanently removes hair of any type and color."
-      },
-      "palamarchuk_bogdana": {
-        "name": "Bogdana Palamarchuk",
-        "position": "Master with medical education for men and women in laser epilation, electroepilation, and depilation.",
-        "description": "Men's epilation is gaining popularity because men have coarse, black hair, which we can help to remove!"
-      },
-      "herich_nina": {
-        "name": "Nina Herich",
-        "position": "Universal master of all hair removal methods for both women and men.",
-        "description": "I will make your procedure as comfortable and pleasant as possible."
-      },
-      "ursalova_anastasiia": {
-        "name": "Anastasiia Ursalova",
-        "position": "Master of natural brows and permanent makeup. Over 3 years of experience.",
-        "description": "I create brows not just based on trends but those that will suit you personally."
-      },
-      "chekalenko_vira": {
-        "name": "Vira Chekalenko",
-        "position": "Manicure and pedicure master",
-        "description": ""
-      },
-      "lilia": {
-        "name": "Lilia",
-        "position": "SMM administrator",
-        "description": ""
-      },
-      "sloboda_olena": {
-        "name": "Olena Sloboda",
-        "position": "Teacher of laser epilation, sugaring, and waxing. Electroepilation master with more than 4 years of experience.",
-        "description": "I will do everything to prove that hair removal is not about fear and pain, but about satisfaction and confidence."
-      }
+      "goToCertificates": "View certificates >"
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -280,13 +235,16 @@
     "modalWindow": {
       "title": "Online Appointment",
       "description": "Fill out the form below, and we will contact you to confirm your appointment",
-      "privatePolicy": "By clicking the button, you agree to the privacy policy",
+      "privatePolicy": "By clicking the button, you agree to the <a>privacy policy</a>",
       "input": {
         "name": "Name",
         "phone": "Phone",
         "name_required": "Name is required",
         "phone_required": "Phone is required"
-      }
+      },
+      "thankYou": "Your request has been received, we will contact you shortly!",
+      "thanks": "Thank you!"
+
     }
   }
 }

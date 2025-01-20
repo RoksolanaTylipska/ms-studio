@@ -21,7 +21,7 @@ function Carousel() {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      speed={1000}
+      speed={2000}
       navigation={true}
       className="mySwiper"
       modules={[Autoplay, Navigation, Pagination]}

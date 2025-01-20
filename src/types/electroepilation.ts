@@ -4,7 +4,7 @@ interface Variant {
   price: number[];
 }
 
-export interface Master {
+export interface Electroepilation {
   masterQnt: string;
   values: string[];
   variants: Variant[];

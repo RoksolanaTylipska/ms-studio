@@ -1,11 +1,11 @@
+import Masters from "@/components/Masters";
 import Prices from "@/components/Prices";
-import Masters from "@/pages/home/components/Masters";
 import { Box } from "@mui/material";
-import Benefits from "./home/components/Benefits";
-import Carousel from "./home/components/Carousel";
-import Photo from "./home/components/Photo";
-import Reviews from "./home/components/Reviews";
-import FAQ from "./home/components/FAQ";
+import Benefits from "../components/Benefits";
+import Carousel from "../components/Carousel";
+import FAQ from "../components/FAQ";
+import Photo from "../components/Photo";
+import Reviews from "../components/Reviews";
 
 function Home() {
   return (
