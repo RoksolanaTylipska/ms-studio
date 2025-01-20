@@ -97,6 +97,8 @@ export const typography: Partial<Theme['typography']> = {
     },
   },
   body2: {
+    fontFamily: ['Comfortaa', 'sans-serif'].join(', '),
+    color: "#83694E",
     fontSize: 12,
     fontWeight: 400,
     lineHeight: '14px',

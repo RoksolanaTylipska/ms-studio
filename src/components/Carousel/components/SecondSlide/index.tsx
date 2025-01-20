@@ -8,9 +8,12 @@ import { SlideContainerSecond, Title, Wrapper } from "./styled";
 import { Trans } from "react-i18next";
 import { useMemo } from "react";
 import i18n from "@/I18n/i18nConfig";
+import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 
 function SecondSlide() {
   const { t } = useTranslation();
+  const { handleModalWindow } = useModalWindowContext();
+
   const selectedlanguage = useMemo(() => {
     if (typeof window !== "undefined") {
       return i18n.language || window.localStorage.i18n;
@@ -32,6 +35,7 @@ function SecondSlide() {
         type="secondary"
         color="dark"
         size="large"
+        onClick={handleModalWindow}
       />
       </div>
 

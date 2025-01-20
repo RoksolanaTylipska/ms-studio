@@ -56,13 +56,13 @@ function ElectroepilationDetails() {
                     </Typography>
                     <PriceContainer>
                       <Typography variant="bodyComfortaa">
-                        {t(`${variant.time}`)} {t("general.min")}
+                        {variant.time}{t("general.min")}
                       </Typography>
                       <Typography variant="bodyComfortaa">
-                        {t(`${variant.price[0]}`)} ₴
+                        {variant.price[0]} ₴
                       </Typography>
                       <Typography variant="bodyComfortaa">
-                        {t(`${variant.price[1]}`)} ₴
+                       {variant.price[1]} ₴
                       </Typography>
                     </PriceContainer>
                   </LabelContainer>

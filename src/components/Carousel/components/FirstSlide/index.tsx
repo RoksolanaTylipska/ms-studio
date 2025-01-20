@@ -11,9 +11,11 @@ import {
   SlideContainerFirst,
   Title,
 } from "./styled";
+import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 
 function FirstSlide() {
   const { t } = useTranslation();
+  const { handleModalWindow } = useModalWindowContext();
 
   return (
       <SlideContainerFirst>
@@ -28,6 +30,7 @@ function FirstSlide() {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Button
             children={t("button.bookAppointment")}
+            onClick={handleModalWindow}
             type="secondary"
             color="light"
             size="large"
