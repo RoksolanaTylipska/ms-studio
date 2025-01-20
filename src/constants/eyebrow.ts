@@ -1,6 +1,6 @@
-import { Zones } from "@/types/zones";
+import { Zone } from "@/types/zones";
 
-export const eyebrow: Zones[] = [
+export const eyebrow: Zone[] = [
   {
     title: "face.eyebrow",
     variants: [

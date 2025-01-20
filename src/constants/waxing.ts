@@ -1,6 +1,6 @@
-import { Zones } from "@/types/zones";
+import { Zone } from "@/types/zones";
 
-export const waxing: Zones[] = [
+export const waxing: Zone[] = [
   {
     title: "zones.bikini",
     variants: [

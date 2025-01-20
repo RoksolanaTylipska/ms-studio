@@ -1,0 +1,50 @@
+.containerClass {
+  color: #593325;
+  border: 1px solid #593325;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.containerClass:hover {
+  background-color: #E0D6D0;
+}
+
+.react-tel-input .form-control {
+  background-color: transparent;
+  border: none;
+  color: #593325;
+  width: 90%;
+}
+
+.flag-dropdown {
+  height: 50%;
+}
+
+.react-tel-input .flag-dropdown {
+  background-color: transparent;
+  border: none;
+  font-family: "Comfortaa";
+  font-size: 12px;
+  top: 13px;
+}
+
+.react-tel-input .country-list {
+  border: none;
+  background-color: #f1eae5;
+}
+
+.react-tel-input .country-list .search {
+  background-color: #f1eae5;
+}
+
+.react-tel-input .country-list .search-box {
+  font-size: 12px;
+  font-family: "Comfortaa";
+  width: 70%;
+}
+
+.react-tel-input .selected-flag {
+  background-color: transparent !important;
+  border: none !important;
+}
+

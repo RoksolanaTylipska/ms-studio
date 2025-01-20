@@ -24,10 +24,12 @@ export const MasterCard = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   height: "500px",
+  flexGrow: 1
 }));
 
 export const TypographyBox = styled(Box)({
-  padding: "30px 20px",
+  padding: "20px 20px",
+  zIndex: "3",
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -36,7 +38,7 @@ export const TypographyBox = styled(Box)({
 
 export const Name = styled(Typography)({
   textAlign: "center",
-  fontSize: "20px"
+  fontSize: "18px"
 })
 
 export const Position = styled(Typography)(({ theme }) => ({
