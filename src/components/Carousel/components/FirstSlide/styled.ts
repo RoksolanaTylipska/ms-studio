@@ -11,11 +11,19 @@ export const SlideContainerFirst = styled(Box)(({ theme }) => ({
   color: theme.palette.colors.white,
 }));
 
-export const Title = styled(Typography)({
+export const Title = styled(Typography)(({ theme }) => ({
   padding: '140px 0 55px',
   fontSize: '100px',
   textAlign: 'center',
-});
+  [theme.breakpoints.down("md")]: { 
+    padding: '100px 0 55px',
+    fontSize: '80px',
+  },
+  [theme.breakpoints.down("sm")]: { 
+    fontSize: '60px',
+    lineHeight: "50px"
+  },
+}));
 
 export const Discount = styled(Box)(({ theme }) => ({
   border: `2px solid ${theme.palette.colors.white}`,
@@ -30,16 +38,25 @@ export const Discount = styled(Box)(({ theme }) => ({
   color: theme.palette.colors.white,
   fontSize: '3rem',
   margin: 'auto',
+  [theme.breakpoints.down("sm")]: { 
+    width: '80%',
+  },
 }));
 
-export const DiscountNumber = styled(Typography)({
+export const DiscountNumber = styled(Typography)(({ theme }) => ({
   fontFamily: '"Prata", serif',
   fontSize: '150px',
-});
+  [theme.breakpoints.down("md")]: { 
+    fontSize: '90px',
+  },
+}));
 
-export const DiscountText = styled(Typography)({
+export const DiscountText = styled(Typography)(({ theme }) => ({
   fontFamily: "'Comfortaa', sans-serif",
   textAlign: 'center',
   fontSize: '30px',
   margin: '26px 0 47px',
-});
+  [theme.breakpoints.down("md")]: { 
+    fontSize: '20px',
+  },
+}));

@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { TitleContainer } from "./styled";
@@ -11,6 +11,8 @@ interface TitleStarsProps {
 
 function TitleStars({ title, filledStars = false, lines = false }: TitleStarsProps) {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
 
   return (
     <TitleContainer>
@@ -28,15 +30,15 @@ function TitleStars({ title, filledStars = false, lines = false }: TitleStarsPro
         <Image
           src="/assets/icons/stars-filled.svg"
           alt="Filled Stars Icon"
-          width={60}
-          height={60}
+          width={isMobile ? 30 : 60}
+          height={isMobile ? 30 : 60}
         />
       ) : (
         <Image
           src="/assets/icons/stars.svg"
           alt="Empty Stars Icon"
-          width={50}
-          height={50}
+          width={isMobile ? 30 : 50}
+          height={isMobile ? 30 : 50}
         />
       )}
       {lines && (

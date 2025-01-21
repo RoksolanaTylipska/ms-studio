@@ -10,6 +10,9 @@ export const ItemContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',  
   justifyContent: 'space-between',
+  [theme.breakpoints.down("sm")]: {
+    height: '380px',
+  },
 }));
 
 export const ItemDescription = styled(Box)(({ theme }) => ({
@@ -22,5 +25,10 @@ export const ItemDescription = styled(Box)(({ theme }) => ({
 }));
 
 export const ItemImageWrapper = styled(Box)({
+  position: 'relative', 
+  width: '150px', 
+  height: '150px', 
   margin: '0 auto',
+  borderRadius: '50%',
+  overflow: 'hidden', 
 });

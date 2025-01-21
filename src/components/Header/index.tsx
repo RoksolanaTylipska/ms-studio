@@ -12,7 +12,7 @@ import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const { t } = useTranslation();
   const { handleModalWindow } = useModalWindowContext();
 

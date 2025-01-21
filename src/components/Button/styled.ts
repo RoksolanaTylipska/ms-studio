@@ -1,15 +1,20 @@
-import styled from "@emotion/styled";
-import { ButtonProps } from ".";
+import { Theme, styled } from "@mui/material/styles";
 
-export const StyledPrimaryButton = styled.button<ButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background-color: #35302D;
-  color: #F1EAE5;
-  height: 40px;
-  width: ${({ size }) => {
+export interface ButtonProps {
+  size?: string;
+  theme: Theme
+}
+
+export const StyledPrimaryButton = styled("button")(({ theme, size }: ButtonProps) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "6px",
+  backgroundColor: "#35302D",
+  color: "#F1EAE5",
+  height: "40px",
+  maxWidth: "300px",
+  width: (() => {
     switch (size) {
       case "small":
         return "100px";
@@ -17,11 +22,11 @@ export const StyledPrimaryButton = styled.button<ButtonProps>`
         return "150px";
       case "large":
         return "297px";
-      default: 
-      return "100%"
+      default:
+        return "100%";
     }
-  }};
-  padding: ${({ size }) => {
+  })(),
+  padding: (() => {
     switch (size) {
       case "small":
         return "5px 10px";
@@ -30,12 +35,12 @@ export const StyledPrimaryButton = styled.button<ButtonProps>`
       default:
         return "10px 20px";
     }
-  }};
-  border-radius: 50px;
-  border: none; 
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  font-size: ${({ size }) => {
+  })(),
+  borderRadius: "50px",
+  border: "none",
+  cursor: "pointer",
+  transition: "background-color 0.3s ease, color 0.3s ease, transform 0.3s ease",
+  fontSize: (() => {
     switch (size) {
       case "small":
         return "10px";
@@ -44,29 +49,54 @@ export const StyledPrimaryButton = styled.button<ButtonProps>`
       default:
         return "14px";
     }
-  }};
+  })(),
+  "&:hover": {
+    transform: "scale(1.05)",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: (() => {
+      switch (size) {
+        case "large":
+          return "24px";
+        default:
+          return "12px";
+      }
+    })(),
+    width: (() => {
+      switch (size) {
+        case "large":
+          return "200px";
+        default:
+          return "100%";
+      }
+    })(),
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "12px",
+    padding: "8px 15px",
+    width: "100%",
+  },
+}));
 
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-export const StyledSecondaryButton = styled.button<ButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background-color: transparent; 
-  color: ${({ color }) => {
+export const StyledSecondaryButton = styled("button")(({ theme, size, color }: any) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "6px",
+  backgroundColor: "transparent",
+  color: (() => {
     switch (color) {
       case "light":
         return "#ffffff";
       case "dark":
         return "#35302D";
+      default:
+        return "#35302D";
     }
-  }};
-  height: 40px;
-  width: ${({ size }) => {
+  })(),
+  height: "40px",
+  maxWidth: "300px",
+  width: (() => {
     switch (size) {
       case "small":
         return "100px";
@@ -74,9 +104,11 @@ export const StyledSecondaryButton = styled.button<ButtonProps>`
         return "150px";
       case "large":
         return "297px";
+      default:
+        return "100%";
     }
-  }};
-  padding: ${({ size }) => {
+  })(),
+  padding: (() => {
     switch (size) {
       case "small":
         return "5px 10px";
@@ -85,19 +117,21 @@ export const StyledSecondaryButton = styled.button<ButtonProps>`
       default:
         return "10px 20px";
     }
-  }};
-  border-radius: 50px;
-  border: ${({ color }) => {
+  })(),
+  borderRadius: "50px",
+  border: (() => {
     switch (color) {
       case "light":
         return `2px solid #ffffff`;
       case "dark":
         return `2px solid #35302D`;
+      default:
+        return "2px solid #35302D";
     }
-  }};
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  font-size: ${({ size }) => {
+  })(),
+  cursor: "pointer",
+  transition: "background-color 0.3s ease, color 0.3s ease, transform 0.3s ease",
+  fontSize: (() => {
     switch (size) {
       case "small":
         return "10px";
@@ -106,9 +140,31 @@ export const StyledSecondaryButton = styled.button<ButtonProps>`
       default:
         return "14px";
     }
-  }};
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
+  })(),
+  "&:hover": {
+    transform: "scale(1.05)",
+  },
+  // [theme.breakpoints.down("md")]: {
+  //   fontSize: (() => {
+  //     switch (size) {
+  //       case "large":
+  //         return "24px";
+  //       default:
+  //         return "12px";
+  //     }
+  //   })(),
+  //   width: (() => {
+  //     switch (size) {
+  //       case "large":
+  //         return "200px";
+  //       default:
+  //         return "100%";
+  //     }
+  //   })(),
+  // },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "16px",
+    padding: "20px 25px",
+    width: "70%",
+  },
+}));
