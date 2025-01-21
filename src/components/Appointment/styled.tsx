@@ -14,7 +14,11 @@ export const ModalContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  gap: "80px"
+  gap: "80px",
+  [theme.breakpoints.down("sm")]: {
+    width: '100%', 
+    height: 500,  
+  },
 }));
 
 export const InputsContainer = styled(Box)(({ theme }) => ({

@@ -13,7 +13,6 @@ function Carousel() {
 
   return (
     <SwiperStyled
-      spaceBetween={30}
       centeredSlides={true}
       pagination={{ type: "bullets", clickable: true }}
       loop={true}

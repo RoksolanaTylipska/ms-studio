@@ -50,6 +50,9 @@ export const typography: Partial<Theme['typography']> = {
     color: "#35302D",
     fontSize: "55px",
     textAlign: "center",
+    '@media (max-width:960px)': {
+      fontSize: "35px",
+    },
   },
   h3: {
     fontFamily: ["Vollkorn", 'sans-serif'].join(', '),

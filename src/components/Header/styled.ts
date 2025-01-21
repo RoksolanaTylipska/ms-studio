@@ -21,6 +21,9 @@ export const HeaderContainer = styled('header')<HeaderContainerProps>(({ isMobil
   right: 0,
   paddingInline: '77px',
   zIndex: 10,
+  [theme.breakpoints.down("sm")]: { 
+    backgroundColor: "transparent"
+  },
 }));
 
 const fadeIn = keyframes`

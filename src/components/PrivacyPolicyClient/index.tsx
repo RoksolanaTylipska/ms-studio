@@ -7,7 +7,7 @@ function PrivacyPolicyClient() {
   const { t } = useTranslation();
 
   return (
-    <PrivacyPolicyContainer>
+    <PrivacyPolicyContainer className="section">
       <Typography
         sx={{ textAlign: "left", fontSize: "30px" }}
         variant="bodyComfortaa"
