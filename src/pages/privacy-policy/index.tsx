@@ -1,12 +1,10 @@
+import PrivacyPolicyClientSide from "@/components/PrivacyPolicyClientSide";
 import { useTranslation } from "react-i18next";
-import PrivacyPolicyClient from "@/components/PrivacyPolicyClient";
 
 function PrivacyPolicy() {
   const { t } = useTranslation();
 
-  return (
-    <PrivacyPolicyClient />
-  );
+  return <PrivacyPolicyClientSide />;
 }
 
 export default PrivacyPolicy;

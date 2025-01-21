@@ -1,9 +1,9 @@
 import { privacyPolicy } from "@/constants/privacyPolicy";
 import { List, ListItem, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { PrivacyPolicyContainer, TermsContainer } from "../../components/PrivacyPolicyClient/styled";
+import { PrivacyPolicyContainer, TermsContainer } from "./styled";
 
-function PrivacyPolicyClient() {
+function PrivacyPolicyClientSide() {
   const { t } = useTranslation();
 
   return (
@@ -38,4 +38,4 @@ function PrivacyPolicyClient() {
   );
 }
 
-export default PrivacyPolicyClient;
+export default PrivacyPolicyClientSide;

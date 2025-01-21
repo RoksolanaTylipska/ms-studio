@@ -13,7 +13,7 @@ function Home() {
       <Carousel />
       <Box>
         <Benefits />
-        <Prices />
+        <Prices mainTitle={"header.services&prices"} />
         <Masters />
         <Photo />
         <Reviews />
