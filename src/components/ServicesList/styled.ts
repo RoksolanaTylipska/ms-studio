@@ -1,0 +1,16 @@
+import { styled } from "@mui/material";
+import { Swiper } from "swiper/react";
+
+export const SwiperStyled = styled(Swiper)(({ theme }) => ({
+  margin: "auto",
+  width: "60%",
+  height: "1200px",
+  [theme.breakpoints.down("md")]: {
+    height: "900px",
+    width: "75%",
+  },
+  [theme.breakpoints.down("sm")]: {
+    height: "600px",
+    width: "100%",
+  },
+}));

@@ -2,19 +2,22 @@ import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Swiper } from "swiper/react";
 
-export const MastersContainer = styled(Box)({
+export const MastersContainer = styled(Box)(({ theme }) => ({
   padding: "100px 0",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-});
+  [theme.breakpoints.down("sm")]: { 
+    padding: "70px 0",
+  },
+}));
 
-export const SwiperStyled = styled(Swiper)({
+export const SwiperStyled = styled(Swiper)(({ theme }) => ({
   width: "100%",
   maxWidth: "1200px",
   paddingBottom: "50px",
   marginTop: "40px",
-});
+}));
 
 export const MasterCard = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
@@ -24,7 +27,10 @@ export const MasterCard = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   height: "500px",
-  flexGrow: 1
+  flexGrow: 1,
+  [theme.breakpoints.down("sm")]: { 
+    margin: '0px 40px',
+  },
 }));
 
 export const TypographyBox = styled(Box)({
@@ -56,11 +62,14 @@ export const Description = styled(Typography)({
   lineHeight: "20px"
 });
 
-export const CertificatesContainer = styled(Box)({
+export const CertificatesContainer = styled(Box)(({ theme }) => ({
    width: "80%",
    justifyContent: "end",
-   display: "flex"
-})
+   display: "flex",
+   [theme.breakpoints.down("sm")]: { 
+    justifyContent: "center",
+  },
+}))
 
 export const CertificatesText = styled(Typography)(({ theme }) => ({
   ":hover": {

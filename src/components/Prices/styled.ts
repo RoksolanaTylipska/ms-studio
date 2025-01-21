@@ -8,4 +8,8 @@ export const PricesContainer = styled(Box)(({ theme }) => ({
   height: "auto",
   width: "100%",
   padding: "100px 75px 200px",
+  [theme.breakpoints.down("sm")]: {
+    padding: "70px 30px",
+    gap: "40px",
+  },
 }));

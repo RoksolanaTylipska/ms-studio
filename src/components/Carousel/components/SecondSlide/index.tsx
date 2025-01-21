@@ -1,18 +1,19 @@
 "use client";
+import i18n from "@/I18n/i18nConfig";
 import Button from "@/components/Button";
-import { useTranslation } from "react-i18next";
+import { useModalWindowContext } from "@/hooks/useModalWindowContext";
+import { useMemo } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { SlideContainerSecond, Title, Wrapper } from "./styled";
-import { Trans } from "react-i18next";
-import { useMemo } from "react";
-import i18n from "@/I18n/i18nConfig";
-import { useModalWindowContext } from "@/hooks/useModalWindowContext";
+import { useMediaQuery } from "@mui/material";
 
 function SecondSlide() {
   const { t } = useTranslation();
   const { handleModalWindow } = useModalWindowContext();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const selectedlanguage = useMemo(() => {
     if (typeof window !== "undefined") {
@@ -24,23 +25,19 @@ function SecondSlide() {
   return (
     <SlideContainerSecond>
       <Wrapper selectedlanguage={selectedlanguage}>
-      <Title>
-      <Trans i18nKey="home.carousel.slogan">
-            Твоя територія <i>гладкості</i>
-          </Trans>
-          </Title>
-      <div style={{position: "absolute", bottom: 0, right: 0}}>
-      <Button
-        children={t("button.bookAppointment")}
-        type="secondary"
-        color="dark"
-        size="large"
-        onClick={handleModalWindow}
-      />
-      </div>
-
-     </Wrapper>
-
+        <Title as="h1">
+          <Trans i18nKey="home.carousel.slogan"></Trans>
+        </Title>
+        <div style={{ position: isMobile? "static" : "absolute", bottom: 0, right: 0 }}>
+          <Button
+            children={t("button.bookAppointment")}
+            type="secondary"
+            color="dark"
+            size="large"
+            onClick={handleModalWindow}
+          />
+        </div>
+      </Wrapper>
     </SlideContainerSecond>
   );
 }

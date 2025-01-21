@@ -28,7 +28,7 @@ function Faq() {
               aria-controls={`panel1-content`}
               id={`panel1-header`}
             >
-              <Typography variant="h3">{t(`${faq.question}`)}</Typography>
+              {t(`${faq.question}`)}
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="bodyComfortaa">

@@ -8,5 +8,9 @@ export const FAQContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  gap: "80px"
+  gap: "80px",
+  [theme.breakpoints.down("sm")]: {
+    padding: "70px 30px",
+    gap: "40px",
+  },
 }));

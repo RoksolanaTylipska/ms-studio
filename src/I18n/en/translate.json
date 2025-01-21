@@ -15,7 +15,7 @@
       "schedule": "Mon-Fri 9:00-20:00, Sat 10:00-20:00, Sunday - closed",
       "msStudio": "Салон краси - «MS Studio»",
       "privacy_policy": "Privacy Policy",
-      "rights": "All rights reserved, 2024"
+      "rights": "All rights reserved, 2025"
     },
     "home": {
       "carousel": {
@@ -33,6 +33,11 @@
       "otherServices": {
         "nails": "Manicure / pedicure",
         "lashes_brows_makeup": "Lashes / brows / makeup"
+      },
+      "intro": {
+        "title": "Beauty That Inspires",
+        "subtitle": "Experience the magic of transformation with our masters and discover our services.",
+        "create_beauty": "Creating beauty with love"
       },
       "gender": {
         "women": "Women's",
@@ -53,7 +58,7 @@
         "mini": "Bikini + Armpits",
         "midi": "Bikini + Armpits + Shins",
         "maxi": "Bikini + Armpits + Legs Full"
-      }
+      }     
     },
     "zones": {
       "bikini": "Bikini",
