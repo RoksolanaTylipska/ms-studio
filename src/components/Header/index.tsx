@@ -60,7 +60,7 @@ const Header = () => {
                 />
               </Link>
             </Box>
-            <Box>
+            <Box sx={{margin: "0px 50px"}}>
               <Navigation navLinks={navLinksRight} />
             </Box>
             <Button

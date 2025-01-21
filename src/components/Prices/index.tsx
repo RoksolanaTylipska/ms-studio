@@ -32,13 +32,13 @@ const services = [
   },
 ];
 
-function Prices() {
+function Prices({mainTitle}: {mainTitle: string}) {
   const { t } = useTranslation();
 
   return (
     <PricesContainer>
       <TitleStars
-        title={"header.services&prices"}
+        title={mainTitle}
         filledStars={true}
         lines={true}
       />
