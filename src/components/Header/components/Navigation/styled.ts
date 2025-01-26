@@ -7,12 +7,10 @@ export const NavList = styled.ul`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 20px;
   height: 100%;
   padding: 0;
   font-size: 20px;
-  margin-bottom: 70px;
-  margin-top: 100px;
 
   @media (min-width: 600px) {
     flex-direction: row;
@@ -31,8 +29,12 @@ export const NavItem = styled.li`
   justify-content: center;
 
   a {
-    &:hover {
-      color: '#D9C6A4';
-    }
+    color: inherit; 
+    transition: all 0.2s ease; 
+  }
+
+  a:hover {
+    color: #7B7167; 
   }
 `;
+

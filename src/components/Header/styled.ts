@@ -1,5 +1,6 @@
 import { styled, keyframes } from "@mui/material/styles";
 import { Box } from "@mui/material";
+import Link from "next/link";
 
 interface HeaderContainerProps {
   isMobile: boolean;
@@ -65,10 +66,27 @@ export const MobileMenu = styled(Box)<HeaderContainerProps>(({ isMobile, isMenuO
   top: 0,
   left: isMobile ? (isMenuOpen ? '0%' : '100%') : 0,
   right: 0,
-  transition: 'ease-out 0.3s',
+  transition: 'ease-out 0.4s',
 }));
 
-export const PhoneNumber = styled('a')({
+export const PhoneNumber = styled(Link)({
   color: 'white',
   borderRadius: '5px',
+});
+
+export const MobileContainer = styled('a')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: "center",
+  justifyContent: "center",
+  margin: "50px 0",
+  gap: "40px"
+
+});
+
+export const SocialMediaContainer = styled(Box)({
+  margin: "auto",
+  display: "flex",
+  gap: "10px",
+  justifyContent: "end",
 });

@@ -1,10 +1,11 @@
 import { Links } from "@/types";
 
 export const navLinksLeft: Links[] = [
+  { name: "header.home", link: "/" },
   { name: "header.services", link: "services" },
   { name: "header.prices", link: "prices" },
   { name: "header.courses", link: "courses" },
-  { name: "header.about", link: "about" },
+  // { name: "header.about", link: "about" },
 ];
 
 export const navLinksRight: Links[] = [
@@ -13,7 +14,8 @@ export const navLinksRight: Links[] = [
 ];
 
 export const navLinks: Links[] = [
-  { name: "header.about", link: "about" },
+  // { name: "header.about", link: "about" },
+  { name: "header.home", link: "/" },
   { name: "header.services", link: "services" },
   { name: "header.prices", link: "prices" },
   { name: "header.courses", link: "courses" },
