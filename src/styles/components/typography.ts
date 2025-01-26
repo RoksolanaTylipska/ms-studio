@@ -48,7 +48,7 @@ export const typography: Partial<Theme['typography']> = {
     fontFamily: ["Vollkorn", 'sans-serif'].join(', '),
     fontWeight: 400,
     color: "#35302D",
-    fontSize: "55px",
+    fontSize: "45px",
     textAlign: "center",
     '@media (max-width:960px)': {
       fontSize: "35px",

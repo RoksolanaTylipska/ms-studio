@@ -60,7 +60,7 @@ function Reviews() {
               }}
             >
               <Image
-                src={`/assets/photos/reviews/review-${key}.png`}
+                src={`/assets/photos/reviews/review-${key}.webp`}
                 alt="review"
                 layout="fill"
                 objectFit="cover"
