@@ -1,6 +1,7 @@
 {
   "translations": {
     "header": {
+      "home": "Home",
       "about": "About us",
       "services": "Services",
       "prices": "Prices",
@@ -12,7 +13,7 @@
     "footer": {
       "address": "8 Olena Stepanivna Street, Lviv",
       "city": "79000, Lviv, Lviv Region",
-      "schedule": "Mon-Fri 9:00-20:00, Sat 10:00-20:00, Sunday - closed",
+      "schedule": "Mon-Sun 9:00 AM - 9:00 PM, no days off",
       "msStudio": "Салон краси - «MS Studio»",
       "privacy_policy": "Privacy Policy",
       "rights": "All rights reserved, 2025"
@@ -41,7 +42,9 @@
       },
       "gender": {
         "women": "Women's",
-        "men": "Men's"
+        "men": "Men's",
+        "womens": "Women",
+        "mens": "Men"
       },
       "zone": "Separate Zones",
       "complex": "Complex",
@@ -185,7 +188,8 @@
     },
     "masters": {
       "title": "Masters",
-      "goToCertificates": "View certificates >"
+      "goToCertificates": "View certificates >",
+      "certificates": "Certificates of our masters"
     },
     "faq": {
       "title": "Frequently Asked Questions",

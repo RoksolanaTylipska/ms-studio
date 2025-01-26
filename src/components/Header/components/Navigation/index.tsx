@@ -7,9 +7,10 @@ import { NavItem, NavList } from "./styled";
 
 interface NavProps {
   navLinks: { name: string; link: string }[];
+  toggleMenu?: () => void;
 }
 
-const Navigation = memo(({ navLinks }: NavProps) => {
+const Navigation = memo(({ navLinks, toggleMenu }: NavProps) => {
   const { t } = useTranslation();
 
   return (
@@ -17,7 +18,14 @@ const Navigation = memo(({ navLinks }: NavProps) => {
       {React.Children.toArray(
         navLinks.map((link: Links) => (
           <NavItem>
-            <Link href={`/${link.link}`}>{t(link.name)}</Link>
+            <Link
+              onClick={() => {
+                if (toggleMenu) toggleMenu();
+              }}
+              href={`/${link.link}`}
+            >
+              {t(link.name)}
+            </Link>
           </NavItem>
         ))
       )}

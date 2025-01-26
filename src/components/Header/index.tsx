@@ -1,14 +1,21 @@
 import { navLinks, navLinksLeft, navLinksRight } from "@/constants/navigation";
+import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 import { Box, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../Button";
+import SocialMedia from "../SocialMedia";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import Navigation from "./components/Navigation";
-import { HeaderContainer, MobileMenu, MobileMenuButton } from "./styled";
-import { useModalWindowContext } from "@/hooks/useModalWindowContext";
+import {
+  HeaderContainer,
+  MobileContainer,
+  MobileMenu,
+  MobileMenuButton,
+  SocialMediaContainer,
+} from "./styled";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -37,10 +44,26 @@ const Header = () => {
             <MobileMenu isMobile={isMobile} isMenuOpen={isMenuOpen}>
               {isMenuOpen && (
                 <>
-                  <Box>
-                    <Navigation navLinks={navLinks} />
-                  </Box>
-                  <LanguageSwitcher />
+                  <MobileContainer>
+                    <Image
+                      src="/assets/icons/logo-black.png"
+                      alt="Logo"
+                      width={85}
+                      height={85}
+                    />
+                    <Navigation navLinks={navLinks} toggleMenu={toggleMenu} />
+                    <LanguageSwitcher />
+                    <SocialMediaContainer>
+                      <SocialMedia
+                        bgColor={"dark"}
+                        img={"/assets/icons/instagram-dark.svg"}
+                      />
+                      <SocialMedia
+                        bgColor={"dark"}
+                        img={"/assets/icons/tiktok-dark.svg"}
+                      />
+                    </SocialMediaContainer>
+                  </MobileContainer>
                 </>
               )}
             </MobileMenu>
@@ -60,14 +83,14 @@ const Header = () => {
                 />
               </Link>
             </Box>
-            <Box sx={{margin: "0px 50px"}}>
+            <Box>
               <Navigation navLinks={navLinksRight} />
             </Box>
             <Button
               children={t("button.bookAppointment")}
               onClick={handleModalWindow}
               type="primary"
-              size = "medium"
+              size="medium"
             />
 
             <div style={{ display: "flex", gap: "50px" }}>
