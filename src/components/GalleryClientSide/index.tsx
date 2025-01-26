@@ -2,9 +2,22 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 import TitleStars from "../TitleStars";
-import { GalleryContainer, ModalContainer, ModalImage, PhotosContainer } from "./styled";
+import {
+  GalleryContainer,
+  ModalContainer,
+  ModalImage,
+  PhotosContainer,
+} from "./styled";
 
-const Gallery = ({ images }: { images: number[] }) => {
+const GalleryClientSide = ({
+  count,
+  path,
+  title = true,
+}: {
+  count: number[];
+  path: string;
+  title?: boolean;
+}) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [priceImage, setPriceImage] = useState<string>("");
 
@@ -20,24 +33,24 @@ const Gallery = ({ images }: { images: number[] }) => {
   return (
     <GalleryContainer>
       {isModalOpen && (
-  <ModalContainer onClick={handleCloseModal}>
-{isModalOpen && (
-  <ModalContainer onClick={handleCloseModal}>
-    <ModalImage
-      src={priceImage}
-      alt="Certificate"
-      width={900}
-      height={600} 
-      objectFit="contain"
-    />
-  </ModalContainer>
-)}
-  </ModalContainer>
-)}
+        <ModalContainer onClick={handleCloseModal}>
+          {isModalOpen && (
+            <ModalContainer onClick={handleCloseModal}>
+              <ModalImage
+                src={priceImage}
+                alt={title ? "Certificate" : "Photo"}
+                width={900}
+                height={600}
+                objectFit="contain"
+              />
+            </ModalContainer>
+          )}
+        </ModalContainer>
+      )}
 
-      <TitleStars title={"masters.certificates"} />
+      {title && <TitleStars title={"masters.certificates"} />}
       <PhotosContainer>
-        {images.map((key) => (
+        {count.map((key) => (
           <Box
             key={key}
             sx={{
@@ -49,15 +62,11 @@ const Gallery = ({ images }: { images: number[] }) => {
             }}
           >
             <Image
-              src={`/assets/photos/certificates/certificate-${key}.webp`}
+              src={`${path}-${key}.webp`}
               alt={`Certificate ${key}`}
               layout="fill"
               objectFit="cover"
-              onClick={() =>
-                handleOpenModal(
-                  `/assets/photos/certificates/certificate-${key}.webp`
-                )
-              }
+              onClick={() => handleOpenModal(`${path}-${key}.webp`)}
             />
           </Box>
         ))}
@@ -66,4 +75,4 @@ const Gallery = ({ images }: { images: number[] }) => {
   );
 };
 
-export default Gallery;
+export default GalleryClientSide;

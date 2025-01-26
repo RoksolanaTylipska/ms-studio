@@ -1,13 +1,13 @@
-import Gallery from "@/components/Gellery";
+import GalleryClientSide from "@/components/GalleryClientSide";
 import { Box } from "@mui/material";
 
 function Certificates() {
-  const images = Array.from({ length: 19 }, (_, i) => i + 1);
+  const count = Array.from({ length: 19 }, (_, i) => i + 1);
 
   return (
     <>
       <Box>
-        <Gallery images={images} />
+        <GalleryClientSide count={count} path={"/assets/photos/certificates/certificate"} />
       </Box>
     </>
   );
