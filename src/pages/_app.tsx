@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ModalWindow from "@/components/ModalWindow";
 import { ModalWindowProvider } from "@/context/ModalContext";
+import { useGenerateMetadata } from "@/hooks/useGenerateMetadata";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
 
