@@ -67,11 +67,11 @@ export const VideoBlock = () => {
     }
   }, [videoRef]);
 
-  let videoSource = "/video/desktop.mp4";
+  let videoSource = "/video/mobile.mp4";
 
-  useEffect(() => {
-    videoSource = isMobile ? "/video/mobile.mp4" : "/video/desktop.mp4";
-  }, [isMobile]);
+  // useEffect(() => {
+  //   videoSource = isMobile ? "/video/mobile.mp4" : "/video/desktop.mp4";
+  // }, [isMobile]);
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
