@@ -11,3 +11,4 @@ export const GenderTitle = styled(Typography)(({ theme }) => ({
     padding: "0px",
   },
 }));
+

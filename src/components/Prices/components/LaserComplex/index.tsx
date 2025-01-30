@@ -31,6 +31,7 @@ function LaserComplex({ complexes }: ComplexProps) {
   return (
     <>
       {/* <AccordionSummary
+
         expandIcon={<ExpandMore />}
         aria-controls="panel3-content"
         id="panel3-header"
@@ -41,12 +42,14 @@ function LaserComplex({ complexes }: ComplexProps) {
         <Box
           sx={{
             paddingTop: "20px",
+
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
           }}
         >
           <Typography variant="bodyCaveat" >{t("lazerEpilation.payLess")} </Typography>
+
           <DiscountBox>
             {discountsComplexes.map((discount, i) => (
               <Discounts>
@@ -82,6 +85,7 @@ function LaserComplex({ complexes }: ComplexProps) {
         ))}
       </AccordionDetails>
     </>
+
   );
 }
 

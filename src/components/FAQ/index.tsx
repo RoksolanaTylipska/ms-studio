@@ -41,6 +41,7 @@ function Faq() {
                       ),
                   }}
                 />
+
               </Typography>
             </AccordionDetails>
           </Accordion>

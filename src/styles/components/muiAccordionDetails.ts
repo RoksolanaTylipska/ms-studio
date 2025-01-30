@@ -13,6 +13,7 @@ export const MuiAccordionDetails: Components["MuiAccordionDetails"] = {
       [theme.breakpoints.down("sm")]: {
         padding: "0px",
       },
+
       "&#panel4-header": {
         fontSize: "16px",
         paddingTop: "15px",

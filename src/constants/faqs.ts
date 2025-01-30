@@ -6,4 +6,5 @@ export const faqs = [
   { question: "faq.question5", answer: "faq.answer5" },
   { question: "faq.question6", answer: "faq.answer6" },
 
+
 ];

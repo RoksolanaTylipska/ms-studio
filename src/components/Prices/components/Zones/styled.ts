@@ -1,6 +1,7 @@
 import { Box, Typography, styled } from "@mui/material";
 
 export const DiscountBox = styled(Box)(({ theme }) => ({
+
   display: "flex",
   flexDirection: "row",
   paddingRight: "50px",
@@ -12,6 +13,7 @@ export const DiscountBox = styled(Box)(({ theme }) => ({
     padding: "0px",
   },
 }));
+
 
 export const Discounts = styled(Box)({
   display: "flex",
@@ -84,6 +86,7 @@ export const PricesBox = styled(Typography)(({ theme }) => ({
     padding: "0px",
   },
 }));
+
 
 export const LabelPriceContainer = styled(Box)({
   display: "flex",

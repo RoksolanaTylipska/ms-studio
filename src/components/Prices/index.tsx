@@ -40,6 +40,7 @@ function Prices({ mainTitle }: { mainTitle: string }) {
           ))}
         </Box>
       )} 
+
     </PricesContainer>
   );
 }

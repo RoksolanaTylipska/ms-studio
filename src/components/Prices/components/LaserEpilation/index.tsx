@@ -30,6 +30,7 @@ function LaserEpilation() {
 
             {/* </AccordionDetails> */}
             {/* <AccordionDetails>
+
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMore />}
@@ -43,6 +44,7 @@ function LaserEpilation() {
                 </AccordionDetails>
               </Accordion>
             </AccordionDetails> */}
+
           </Accordion>
         ))}
       </AccordionDetails>

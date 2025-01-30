@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 function Gallery() {
   const count = Array.from({ length: 30 }, (_, i) => i + 1);
 
+
   return (
     <>
       <Box>

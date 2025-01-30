@@ -25,6 +25,7 @@
       },
       "slogan": "Touching your body with care and tenderness",
       "reviews": "Our Clients"
+
     },
     "services": {
       "lazer": "Laser epilation",
@@ -48,6 +49,7 @@
       },
       "zone": "Separate Zones",
       "complex": "Complexes",
+
       "sessions10": "10 sessions",
       "sessions5": "5 sessions",
       "sessions1": "1 session"
@@ -161,6 +163,7 @@
       "lamination": "Lamination",
       "lamination_tinting": "Eyelash lamination with tinting",
       "lasting_styling": "Long-lasting eyebrow styling",
+
       "makeup": "Makeup",
       "day": "Day makeup",
       "evening": "Evening makeup",
@@ -205,6 +208,7 @@
       "answer5": "We use the modern European diode laser Alvi Prague DL-7000, 2024 model. This device ensures effective and safe hair removal thanks to advanced technology and high power. Its innovative cooling system guarantees comfort during the procedure, and its settings allow adaptation to different skin and hair types. This device features a short pulse – 20 joules in 25 ms! This is the optimal flash duration for effective hair removal while ensuring skin safety.",
       "question6": "Does laser hair removal remove ingrown hairs?",
       "answer6": "Laser hair removal can help reduce the number of ingrown hairs, as it affects the hair follicle, destroying it and decreasing the likelihood of hair growing inward in the future."
+
     },
     "privacyPolicy": {
       "title": "Privacy Policy",

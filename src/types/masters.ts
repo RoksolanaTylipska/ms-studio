@@ -5,4 +5,5 @@ export interface Master {
   description?: { [key: string]: string };
   img: string;
   priority: number;
+
 }

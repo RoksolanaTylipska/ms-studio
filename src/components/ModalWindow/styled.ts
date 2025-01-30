@@ -22,6 +22,7 @@ export const ModalContainer = styled(Box)(({ theme }) => ({
     borderRadius: "15px",
     width: "95%"
   },
+
 }));
 
 

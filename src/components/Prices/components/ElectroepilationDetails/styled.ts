@@ -46,5 +46,6 @@ export const LabelTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.colors.camel,
   fontWeight: 500,
   fontSize: "18px",
+
 }));
 

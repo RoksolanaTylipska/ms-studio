@@ -66,6 +66,7 @@ function Masters() {
           disableOnInteraction: false,
         }}
         speed={500}
+
         navigation={true}
         modules={[Navigation, Pagination, Autoplay]}
         breakpoints={{
@@ -128,7 +129,6 @@ function Masters() {
         </MasterCard>
       </SwiperSlide>
     ))}
-
 
       </SwiperStyled>
       <CertificatesContainer>

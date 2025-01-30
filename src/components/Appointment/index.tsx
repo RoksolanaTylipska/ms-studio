@@ -52,6 +52,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
             }}
           />
         </div>
+
       )}
 
       <TextContainer>
@@ -62,6 +63,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
           height={80}
           style={{ margin: "auto" }}
         />
+
 
         <Typography
           id="modal-modal-title"

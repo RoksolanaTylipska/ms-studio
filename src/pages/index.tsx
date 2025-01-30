@@ -10,6 +10,7 @@ import { VideoBlock } from "@/components/VideoBlock";
 
 const FAQ = dynamic(() => import("../components/FAQ/index"), { ssr: false });
 
+
 function Home() {
   return (
     <>
@@ -20,6 +21,7 @@ function Home() {
         <Masters />
         <Photo />
         {/* <VideoBlock /> */}
+
         <Reviews />
         <FAQ />
       </Box>
