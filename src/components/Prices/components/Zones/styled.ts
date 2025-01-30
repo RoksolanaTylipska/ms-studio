@@ -1,11 +1,19 @@
 import { Box, Typography, styled } from "@mui/material";
 
-export const DiscountBox = styled(Box)({
+export const DiscountBox = styled(Box)(({ theme }) => ({
+
   display: "flex",
   flexDirection: "row",
   paddingRight: "50px",
   gap: "30px",
-});
+  [theme.breakpoints.down("md")]: { 
+    padding: "0px",
+  },
+  [theme.breakpoints.down("sm")]: { 
+    padding: "0px",
+  },
+}));
+
 
 export const Discounts = styled(Box)({
   display: "flex",
@@ -47,19 +55,38 @@ export const ZoneTitle = styled(Typography)(({ theme }) => ({
   width: "250px",
   height: "25px",
   backgroundColor: theme.palette.colors.gold,
-  borderRadius: "50px"
+  borderRadius: "50px",
+  [theme.breakpoints.down("md")]: { 
+    fontSize: "16px",
+  },
+  [theme.breakpoints.down("sm")]: { 
+    fontSize: "16px",
+  },
 }));
 
-export const ZonePrice = styled(Typography)({
+export const ZonePrice = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
-});
+  [theme.breakpoints.down("md")]: { 
+    fontSize: "14px",
+  },
+  [theme.breakpoints.down("sm")]: { 
+    fontSize: "14px",
+  },
+}));
 
-export const PricesBox = styled(Typography)({
+export const PricesBox = styled(Typography)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   gap: "40px",
-  paddingRight: "50px"
-});
+  paddingRight: "50px",
+  [theme.breakpoints.down("md")]: { 
+    padding: "0px",
+  },
+  [theme.breakpoints.down("sm")]: { 
+    padding: "0px",
+  },
+}));
+
 
 export const LabelPriceContainer = styled(Box)({
   display: "flex",

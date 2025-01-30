@@ -24,7 +24,8 @@
         "slogan": "Your territory of <i>smoothness</i>"
       },
       "slogan": "Touching your body with care and tenderness",
-      "reviews": "Reviews"
+      "reviews": "Our Clients"
+
     },
     "services": {
       "lazer": "Laser epilation",
@@ -47,7 +48,8 @@
         "mens": "Men"
       },
       "zone": "Separate Zones",
-      "complex": "Complex",
+      "complex": "Complexes",
+
       "sessions10": "10 sessions",
       "sessions5": "5 sessions",
       "sessions1": "1 session"
@@ -160,7 +162,8 @@
       "correction_tinting": "Eyebrow correction + tinting (dye/henna)",
       "lamination": "Lamination",
       "lamination_tinting": "Eyelash lamination with tinting",
-      "long-lasting_styling": "Long-lasting eyebrow styling",
+      "lasting_styling": "Long-lasting eyebrow styling",
+
       "makeup": "Makeup",
       "day": "Day makeup",
       "evening": "Evening makeup",
@@ -193,16 +196,19 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "question1": "How should I prepare for laser hair removal?",
-      "answer1": "Here is the answer to question 1...",
-      "question2": "At what age can you start laser hair removal?",
-      "answer2": "Here is the answer to question 2...",
-      "question3": "What are the contraindications for laser hair removal?",
-      "answer3": "Here is the answer to question 3...",
-      "question4": "How should I care for my skin after laser hair removal?",
-      "answer4": "Here is the answer to question 4...",
-      "question5": "Which device do you use for the procedure?",
-      "answer5": "Here is the answer to question 5..."
+      "question1": "How to prepare for the procedure and what care is needed afterward?",
+      "answer1": "Detailed information about preparation and post-procedure care can be found <strong><a href='/services'>here</a></strong>.",
+      "question2": "Contraindications for the procedure?",
+      "answer2": "Detailed information about contraindications for each procedure can be found <strong><a href='/services'>here</a></strong>.",
+      "question3": "What to choose: electroepilation or laser hair removal?",
+      "answer3": "Our specialists will help you choose the best hair removal method that suits your skin type, hair color, and the area you want to treat. <br/> <br/> <strong>Laser Hair Removal:</strong> <br/> ✔ Suitable for dark hair and fair skin (modern lasers can also work on darker skin, but there are still some limitations). <br/> ✔ The procedure is fast, especially for large areas. <br/> ✔ Less painful compared to electroepilation. <br/><br/> <strong>Electroepilation:</strong> <br/> ✔ Permanently removes hair by destroying each follicle individually. <br/> ✔ Suitable for all hair types (even light and gray hair). <br/> ✔ Can be performed on all skin phototypes.",
+      "question4": "At what age can hair removal/depilation be done?",
+      "answer4": "<strong>Laser Hair Removal:</strong> Officially allowed from the age of 18. In some cases, the procedure can be performed earlier, but only with written parental or guardian consent. <br /><br/> <strong>Sugaring and Wax Depilation:</strong> Regular procedures can start from the age of 12-14. If unwanted hair appears early and causes psychological discomfort, the procedure can be done earlier, with parental consent.",
+      "question5": "Which device do you use?",
+      "answer5": "We use the modern European diode laser Alvi Prague DL-7000, 2024 model. This device ensures effective and safe hair removal thanks to advanced technology and high power. Its innovative cooling system guarantees comfort during the procedure, and its settings allow adaptation to different skin and hair types. This device features a short pulse – 20 joules in 25 ms! This is the optimal flash duration for effective hair removal while ensuring skin safety.",
+      "question6": "Does laser hair removal remove ingrown hairs?",
+      "answer6": "Laser hair removal can help reduce the number of ingrown hairs, as it affects the hair follicle, destroying it and decreasing the likelihood of hair growing inward in the future."
+
     },
     "privacyPolicy": {
       "title": "Privacy Policy",

@@ -39,7 +39,8 @@ function Prices({ mainTitle }: { mainTitle: string }) {
             </Accordion>
           ))}
         </Box>
-      )}
+      )} 
+
     </PricesContainer>
   );
 }

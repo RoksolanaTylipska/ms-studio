@@ -33,14 +33,26 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
 
   return (
     <>
-      {!isMobile && (
+      {!isMobile ? (
         <Image
-          src="/assets/photos/modal-window.jpeg"
+          src="/assets/photos/modal-window.webp"
           alt="MS Studio"
-          width={270}
+          width={300}
           height={400}
-          style={{ borderRadius: "25px" }}
+          style={{ borderRadius: "15px" }}
         />
+      ) : (
+        <div style={{ position: "relative", width: "100%", height: "260px" }}>
+          <Image
+            src="/assets/photos/modal-window-mobile.webp"
+            alt="MS Studio"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+          />
+        </div>
+
       )}
 
       <TextContainer>
@@ -51,6 +63,8 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
           height={80}
           style={{ margin: "auto" }}
         />
+
+
         <Typography
           id="modal-modal-title"
           variant="h4"

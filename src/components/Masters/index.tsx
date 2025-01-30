@@ -65,7 +65,8 @@ function Masters() {
           delay: 7000,
           disableOnInteraction: false,
         }}
-        speed={2000}
+        speed={500}
+
         navigation={true}
         modules={[Navigation, Pagination, Autoplay]}
         breakpoints={{
@@ -83,45 +84,52 @@ function Masters() {
           },
         }}
       >
-        {masters &&
-          masters.map((master, i) => (
-            <SwiperSlide
-              key={i}
-              style={{ display: "flex", justifyContent: "center" }}
-            >
-              <MasterCard>
-                <Box
-                  width="100%"
-                  height="260px"
-                  position="relative"
-                  overflow="hidden"
-                >
-                  <Image
-                    src={master.img}
-                    alt={master.name[locale]}
-                    fill
-                    style={{
-                      objectFit: "cover",
-                      borderTopLeftRadius: "15px",
-                      borderTopRightRadius: "15px",
-                      objectPosition: "top",
-                    }}
-                  />
-                </Box>
-                <TypographyBox>
-                  <Name variant="bodyComfortaa">{master.name[locale]}</Name>
-                  <Position variant="bodyComfortaa">
-                    {master.position[locale]}
-                  </Position>
-                  {master.description && (
-                    <Description variant="bodyComfortaa">
-                      "{master.description[locale]}"
-                    </Description>
-                  )}
-                </TypographyBox>
-              </MasterCard>
-            </SwiperSlide>
-          ))}
+{masters &&
+  [...masters]
+    .sort((a, b) => {
+      const priorityA = a.priority ?? Infinity; // Якщо priority відсутній, ставимо Infinity
+      const priorityB = b.priority ?? Infinity; // Якщо priority відсутній, ставимо Infinity
+      return priorityA - priorityB; // Сортуємо за зростанням
+    })
+    .map((master, i) => (
+      <SwiperSlide
+        key={i}
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <MasterCard>
+          <Box
+            width="100%"
+            height="260px"
+            position="relative"
+            overflow="hidden"
+          >
+            <Image
+              src={master.img}
+              alt={master.name[locale]}
+              fill
+              style={{
+                objectFit: "cover",
+                borderTopLeftRadius: "15px",
+                borderTopRightRadius: "15px",
+                objectPosition: "top",
+              }}
+            />
+          </Box>
+          <TypographyBox>
+            <Name variant="bodyComfortaa">{master.name[locale]}</Name>
+            <Position variant="bodyComfortaa">
+              {master.position[locale]}
+            </Position>
+            {master.description && (
+              <Description variant="bodyComfortaa">
+                "{master.description[locale]}"
+              </Description>
+            )}
+          </TypographyBox>
+        </MasterCard>
+      </SwiperSlide>
+    ))}
+
       </SwiperStyled>
       <CertificatesContainer>
         <Link href={ROUTES.certificates}>

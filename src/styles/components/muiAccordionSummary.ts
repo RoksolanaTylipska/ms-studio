@@ -16,12 +16,14 @@ export const MuiAccordionSummary: Components["MuiAccordionSummary"] = {
         fontSize: "20px",
       },
       "&#panel1-header": {
-        fontSize: "25px",
+        fontSize: "22px",
+
         padding: "0px",
         textTransform: "uppercase",
         borderBottom: "1px solid rgba(0, 0, 0, .125)",
         [theme.breakpoints.down("md")]: {
-          fontSize: "22px",
+          fontSize: "20px",
+
         },
         [theme.breakpoints.down("sm")]: {
           fontSize: "18px",
@@ -38,6 +40,8 @@ export const MuiAccordionSummary: Components["MuiAccordionSummary"] = {
         },
         [theme.breakpoints.down("sm")]: {
           fontSize: "18px",
+          
+
         },
       },
       "&#panel3-header": {
@@ -48,6 +52,9 @@ export const MuiAccordionSummary: Components["MuiAccordionSummary"] = {
         },
         [theme.breakpoints.down("sm")]: {
           fontSize: "16px",
+          padding: "0px",
+
+
         },
       },
     }),
