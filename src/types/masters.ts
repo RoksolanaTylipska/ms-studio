@@ -4,4 +4,5 @@ export interface Master {
   position: { [key: string]: string };
   description?: { [key: string]: string };
   img: string;
+  priority: number;
 }

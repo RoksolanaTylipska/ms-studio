@@ -2,7 +2,7 @@ import GalleryClientSide from "@/components/GalleryClientSide";
 import { Box } from "@mui/material";
 
 function Gallery() {
-  const count = Array.from({ length: 23 }, (_, i) => i + 1);
+  const count = Array.from({ length: 30 }, (_, i) => i + 1);
 
   return (
     <>

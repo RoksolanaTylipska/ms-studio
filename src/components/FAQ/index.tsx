@@ -32,7 +32,15 @@ function Faq() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="bodyComfortaa">
-                {t(`${faq.answer}`)}
+                <span
+                  style={{ marginTop: "10px", display: "block", lineHeight: "20px" }}
+                  dangerouslySetInnerHTML={{
+                    __html: t(`${faq.answer}`).replace(
+                      /<a\s+(.*?)>(.*?)<\/a>/g, 
+                      `<a $1 style="text-decoration: underline; color: black; font-size: 14px; font-family: Comfortaa;">$2</a>`
+                      ),
+                  }}
+                />
               </Typography>
             </AccordionDetails>
           </Accordion>

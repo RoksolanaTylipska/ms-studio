@@ -24,10 +24,12 @@ function LaserEpilation() {
             >
               {t(`${item.gender}`)}
             </AccordionSummary>
-            <AccordionDetails>
+            {/* <AccordionDetails> */}
               <LaserComplex complexes={item.complexes} />
-            </AccordionDetails>
-            <AccordionDetails>
+              <LaserZone zones={item.zones} />
+
+            {/* </AccordionDetails> */}
+            {/* <AccordionDetails>
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMore />}
@@ -40,7 +42,7 @@ function LaserEpilation() {
                   <LaserZone zones={item.zones} />
                 </AccordionDetails>
               </Accordion>
-            </AccordionDetails>
+            </AccordionDetails> */}
           </Accordion>
         ))}
       </AccordionDetails>

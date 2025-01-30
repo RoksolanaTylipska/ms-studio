@@ -17,10 +17,10 @@ function Carousel() {
       pagination={{ type: "bullets", clickable: true }}
       loop={true}
       autoplay={{
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       }}
-      speed={2000}
+      speed={4000}
       navigation={true}
       className="mySwiper"
       modules={[Autoplay, Navigation, Pagination]}

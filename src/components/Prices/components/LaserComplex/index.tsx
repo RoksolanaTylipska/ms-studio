@@ -29,23 +29,24 @@ function LaserComplex({ complexes }: ComplexProps) {
   const { t } = useTranslation();
 
   return (
-    <Accordion>
-      <AccordionSummary
+    <>
+      {/* <AccordionSummary
         expandIcon={<ExpandMore />}
         aria-controls="panel3-content"
         id="panel3-header"
       >
-        {t("services.complex")}
-      </AccordionSummary>
+        {t("services.complex")} */}
+      {/* </AccordionSummary> */}
       <AccordionDetails>
         <Box
           sx={{
+            paddingTop: "20px",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="bodyCaveat" sx={{rotate: ('-4deg')}}>{t("lazerEpilation.payLess")} </Typography>
+          <Typography variant="bodyCaveat" >{t("lazerEpilation.payLess")} </Typography>
           <DiscountBox>
             {discountsComplexes.map((discount, i) => (
               <Discounts>
@@ -80,7 +81,7 @@ function LaserComplex({ complexes }: ComplexProps) {
           </ComplexNameContainer>
         ))}
       </AccordionDetails>
-    </Accordion>
+    </>
   );
 }
 

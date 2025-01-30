@@ -13,7 +13,15 @@ export const ModalContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  gap: "70px"
+  gap: "60px",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    gap: "10px",
+    height: "auto",
+    padding: "30px 0",
+    borderRadius: "15px",
+    width: "95%"
+  },
 }));
 
 
