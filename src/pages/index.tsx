@@ -20,8 +20,7 @@ function Home() {
         <Prices mainTitle={"header.services&prices"} />
         <Masters />
         <Photo />
-        {/* <VideoBlock /> */}
-
+        <VideoBlock />
         <Reviews />
         <FAQ />
       </Box>

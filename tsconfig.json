@@ -22,6 +22,6 @@
     "**/*.tsx",
     "src/theme/palette.ts",
     "src/theme/theme.ts"
-  ],
+, "src/lib/cloudinary.js", "src/pages/api/cloudinary.js"  ],
   "exclude": ["node_modules"]
 }

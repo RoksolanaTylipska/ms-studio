@@ -1,7 +1,17 @@
 "use client";
 
 import { electroepilation } from "@/constants/electroepilation";
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { useTranslation } from "react-i18next";
@@ -10,6 +20,7 @@ import {
   LabelContainer,
   LabelTypography,
   PriceContainer,
+  TextTypography,
   TrialBox,
   ValuesContainer,
   VariantsContainer,
@@ -17,6 +28,7 @@ import {
 
 function ElectroepilationDetails() {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <Accordion>
@@ -32,45 +44,51 @@ function ElectroepilationDetails() {
             {t("electroepilation.trialPrice")}
           </Typography>
         </TrialBox>
-        <Box>
-          {electroepilation.map((item, i) => (
-            <FlexContainer>
-              <LabelContainer key={i}>
-                <LabelTypography sx={{ width: "300px" }} variant="bodyComfortaa">
-                  {t(`${item.masterQnt}`)}
-                </LabelTypography>
 
-                <ValuesContainer>
+        <TableContainer sx={{overflow: "hidden"}}>
+          {electroepilation.map((item, i) => (
+            <Table>
+              <TableHead sx={{ borderColor: "transparent" }}>
+                <TableRow>
+                  <TableCell sx={{ width: "70%", borderColor: "transparent", padding: "0px" }}>
+                    <LabelTypography>{t(`${item.masterQnt}`)}</LabelTypography>
+                  </TableCell>
                   {item.values.map((value, i) => (
-                    <LabelTypography variant="bodyComfortaa">
-                      {t(`${value}`)}
-                    </LabelTypography>
+                    <TableCell sx={{ borderColor: "transparent", padding: isMobile ? "0px" : "16px"}}>
+                      <LabelTypography variant="bodyComfortaa">
+                        {t(`${value}`)}
+                      </LabelTypography>
+                    </TableCell>
                   ))}
-                </ValuesContainer>
-              </LabelContainer>
-              <VariantsContainer>
-                {item.variants.map((variant, i) => (
-                  <LabelContainer key={i}>
-                    <Typography variant="bodyComfortaa">
-                      {t(`${variant.label}`)}
-                    </Typography>
-                    <PriceContainer>
-                      <Typography variant="bodyComfortaa">
-                        {variant.time}{t("general.min")}
-                      </Typography>
-                      <Typography variant="bodyComfortaa">
-                        {variant.price[0]} ₴
-                      </Typography>
-                      <Typography variant="bodyComfortaa">
-                       {variant.price[1]} ₴
-                      </Typography>
-                    </PriceContainer>
-                  </LabelContainer>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {item.variants.map((variant, j) => (
+                  <TableRow key={j}>
+                    <TableCell
+                      sx={{ padding: "0px", borderColor: "transparent" }}
+                    >
+                      <TextTypography>{t(variant.label)}</TextTypography>
+                    </TableCell>
+                    <TableCell sx={{ borderColor: "transparent" }}>
+                    <TextTypography>{variant.time} {t("general.min")}</TextTypography>
+                    </TableCell>
+                    <TableCell
+                      sx={{ textAlign: "center", borderColor: "transparent" }}
+                    >
+                       <TextTypography>{variant.price[0]} ₴</TextTypography>
+                    </TableCell>
+                    <TableCell
+                      sx={{ textAlign: "center", borderColor: "transparent" }}
+                    >
+                     <TextTypography>{variant.price[1]} ₴</TextTypography> 
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </VariantsContainer>
-            </FlexContainer>
+              </TableBody>
+            </Table>
           ))}
-        </Box>
+        </TableContainer>
       </AccordionDetails>
     </Accordion>
   );

@@ -20,7 +20,7 @@ function Carousel() {
         delay: 5000,
         disableOnInteraction: false,
       }}
-      speed={4000}
+      speed={2000}
 
       navigation={true}
       className="mySwiper"

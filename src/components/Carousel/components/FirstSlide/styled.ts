@@ -9,6 +9,9 @@ export const SlideContainerFirst = styled(Box)(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'bottom',
   color: theme.palette.colors.white,
+  [theme.breakpoints.down("sm")]: { 
+    backgroundImage: 'url("/assets/photos/carousel_1-mobile.webp")',
+  },
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
@@ -16,7 +19,7 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontSize: '100px',
   textAlign: 'center',
   [theme.breakpoints.down("md")]: { 
-    padding: '100px 0 55px',
+    padding: '70px 0 120px',
     fontSize: '80px',
   },
   [theme.breakpoints.down("sm")]: { 
