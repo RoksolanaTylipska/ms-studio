@@ -17,7 +17,7 @@ export const useSubmitAppointment = ({ setSuccess }: useSubmitAppointmentProps) 
   const [error, setError] = useState<string | null>(null); 
 
   const token = "7900221803:AAHemZlkwSXTRDSczzBMLnJcBpvL1OdYOD0";
-  const chatId = "25099289";
+  const chatId = "-1002392170384"; // -1002392170384 25099289
 
   const addToFirebase = async (data: InputData) => {
     const date = new Date();

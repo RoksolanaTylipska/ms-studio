@@ -3,8 +3,8 @@ import { Swiper } from "swiper/react";
 
 export const SwiperStyled = styled(Swiper)(({ theme }) => ({
   margin: "auto",
-  width: "60%",
-  height: "1200px",
+  width: "85%",
+  height: "700px",
   [theme.breakpoints.down("md")]: {
     height: "900px",
     width: "75%",

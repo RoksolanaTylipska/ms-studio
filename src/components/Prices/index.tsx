@@ -19,9 +19,9 @@ function Prices({ mainTitle }: { mainTitle: string }) {
     <PricesContainer>
       <TitleStars title={mainTitle} filledStars={true} lines={true} />
 
-      {isMobile ? (
+      {/* {isMobile ? (
         <PriceModal />
-      ) : (
+      ) : ( */}
         <Box>
           {services.map(({ title, Component }) => (
             <Accordion key={title}>
@@ -39,7 +39,7 @@ function Prices({ mainTitle }: { mainTitle: string }) {
             </Accordion>
           ))}
         </Box>
-      )} 
+      {/* )}  */}
 
     </PricesContainer>
   );

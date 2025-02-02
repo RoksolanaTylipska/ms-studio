@@ -16,6 +16,7 @@
     "@mui/icons-material": "^6.0.2",
     "@mui/material": "^6.0.2",
     "@mui/material-nextjs": "^6.0.2",
+    "cloudinary": "^2.5.1",
     "firebase": "^11.2.0",
     "i18next": "^23.12.2",
     "next": "^14.2.5",

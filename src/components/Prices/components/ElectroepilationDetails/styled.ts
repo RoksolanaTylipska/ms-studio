@@ -9,6 +9,10 @@ export const TrialBox = styled(Box)(({ theme }) => ({
   margin: "20px auto",
   padding: "10px 100px",
   borderRadius: "30px",
+  [theme.breakpoints.down("md")]: { 
+    padding: "14px",
+    gap: "10px",
+  },
 }));
 
 export const FlexContainer = styled(Box)({
@@ -19,19 +23,25 @@ export const FlexContainer = styled(Box)({
   flexDirection: "column",
 });
 
-export const LabelContainer = styled(Box)({
+export const LabelContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
-});
+  [theme.breakpoints.down("md")]: { 
+    fontSize: "18px",
+  },
+}));
 
 export const ValuesContainer = styled(Box)({
   display: "flex",
   gap: "35px",
+  
 });
 
 export const PriceContainer = styled(Box)({
   display: "flex",
   gap: "120px",
+      fontSize: "18px",
+
 });
 
 export const VariantsContainer = styled(Box)({
@@ -46,6 +56,12 @@ export const LabelTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.colors.camel,
   fontWeight: 500,
   fontSize: "18px",
-
+  [theme.breakpoints.down("sm")]: { 
+    fontSize: "12px",
+  },
 }));
 
+export const TextTypography = styled(Typography)(({ theme }) => ({
+  fontSize: "14px",
+  color: theme.palette.colors.black,
+}));

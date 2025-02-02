@@ -1,7 +1,9 @@
-import { servicesDetails } from "@/constants/servicesDetails";
-import { Box } from "@mui/material";
+import {
+  servicesDetailsDesktop,
+  servicesDetailsMobile,
+} from "@/constants/servicesDetails";
+import { Box, useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,7 +12,10 @@ import { SwiperSlide } from "swiper/react";
 import { SwiperStyled } from "./styled";
 
 const ServicesList = () => {
-  const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const servicesDetails = isMobile
+    ? servicesDetailsMobile
+    : servicesDetailsDesktop;
 
   return (
     <Box sx={{ backgroundColor: "#c9ad9b", padding: "50px 0px" }}>
@@ -41,6 +46,7 @@ const ServicesList = () => {
                 fill
                 style={{
                   objectFit: "contain",
+                  borderRadius: "15px"
                 }}
               />
             </Box>

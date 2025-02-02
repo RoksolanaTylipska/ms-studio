@@ -16,6 +16,10 @@ declare global {
 }
 
 export const VideoBlock = () => {
+  const mobile = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/mobile-vodeo_ockbps.mp4`;
+  const desktop = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/desktop-video_ixkedc.mp4`;
+
+  const [videoSource, setVideoSource] = useState(desktop);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [videoIsInView, setVideoIsInView] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -67,11 +71,15 @@ export const VideoBlock = () => {
     }
   }, [videoRef]);
 
-  let videoSource = "/video/mobile.mp4";
-
-  // useEffect(() => {
-  //   videoSource = isMobile ? "/video/mobile.mp4" : "/video/desktop.mp4";
-  // }, [isMobile]);
+  useEffect(() => {
+    const currentVideo = videoRef.current;
+  
+    if (currentVideo) {
+      currentVideo.src = isMobile ? mobile : desktop;
+      currentVideo.load();
+      currentVideo.play();
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -125,6 +133,7 @@ export const VideoBlock = () => {
   return (
     <VideoContainer>
       <video
+        // key={videoSource}
         autoPlay
         muted={isMuted}
         playsInline

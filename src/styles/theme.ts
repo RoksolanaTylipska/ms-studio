@@ -88,6 +88,6 @@ export const theme = createTheme({
     MuiIconButton,
     MuiAccordion,
     MuiAccordionSummary,
-    MuiAccordionDetails
+    MuiAccordionDetails,
   },
 });
