@@ -13,7 +13,7 @@
     "footer": {
       "address": "8 Olena Stepanivna Street, Lviv",
       "city": "79000, Lviv, Lviv Region",
-      "schedule": "Mon-Sun 9:00 AM - 9:00 PM, no days off",
+      "schedule": "Mon-Sun 9:00 AM - 8:00 PM, no days off",
       "msStudio": "Салон краси - «MS Studio»",
       "privacy_policy": "Privacy Policy",
       "rights": "All rights reserved, 2025"
@@ -25,7 +25,6 @@
       },
       "slogan": "Touching your body with care and tenderness",
       "reviews": "Our Clients"
-
     },
     "services": {
       "lazer": "Laser epilation",
@@ -163,15 +162,25 @@
       "lamination": "Lamination",
       "lamination_tinting": "Eyelash lamination with tinting",
       "lasting_styling": "Long-lasting eyebrow styling",
+      "lasting_styling_correction": "Long-lasting eyebrow styling + correction",
+      "lasting_styling_correction_tinting": "Long-lasting eyebrow styling + correction + tinting",
 
       "makeup": "Makeup",
       "day": "Day makeup",
       "evening": "Evening makeup",
       "express": "Express makeup",
+
       "complexes": "Packages",
-      "lamination_eyebrows": "Eyebrow + eyelash lamination (correction + tinting)",
-      "eyebrow_eyelash_lamination": "Eyebrow + eyelash lamination (correction + tinting)",
-      "eyebrow_eyelash_lamination_without": "Eyebrow + eyelash lamination (without correction or tinting)",
+
+      "lamination_eyebrows": "Lash lamination + eyebrows (correction + tinting)",
+      "lamination_eyebrows_correction": "Lash lamination + long-lasting eyebrow styling + correction",
+      "lamination_eyebrows_correction_tinting": "Lash lamination + long-lasting eyebrow styling + correction + tinting",
+      "lamination_eyebrows_without": "Lash lamination + long-lasting eyebrow styling (without correction and tinting)",
+
+      "man_eyebrows": "Man eyebrows",
+      "man_correction": "Men's shape correction",
+      "man_correction_thin": "Men's shape correction + thinning",
+
       "permanent": "Permanent makeup",
       "initial_procedure": "Initial procedure",
       "correction": "Correction"
@@ -208,7 +217,6 @@
       "answer5": "We use the modern European diode laser Alvi Prague DL-7000, 2024 model. This device ensures effective and safe hair removal thanks to advanced technology and high power. Its innovative cooling system guarantees comfort during the procedure, and its settings allow adaptation to different skin and hair types. This device features a short pulse – 20 joules in 25 ms! This is the optimal flash duration for effective hair removal while ensuring skin safety.",
       "question6": "Does laser hair removal remove ingrown hairs?",
       "answer6": "Laser hair removal can help reduce the number of ingrown hairs, as it affects the hair follicle, destroying it and decreasing the likelihood of hair growing inward in the future."
-
     },
     "privacyPolicy": {
       "title": "Privacy Policy",
