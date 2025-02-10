@@ -14,8 +14,8 @@ export const eyebrow: Zone[] = [
     variants: [
       { label: "face.lamination_tinting", price: [900] },
       { label: "face.lasting_styling", price: [500] },
-      { label: "lasting_styling_correction", price: [550] },
-      { label: "lasting_styling_correction_tinting", price: [650] },
+      { label: "face.lasting_styling_correction", price: [550] },
+      { label: "face.lasting_styling_correction_tinting", price: [650] },
 
     ],
   },

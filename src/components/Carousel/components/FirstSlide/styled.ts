@@ -42,8 +42,8 @@ export const Discount = styled(Box)(({ theme }) => ({
   fontSize: '3rem',
   margin: 'auto',
   [theme.breakpoints.down("sm")]: { 
-    width: '70%',
-    height: '160px',
+    width: '80%',
+    height: '100px',
   },
 }));
 
@@ -61,6 +61,6 @@ export const DiscountText = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
   margin: '26px 0 47px',
   [theme.breakpoints.down("md")]: { 
-    fontSize: '20px',
+    fontSize: '25px',
   },
 }));
