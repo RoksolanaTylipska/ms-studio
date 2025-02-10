@@ -61,6 +61,6 @@ export const DiscountText = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
   margin: '26px 0 47px',
   [theme.breakpoints.down("md")]: { 
-    fontSize: '25px',
+    fontSize: '20px',
   },
 }));
