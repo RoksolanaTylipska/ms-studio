@@ -63,8 +63,3 @@ export const Description = styled(Typography)(({ theme }) => ({
     fontSize: "15px",
   },
 }));
-
-export const CreateBeautyText = styled(Typography)(({ theme }) => ({
-  fontSize: "30px", 
-  paddingRight: "10px",  
-}));

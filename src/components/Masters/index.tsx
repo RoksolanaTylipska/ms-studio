@@ -5,7 +5,6 @@ import i18n from "@/I18n/i18nConfig";
 import { ROUTES } from "@/constants/routes";
 import { db } from "@/lib/firebase";
 import { Master } from "@/types/masters";
-import { Box } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,6 +21,7 @@ import {
   CertificatesContainer,
   CertificatesText,
   Description,
+  ImageContainer,
   MasterCard,
   MastersContainer,
   Name,
@@ -96,12 +96,7 @@ function Masters() {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <MasterCard>
-                  <Box
-                    width="100%"
-                    height="260px"
-                    position="relative"
-                    overflow="hidden"
-                  >
+                  <ImageContainer>
                     <Image
                       src={master.img}
                       alt={master.name[locale]}
@@ -113,7 +108,7 @@ function Masters() {
                         objectPosition: "top",
                       }}
                     />
-                  </Box>
+                  </ImageContainer>
                   <TypographyBox>
                     <Name variant="bodyComfortaa">{master.name[locale]}</Name>
                     <Position variant="bodyComfortaa">

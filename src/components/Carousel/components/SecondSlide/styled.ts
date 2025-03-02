@@ -1,11 +1,13 @@
 import { Box, Typography, styled } from "@mui/material";
 
 interface SlideContainerSecondProps {
-  selectedlanguage: "en" | "default";
+  selectedLanguage: "en" | "default";
 }
-
 interface SlideContainerSecondProps {
-  selectedlanguage: "en" | "default";
+  selectedLanguage: "en" | "default";
+}
+interface ButtonContainerProps {
+  isMobile: boolean;
 }
 
 export const SlideContainerSecond = styled(Box)(({ theme }) => ({
@@ -23,14 +25,14 @@ export const SlideContainerSecond = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const Wrapper = styled(Box)<SlideContainerSecondProps>(({ selectedlanguage, theme }) => ({
+export const Wrapper = styled(Box)<SlideContainerSecondProps>(({ selectedLanguage, theme }) => ({
   paddingTop: "140px",
   position: "relative",
   margin: "auto",
-  width: selectedlanguage === "en" ? "850px" : "770px",
+  width: selectedLanguage === "en" ? "850px" : "770px",
   [theme.breakpoints.down("sm")]: { 
     paddingTop: "70px",
-    width: selectedlanguage === "en" ? "80%" : "90%",
+    width: selectedLanguage === "en" ? "80%" : "90%",
   },
 }));
 
@@ -47,4 +49,10 @@ export const Title = styled(Typography)(({ theme }) => ({
     fontSize: '40px',
     lineHeight: "50px",
   },
+}));
+
+export const ButtonContainer = styled(Box)<ButtonContainerProps>(({ isMobile }) => ({
+  position: isMobile? "static" : "absolute", 
+  bottom: 0,
+  right: 0 
 }));

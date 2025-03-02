@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
-import { SwiperStyled } from "./styled";
+import { ImageContainer, SwiperStyled } from "./styled";
 
 const ServicesList = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -30,26 +30,17 @@ const ServicesList = () => {
       >
         {servicesDetails.map(({ src, alt }, i) => (
           <SwiperSlide key={i}>
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <ImageContainer>
               <Image
                 src={src}
                 alt={alt}
                 fill
                 style={{
                   objectFit: "contain",
-                  borderRadius: "15px"
+                  borderRadius: "15px",
                 }}
               />
-            </Box>
+            </ImageContainer>
           </SwiperSlide>
         ))}
       </SwiperStyled>

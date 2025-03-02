@@ -11,6 +11,7 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 import Navigation from "./components/Navigation";
 import {
   HeaderContainer,
+  LanguageSwitcherContainer,
   MobileContainer,
   MobileMenu,
   MobileMenuButton,
@@ -53,6 +54,12 @@ const Header = () => {
                     />
                     <Navigation navLinks={navLinks} toggleMenu={toggleMenu} />
                     <LanguageSwitcher />
+                    <Button
+                      children={t("button.bookAppointment")}
+                      onClick={handleModalWindow}
+                      type="primary"
+                      size="medium"
+                    />
                     <SocialMediaContainer>
                       <SocialMedia
                         bgColor={"dark"}
@@ -73,8 +80,7 @@ const Header = () => {
             <Box>
               <Navigation navLinks={navLinksLeft} />
             </Box>
-            <Box sx={{ margin: "auto" }}>
-              <Link href="/">
+              <Link href="/" style={{ margin: "auto" }}>
                 <Image
                   src="/assets/icons/logo-black.png"
                   alt="Logo"
@@ -82,7 +88,6 @@ const Header = () => {
                   height={85}
                 />
               </Link>
-            </Box>
             <Box>
               <Navigation navLinks={navLinksRight} />
             </Box>
@@ -90,12 +95,12 @@ const Header = () => {
               children={t("button.bookAppointment")}
               onClick={handleModalWindow}
               type="primary"
-              size="medium"
+              size="small"
             />
 
-            <div style={{ display: "flex", gap: "50px" }}>
+            <LanguageSwitcherContainer>
               <LanguageSwitcher />
-            </div>
+            </LanguageSwitcherContainer>
           </>
         )}
       </HeaderContainer>

@@ -1,16 +1,15 @@
 "use client";
 
 import TitleStars from "@/components/TitleStars";
-import { Box } from "@mui/material";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
-import { ReviewsContainer, SwiperStyled } from "./styled";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
+import { ImageContainer, ReviewsContainer, SwiperStyled } from "./styled";
 
 function Reviews() {
   const { t } = useTranslation();
@@ -52,13 +51,7 @@ function Reviews() {
             key={key}
             style={{ display: "flex", justifyContent: "center" }}
           >
-            <Box
-              sx={{
-                position: "relative",
-                width: "80vw",
-                height: "57vh",
-              }}
-            >
+            <ImageContainer>
               <Image
                 src={`/assets/photos/reviews/review-${key}.webp`}
                 alt="review"
@@ -66,7 +59,7 @@ function Reviews() {
                 objectFit="cover"
                 style={{ borderRadius: "15px" }}
               />
-            </Box>
+            </ImageContainer>
           </SwiperSlide>
         ))}
       </SwiperStyled>

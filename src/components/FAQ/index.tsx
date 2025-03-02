@@ -19,7 +19,6 @@ function Faq() {
   return (
     <FAQContainer>
       <TitleStars title={t("faq.title")} />
-
       <Box>
         {faqs.map((faq, index) => (
           <Accordion key={index}>
@@ -33,15 +32,18 @@ function Faq() {
             <AccordionDetails>
               <Typography variant="bodyComfortaa">
                 <span
-                  style={{ marginTop: "10px", display: "block", lineHeight: "20px" }}
+                  style={{
+                    marginTop: "10px",
+                    display: "block",
+                    lineHeight: "20px",
+                  }}
                   dangerouslySetInnerHTML={{
                     __html: t(`${faq.answer}`).replace(
-                      /<a\s+(.*?)>(.*?)<\/a>/g, 
+                      /<a\s+(.*?)>(.*?)<\/a>/g,
                       `<a $1 style="text-decoration: underline; color: black; font-size: 14px; font-family: Comfortaa;">$2</a>`
-                      ),
+                    ),
                   }}
                 />
-
               </Typography>
             </AccordionDetails>
           </Accordion>

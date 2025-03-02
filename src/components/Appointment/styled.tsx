@@ -21,22 +21,30 @@ export const ModalContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const InputsContainer = styled(Box)(({ theme }) => ({
+export const InputsContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
   gap: "10px",
   padding: "20px 0px"
-}));
+});
 
-export const TextContainer = styled(Box)(({ theme }) => ({
+export const TextContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
+  textAlign: "center",
   width: "300px",
-}));
+});
 
-export const Description = styled(Typography)(({ theme }) => ({
+export const Description = styled(Typography)({ 
   padding: "10px 0px 5px"
-}));
+});
+
+
+export const ImageContainerMobile = styled(Box)({
+  position: "relative", 
+  width: "100%", 
+  height: "260px"
+});
 
 
 

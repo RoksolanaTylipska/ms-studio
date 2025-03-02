@@ -14,3 +14,4 @@ export const FAQContainer = styled(Box)(({ theme }) => ({
     gap: "40px",
   },
 }));
+

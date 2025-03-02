@@ -7,17 +7,17 @@ export const MastersContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  [theme.breakpoints.down("sm")]: { 
+  [theme.breakpoints.down("sm")]: {
     padding: "70px 0",
   },
 }));
 
-export const SwiperStyled = styled(Swiper)(({ theme }) => ({
+export const SwiperStyled = styled(Swiper)({
   width: "100%",
   maxWidth: "1200px",
   paddingBottom: "50px",
   marginTop: "40px",
-}));
+});
 
 export const MasterCard = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
@@ -28,8 +28,8 @@ export const MasterCard = styled(Box)(({ theme }) => ({
   alignItems: "center",
   height: "500px",
   flexGrow: 1,
-  [theme.breakpoints.down("sm")]: { 
-    margin: '0px 40px',
+  [theme.breakpoints.down("sm")]: {
+    margin: "0px 40px",
   },
 }));
 
@@ -44,39 +44,44 @@ export const TypographyBox = styled(Box)({
 
 export const Name = styled(Typography)({
   textAlign: "center",
-  fontSize: "18px"
-})
+  fontSize: "18px",
+});
 
 export const Position = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   fontWeight: 400,
   fontSize: "14px",
   color: theme.palette.colors.camel,
-  lineHeight: "20px"
+  lineHeight: "20px",
 }));
 
 export const Description = styled(Typography)({
   textAlign: "center",
   fontWeight: 200,
   fontSize: "12px",
-  lineHeight: "20px"
+  lineHeight: "20px",
 });
 
 export const CertificatesContainer = styled(Box)(({ theme }) => ({
-   width: "80%",
-   justifyContent: "end",
-   display: "flex",
-   [theme.breakpoints.down("sm")]: { 
+  width: "80%",
+  justifyContent: "end",
+  display: "flex",
+  [theme.breakpoints.down("sm")]: {
     justifyContent: "center",
   },
-}))
+}));
 
 export const CertificatesText = styled(Typography)(({ theme }) => ({
   ":hover": {
     color: theme.palette.colors.camel,
-    textDecoration: "underline"
-  },}))
+    textDecoration: "underline",
+  },
+}));
 
-
-
+export const ImageContainer = styled(Box)({
+  width: "100%",
+  height: "260px",
+  position: "relative",
+  overflow: "hidden",
+});
 

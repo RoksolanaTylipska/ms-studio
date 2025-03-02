@@ -8,7 +8,12 @@ export const SwiperStyled = styled(Swiper)({
   marginTop: "40px",
 });
 
-
 export const ReviewsContainer = styled(Box)({
   padding: "100px 0",
+});
+
+export const ImageContainer = styled(Box)({
+  position: "relative",
+  width: "80vw",
+  height: "57vh",
 });

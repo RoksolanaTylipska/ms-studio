@@ -17,9 +17,9 @@ export const StyledPrimaryButton = styled("button")(({ theme, size }: ButtonProp
   width: (() => {
     switch (size) {
       case "small":
-        return "100px";
+        return "120px";
       case "medium":
-        return "150px";
+        return "200px";
       case "large":
         return "297px";
       default:
@@ -43,7 +43,7 @@ export const StyledPrimaryButton = styled("button")(({ theme, size }: ButtonProp
   fontSize: (() => {
     switch (size) {
       case "small":
-        return "10px";
+        return "13px";
       case "large":
         return "28px";
       default:
@@ -144,24 +144,6 @@ export const StyledSecondaryButton = styled("button")(({ theme, size, color }: a
   "&:hover": {
     transform: "scale(1.05)",
   },
-  // [theme.breakpoints.down("md")]: {
-  //   fontSize: (() => {
-  //     switch (size) {
-  //       case "large":
-  //         return "24px";
-  //       default:
-  //         return "12px";
-  //     }
-  //   })(),
-  //   width: (() => {
-  //     switch (size) {
-  //       case "large":
-  //         return "200px";
-  //       default:
-  //         return "100%";
-  //     }
-  //   })(),
-  // },
   [theme.breakpoints.down("sm")]: {
     fontSize: "16px",
     padding: "20px 25px",

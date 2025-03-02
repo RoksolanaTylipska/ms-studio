@@ -27,12 +27,12 @@ export const MapContainer = styled(Box)(({ theme }) => ({
   gap: "60px",
 }));
 
-export const InfoContainer = styled(Box)(({ theme }) => ({
+export const InfoContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   gap: "20px",
-}));
+});
 
 export const PhoneNumber = styled(Link)(({ theme }) => ({
   color: theme.palette.colors.chocolate,
