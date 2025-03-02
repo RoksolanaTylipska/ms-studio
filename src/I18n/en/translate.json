@@ -198,6 +198,19 @@
       "versatility": "Versatility",
       "versatility_description": "We provide services for both men and women"
     },
+    "removalMethods": {
+      "title": "Monostudio in all hair removal methods",
+      "alexandrite_title": "Alexandrite Laser DEKA Motus AX",
+      "alexandrite_description": "The world's only Alexandrite laser that operates using the latest dynamic hair removal technology 'in motion' – MOVEO! Painless and suitable for all hair types.",
+      "diode_title": "Diode Laser Alvi Prague DL-7000",
+      "diode_description": "The modern European diode laser Alvi Prague DL-7000, 2024 model, ensures maximum efficiency and comfort during the procedure.",
+      "electroepilation_title": "Electroepilation with Hebe and Flash Devices",
+      "electroepilation_description": "The only hair removal method that can permanently remove hair of any color (light, black, gray, blonde, or red)!",
+      "sugaring_title": "Sugaring",
+      "sugaring_description": "A method of removing unwanted hair using sugar paste. The procedure involves applying warm paste against the direction of hair growth and removing it in the direction of growth.",
+      "wax_title": "Wax Depilation",
+      "wax_description": "Allows you achieve perfectly smooth skin. Since hair is removed from the root, the results last longer, and hair growth gradually slows down."
+    },
     "masters": {
       "title": "Masters",
       "goToCertificates": "View certificates >",
@@ -273,6 +286,45 @@
     },
     "descriptionMetaData": {
       "home": "Professional services in laser hair removal, electroepilation, sugaring, and waxing in Lviv. We guarantee safety, quality, and comfort. Book your procedure today!"
-    }
+    },
+    "courses": {
+      "title": "Author's Courses",
+      "aboutMe": {
+        "name": "Maria Pavelchuk",
+        "position": "Founder of the Salon",
+        "description": "Maria Pavelchuk is a lecturer-technologist, speaker, and judge of hair removal championships. She has been in this field for over 10 years. Specializing in laser hair removal, electroepilation, sugaring, and waxing. My life motto: 'Be the sun, shine, and create for the benefit of others!' Our courses are not just about learning; they are an experience we are ready to share with you. Upon completion of the course, you will receive a certificate and knowledge that will help you become a professional in your field."
+      },
+      "variants": {
+        "electroepilation": {
+          "base": "Basic Course from Scratch",
+          "deep": "Advanced Course from Scratch",
+          "qualification": "Qualification Upgrade",
+          "online": "Online Consultation"
+        },
+        "laser": {
+          "base": "Laser Hair Removal from Scratch",
+          "deep": "Advanced Laser Hair Removal Course",
+          "men": "Men's Hair Removal",
+          "online": "Online Consultation"
+        },
+        "waxing": {
+          "base": "Wax Depilation from Scratch",
+          "master": "Master Universal",
+          "bikini": "Perfect Bikini",
+          "face": "Face Depilation",
+          "men": "Men's Depilation"
+        },
+        "days": {
+          "one": "1 day",
+          "two": "2 days",
+          "one-two": "1-2 days",
+          "three": "3 days",
+          "five": "5 days"
+        }
+      },
+      "more": "More information"
+
+      
+    }    
   }
 }

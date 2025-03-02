@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 export const SlideContainerFirst = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '100%',
-  backgroundImage: 'url("/assets/photos/carousel_1.png")',
+  backgroundImage: 'url("/assets/photos/carousel_1.webp")',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'bottom',
@@ -19,7 +19,7 @@ export const Title = styled(Typography)(({ theme }) => ({
   fontSize: '100px',
   textAlign: 'center',
   [theme.breakpoints.down("md")]: { 
-    padding: '70px 0 120px',
+    padding: '200px 0 60px',
     fontSize: '80px',
   },
   [theme.breakpoints.down("sm")]: { 
@@ -64,3 +64,9 @@ export const DiscountText = styled(Typography)(({ theme }) => ({
     fontSize: '20px',
   },
 }));
+
+export const ButtonContainer = styled(Typography)({
+  display: "flex", 
+  justifyContent: "center"
+});
+

@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 
 export const LanguageButton = styled('button')({
   cursor: 'pointer',
+  textDecoration: 'none',
   margin: 0,
   padding: 0,
   justifyContent: 'center',

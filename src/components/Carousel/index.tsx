@@ -10,7 +10,6 @@ import SecondSlide from "./components/SecondSlide";
 import { SwiperStyled } from "./styled";
 
 function Carousel() {
-
   return (
     <SwiperStyled
       centeredSlides={true}
@@ -21,7 +20,6 @@ function Carousel() {
         disableOnInteraction: false,
       }}
       speed={2000}
-
       navigation={true}
       className="mySwiper"
       modules={[Autoplay, Navigation, Pagination]}

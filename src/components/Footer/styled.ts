@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Link from "next/link";
 
 export const FooterContainer = styled("footer")(({ theme }) => ({
+  width: "100%",
   display: "flex",
   position: "relative",
   justifyContent: "center",
@@ -59,7 +60,7 @@ export const TopInfo = styled(Box)({
   flexDirection: "column",
   gap: "15px",
   justifyContent: "end",
-  height: "70%",
+  height: "70%"
 });
 
 export const SocialMediaContainer = styled(Box)({

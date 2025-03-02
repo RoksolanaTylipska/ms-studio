@@ -7,7 +7,7 @@ import { Trans, useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { SlideContainerSecond, Title, Wrapper } from "./styled";
+import { ButtonContainer, SlideContainerSecond, Title, Wrapper } from "./styled";
 import { useMediaQuery } from "@mui/material";
 
 function SecondSlide() {
@@ -15,7 +15,7 @@ function SecondSlide() {
   const { handleModalWindow } = useModalWindowContext();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const selectedlanguage = useMemo(() => {
+  const selectedLanguage = useMemo(() => {
     if (typeof window !== "undefined") {
       return i18n.language || window.localStorage.i18n;
     }
@@ -24,11 +24,11 @@ function SecondSlide() {
 
   return (
     <SlideContainerSecond>
-      <Wrapper selectedlanguage={selectedlanguage}>
+      <Wrapper selectedLanguage={selectedLanguage}>
         <Title as="h1">
           <Trans i18nKey="home.carousel.slogan"></Trans>
         </Title>
-        <div style={{ position: isMobile? "static" : "absolute", bottom: 0, right: 0 }}>
+        <ButtonContainer isMobile={isMobile}>
           <Button
             children={t("button.bookAppointment")}
             type="secondary"
@@ -36,7 +36,7 @@ function SecondSlide() {
             size="large"
             onClick={handleModalWindow}
           />
-        </div>
+        </ButtonContainer>
       </Wrapper>
     </SlideContainerSecond>
   );

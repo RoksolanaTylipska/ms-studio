@@ -90,3 +90,8 @@ export const SocialMediaContainer = styled(Box)({
   gap: "10px",
   justifyContent: "end",
 });
+
+export const LanguageSwitcherContainer = styled(Box)({
+  display: "flex", 
+  gap: "50px"
+});

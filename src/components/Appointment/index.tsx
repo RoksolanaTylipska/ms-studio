@@ -8,7 +8,12 @@ import { Trans, useTranslation } from "react-i18next";
 import Button from "../Button";
 import InputName from "../InputName";
 import InputPhone from "../InputPhone";
-import { Description, InputsContainer, TextContainer } from "./styled";
+import {
+  Description,
+  ImageContainerMobile,
+  InputsContainer,
+  TextContainer,
+} from "./styled";
 
 interface AppointmentProps {
   setSuccess: (value: boolean) => void;
@@ -42,7 +47,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
           style={{ borderRadius: "15px" }}
         />
       ) : (
-        <div style={{ position: "relative", width: "100%", height: "260px" }}>
+        <ImageContainerMobile>
           <Image
             src="/assets/photos/modal-window-mobile.webp"
             alt="MS Studio"
@@ -51,8 +56,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
               objectFit: "contain",
             }}
           />
-        </div>
-
+        </ImageContainerMobile>
       )}
 
       <TextContainer>
@@ -64,28 +68,17 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
           style={{ margin: "auto" }}
         />
 
-
-        <Typography
-          id="modal-modal-title"
-          variant="h4"
-          sx={{ textAlign: "center" }}
-        >
+        <Typography id="modal-modal-title" variant="h4">
           {t("modalWindow.title")}
         </Typography>
-        <Description
-          id="modal-modal-description"
-          variant="body1"
-          sx={{ textAlign: "center" }}
-        >
+        <Description id="modal-modal-description" variant="body1">
           {t("modalWindow.description")}
         </Description>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <InputsContainer>
             <InputName control={control} errors={errors} />
-
             <InputPhone control={control} />
-
             <Button
               children={t("button.bookAppointment")}
               color="dark"
@@ -94,11 +87,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
           </InputsContainer>
         </form>
 
-        <Typography
-          id="modal-modal-description"
-          variant="body2"
-          sx={{ textAlign: "center" }}
-        >
+        <Typography id="modal-modal-description" variant="body2">
           <Trans
             i18nKey="modalWindow.privatePolicy"
             components={{

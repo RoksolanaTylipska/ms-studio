@@ -5,12 +5,12 @@ import { StyledPrimaryButton, StyledSecondaryButton } from "./styled";
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  type?: "primary" | "secondary";
-  size?: "small" | "medium" | "large";
-  color?: "light" | "dark"
+  type?: ButtonType;
+  size?: ButtonSize;
+  color?: ButtonColor;
 }
 
-const Button = ({ children, onClick, type = "primary", size, color }: ButtonProps) => {
+const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, color }: ButtonProps) => {
   return (
     <>
       {type === "primary" ? (
