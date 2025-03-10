@@ -1,113 +1,110 @@
-//@ts-nocheck
-
 "use client";
 
-import { courseDetails } from "@/constants/courseDetails";
+import { Course, CourseSection } from "@/types/courseDetails";
 import { Typography, useMediaQuery } from "@mui/material";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import {
   Container,
   Content,
   DayContainer,
   DayTitle,
+  Note,
+  Price,
   Section,
   TitleContainer,
 } from "./styled";
 
-function CourseDetails({ course }) {
-  const link = useParams();
+function CourseDetails({ course: course }: { course: Course }) {
   const router = useRouter();
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 768px)");
-
 
   if (!course) {
     router.push("/not-found");
     return null;
   }
 
+  const renderDayContainer = (data: CourseSection) => {
+    const title = t(data.title);
+    const description = t(data.description, { returnObjects: true });
+
+    if (
+      !title ||
+      title.trim() === "" ||
+      !description ||
+      (Array.isArray(description) && description.length === 0)
+    ) {
+      return null;
+    }
+
+    return (
+      <DayContainer>
+        <DayTitle variant="h5">{title}</DayTitle>
+        {Array.isArray(description) && (
+          <ul>
+            {description.map((topic, index) => (
+              <li key={index} style={{ paddingBottom: "10px" }}>
+                <Typography variant="body1">- {topic}</Typography>
+              </li>
+            ))}
+          </ul>
+        )}
+      </DayContainer>
+    );
+  };
+
+  const days = Array.from(
+    new Set([
+      ...Object.keys(course.theory || {}),
+      ...Object.keys(course.practice || {}),
+    ])
+  );
+
   return (
     <Container>
       <Content>
         <TitleContainer>
-          <Typography variant="bodyCaveat">{t(course.title)}</Typography> {!isMobile && "|"}
-          <Typography variant="bodyCaveat">{t(course.subTitle)}</Typography> {!isMobile && "|"}
+          <Typography variant="bodyCaveat">{t(course.title)}</Typography>{" "}
+          {course?.subTitle && (
+            <>
+              {!isMobile && "|"}
+              <Typography variant="bodyCaveat">
+                {t(course.subTitle)}
+              </Typography>{" "}
+            </>
+          )}
+          {!isMobile && "|"}
           <Typography variant="bodyCaveat">{t(course.duration)}</Typography>
         </TitleContainer>
 
-        {Object.keys({ ...course.theory, ...course.practice }).map((day) => (
-          <Section key={day}>
-            {course.theory?.[day] && (
-              <DayContainer>
-                <DayTitle variant="h5">{t(course.theory[day].title)}</DayTitle>
-                {Array.isArray(
-                  t(course.theory[day].description, { returnObjects: true })
-                ) ? (
-                  <ul>
-                    {t(course.theory[day].description, {
-                      returnObjects: true,
-                    }).map((topic: string, index: number) => (
-                      <li key={index} style={{ paddingBottom: "10px" }}>
-                        <Typography variant="body1">- {topic}</Typography>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <Typography variant="body1">
-                    {t(course.theory[day].description)}
-                  </Typography>
-                )}
-              </DayContainer>
-            )}
+        {days.map((day) => {
+          const theoryDay = course.theory?.[day];
+          const practiceDay = course.practice?.[day];
 
-            {course.practice?.[day] && (
-              <DayContainer>
-                <DayTitle variant="h5">
-                  {t(course.practice[day].title)}
-                </DayTitle>
-                {Array.isArray(
-                  t(course.practice[day].description, { returnObjects: true })
-                ) ? (
-                  <ul>
-                    {t(course.practice[day].description, {
-                      returnObjects: true,
-                    }).map((topic: string, index: number) => (
-                      <li key={index} style={{ paddingBottom: "10px" }}>
-                        <Typography variant="body1">- {topic}</Typography>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <Typography variant="body1">
-                    {t(course.practice[day].description)}
-                  </Typography>
-                )}
-              </DayContainer>
-            )}
-          </Section>
-        ))}
-        {course.diploma && (
-          <Section>
-            {Array.isArray(
-              t(course.diploma.description, { returnObjects: true })
-            ) ? (
-              <ul>
-                {t(course.diploma.description, { returnObjects: true }).map(
-                  (topic: string, index: number) => (
-                    <li key={index} style={{ paddingBottom: "10px" }}>
-                      <Typography variant="body1">{topic}</Typography>
-                    </li>
-                  )
-                )}
-              </ul>
-            ) : (
-              <Typography variant="body1">
-                {t(course.diploma.description)}
-              </Typography>
-            )}
-          </Section>
+          const theoryContent = theoryDay && renderDayContainer(theoryDay);
+          const practiceContent =
+            practiceDay && renderDayContainer(practiceDay);
+
+          if (!theoryContent && !practiceContent) return null;
+
+          return (
+            <Section key={day}>
+              {theoryContent}
+              {practiceContent}
+            </Section>
+          );
+        })}
+
+        {course.diploma && renderDayContainer(course.diploma)}
+
+        {course.note && (
+          <DayContainer>
+            <Note variant="body1">{t(course?.note)}</Note>{" "}
+          </DayContainer>
         )}
+
+        <Price variant="bodyCaveat">{t("courses.variants.price")}: {course.price}</Price>
       </Content>
     </Container>
   );

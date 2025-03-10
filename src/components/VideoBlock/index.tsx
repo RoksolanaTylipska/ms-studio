@@ -35,11 +35,11 @@ export const VideoBlock = () => {
       </video>
 
       <button onClick={toggleMute}>
-        {isMuted ? <VolumeOff /> : <VolumeUp />}
+        {isMuted ? <VolumeOff sx={{color: "black"}} /> : <VolumeUp sx={{color: "black"}} />}
       </button>
 
       <button onClick={togglePlay} className="md:flex hidden">
-        {!isPlaying ? <PlayCircle /> : <PauseCircle />}
+        {!isPlaying ? <PlayCircle sx={{color: "black"}} /> : <PauseCircle sx={{color: "black"}} />}
       </button>
     </VideoContainer>
   );

@@ -9,11 +9,13 @@ import Button from "../Button";
 import InputName from "../InputName";
 import InputPhone from "../InputPhone";
 import {
+  CloseImage,
   Description,
   ImageContainerMobile,
   InputsContainer,
   TextContainer,
 } from "./styled";
+import CloseIcon from '@mui/icons-material/Close';
 
 interface AppointmentProps {
   setSuccess: (value: boolean) => void;
@@ -37,7 +39,11 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
   };
 
   return (
-    <>
+    <> 
+    <CloseImage>
+    <CloseIcon onClick={handleModalWindow} />
+    </CloseImage>
+    
       {!isMobile ? (
         <Image
           src="/assets/photos/modal-window.webp"
