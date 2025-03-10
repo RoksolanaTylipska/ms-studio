@@ -67,7 +67,7 @@ export const ImageBackground = styled(Box)(({ theme }) => ({
   position: "relative", 
   [theme.breakpoints.down("sm")]: {
     position: "static", 
-    width: "100%",
+    width: "90%",
     height: "400px",
     marginLeft: "20px",
   },

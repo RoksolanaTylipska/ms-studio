@@ -8,6 +8,7 @@ export const LanguageButton = styled('button')({
   margin: 0,
   padding: 0,
   justifyContent: 'center',
+  color: "black",
   "&:hover": {
     textDecoration: "underline",
     textUnderlineOffset: "4px"

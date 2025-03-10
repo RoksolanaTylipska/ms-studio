@@ -22,7 +22,8 @@ export const Title = styled(Typography)(({ theme }) => ({
   marginBottom: "40px",
 }));
 
-export const VariantTitle = styled(Typography)(({ theme }) => ({}));
+export const VariantTitle = styled(Typography)(({ theme }) => ({
+}));
 export const VariantDuration = styled(Typography)(({ theme }) => ({}));
 
 export const VariantContainer = styled(Box)<BackgroundColor>(
