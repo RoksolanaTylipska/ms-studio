@@ -1,13 +1,16 @@
-import { Typography } from "@mui/material";
 import { Control, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import { theme } from "@/styles";
 import { t } from "i18next";
 
 interface InputPhoneProps {
+  name: string; 
   control: Control<any>;
+  errors?: any;
+  rules?: object;
+  label: string;
+  required?: boolean
 }
 
 const InputPhone = ({ control }: InputPhoneProps) => {
@@ -36,7 +39,7 @@ const InputPhone = ({ control }: InputPhoneProps) => {
             countryCodeEditable={false}
             placeholder={t("modalWindow.input.phone")}
             enableSearch={true}
-            containerClass="containerClass"
+            containerClass={error ? "containerClassError" : "containerClass"}
             buttonStyle={{
               backgroundColor: "transparent",
             }}
@@ -45,18 +48,6 @@ const InputPhone = ({ control }: InputPhoneProps) => {
               fontSize: "12px",
             }}
           />
-          {error && (
-            <Typography
-              sx={{
-                color: theme.palette.colors.latte,
-                fontSize: "12px",
-                fontFamily: "Comfortaa, sans-serif",
-                marginLeft: "15px",
-              }}
-            >
-              {error.message}
-            </Typography>
-          )}
         </>
       )}
     />

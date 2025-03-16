@@ -11,7 +11,7 @@ export const formatDate = (date: Date): string => {
   const parts = formatter.formatToParts(date).reduce((acc, part) => {
     acc[part.type] = part.value;
     return acc;
-  }, {} as Record<string, string>); // Типізація об'єкта частин дати
+  }, {} as Record<string, string>); 
 
   return `${parts.day}.${parts.month}.${parts.year} ${parts.hour}:${parts.minute}`;
 };

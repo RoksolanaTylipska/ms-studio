@@ -28,6 +28,8 @@
     },
     "services": {
       "lazer": "Laser epilation",
+      "lazer_diod": "Laser hair removal with a diode laser",
+      "lazer_oleksandryt": "Laser hair removal with an alexandrite laser",
       "electroepilation": "Electroepilation",
       "waxing": "Waxing / sugaring",
       "other": "Other services",
@@ -287,12 +289,13 @@
     "descriptionMetaData": {
       "home": "Professional services in laser hair removal, electroepilation, sugaring, and waxing in Lviv. We guarantee safety, quality, and comfort. Book your procedure today!"
     },
+
     "courses": {
       "title": "Author's Courses",
       "aboutMe": {
         "name": "Maria Pavelchuk",
         "position": "Founder of the Salon",
-        "description": "Maria Pavelchuk is a lecturer-technologist, speaker, and judge of hair removal championships. She has been in this field for over 10 years. Specializing in laser hair removal, electroepilation, sugaring, and waxing. My life motto: 'Be the sun, shine, and create for the benefit of others!' Our courses are not just about learning; they are an experience we are ready to share with you. Upon completion of the course, you will receive a certificate and knowledge that will help you become a professional in your field."
+        "description": "Maria Pavelchuk is an instructor-technologist, speaker, and judge at hair removal championships. She has been in this field for over 10 years, specializing in laser hair removal, electroepilation, sugaring, and waxing. My life motto: 'Be the sun—shine and create for the good of others!'. Our courses are not just training; they are experience we are ready to share with you. Upon completing the course, you will receive a certificate and knowledge that will help you become a professional in your field."
       },
       "variants": {
         "electroepilation": {
@@ -302,29 +305,469 @@
           "online": "Online Consultation"
         },
         "laser": {
-          "base": "Laser Hair Removal from Scratch",
-          "deep": "Advanced Laser Hair Removal Course",
-          "men": "Men's Hair Removal",
+          "base": "Basic Laser Hair Removal Course",
+          "deep": "Qualification Upgrade in Laser Hair Removal",
+          "men": "Laser Hair Removal for Men",
           "online": "Online Consultation"
         },
         "waxing": {
-          "base": "Wax Depilation from Scratch",
-          "master": "Master Universal",
+          "base": "Basic Course",
+          "master": "Universal Master",
           "bikini": "Perfect Bikini",
-          "face": "Face Depilation",
-          "men": "Men's Depilation"
+          "face": "Facial Hair Removal",
+          "men": "Men’s Waxing"
         },
         "days": {
           "one": "1 day",
           "two": "2 days",
           "one-two": "1-2 days",
           "three": "3 days",
-          "five": "5 days"
+          "five": "5 days",
+          "hours": "From 1 to 3 hours"
+        },
+        "price": "Price"
+      },
+      "more": "Learn More",
+      "electroepilation_advance": {
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART: DAY 1 (2 HOURS)",
+            "topics": [
+              "Understanding electroepilation and its history.",
+              "Skin structure, hair anatomy, follicle structure, hair types, and growth stages.",
+              "Electroepilation methods.",
+              "Indications for electroepilation.",
+              "Review of tools used for electroepilation; skin preparation.",
+              "Device settings for HEBE and FLASH."
+            ]
+          },
+          "day2": {
+            "title": "THEORETICAL PART: DAY 2 (2 HOURS)",
+            "topics": [
+              "Types of electrodes.",
+              "Contraindications for electroepilation.",
+              "Anesthesia (topical and injectable). Allergy test.",
+              "Anaphylactic shock, Quincke's edema. Emergency care and anti-shock kit.",
+              "Course of electroepilation procedures. Trial procedure. Electroepilation after other hair removal methods.",
+              "Preparation for the procedure.",
+              "Post-care recommendations."
+            ]
+          },
+          "day5": {
+            "title": "THEORETICAL PART: DAY 5 (1 HOUR)",
+            "topics": [
+              "Final test.",
+              "Answers to questions prepared by the student."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART: DAY 1 (4 HOURS)",
+            "topics": [
+              "Proper hand positioning.",
+              "Epilation of the shin area."
+            ]
+          },
+          "day2": {
+            "title": "PRACTICAL PART: DAY 2",
+            "topics": ["Epilation of the classic bikini area."]
+          },
+          "day3": {
+            "title": "PRACTICAL PART: DAY 3",
+            "topics": ["Epilation of the armpit area + injectable anesthesia."]
+          },
+          "day4": {
+            "title": "PRACTICAL PART: DAY 4",
+            "topics": [
+              "Epilation of the deep bikini area + injectable anesthesia."
+            ]
+          },
+          "day5": {
+            "title": "PRACTICAL PART: DAY 5",
+            "topics": [
+              "Performing procedures on the thigh/arm/buttocks area.",
+              "Performing procedures on the face area."
+            ]
+          }
+        },
+        "break": "LUNCH BREAK"
+      },
+      "electroepilation_base": {
+        "title": "BASIC COURSE 3.0 (3 DAYS)",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART: DAY 1 (2 HOURS)",
+            "topics": [
+              "History of electroepilation.",
+              "Skin and hair structure.",
+              "Techniques of the procedure, indications, contraindications.",
+              "Types of anesthesia.",
+              "Electroepilation procedure course."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART: DAY 1 (3.5 HOURS)",
+            "topics": [
+              "Review of tools used for electroepilation.",
+              "Correct hand positioning.",
+              "Skin preparation for the procedure.",
+              "Performing the procedure on the shin area."
+            ]
+          },
+          "day2": {
+            "title": "PRACTICAL PART: DAY 2 (5.5 HOURS)",
+            "topics": [
+              "Performing electroepilation on the armpit area.",
+              "Demonstration of topical or injectable anesthesia on the armpit area.",
+              "Instructor’s demonstration of injectable anesthesia.",
+              "Performing electroepilation on the classic bikini area."
+            ]
+          },
+          "day3": {
+            "title": "PRACTICAL PART: DAY 3 (5.5 HOURS)",
+            "topics": [
+              "Performing the procedure on the deep bikini area using injectable anesthesia.",
+              "Performing the procedure on the thigh/arm/buttocks area.",
+              "Performing the procedure on the face area.",
+              "Answers to questions prepared by the student."
+            ]
+          }
+        },
+        "diploma": {
+          "title": "DIPLOMA AWARDING",
+          "topics": [
+            "Course duration - 3 days (10 AM - 4 PM).",
+            "Located in the city center.",
+            "Individual course.",
+            "Conducted by an instructor-technologist with 4 years of experience.",
+            "Internationally recognized certificate.",
+            "Discount on all products for students.",
+            "Starter kit for beginners.",
+            "Job placement assistance for the best students.",
+            "All necessary materials provided during the course."
+          ]
         }
       },
-      "more": "More information"
-
-      
-    }    
+      "electroepilation_qualification": {
+        "title": "QUALIFICATION UPGRADE (1-2 DAYS)",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART: DAY 1 (2 HOURS)",
+            "topics": [
+              "History of electroepilation.",
+              "Skin and hair structure.",
+              "Procedure techniques, indications, contraindications.",
+              "Types of anesthesia.",
+              "Electroepilation procedure course."
+            ]
+          },
+          "day2": {
+            "title": "THEORETICAL PART: DAY 2 (2.5 HOURS)",
+            "topics": [
+              "Performing electroepilation on the armpit area.",
+              "Demonstration of topical or injectable anesthesia on the armpit area."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART: DAY 1 (3.5 HOURS)",
+            "topics": [
+              "Review of tools used for electroepilation.",
+              "Correct hand positioning.",
+              "Skin preparation for the procedure.",
+              "Performing the procedure on the shin area."
+            ]
+          },
+          "day2": {
+            "title": "PRACTICAL PART: DAY 2 (3 HOURS)",
+            "topics": [
+              "Instructor’s demonstration of injectable anesthesia.",
+              "Performing electroepilation on the classic bikini area."
+            ]
+          }
+        },
+        "diploma": {
+          "title": "DIPLOMA AWARDING",
+          "topics": [
+            "Course duration - 3 days (10 AM - 4 PM).",
+            "Located in the city center.",
+            "Individual course.",
+            "Conducted by an instructor-technologist with 4 years of experience.",
+            "Internationally recognized certificates.",
+            "Discount on all products for students.",
+            "Starter kit for beginners.",
+            "Job placement assistance for the best students.",
+            "All necessary materials provided during the course."
+          ]
+        }
+      },
+      "online-consultation": {
+        "note": "Online consultation for professionals who want to improve their skills, analyze complex cases, or get answers to professional questions. The consultation takes place in an individual video call format."
+      },
+      "laser_base": {
+        "title": "BASIC COURSE 1 DAY (10:00 AM - 7:00 PM)",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART: DAY 1 (2 HOURS)",
+            "topics": [
+              "Client concerns that laser hair removal solves.",
+              "What is laser hair removal?",
+              "Skin structure and hair growth stages.",
+              "Types of lasers and their differences.",
+              "Operating conditions of the device in the workspace.",
+              "Skin phototypes according to Fitzpatrick.",
+              "Preparation, contraindications, and post-procedure care.",
+              "Techniques for performing the procedure.",
+              "7 taboos for preventing burns in laser hair removal.",
+              "Workplace setup for the specialist.",
+              "Practical recommendations for first-time clients.",
+              "Main device parameters."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART: DAY 1 (7 HOURS)",
+            "topics": [
+              "Overview of equipment and materials used for laser hair removal.",
+              "Correct hand positioning for working with the laser.",
+              "Skin preparation for the procedure.",
+              "Practicing the procedure on areas: full legs, bikini + armpits, arms, mustache (face)."
+            ]
+          }
+        }
+      },
+      "laser_advance": {
+        "title": "ADVANCED COURSE 1 DAY (10:00 AM - 7:00 PM)",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART (2 HOURS)",
+            "topics": [
+              "Hair growth stages and their impact on procedure effectiveness.",
+              "Types of lasers: detailed analysis of technologies and applications.",
+              "Skin phototypes and working with different hair types.",
+              "Causes of ineffective procedures and ways to address them.",
+              "Combined working techniques for better results.",
+              "Algorithm for adjusting laser parameters for each client.",
+              "Contraindications and safety of the procedure.",
+              "Analysis of burns, pigmentation, and other possible complications.",
+              "Working with sensitive areas and problem zones.",
+              "Proper client follow-up after the procedure."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART (5-6 HOURS)",
+            "topics": [
+              "Overview of equipment and parameter adjustments.",
+              "Practicing on different skin phototypes.",
+              "Optimization of speed and efficiency.",
+              "Developing pain-free working techniques.",
+              "Correction of hand positioning and nozzle movement.",
+              "Working on complex areas (deep bikini, face, abdominal zone).",
+              "Solving issues: ingrown hairs, folliculitis, sensitive skin.",
+              "Review of real-life cases from professionals' practice."
+            ]
+          }
+        },
+        "note": "Zones for practice are selected individually based on the specialist’s request."
+      },
+      "laser_men": {
+        "title": "BASIC COURSE 1 DAY (10:00 AM - 7:00 PM)",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART",
+            "topics": [
+              "Concept of laser hair removal and its advantages over other hair removal methods.",
+              "Structure of the skin and hair.",
+              "Principle of laser systems operation. Selection of laser equipment parameters.",
+              "Features of male laser hair removal.",
+              "Differences in working with various body areas.",
+              "Skin reactions after the laser hair removal procedure.",
+              "Disinfection of the workspace.",
+              "Filling out the client questionnaire. Determining intervals between procedures."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART",
+            "topics": [
+              "Client preparation for the procedure.",
+              "Execution technique: practical demonstration and practice on cold zones (abdomen, chest, legs, arms).",
+              "Practice on hot zones (face, groin area in men).",
+              "Laser hair removal practice in the male bikini area.",
+              "Post-procedure skin treatment.",
+              "Further recommendations for the client after laser hair removal."
+            ]
+          }
+        }
+      },
+      "waxing-men": {
+        "title": "MALE WAXING",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART",
+            "topics": [
+              "Structure of the skin and hair.",
+              "Differences between male and female waxing.",
+              "Facts about male waxing.",
+              "Characteristics of male skin and hair.",
+              "Procedure protocol for men.",
+              "Specifics of bikini waxing and working with the scrotum.",
+              "Psychology of working with male clients."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART",
+            "topics": [
+              "Execution technique.",
+              "Specifics of skin stretching.",
+              "Working with cold zones: legs, arms.",
+              "Working with hot zones.",
+              "Specifics of working in the bikini area: erection, skin stretching, trauma prevention."
+            ]
+          }
+        }
+      },
+      "waxing-base": {
+        "title": "BASIC COURSE",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART",
+            "topics": [
+              "Structure of the skin and hair.",
+              "Hair growth stages.",
+              "Types of hair.",
+              "Hair removal methods.",
+              "Required materials.",
+              "Features of warm wax.",
+              "Features of film wax.",
+              "Composition and types of wax.",
+              "Factors for choosing wax.",
+              "Working techniques.",
+              "Hair removal areas.",
+              "Procedure protocol."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "PRACTICAL PART",
+            "topics": [
+              "Students practice on the following areas: full legs, 2 bikini + 2 armpits, full arms, upper lip/nose."
+            ]
+          }
+        },
+        "diploma": {
+          "title": "DIPLOMA AWARDING",
+          "topics": [
+            "Course duration - 3 days (10 AM - 4 PM).",
+            "City center location.",
+            "Individual course.",
+            "Conducted by a technologist-instructor with 4 years of experience.",
+            "Internationally recognized certificate.",
+            "Discount on all products for students.",
+            "Starter kit for beginners.",
+            "Helping the best students with employment.",
+            "Providing all necessary materials during the course."
+          ]
+        }
+      },
+      "waxing-advanced": {
+        "title": "UNIVERSAL MASTER SUGARING + WAX",
+        "theory": {
+          "day1": {
+            "title": "THEORETICAL PART",
+            "topics": [
+              "Structure of the skin and hair.",
+              "Hair growth stages.",
+              "Types of hair.",
+              "Hair removal methods.",
+              "Required materials.",
+              "Features of warm wax.",
+              "Features of film wax.",
+              "Features of sugar paste.",
+              "Pros and cons of each method.",
+              "Composition, types, and factors for selecting paste/wax. How to mix pastes?",
+              "Working techniques.",
+              "Methods of heating paste/wax.",
+              "Hair removal areas.",
+              "Procedure protocol.",
+              "Basic rules for working with sugar paste.",
+              "Rules for handling paste adhesion issues."
+            ]
+          }
+        },
+        "practice": {
+          "day1": {
+            "title": "DAY 1",
+            "topics": [
+              "Theoretical part (2 hours)",
+              "Lunch break (30 min)",
+              "Practical part (instructor demonstration, hand positioning, practice on models)"
+            ]
+          },
+          "day2": {
+            "title": "DAY 2",
+            "topics": [
+              "Theoretical part (2 hours)",
+              "Lunch break (30 min)",
+              "Practical part (practice on models, correction of technique errors)",
+              "Diploma awarding"
+            ]
+          },
+          "day3": {
+            "title": "PRACTICAL PART",
+            "topics": [
+              "Theoretical part (2 hours)",
+              "Lunch break (30 min)",
+              "Practical part (practice on models, correction of technique errors)",
+              "Diploma awarding"
+            ]
+          }
+        },
+        "diploma": {
+          "title": "DIPLOMA AWARDING",
+          "topics": [
+            "Students practice on the following areas: full legs, 2 bikini + armpits, full arms, upper lip/nose."
+          ]
+        },
+        "note": "Internationally recognized certificates; Discount on all products for students; Starter kit for beginners; Helping the best students with employment; Providing all necessary materials during the course! Lunch and coffee breaks included."
+      }
+    },
+    "feedback": {
+      "title": "Have you used our services? Leave a review",
+      "star": "Service rating:",
+      "submit": "Submit review",
+      "form": {
+        "name": "Enter your name",
+        "name_label": "Your name",
+        "email": "Enter your email",
+        "email_label": "Your email",
+        "service": "Service",
+        "master": "Master",
+        "master_label": "Which master performed the service?",
+        "service_label": "Which service did you use?",
+        "experience": "Write your review",
+        "experience_label": "Your review",
+        "source_label": "Where did you hear about us?",
+        "source": {
+          "friends": "From friends/acquaintances",
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "google": "Google (search)",
+          "tiktok": "TikTok",
+          "ads": "Online advertising"
+        }
+      }
+    }
   }
 }

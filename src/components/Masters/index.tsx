@@ -29,28 +29,12 @@ import {
   SwiperStyled,
   TypographyBox,
 } from "./styled";
+import useGetFirebaseDta from "@/hooks/useGetFirebaseDta";
 
 function Masters() {
   const { t } = useTranslation();
   const locale = i18n.language;
-  const [masters, setMasters] = useState<null | Master[]>(null);
-
-  useEffect(() => {
-    const fetchMasters = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "masters"));
-        const fetchedMasters = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as Master[];
-        setMasters(fetchedMasters);
-      } catch (error) {
-        console.error("Error fetching masters: ", error);
-      }
-    };
-
-    fetchMasters();
-  }, []);
+  const { data: masters} = useGetFirebaseDta("masters");
 
   return (
     <MastersContainer>

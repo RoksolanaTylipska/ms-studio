@@ -7,6 +7,8 @@ import {
   MuiIconButton,
   MuiTextField,
   typography,
+  MuiSelect,
+  MuiInputLabel,
 } from './components';
 
 declare module '@mui/material/styles' {
@@ -73,21 +75,13 @@ export const theme = createTheme({
         },
       },
     },
-    // MuiTypography: {
-    //   defaultProps: {
-    //     variantMapping: {
-    //       headline: 'h2',
-    //       body: 'h1',
-    //       subtitle: 'h1',
-    //       footNote: 'h1',
-    //     },
-    //   },
-    // },
     MuiButton,
     MuiTextField,
     MuiIconButton,
     MuiAccordion,
     MuiAccordionSummary,
     MuiAccordionDetails,
+    MuiSelect,
+    MuiInputLabel,
   },
 });

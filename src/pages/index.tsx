@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import { VideoBlock } from "@/components/VideoBlock";
 import RemovalMethods from "@/components/RemovalMethods";
 import Head from "next/head";
+import Feedback from "@/components/Feedback";
 
 const FAQ = dynamic(() => import("../components/FAQ/index"), { ssr: false });
 
@@ -39,6 +40,7 @@ function Home() {
         <VideoBlock />
         <Reviews />
         <FAQ />
+        <Feedback />
       </Box>
     </>
   );

@@ -75,7 +75,7 @@ export const typography: Partial<Theme['typography']> = {
   },
   body: {
     fontFamily: ["Comfortaa", 'sans-serif'].join(', '),
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: 400,
     lineHeight: '26px',
   },
