@@ -9,7 +9,9 @@ import FirstSlide from "./components/FirstSlide";
 import SecondSlide from "./components/SecondSlide";
 import { SwiperStyled } from "./styled";
 
+
 function Carousel() {
+
   return (
     <SwiperStyled
       centeredSlides={true}

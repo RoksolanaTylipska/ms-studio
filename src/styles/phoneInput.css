@@ -1,12 +1,19 @@
 .containerClass {
   color: #593325;
   border: 1px solid #593325;
-  border-radius: 50px;
+  border-radius: 20px;
   padding: 10px;
 }
 
 .containerClass:hover {
   background-color: #E0D6D0;
+}
+
+.containerClassError {
+  color: red;
+  border: 1px solid red;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .react-tel-input .form-control {

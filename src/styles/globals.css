@@ -75,3 +75,8 @@ h1 {
 .section {
   padding: 150px 60px;
 }
+
+.MuiRadio-root {
+  padding: 3px !important;
+  color: #7B7167 !important;
+}

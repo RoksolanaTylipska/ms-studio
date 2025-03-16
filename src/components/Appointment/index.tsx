@@ -1,12 +1,13 @@
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 import { InputData, useSubmitAppointment } from "@/hooks/useSubmitAppointment";
+import CloseIcon from "@mui/icons-material/Close";
 import { Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { Trans, useTranslation } from "react-i18next";
 import Button from "../Button";
-import InputName from "../InputName";
+import InputField from "../InputField";
 import InputPhone from "../InputPhone";
 import {
   CloseImage,
@@ -15,7 +16,6 @@ import {
   InputsContainer,
   TextContainer,
 } from "./styled";
-import CloseIcon from '@mui/icons-material/Close';
 
 interface AppointmentProps {
   setSuccess: (value: boolean) => void;
@@ -39,11 +39,11 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
   };
 
   return (
-    <> 
-    <CloseImage>
-    <CloseIcon onClick={handleModalWindow} />
-    </CloseImage>
-    
+    <>
+      <CloseImage>
+        <CloseIcon onClick={handleModalWindow} />
+      </CloseImage>
+
       {!isMobile ? (
         <Image
           src="/assets/photos/modal-window.webp"
@@ -65,14 +65,15 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
         </ImageContainerMobile>
       )}
 
+
       <TextContainer>
-        <Image
+      {!isMobile &&  <Image
           src="/assets/icons/logo-black.png"
           alt="Logo"
           width={80}
           height={80}
           style={{ margin: "auto" }}
-        />
+        />}
 
         <Typography id="modal-modal-title" variant="h4">
           {t("modalWindow.title")}
@@ -83,8 +84,18 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <InputsContainer>
-            <InputName control={control} errors={errors} />
-            <InputPhone control={control} />
+            <InputField
+              name="name"
+              rules={{ required: t("feedback.form.name") }}
+              label={t("feedback.form.name_label")}
+              control={control}
+              errors={errors}
+            />
+            <InputPhone
+              control={control}
+              name="phone"
+              label={t("modalWindow.input.phone_label")}
+            />
             <Button
               children={t("button.bookAppointment")}
               color="dark"
