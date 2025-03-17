@@ -47,7 +47,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
       {!isMobile ? (
         <Image
           src="/assets/photos/modal-window.webp"
-          alt="MS Studio"
+          alt="MS Laser"
           width={300}
           height={400}
           style={{ borderRadius: "15px" }}
@@ -56,7 +56,7 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
         <ImageContainerMobile>
           <Image
             src="/assets/photos/modal-window-mobile.webp"
-            alt="MS Studio"
+            alt="MS Laser"
             fill
             style={{
               objectFit: "contain",
