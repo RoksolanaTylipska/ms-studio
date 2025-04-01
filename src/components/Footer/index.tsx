@@ -3,7 +3,6 @@ import { useResponsive } from "@/hooks/useResponsive";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import SocialMedia from "../SocialMedia";
 import {
   AddressText,
   BlockContainer,
@@ -15,10 +14,12 @@ import {
   TextContainer,
   TopInfo,
 } from "./styled";
+import { SocialMedia } from "@/components";
 
-const Footer = () => {
+export const Footer = () => {
   const { t } = useTranslation();
   const { isMobile } = useResponsive();
+  const currentYear = new Date().getFullYear();
 
   return (
     <FooterContainer>
@@ -76,7 +77,7 @@ const Footer = () => {
             </TopInfo>
 
             <PolicyText variant="bodyComfortaa">
-              {t("footer.rights")}
+              {t("footer.rights")} {currentYear}
             </PolicyText>
           </TextContainer>
         )}
@@ -84,5 +85,3 @@ const Footer = () => {
     </FooterContainer>
   );
 };
-
-export default Footer;

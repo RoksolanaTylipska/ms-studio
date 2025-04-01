@@ -1,7 +1,7 @@
+import CourseDetails from "@/features/courses/components/CourseDetails";
+import { courseDetails } from "@/features/courses/constants/courseDetails";
+import { Course } from "@/features/courses/types/courseDetails";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { courseDetails } from "@/constants/courseDetails";
-import CourseDetails from "@/components/CoursesClientSide/components/CourseDetails";
-import { Course } from "@/types/courseDetails";
 
 export default function CourseDetail({ course }: { course: Course }) {
   if (!course) return <h1>Курс не знайдено</h1>;
@@ -11,10 +11,10 @@ export default function CourseDetail({ course }: { course: Course }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = courseDetails.map((course) => ({
-    params: { id: course.link }, 
+    params: { id: course.link },
   }));
 
-  return { paths, fallback: false }; 
+  return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

@@ -1,5 +1,4 @@
-
-import ContactsClientSide from "@/components/ContactsClientSide";
+import ContactsClientSide from "@/features/contacts/components/ContactsClientSide";
 
 function Contacts() {
   return (

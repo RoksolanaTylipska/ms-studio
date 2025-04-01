@@ -1,14 +1,11 @@
+import { AppointmentData } from "@/features/home/components/Feedback/types/inputsData";
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
-import { InputData, useSubmitAppointment } from "@/hooks/useSubmitAppointment";
 import CloseIcon from "@mui/icons-material/Close";
 import { Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { Trans, useTranslation } from "react-i18next";
-import Button from "../Button";
-import InputField from "../InputField";
-import InputPhone from "../InputPhone";
 import {
   CloseImage,
   Description,
@@ -16,21 +13,22 @@ import {
   InputsContainer,
   TextContainer,
 } from "./styled";
+import { Button, InputField, InputPhone } from "@/components";
 
-interface AppointmentProps {
-  setSuccess: (value: boolean) => void;
-}
-
-const Appointment = ({ setSuccess }: AppointmentProps) => {
+export const Appointment = ({
+  onSubmit,
+}: {
+  onSubmit: (data: AppointmentData) => Promise<void>;
+}) => {
   const { handleModalWindow } = useModalWindowContext();
   const { t } = useTranslation();
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<InputData>();
+  } = useForm<AppointmentData>();
   const router = useRouter();
-  const { onSubmit, loading } = useSubmitAppointment({ setSuccess });
+
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const goToPrivatePolicy = () => {
@@ -65,15 +63,16 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
         </ImageContainerMobile>
       )}
 
-
       <TextContainer>
-      {!isMobile &&  <Image
-          src="/assets/icons/logo-black.png"
-          alt="Logo"
-          width={80}
-          height={80}
-          style={{ margin: "auto" }}
-        />}
+        {!isMobile && (
+          <Image
+            src="/assets/icons/logo-black.png"
+            alt="Logo"
+            width={80}
+            height={80}
+            style={{ margin: "auto" }}
+          />
+        )}
 
         <Typography id="modal-modal-title" variant="h4">
           {t("modalWindow.title")}
@@ -124,5 +123,3 @@ const Appointment = ({ setSuccess }: AppointmentProps) => {
     </>
   );
 };
-
-export default Appointment;

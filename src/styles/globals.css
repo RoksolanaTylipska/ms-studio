@@ -80,3 +80,10 @@ h1 {
   padding: 3px !important;
   color: #7B7167 !important;
 }
+
+.Toastify__progress-bar {
+  background: #83694E !important; /* Колір прогрес-бара */
+}
+.Toastify__progress-bar--success {
+  background: #83694E !important;
+}
