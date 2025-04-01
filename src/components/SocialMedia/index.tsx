@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SocialMediaCircle } from "./styled";
 import Link from "next/link";
 
-const SocialMedia = ({ img, bgColor }: { img: string, bgColor?: string }) => {
+export const SocialMedia = ({ img, bgColor }: { img: string, bgColor?: string }) => {
   const instagram = img.includes("instagram")
 
   const path = instagram ? "https://www.instagram.com/ms_studio_laser?igsh=MXJtbXl1NHV1eGVnZQ==" : "https://www.tiktok.com/@ms_studio_epil?_t=ZM-8tEZna2ap42"
@@ -17,4 +17,3 @@ const SocialMedia = ({ img, bgColor }: { img: string, bgColor?: string }) => {
   );
 };
 
-export default SocialMedia;

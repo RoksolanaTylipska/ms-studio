@@ -1,9 +1,10 @@
 import { collection, getDocs, query, Firestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
+import { FirebaseCollection } from "@/helpers/addFirebaseData";
 
-const useGetFirebaseDta = (collectionName: string) => {
-  const [data, setData] = useState<any[]>([]);
+const useGetFirebaseDta = <T = any>(collectionName: FirebaseCollection) => {
+  const [data, setData] = useState<(T & { id: string })[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,7 +16,7 @@ const useGetFirebaseDta = (collectionName: string) => {
         const querySnapshot = await getDocs(q);
         const documents = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          ...doc.data(),
+          ...(doc.data() as T),
         }));
         setData(documents);
       } catch (err) {
@@ -24,7 +25,6 @@ const useGetFirebaseDta = (collectionName: string) => {
       }
       setLoading(false);
     };
-
     fetchData();
   }, [db, collectionName]);
 

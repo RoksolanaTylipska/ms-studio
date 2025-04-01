@@ -10,7 +10,7 @@ export interface ButtonProps {
   color?: ButtonColor;
 }
 
-const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, color }: ButtonProps) => {
+export const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, color }: ButtonProps) => {
   return (
     <>
       {type === "primary" ? (
@@ -55,6 +55,3 @@ const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, color }: B
     </>
   );
 };
-
-
-export default Button;

@@ -1,4 +1,4 @@
-import GalleryClientSide from "@/components/GalleryClientSide";
+import GalleryClientSide from "@/features/gallery/components/GalleryClientSide";
 import { Box } from "@mui/material";
 
 function Certificates() {

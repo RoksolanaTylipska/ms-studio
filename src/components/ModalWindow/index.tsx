@@ -1,22 +1,29 @@
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
-import { useSubmitAppointment } from "@/hooks/useSubmitAppointment";
+import { useSendTelegramMessage } from "@/hooks/useSendTelegramMessage";
 import { Modal } from "@mui/material";
-import { useEffect, useState } from "react";
-import Appointment from "../Appointment";
-import Loader from "../Loader";
-import ThankYou from "../ThankYou";
+import { useEffect } from "react";
 import { ModalContainer } from "./styled";
+import { MessageType } from "@/helpers/getMessages";
+import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { Appointment, Loader, ThankYou } from '@/components';
 
-const ModalWindow = () => {
-  const [success, setSuccess] = useState<boolean>(false);
+const token = process.env.NEXT_PUBLIC_TELEGRAM_APPOINTMENT_token ?? "";
+const chatId = process.env.NEXT_PUBLIC_TELEGRAM_APPOINTMENT_chatId ?? "";
+
+export const ModalWindow = () => {
   const { isOpen, handleModalWindow, setIsOpen } = useModalWindowContext();
-  const { loading } = useSubmitAppointment({ setSuccess });
+  const { success, setSuccess, loading, onSubmit } = useSendTelegramMessage({
+    chatId,
+    token,
+    firebaseCollection: FirebaseCollection.USERS,
+    messageType: MessageType.APPOINTMENT,
+  });
 
   useEffect(() => {
     if (success) {
       const timer = window.setTimeout(() => {
-        setSuccess(false);
         setIsOpen(false);
+        setSuccess(false);
       }, 2000);
 
       return () => clearTimeout(timer);
@@ -34,13 +41,9 @@ const ModalWindow = () => {
         {loading ? (
           <Loader />
         ) : (
-          <>
-            {!success ? <Appointment setSuccess={setSuccess} /> : <ThankYou />}
-          </>
+          <>{!success ? <Appointment onSubmit={onSubmit} /> : <ThankYou />}</>
         )}
       </ModalContainer>
     </Modal>
   );
 };
-
-export default ModalWindow;

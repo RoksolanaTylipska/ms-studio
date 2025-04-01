@@ -9,7 +9,7 @@ interface TitleStarsProps {
   lines?: boolean;
 }
 
-function TitleStars({ title, filledStars = false, lines = false }: TitleStarsProps) {
+export const TitleStars = ({ title, filledStars = false, lines = false }: TitleStarsProps) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -53,5 +53,3 @@ function TitleStars({ title, filledStars = false, lines = false }: TitleStarsPro
     </TitleContainer>
   );
 }
-
-export default TitleStars;

@@ -13,7 +13,7 @@ interface InputPhoneProps {
   required?: boolean
 }
 
-const InputPhone = ({ control }: InputPhoneProps) => {
+export const InputPhone = ({ control }: InputPhoneProps) => {
   return (
     <Controller
       name="phone"
@@ -53,5 +53,3 @@ const InputPhone = ({ control }: InputPhoneProps) => {
     />
   );
 };
-
-export default InputPhone;

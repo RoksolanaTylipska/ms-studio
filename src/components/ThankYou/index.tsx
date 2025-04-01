@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { ThankYouContainer, ThankYouText } from "./styled";
 
-const ThankYou = () => {
+export const ThankYou = () => {
   const { t } = useTranslation();
 
   return (
@@ -26,5 +26,3 @@ const ThankYou = () => {
     </ThankYouContainer>
   );
 };
-
-export default ThankYou;

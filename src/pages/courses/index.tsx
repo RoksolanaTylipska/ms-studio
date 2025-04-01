@@ -1,11 +1,11 @@
 
-import CoursesClientSide from "@/components/CoursesClientSide";
+import CoursesClientSide from "@/features/courses/components/CoursesClientSide";
 import Head from "next/head";
 
 function Courses() {
   return (
     <>
-          <Head>
+      <Head>
         <title>Курси лазерної епіляції, електроепіляції, шугарингу та воскової депіляції у Львові
         </title>
         <meta name="description" content="Наші курси - це не просто навчання, це досвід, яким ми готові поділитися з вами. По закінченні курсу ви отримаєте сертифікат та знання, які допоможуть вам стати професіоналом у своїй сфері."

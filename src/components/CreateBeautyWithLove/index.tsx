@@ -4,8 +4,7 @@ import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { CreateBeautyText } from "./styled";
 
-
-function CreateBeautyWithLove() {
+export const CreateBeautyWithLove =() => {
   const { t } = useTranslation();
 
   return (
@@ -31,5 +30,3 @@ function CreateBeautyWithLove() {
   </Box>
   )
 }
-
-export default CreateBeautyWithLove;

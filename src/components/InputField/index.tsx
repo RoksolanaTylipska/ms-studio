@@ -14,7 +14,7 @@ interface InputFieldProps<T extends FieldValues> {
   required?: boolean;
 }
 
-const InputField = <T extends FieldValues>({
+export const InputField = <T extends FieldValues>({
   name,
   control,
   errors,
@@ -51,5 +51,3 @@ const InputField = <T extends FieldValues>({
     />
   );
 };
-
-export default InputField;
