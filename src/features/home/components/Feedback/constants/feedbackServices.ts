@@ -1,4 +1,4 @@
-export const feedbackServiсes = [
+export const feedbackServices = [
   { value: "Лазерна епіляція діодним лазером", label: "services.lazer_diod" },
   { value: "Лазерна епіляція олександритовим лазером", label: "services.lazer_oleksandryt" },
   { value: "Воскова депіляція / шугаринг", label: "services.waxing" },

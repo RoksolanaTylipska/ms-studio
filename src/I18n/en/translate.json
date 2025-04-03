@@ -759,6 +759,8 @@
         "experience": "Write your review",
         "experience_label": "Your review",
         "source_label": "Where did you hear about us?",
+        "success": "Thank you for your review! We appreciate your feedback.",
+        "error": "Ups...Something goes wrong. Try again.",
         "source": {
           "friends": "From friends/acquaintances",
           "instagram": "Instagram",

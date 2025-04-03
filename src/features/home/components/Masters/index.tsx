@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
-import { Master } from "../../types/masters";
+import { getSortedMasters } from "./helpers/getSortedMasters";
 import {
   CertificatesContainer,
   CertificatesText,
@@ -28,6 +28,7 @@ import {
   SwiperStyled,
   TypographyBox,
 } from "./styled";
+import { Master } from "./types/masters";
 
 function Masters() {
   const { t } = useTranslation();
@@ -36,14 +37,7 @@ function Masters() {
     FirebaseCollection.MASTERS
   );
 
-  const sortedMasters = useMemo(() => {
-    if (!masters) return [];
-    return [...masters].sort((a, b) => {
-      const priorityA = a.priority ?? Infinity;
-      const priorityB = b.priority ?? Infinity;
-      return priorityA - priorityB;
-    });
-  }, [masters]);
+  const sortedMasters = useMemo(() => getSortedMasters(masters), [masters]);
 
   return (
     <MastersContainer>

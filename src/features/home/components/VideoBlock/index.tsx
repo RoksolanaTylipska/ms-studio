@@ -26,7 +26,6 @@ export const VideoBlock = () => {
   return (
     <VideoContainer>
       <video
-        // key={videoSource}
         autoPlay
         muted={isMuted}
         playsInline

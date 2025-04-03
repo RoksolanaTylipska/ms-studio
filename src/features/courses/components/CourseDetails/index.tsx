@@ -1,6 +1,6 @@
 "use client";
 
-import { Course, CourseSection } from "@/features/courses/types/courseDetails";
+import { Course } from "@/features/courses/types/courseDetails";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
@@ -14,52 +14,18 @@ import {
   Section,
   TitleContainer,
 } from "./styled";
+import { useCourseDetails } from "../../hooks/useCourseDetails";
 
-function CourseDetails({ course: course }: { course: Course }) {
+function CourseDetails({ course }: { course: Course }) {
   const router = useRouter();
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const { days, renderDayContainer } = useCourseDetails({ course });
 
   if (!course) {
     router.push("/not-found");
     return null;
   }
-
-  const renderDayContainer = (data: CourseSection) => {
-    const title = t(data.title);
-    const description = t(data.description, { returnObjects: true });
-
-    if (
-      !title ||
-      title.trim() === "" ||
-      !description ||
-      (Array.isArray(description) && description.length === 0)
-    ) {
-      return null;
-    }
-
-    return (
-      <DayContainer>
-        <DayTitle variant="h5">{title}</DayTitle>
-        {Array.isArray(description) && (
-          <ul>
-            {description.map((topic, index) => (
-              <li key={index} style={{ paddingBottom: "10px" }}>
-                <Typography variant="body1">- {topic}</Typography>
-              </li>
-            ))}
-          </ul>
-        )}
-      </DayContainer>
-    );
-  };
-
-  const days = Array.from(
-    new Set([
-      ...Object.keys(course.theory || {}),
-      ...Object.keys(course.practice || {}),
-    ])
-  );
 
   return (
     <Container>

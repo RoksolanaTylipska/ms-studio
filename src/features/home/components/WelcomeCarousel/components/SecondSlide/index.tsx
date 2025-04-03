@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import { ButtonContainer, SlideContainerSecond, Title, Wrapper } from "./styled";
 import { useMediaQuery } from "@mui/material";
 import { Button } from "@/components";
-import { useMemo } from "react";
 
 function SecondSlide() {
   const { t, i18n} = useTranslation();

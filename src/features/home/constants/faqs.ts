@@ -5,6 +5,4 @@ export const faqs = [
   { question: "faq.question4", answer: "faq.answer4" },
   { question: "faq.question5", answer: "faq.answer5" },
   { question: "faq.question6", answer: "faq.answer6" },
-
-
 ];
