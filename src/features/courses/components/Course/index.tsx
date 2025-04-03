@@ -2,9 +2,7 @@
 
 import { Course as CourseType } from "@/features/courses/types/courses";
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
-import { useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import {
   ButtonContainer,
@@ -17,21 +15,12 @@ import {
   Variants,
 } from "./styled";
 import { Button } from "@/components";
+import { useCourse } from "../../hooks/useCourse";
 
 function Course({ title, variants, backgroundColor }: CourseType) {
   const { t } = useTranslation();
   const { handleModalWindow } = useModalWindowContext();
-  const router = useRouter();
-
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
-  const handleMoreDetails = (link: string) => {
-    if (link) {
-      router.push(`/courses/${link}`);
-      return;
-    }
-    handleModalWindow();
-  };
+  const { handleMoreDetails } = useCourse({ handleModalWindow });
 
   return (
     <CourseContainer backgroundColor={backgroundColor}>
