@@ -16,6 +16,7 @@ import {
   SocialMediaContainer,
 } from "./styled";
 import { Button, SocialMedia } from "@/components";
+import { ButtonSize, ButtonType } from "@/types/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -68,8 +69,8 @@ const Header = () => {
                     <Button
                       children={t("button.bookAppointment")}
                       onClick={handleModalWindow}
-                      type="primary"
-                      size="medium"
+                      type={ButtonType.PRIMARY}
+                      size={ButtonSize.MEDIUM}
                     />
                     <SocialMediaContainer>
                       <SocialMedia
@@ -105,8 +106,8 @@ const Header = () => {
             <Button
               children={t("button.bookAppointment")}
               onClick={handleModalWindow}
-              type="primary"
-              size="small"
+              type={ButtonType.PRIMARY}
+              size={ButtonSize.SMALL}
             />
 
             <LanguageSwitcherContainer>

@@ -2,7 +2,7 @@ import i18n from "@/I18n/i18nConfig";
 import { Master } from "@/features/home/components/Masters/types/masters";
 import { FirebaseCollection } from "@/helpers/addFirebaseData";
 import { showToast } from "@/helpers/showToast";
-import useGetFirebaseDta from "@/hooks/useGetFirebaseDta";
+import useGetFirebaseData from "@/hooks/useGetFirebaseData";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +23,7 @@ const useFeedbackForm = ({
 }: useFeedbackFormProps) => {
   const selectedLanguage = i18n.language;
   const { t } = useTranslation();
-  const { data: masters } = useGetFirebaseDta<Master>(
+  const { data: masters } = useGetFirebaseData<Master>(
     FirebaseCollection.MASTERS
   );
 

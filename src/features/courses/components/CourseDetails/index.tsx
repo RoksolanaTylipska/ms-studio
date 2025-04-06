@@ -8,7 +8,6 @@ import {
   Container,
   Content,
   DayContainer,
-  DayTitle,
   Note,
   Price,
   Section,

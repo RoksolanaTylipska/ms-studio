@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { ButtonContainer, SlideContainerSecond, Title, Wrapper } from "./styled";
 import { useMediaQuery } from "@mui/material";
 import { Button } from "@/components";
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 
 function SecondSlide() {
   const { t, i18n} = useTranslation();
@@ -23,9 +24,9 @@ function SecondSlide() {
         <ButtonContainer isMobile={isMobile}>
           <Button
             children={t("button.bookAppointment")}
-            type="secondary"
-            color="dark"
-            size="large"
+            type={ButtonType.SECONDARY}
+            color={ButtonColor.DARK}
+            size={ButtonSize.LARGE}
             onClick={handleModalWindow}
           />
         </ButtonContainer>

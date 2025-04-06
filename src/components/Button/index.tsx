@@ -1,5 +1,5 @@
-//@ts-nocheck
 
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 import { StyledPrimaryButton, StyledSecondaryButton } from "./styled";
 
 export interface ButtonProps {

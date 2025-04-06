@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useFeedbackForm from "../../hooks/useFeedbackForm";
 import { Form, RatingContainer } from "./styled";
 import { feedbackServices } from "../../constants/feedbackServices";
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 
 const chatId = process.env.NEXT_PUBLIC_TELEGRAM_FEEDBACK_chatId;
 const token = process.env.NEXT_PUBLIC_TELEGRAM_FEEDBACK_token;
@@ -57,7 +58,6 @@ function FeedbackForm() {
         <InputPhone
           name="phone"
           control={control}
-          errors={errors}
           label={t("modalWindow.input.phone_label")}
           required
         />
@@ -127,9 +127,9 @@ function FeedbackForm() {
         <Button
           children={t("feedback.submit")}
           onClick={handleSubmit(onSubmit)}
-          type="primary"
-          color="dark"
-          size="medium"
+          type={ButtonType.PRIMARY}
+          color={ButtonColor.DARK}
+          size={ButtonSize.MEDIUM}
         />
       </Form>
       <ToastContainer position="top-center" autoClose={4000} />

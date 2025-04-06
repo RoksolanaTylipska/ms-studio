@@ -1,7 +1,8 @@
+import { Loader } from "@/components";
 import { Feedback } from "@/features/home/components/Feedback/types/feedback";
 import { FirebaseCollection } from "@/helpers/addFirebaseData";
 import { formatDate } from "@/helpers/formatDate";
-import useGetFirebaseDta from "@/hooks/useGetFirebaseDta";
+import useGetFirebaseData from "@/hooks/useGetFirebaseData";
 import { useResponsive } from "@/hooks/useResponsive";
 import { Rating, Typography } from "@mui/material";
 import Image from "next/image";
@@ -14,14 +15,13 @@ import {
   ImageContainer,
   List,
 } from "./styled";
-import { Loader } from "@/components";
 
 function FeedbackList() {
   const {
     data: feedbacks,
     loading,
     error,
-  } = useGetFirebaseDta<Feedback>(FirebaseCollection.FEEDBACKS);
+  } = useGetFirebaseData<Feedback>(FirebaseCollection.FEEDBACKS);
   const { t } = useTranslation();
   const { isMobile } = useResponsive();
 
