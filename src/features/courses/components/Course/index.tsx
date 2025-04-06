@@ -16,6 +16,7 @@ import {
 } from "./styled";
 import { Button } from "@/components";
 import { useCourse } from "../../hooks/useCourse";
+import { ButtonSize, ButtonType } from "@/types/button";
 
 function Course({ title, variants, backgroundColor }: CourseType) {
   const { t } = useTranslation();
@@ -49,8 +50,8 @@ function Course({ title, variants, backgroundColor }: CourseType) {
             <ButtonContainer>
               <Button
                 children={t("courses.more")}
-                type="primary"
-                size="medium"
+                type={ButtonType.PRIMARY}
+                size={ButtonSize.MEDIUM}
                 onClick={() => handleMoreDetails(variant.link || "")}
               />
             </ButtonContainer>

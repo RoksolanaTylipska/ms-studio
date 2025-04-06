@@ -13,6 +13,7 @@ import {
   Title,
 } from "./styled";
 import { Button } from "@/components";
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 
 function FirstSlide() {
   const { t } = useTranslation();
@@ -32,9 +33,9 @@ function FirstSlide() {
         <Button
           children={t("button.bookAppointment")}
           onClick={handleModalWindow}
-          type="secondary"
-          color="light"
-          size="large"
+          type={ButtonType.SECONDARY}
+          color={ButtonColor.LIGHT}
+          size={ButtonSize.LARGE}
         />
       </ButtonContainer>
     </SlideContainerFirst>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
 import { FirebaseCollection } from "@/helpers/addFirebaseData";
 
-const useGetFirebaseDta = <T = any>(collectionName: FirebaseCollection) => {
+const useGetFirebaseData = <T = unknown>(collectionName: FirebaseCollection) => {
   const [data, setData] = useState<(T & { id: string })[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,4 +31,4 @@ const useGetFirebaseDta = <T = any>(collectionName: FirebaseCollection) => {
   return { data, loading, error };
 };
 
-export default useGetFirebaseDta;
+export default useGetFirebaseData;

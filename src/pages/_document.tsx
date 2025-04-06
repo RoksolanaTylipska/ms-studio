@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/assets/icons/logo-gold.png" />
+        <link rel="icon" href="/logo-gold_withoutText.png" />
         
         {/* Google Analytics – load script */}
         <script

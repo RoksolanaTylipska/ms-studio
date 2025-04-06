@@ -1,11 +1,10 @@
-import { Course, CourseSection } from "../types/courseDetails";
-import { DayContainer, DayTitle } from "../components/CourseDetails/styled";
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { DayContainer, DayTitle } from "../components/CourseDetails/styled";
+import { Course, CourseSection } from "../types/courseDetails";
 
-export const useCourseDetails = ({ course }: {course: Course}) => {
+export const useCourseDetails = ({ course }: { course: Course }) => {
   const { t } = useTranslation();
-
 
   const renderDayContainer = (data: CourseSection) => {
     const title = t(data.title);
@@ -42,7 +41,6 @@ export const useCourseDetails = ({ course }: {course: Course}) => {
       ...Object.keys(course.practice || {}),
     ])
   );
-
 
   return { days, renderDayContainer };
 };

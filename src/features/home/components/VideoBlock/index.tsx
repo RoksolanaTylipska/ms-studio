@@ -9,8 +9,8 @@ import { VideoContainer } from "./styled";
 
 declare global {
   interface Window {
-    fbq?: Function;
-    dataLayer: any;
+    fbq?: (...args: any[]) => void;
+    dataLayer: Record<string, any>[];
   }
 }
 

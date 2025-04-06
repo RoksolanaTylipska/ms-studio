@@ -4,7 +4,7 @@ import i18n from "@/I18n/i18nConfig";
 import { TitleStars } from "@/components";
 import { ROUTES } from "@/constants/routes";
 import { FirebaseCollection } from "@/helpers/addFirebaseData";
-import useGetFirebaseDta from "@/hooks/useGetFirebaseDta";
+import useGetFirebaseDta from "@/hooks/useGetFirebaseData";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";

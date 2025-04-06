@@ -14,6 +14,7 @@ import {
   TextContainer,
 } from "./styled";
 import { Button, InputField, InputPhone } from "@/components";
+import { ButtonColor, ButtonType } from "@/types/button";
 
 export const Appointment = ({
   onSubmit,
@@ -97,8 +98,8 @@ export const Appointment = ({
             />
             <Button
               children={t("button.bookAppointment")}
-              color="dark"
-              type="primary"
+              color={ButtonColor.DARK}
+              type={ButtonType.PRIMARY}
             />
           </InputsContainer>
         </form>

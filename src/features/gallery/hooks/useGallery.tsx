@@ -8,7 +8,6 @@ export const useGallery = (folder = 'ms-studio-gallery/gallery') => {
   const [nextCursor, setNextCursor] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  console.log(images)
   const sentinelRef = useRef(null);
   const hasFetchedInitialRef = useRef(false);
 

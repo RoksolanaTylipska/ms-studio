@@ -12,6 +12,7 @@ import {
   Title,
 } from "./styled";
 import { Button, CreateBeautyWithLove } from "@/components";
+import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 
 function Intro() {
   const { t } = useTranslation();
@@ -44,9 +45,9 @@ function Intro() {
           <Button
             children={t("button.bookAppointment")}
             onClick={handleModalWindow}
-            type="primary"
-            color="dark"
-            size="medium"
+            type={ButtonType.PRIMARY}
+            color={ButtonColor.DARK}
+            size={ButtonSize.MEDIUM}
           />
 
           <CreateBeautyWithLove />

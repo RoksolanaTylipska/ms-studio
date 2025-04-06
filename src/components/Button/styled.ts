@@ -1,11 +1,13 @@
+import { ButtonColor, ButtonSize } from "@/types/button";
 import { Theme, styled } from "@mui/material/styles";
 
-export interface ButtonProps {
-  size?: string;
-  theme: Theme
+interface ButtonProps {
+  size?: ButtonSize;
+  color?: ButtonColor;
+  theme?: Theme;
 }
 
-export const StyledPrimaryButton = styled("button")(({ theme, size }: ButtonProps) => ({
+export const StyledPrimaryButton = styled("button")<ButtonProps>(({ theme, size }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -78,7 +80,7 @@ export const StyledPrimaryButton = styled("button")(({ theme, size }: ButtonProp
   },
 }));
 
-export const StyledSecondaryButton = styled("button")(({ theme, size, color }: any) => ({
+export const StyledSecondaryButton = styled("button")<ButtonProps>(({ theme, size, color }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
