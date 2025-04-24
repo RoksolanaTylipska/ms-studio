@@ -33,6 +33,9 @@ interface ComplexProps {
 function LaserComplex({ complexes }: ComplexProps) {
   const { t } = useTranslation();
 
+  const isOlexandrut = complexes[0].prices.length === 1;
+  const discount = isOlexandrut ? Array(discountsComplexes[1])  : discountsComplexes
+  
   return (
     <>
       <AccordionDetails id="panel4-header" sx={{ padding: "0px" }}>
@@ -53,15 +56,17 @@ function LaserComplex({ complexes }: ComplexProps) {
                     </Typography>
                   </TableSortLabel>
                 </TableCell>
-                {discountsComplexes.map((discount, i) => (
+                {discount.map((discount, i) => (
                   <TableCell sx={{ borderColor: "transparent" }}>
                     <Discounts>
                       <Box key={i} textAlign="center">
                         <DiscountNumber>{discount.label}</DiscountNumber>
                       </Box>
-                      <SessionsNumber>
-                        {t(`${discount.sessions}`)}
-                      </SessionsNumber>
+                      {!isOlexandrut && (
+                        <SessionsNumber>
+                          {t(`${discount.sessions}`)}
+                        </SessionsNumber>
+                      )}
                     </Discounts>
                   </TableCell>
                 ))}
