@@ -25,10 +25,12 @@ interface ZonesProps {
 function Zones({ zones, discounts = true }: ZonesProps) {
   const { t } = useTranslation();
 
+  const isOlexandrut = zones[0].variants[0].price.length === 1;
+
   return (
     <Accordion>
       <AccordionDetails sx={{ padding: "0px 0px 20px 0px" }}>
-        {discounts && (
+        {discounts && !isOlexandrut && (
           <Box
             sx={{
               display: "flex",

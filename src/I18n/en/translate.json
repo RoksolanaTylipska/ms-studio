@@ -3,12 +3,13 @@
     "header": {
       "home": "Home",
       "about": "About us",
-      "services": "Services",
+      "services": "Services and prices",
       "prices": "Prices",
       "courses": "Courses",
       "gallery": "Gallery",
       "contacts": "Contacts",
-      "services&prices": "Services and prices"
+      "services&prices": "Services and prices",
+      "preparation": "Preparation for"
     },
     "footer": {
       "address": "8 Olena Stepanivna Street, Lviv",
@@ -28,6 +29,8 @@
     },
     "services": {
       "lazer": "Laser epilation",
+      "lazer_oleksandryt_name": "Alexandrite laser DEKA MOTUS AX",
+      "lazer_diod_name": "Diode laser Alvi Prague",   
       "lazer_diod": "Laser hair removal with a diode laser",
       "lazer_oleksandryt": "Laser hair removal with an alexandrite laser",
       "electroepilation": "Electroepilation",
@@ -63,7 +66,8 @@
       "complexes": {
         "mini": "Bikini + Armpits",
         "midi": "Bikini + Armpits + Shins",
-        "maxi": "Bikini + Armpits + Legs Full"
+        "maxi": "Bikini + Armpits + Legs Full",
+        "ultra": "Bikini + Underarms + Full Legs + Arms up to elbows"
       }
     },
     "zones": {
@@ -95,7 +99,8 @@
         "eyebrows": "Eyebrows",
         "cheeksLine": "Cheeks along the line",
         "cheeksFully": "Cheeks fully",
-        "noseEars": "Nose / ears"
+        "noseEars": "Nose / ears",
+        "neck": "Front neck / Nape"
       },
       "bodyList": {
         "areola": "Areola",
@@ -105,7 +110,7 @@
         "lowerBack": "Lower Back",
         "back": "Back",
         "buttocks": "Buttocks",
-        "сhest": "Сhest"
+        "chest": "Chest"
       }
     },
     "electroepilation": {

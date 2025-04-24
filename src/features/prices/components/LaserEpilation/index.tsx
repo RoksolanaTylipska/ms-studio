@@ -14,21 +14,36 @@ function LaserEpilation() {
 
   return (
     <>
-      <AccordionDetails>
-        {lazerEpilation.map((item, i) => (
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMore />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              {t(`${item.gender}`)}
-            </AccordionSummary>
-            <LaserComplex complexes={item.complexes} />
-            <LaserZone zones={item.zones} />
-          </Accordion>
-        ))}
-      </AccordionDetails>
+      {lazerEpilation.map((type, i) => (
+        <Accordion key={`type-${i}`}>
+          <AccordionSummary
+            expandIcon={<ExpandMore />}
+            aria-controls="panel2-content"
+            id="panel2-header"
+          >
+            {t(`${type.lazerType}`)}
+          </AccordionSummary>
+
+          <AccordionDetails>
+            {type.info.map((group, j) => (
+              <Accordion key={`group-${i}-${j}`}>
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  aria-controls="panel2-content"
+                  id="panel2-header"
+                >
+                  {t(group.gender)}
+                </AccordionSummary>
+
+                <AccordionDetails>
+                  {group.complexes?.length && <LaserComplex complexes={group.complexes} />}
+                  <LaserZone zones={group.zones} />
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </>
   );
 }

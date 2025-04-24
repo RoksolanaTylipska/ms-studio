@@ -8,7 +8,8 @@
       "courses": "Курси",
       "gallery": "Галерея",
       "contacts": "Контакти",
-      "services&prices": "Послуги та ціни"
+      "services&prices": "Послуги та ціни",
+      "preparation": "Підготовка"
     },
     "footer": {
       "address": "вул. Олени Степанівни, 8, Львів",
@@ -28,6 +29,8 @@
     },
     "services": {
       "lazer": "Лазерна епіляція",
+      "lazer_oleksandryt_name": "Олександритовим лазером DEKA MOTUS AX",
+      "lazer_diod_name": "Діодним лазером Alvi Prague",
       "lazer_diod": "Лазерна епіляція діодним лазером",
       "lazer_oleksandryt": "Лазерна епіляція олександритовим лазером",
       "electroepilation": "Eлектроепіляція",
@@ -63,7 +66,8 @@
       "complexes": {
         "mini": "Бікіні + пахви",
         "midi": "Бікіні + пахви + гомілки",
-        "maxi": "Бікіні + пахви + Ноги Повністю"
+        "maxi": "Бікіні + пахви + Ноги Повністю",
+        "ultra": "Бікіні + пахви + Ноги Повністю + Руки до ліктя"
       }
     },
     "zones": {
@@ -95,7 +99,8 @@
         "eyebrows": "Брови",
         "cheeksLine": "Щоки по лінії",
         "cheeksFully": "Щоки повністю",
-        "noseEars": "Ніс / Вуха"
+        "noseEars": "Ніс / Вуха",
+        "neck": "Шия передня частина / потилиця"
       },
       "bodyList": {
         "areola": "Ареол грудей",
@@ -105,7 +110,7 @@
         "lowerBack": "Поперек",
         "back": "Спина",
         "buttocks": "Сідниці",
-        "сhest": "Груди"
+        "chest": "Груди"
       }
     },
     "electroepilation": {
