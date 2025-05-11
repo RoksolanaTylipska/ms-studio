@@ -36,8 +36,12 @@ function Masters() {
   const { data: masters } = useGetFirebaseDta<Master>(
     FirebaseCollection.MASTERS
   );
+  const excludedIds = ["Sloboda", "Pavelchuk", "Ursalova"];
 
   const sortedMasters = useMemo(() => getSortedMasters(masters), [masters]);
+  const filteredMasters = sortedMasters.filter(
+    (master) => !excludedIds.includes(master.id)
+  );
 
   return (
     <MastersContainer>
@@ -70,7 +74,7 @@ function Masters() {
           },
         }}
       >
-        {sortedMasters.map((master, i) => (
+        {filteredMasters.map((master, i) => (
           <SwiperSlide
             key={i}
             style={{ display: "flex", justifyContent: "center" }}
