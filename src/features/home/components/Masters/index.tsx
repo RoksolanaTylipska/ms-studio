@@ -36,7 +36,7 @@ function Masters() {
   const { data: masters } = useGetFirebaseDta<Master>(
     FirebaseCollection.MASTERS
   );
-  const excludedIds = ["Sloboda", "Pavelchuk", "Ursalova"];
+  const excludedIds = ["Sloboda"];
 
   const sortedMasters = useMemo(() => getSortedMasters(masters), [masters]);
   const filteredMasters = sortedMasters.filter(
