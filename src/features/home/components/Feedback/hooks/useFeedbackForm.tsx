@@ -13,7 +13,7 @@ interface useFeedbackFormProps {
   reset: () => void;
 }
 
-const excludedIds = ["Kril", "Semak", "Ursalova"];
+const excludedIds = ["Kril", "Semak", "Sloboda"];
 
 const useFeedbackForm = ({
   success,
