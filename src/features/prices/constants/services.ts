@@ -1,6 +1,5 @@
 import Electroepilation from "@/features/prices/components/Electroepilation";
 import LaserEpilation from "@/features/prices/components/LaserEpilation";
-import OtherServices from "@/features/prices/components/OtherServices";
 import Waxing from "@/features/prices/components/Waxing";
 
 export const services = [
@@ -16,10 +15,10 @@ export const services = [
     title: "services.waxing",
     Component: Waxing,
   },
-  {
-    title: "services.other",
-    Component: OtherServices,
-  },
+  // {
+  //   title: "services.other",
+  //   Component: OtherServices,
+  // },
 ];
 
 export const modalServices = [

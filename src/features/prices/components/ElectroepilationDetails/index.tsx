@@ -13,12 +13,8 @@ import {
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { useTranslation } from "react-i18next";
-import {
-  LabelTypography,
-  TextTypography,
-  TrialBox,
-} from "./styled";
 import { electroepilation } from "../../constants/electroepilation";
+import { LabelTypography, TextTypography, TrialBox } from "./styled";
 
 function ElectroepilationDetails() {
   const { t } = useTranslation();
@@ -39,16 +35,27 @@ function ElectroepilationDetails() {
           </Typography>
         </TrialBox>
 
-        <TableContainer sx={{overflow: "hidden"}}>
+        <TableContainer sx={{ overflow: "hidden" }}>
           {electroepilation.map((item, i) => (
             <Table>
               <TableHead sx={{ borderColor: "transparent" }}>
                 <TableRow>
-                  <TableCell sx={{ width: "70%", borderColor: "transparent", padding: "0px" }}>
+                  <TableCell
+                    sx={{
+                      width: "70%",
+                      borderColor: "transparent",
+                      padding: "0px",
+                    }}
+                  >
                     <LabelTypography>{t(`${item.masterQnt}`)}</LabelTypography>
                   </TableCell>
                   {item.values.map((value, i) => (
-                    <TableCell sx={{ borderColor: "transparent", padding: isMobile ? "0px" : "16px"}}>
+                    <TableCell
+                      sx={{
+                        borderColor: "transparent",
+                        padding: isMobile ? "0px" : "16px",
+                      }}
+                    >
                       <LabelTypography variant="bodyComfortaa">
                         {t(`${value}`)}
                       </LabelTypography>
@@ -65,17 +72,19 @@ function ElectroepilationDetails() {
                       <TextTypography>{t(variant.label)}</TextTypography>
                     </TableCell>
                     <TableCell sx={{ borderColor: "transparent" }}>
-                    <TextTypography>{variant.time} {t("general.min")}</TextTypography>
+                      <TextTypography>
+                        {variant.time} {t("general.min")}
+                      </TextTypography>
                     </TableCell>
                     <TableCell
                       sx={{ textAlign: "center", borderColor: "transparent" }}
                     >
-                       <TextTypography>{variant.price[0]} ₴</TextTypography>
+                      <TextTypography>{variant.price[0]} ₴</TextTypography>
                     </TableCell>
                     <TableCell
                       sx={{ textAlign: "center", borderColor: "transparent" }}
                     >
-                     <TextTypography>{variant.price[1]} ₴</TextTypography> 
+                      <TextTypography>{variant.price[1]} ₴</TextTypography>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -83,6 +92,17 @@ function ElectroepilationDetails() {
             </Table>
           ))}
         </TableContainer>
+        <TrialBox>
+          <Typography variant="bodyCaveat">
+            {t("electroepilation.billedSeparately")}
+          </Typography>
+          <Typography variant="bodyCaveat">
+            {t("electroepilation.needle")}
+          </Typography>
+          <Typography variant="bodyCaveat">
+            {t("electroepilation.anesthesia")}
+          </Typography>
+        </TrialBox>
       </AccordionDetails>
     </Accordion>
   );
