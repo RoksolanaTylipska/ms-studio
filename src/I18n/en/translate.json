@@ -30,7 +30,7 @@
     "services": {
       "lazer": "Laser epilation",
       "lazer_oleksandryt_name": "Alexandrite laser DEKA MOTUS AX",
-      "lazer_diod_name": "Diode laser Alvi Prague",   
+      "lazer_diod_name": "Diode laser Alvi Prague",
       "lazer_diod": "Laser hair removal with a diode laser",
       "lazer_oleksandryt": "Laser hair removal with an alexandrite laser",
       "electroepilation": "Electroepilation",
@@ -116,7 +116,7 @@
     "electroepilation": {
       "trial": "Trial procedure + consultation",
       "trialTime": "45 min ",
-      "trialPrice": "600 uah",
+      "trialPrice": "600 / 700 uah -  Master / TOP Master",
       "time": "Time",
       "master": "Master",
       "expertMaster": "Expert master",
@@ -128,8 +128,8 @@
         "bikini": "Deep bikini electroepilation",
         "upTo30minutes": "Session up to 30 minutes"
       },
-      "needle": "Single-use needle",
-      "anesthesia": "Anesthesia",
+      "needle": "Single-use needle- 150 uah",
+      "anesthesia": "Anesthesia  - 200 uah",
       "billedSeparately": "Billed separately and added to each master’s price list"
     },
     "general": {
