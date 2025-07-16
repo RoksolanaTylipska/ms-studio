@@ -1,3 +1,4 @@
+import { SocialMedia } from "@/components";
 import { ROUTES } from "@/constants/routes";
 import { useResponsive } from "@/hooks/useResponsive";
 import Image from "next/image";
@@ -14,7 +15,6 @@ import {
   TextContainer,
   TopInfo,
 } from "./styled";
-import { SocialMedia } from "@/components";
 
 export const Footer = () => {
   const { t } = useTranslation();
@@ -43,14 +43,14 @@ export const Footer = () => {
 
         <TextContainer sx={{ alignItems: "center" }}>
           <TopInfo>
-            <Link href={"/"} style={{margin: "auto"}}>
-            <Image
-              src="/assets/icons/logo-brown.svg"
-              alt="Logo"
-              width={75}
-              height={75}
-              style={{ margin: "auto", paddingBottom: "10px" }}
-            />
+            <Link href={"/"} style={{ margin: "auto" }}>
+              <Image
+                src="/assets/icons/logo-brown.svg"
+                alt="Logo"
+                width={75}
+                height={75}
+                style={{ margin: "auto", paddingBottom: "10px" }}
+              />
             </Link>
             <ScheduleText variant="bodyComfortaa">
               {t("footer.schedule")}
@@ -62,6 +62,24 @@ export const Footer = () => {
               {t("footer.privacy_policy")}
             </PolicyText>
           </Link>
+
+          <PolicyText
+            variant="bodyComfortaa"
+            style={{ minWidth: "max-content" }}
+          >
+            <Link
+              href="mailto:roksolana.tylipska@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PolicyText variant="bodyComfortaa">
+                {t("footer.developed")}{" "}
+                <span style={{ textDecoration: "underline" }}>
+                  Roksolana Tylipska{" "}
+                </span>
+              </PolicyText>
+            </Link>
+          </PolicyText>
         </TextContainer>
 
         {!isMobile && (
