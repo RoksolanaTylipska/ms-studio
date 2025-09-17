@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/logo-gold_withoutText.png" />
-        
         {/* Google Analytics – load script */}
         <script
           async
@@ -28,6 +27,21 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, w, s) {
+                var widgetHash = 'n4bcvh5gnl6q2q4khp2x', gcw = d.createElement(s); 
+                gcw.type = 'text/javascript'; 
+                gcw.async = true;
+                gcw.src = '//widgets.binotel.com/getcall/widgets/' + widgetHash + '.js';
+                var sn = d.getElementsByTagName(s)[0]; 
+                sn.parentNode.insertBefore(gcw, sn);
+              })(document, window, 'script');
+            `,
+          }}
+        />
       </body>
     </Html>
   );

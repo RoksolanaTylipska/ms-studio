@@ -2,7 +2,6 @@
 
 import { I18nProvider } from "@/I18n/I18nProvider";
 import { Footer, Loader, ModalWindow } from "@/components";
-import { PhoneAppointment } from "@/components/PhoneAppointment";
 import { ModalWindowProvider } from "@/context/ModalContext";
 import Header from "@/features/header";
 import { theme } from "@/styles";
@@ -52,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   <ModalWindow />
                   <main style={{ flex: 1 }}>
                     <Component {...pageProps} />
-                    {isMobile && <PhoneAppointment />}
+                    {/* {isMobile && <PhoneAppointment />} */}
                   </main>
                   <Footer />
                 </>
