@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const PhotoContainer = styled(Box)(({ theme }) => ({
-  width: "100vw",
   height: "80vh",
   backgroundImage: 'url("/assets/photos/touch.jpg")',
   backgroundRepeat: "no-repeat",
