@@ -28,7 +28,8 @@ export default function Document() {
         <Main />
         <NextScript />
 
-        <script
+        {/* Binotel – load script */}
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(d, w, s) {
@@ -41,7 +42,7 @@ export default function Document() {
               })(document, window, 'script');
             `,
           }}
-        />
+        /> */}
       </body>
     </Html>
   );
