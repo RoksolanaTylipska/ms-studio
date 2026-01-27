@@ -21,10 +21,7 @@ import {
   ComplexTime,
   ComplexTimeContainer,
   ComplexType,
-  ComplexZone,
-  DiscountNumber,
-  Discounts,
-  SessionsNumber,
+  ComplexZone
 } from "./styled";
 
 interface ComplexProps {
@@ -34,8 +31,8 @@ function LaserComplex({ complexes }: ComplexProps) {
   const { t } = useTranslation();
 
   const isOlexandrut = complexes[0].prices.length === 1;
-  const discount = isOlexandrut ? Array(discountsComplexes[1])  : discountsComplexes
-  
+  const discount = isOlexandrut ? Array(discountsComplexes[1]) : discountsComplexes
+
   return (
     <>
       <AccordionDetails id="panel4-header" sx={{ padding: "0px" }}>
@@ -48,6 +45,7 @@ function LaserComplex({ complexes }: ComplexProps) {
                     padding: "0px",
                     borderColor: "transparent",
                     width: "70%",
+                    paddingBottom: "20px",
                   }}
                 >
                   <TableSortLabel>
@@ -56,8 +54,8 @@ function LaserComplex({ complexes }: ComplexProps) {
                     </Typography>
                   </TableSortLabel>
                 </TableCell>
-                {discount.map((discount, i) => (
-                  <TableCell sx={{ borderColor: "transparent" }}>
+                {/* {discount.map((discount, i) => (
+                  <TableCell key={i} sx={{ borderColor: "transparent" }}>
                     <Discounts>
                       <Box key={i} textAlign="center">
                         <DiscountNumber>{discount.label}</DiscountNumber>
@@ -69,12 +67,12 @@ function LaserComplex({ complexes }: ComplexProps) {
                       )}
                     </Discounts>
                   </TableCell>
-                ))}
+                ))} */}
               </TableRow>
             </TableHead>
             <TableBody>
               {complexes.map((complex, i) => (
-                <TableRow>
+                <TableRow key={i}>
                   <TableCell
                     sx={{ padding: "0px", borderColor: "transparent" }}
                   >
@@ -100,7 +98,7 @@ function LaserComplex({ complexes }: ComplexProps) {
                     </ComplexNameContainer>
                   </TableCell>
                   {complex.prices.map((price, i) => (
-                    <TableCell sx={{ borderColor: "transparent" }}>
+                    <TableCell key={i} sx={{ borderColor: "transparent", textAlign: "right", paddingRight: "50px" }}>
                       <ComplexPrice variant="bodyComfortaa" key={i}>
                         {price}₴
                       </ComplexPrice>
