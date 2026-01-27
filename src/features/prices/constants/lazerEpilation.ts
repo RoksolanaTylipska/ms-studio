@@ -1,4 +1,3 @@
-import { LazerEpilation } from "@/features/prices/types/lazerEpilation";
 
 export const discountsComplexes = [
   { label: "-25%", sessions: "services.sessions10" },
@@ -12,7 +11,7 @@ export const discountsZones = [
 ];
 
 export const lazerEpilation = [
-  {lazerType: "services.lazer_oleksandryt_name", 
+  {lazerType: "services.lazer_oleksandryt_name",
   info:  [ {
     title: "services.lazer",
     gender: "services.gender.women",
@@ -99,7 +98,7 @@ export const lazerEpilation = [
     gender: "services.gender.men",
     complex: "services.complex",
     zone: "services.zone",
-    
+
     zones: [
       {
         title: "zones.bikini",
@@ -162,19 +161,19 @@ info:   [{
       type: "MINI",
       time: "30 хв",
       name: "lazerEpilation.complexes.mini",
-      prices: [920, 1040, 1150],
+      prices: [1150],
     },
     {
       type: "MIDI",
       time: "45 хв",
       name: "lazerEpilation.complexes.midi",
-      prices: [1440, 1620, 1800],
+      prices: [1800],
     },
     {
       type: "MAXI",
       time: "60 хв",
       name: "lazerEpilation.complexes.maxi",
-      prices: [1920, 2160, 2400],
+      prices: [2400],
     },
   ],
   zones: [
@@ -209,12 +208,15 @@ info:   [{
         { label: "zones.faceList.chin", price: [240, 300] },
         { label: "zones.faceList.cheeks", price: [240, 300] },
         { label: "zones.faceList.eyebrows", price: [240, 300] },
+        { label: "zones.faceList.neck", price: [0, 500] },
+
       ],
     },
     {
       title: "zones.body",
       variants: [
         { label: "zones.bodyList.areola", price: [240, 300] },
+        { label: "zones.bodyList.fullChest", price: [480, 600] },
         { label: "zones.bodyList.stomachLine", price: [240, 300] },
         { label: "zones.bodyList.fullStomach", price: [480, 600] },
         { label: "zones.bodyList.lowerBack", price: [480, 600] },
@@ -229,26 +231,26 @@ info:   [{
   gender: "services.gender.men",
   complex: "services.complex",
   zone: "services.zone",
-  complexes: [
-    {
-      type: "MINI",
-      time: "30 хв",
-      name: "lazerEpilation.complexes.mini",
-      prices: [1240, 1395, 1550],
-    },
-    {
-      type: "MIDI",
-      time: "45 хв",
-      name: "lazerEpilation.complexes.midi",
-      prices: [2000, 2250, 2500],
-    },
-    {
-      type: "MAXI",
-      time: "60 хв",
-      name: "lazerEpilation.complexes.maxi",
-      prices: [2400, 2700, 3000],
-    },
-  ],
+  // complexes: [
+  //   {
+  //     type: "MINI",
+  //     time: "30 хв",
+  //     name: "lazerEpilation.complexes.mini",
+  //     prices: [1240, 1395, 1550],
+  //   },
+  //   {
+  //     type: "MIDI",
+  //     time: "45 хв",
+  //     name: "lazerEpilation.complexes.midi",
+  //     prices: [2000, 2250, 2500],
+  //   },
+  //   {
+  //     type: "MAXI",
+  //     time: "60 хв",
+  //     name: "lazerEpilation.complexes.maxi",
+  //     prices: [2400, 2700, 3000],
+  //   },
+  // ],
   zones: [
     {
       title: "zones.bikini",
@@ -281,19 +283,20 @@ info:   [{
         { label: "zones.faceList.upperLip", price: [320, 400] },
         { label: "zones.faceList.foreheadLine", price: [320, 400] },
         { label: "zones.faceList.chin", price: [440, 550] },
-        { label: "zones.faceList.cheeksLine", price: [320, 400] },
-        { label: "zones.faceList.cheeksFully", price: [440, 550] },
+        { label: "zones.faceList.cheeks", price: [440, 550] },
         { label: "zones.faceList.eyebrows", price: [320, 400] },
+        { label: "zones.faceList.neck", price: [0, 700] },
       ],
     },
     {
       title: "zones.body",
       variants: [
-        { label: "zones.bodyList.сhest", price: [520, 650] },
+        { label: "zones.bodyList.chest", price: [520, 650] },
+        { label: "zones.bodyList.fullChest", price: [1000, 800] },
         { label: "zones.bodyList.stomachLine", price: [240, 300] },
         { label: "zones.bodyList.fullStomach", price: [520, 650] },
         { label: "zones.bodyList.lowerBack", price: [520, 650] },
-        { label: "zones.bodyList.back", price: [800, 1000] },
+        { label: "zones.bodyList.back", price: [800, 1300] },
         { label: "zones.bodyList.buttocks", price: [600, 800] },
       ],
     },

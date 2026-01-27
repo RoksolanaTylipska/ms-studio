@@ -97,7 +97,7 @@
         "foreheadLine": "Лінія чола",
         "chin": "Підборіддя",
         "cheeks": "Щоки",
-        "eyebrows": "Брови",
+        "eyebrows": "Брови + міжбрів'я",
         "cheeksLine": "Щоки по лінії",
         "cheeksFully": "Щоки повністю",
         "noseEars": "Ніс / Вуха",
@@ -105,7 +105,7 @@
       },
       "bodyList": {
         "areola": "Ареол грудей",
-        "areolaFullChest": "Ареол грудей / груди повністю",
+        "fullChest": "Груди повністю",
         "stomachLine": "Лінія живота",
         "fullStomach": "Живіт повністю",
         "lowerBack": "Поперек",

@@ -1,21 +1,16 @@
 "use client";
 
-import { discountsZones } from "@/features/prices/constants/lazerEpilation";
 import { Zone } from "@/features/prices/types/zones";
 import { Box, Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { useTranslation } from "react-i18next";
 import {
-  DiscountBox,
-  DiscountNumber,
-  Discounts,
   LabelPriceContainer,
   PricesBox,
-  SessionsNumber,
   ZonePrice,
   ZoneTitle,
-  ZonesContainer,
+  ZonesContainer
 } from "./styled";
 
 interface ZonesProps {
@@ -38,7 +33,7 @@ function Zones({ zones, discounts = true }: ZonesProps) {
               justifyContent: "end",
             }}
           >
-            <DiscountBox>
+            {/* <DiscountBox>
               {discountsZones.map((discount, i) => (
                 <Discounts>
                   <Box key={i} textAlign="center">
@@ -49,7 +44,7 @@ function Zones({ zones, discounts = true }: ZonesProps) {
                   <SessionsNumber>{t(`${discount.sessions}`)}</SessionsNumber>
                 </Discounts>
               ))}
-            </DiscountBox>
+            </DiscountBox> */}
           </Box>
         )}
         {zones.map((zone, i) => (
@@ -61,9 +56,9 @@ function Zones({ zones, discounts = true }: ZonesProps) {
                   {t(`${variant.label}`)}
                 </Typography>
                 <PricesBox>
-                  <ZonePrice variant="bodyComfortaa">
+                  {/* <ZonePrice variant="bodyComfortaa">
                     {variant.price[0]}₴
-                  </ZonePrice>
+                  </ZonePrice> */}
                   {variant.price[1] && (
                     <ZonePrice variant="bodyComfortaa">
                       {variant.price[1]}₴
