@@ -15,7 +15,7 @@ export const electroepilation: Electroepilation[] = [
       {
         label: "electroepilation.zones.upTo30minutes",
         time: 30,
-        price: [700, 600],
+        price: [700, 700],
       },
     ],
   },
