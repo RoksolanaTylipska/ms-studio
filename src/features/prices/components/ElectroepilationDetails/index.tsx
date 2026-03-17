@@ -37,7 +37,7 @@ function ElectroepilationDetails() {
 
         <TableContainer sx={{ overflow: "hidden" }}>
           {electroepilation.map((item, i) => (
-            <Table>
+            <Table key={i}>
               <TableHead sx={{ borderColor: "transparent" }}>
                 <TableRow>
                   <TableCell
@@ -50,7 +50,7 @@ function ElectroepilationDetails() {
                     <LabelTypography>{t(`${item.masterQnt}`)}</LabelTypography>
                   </TableCell>
                   {item.values.map((value, i) => (
-                    <TableCell
+                    <TableCell key={i}
                       sx={{
                         borderColor: "transparent",
                         padding: isMobile ? "0px" : "16px",

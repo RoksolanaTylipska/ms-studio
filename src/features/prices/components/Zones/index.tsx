@@ -56,9 +56,9 @@ function Zones({ zones, discounts = true }: ZonesProps) {
                   {t(`${variant.label}`)}
                 </Typography>
                 <PricesBox>
-                  {/* <ZonePrice variant="bodyComfortaa">
+                  <ZonePrice variant="bodyComfortaa">
                     {variant.price[0]}₴
-                  </ZonePrice> */}
+                  </ZonePrice>
                   {variant.price[1] && (
                     <ZonePrice variant="bodyComfortaa">
                       {variant.price[1]}₴
