@@ -7,6 +7,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import FirstSlide from "./components/FirstSlide";
 import SecondSlide from "./components/SecondSlide";
+import ThirdSlide from "./components/ThirdSlide";
 import { SwiperStyled } from "./styled";
 
 
@@ -32,6 +33,10 @@ function WelcomeCarousel() {
 
       <SwiperSlide>
         <SecondSlide />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <ThirdSlide />
       </SwiperSlide>
     </SwiperStyled>
   );
