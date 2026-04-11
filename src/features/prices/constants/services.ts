@@ -1,4 +1,5 @@
 import Electroepilation from "@/features/prices/components/Electroepilation";
+import Endosphere from "@/features/prices/components/Endosphere";
 import LaserEpilation from "@/features/prices/components/LaserEpilation";
 import Waxing from "@/features/prices/components/Waxing";
 
@@ -14,6 +15,10 @@ export const services = [
   {
     title: "services.waxing",
     Component: Waxing,
+  },
+  {
+    title: "services.endosphere",
+    Component: Endosphere,
   },
   // {
   //   title: "services.other",

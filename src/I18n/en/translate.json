@@ -36,6 +36,7 @@
       "lazer_oleksandryt": "Laser hair removal with an alexandrite laser",
       "electroepilation": "Electroepilation",
       "waxing": "Waxing / sugaring",
+      "endosphere": "Endosphere",
       "other": "Other services",
       "otherServices": {
         "nails": "Manicure / pedicure",
@@ -112,6 +113,19 @@
         "back": "Back",
         "buttocks": "Buttocks",
         "chest": "Chest"
+      }
+    },
+    "endosphere": {
+      "zones": {
+        "fullBody": "Buttocks, arms, legs, back, abdomen, sides",
+        "legsHipsSidesAbdomen": "Legs, buttocks, sides and abdomen",
+        "legsHips": "Legs and buttocks",
+        "abdomenSides": "Abdomen and sides",
+        "face": "Face"
+      },
+      "discounts": {
+        "tenPercent": "10% discount",
+        "fifteenPercent": "15% discount"
       }
     },
     "electroepilation": {
