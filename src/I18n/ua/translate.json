@@ -106,7 +106,7 @@
         "neck": "Шия передня частина / потилиця"
       },
       "bodyList": {
-        "areola": "Ареол грудей",
+        "areolaFullChest": "Ареол грудей / груди повністю",
         "fullChest": "Груди повністю",
         "stomachLine": "Лінія живота",
         "fullStomach": "Живіт повністю",
@@ -127,6 +127,18 @@
       "discounts": {
         "tenPercent": "10% знижки",
         "fifteenPercent": "15% знижки"
+      },
+      "sessions": {
+        "one": "1 сеанс",
+        "six": "6 сеансів",
+        "twelve": "12 сеансів"
+      },
+      "time": {
+        "oneHour": "1 год",
+        "min50": "50 хв",
+        "min45": "45 хв",
+        "min40": "40 хв",
+        "min30": "30 хв"
       }
     },
     "electroepilation": {

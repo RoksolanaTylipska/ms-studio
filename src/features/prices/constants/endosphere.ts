@@ -7,33 +7,33 @@ export interface EndosphereZone {
 export const endosphere: EndosphereZone[] = [
   {
     name: "endosphere.zones.fullBody",
-    time: "1 год",
+    time: "endosphere.time.oneHour",
     prices: [1500, 8100, 15300],
   },
   {
     name: "endosphere.zones.legsHipsSidesAbdomen",
-    time: "50 хв",
+    time: "endosphere.time.min50",
     prices: [1300, 7020, 11700],
   },
   {
     name: "endosphere.zones.legsHips",
-    time: "45 хв",
+    time: "endosphere.time.min45",
     prices: [1100, 5940, 11220],
   },
   {
     name: "endosphere.zones.abdomenSides",
-    time: "40 хв",
+    time: "endosphere.time.min40",
     prices: [800, 4320, 8160],
   },
   {
     name: "endosphere.zones.face",
-    time: "30 хв",
+    time: "endosphere.time.min30",
     prices: [800, 4320, 8160],
   },
 ];
 
 export const endosphereDiscounts = [
-  { label: "1 сеанс", sessions: "" },
-  { label: "6 сеансів", sessions: "endosphere.discounts.tenPercent" },
-  { label: "12 сеансів", sessions: "endosphere.discounts.fifteenPercent" },
+  { label: "endosphere.sessions.one", sessions: "" },
+  { label: "endosphere.sessions.six", sessions: "endosphere.discounts.tenPercent" },
+  { label: "endosphere.sessions.twelve", sessions: "endosphere.discounts.fifteenPercent" },
 ];
