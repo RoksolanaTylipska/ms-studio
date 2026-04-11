@@ -36,6 +36,7 @@
       "lazer_oleksandryt": "Лазерна епіляція олександритовим лазером",
       "electroepilation": "Eлектроепіляція",
       "waxing": "Воскова депіляція / шугаринг",
+      "endosphere": "Ендосфера",
       "other": "Інші послуги",
       "otherServices": {
         "nails": "Манікюр / педікюр",
@@ -112,6 +113,19 @@
         "back": "Спина",
         "buttocks": "Сідниці",
         "chest": "Груди"
+      }
+    },
+    "endosphere": {
+      "zones": {
+        "fullBody": "Сідниці, руки, ноги, спина, живіт, боки",
+        "legsHipsSidesAbdomen": "Ноги, сідниці, боки та живіт",
+        "legsHips": "Ноги та сідниці",
+        "abdomenSides": "Живіт та боки",
+        "face": "Обличчя"
+      },
+      "discounts": {
+        "tenPercent": "10% знижки",
+        "fifteenPercent": "15% знижки"
       }
     },
     "electroepilation": {
