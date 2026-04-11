@@ -3,7 +3,7 @@
     "header": {
       "home": "Home",
       "about": "About us",
-      "services": "Services and prices",
+      "services": "Services",
       "prices": "Prices",
       "courses": "Courses",
       "gallery": "Gallery",
@@ -106,7 +106,7 @@
         "neck": "Front neck / Nape"
       },
       "bodyList": {
-        "areola": "Areola",
+        "areolaFullChest": "Areola / full chest",
         "fullChest": "Full chest",
         "stomachLine": "Stomach Line",
         "fullStomach": "Full Stomach",
@@ -127,6 +127,18 @@
       "discounts": {
         "tenPercent": "10% discount",
         "fifteenPercent": "15% discount"
+      },
+      "sessions": {
+        "one": "1 session",
+        "six": "6 sessions",
+        "twelve": "12 sessions"
+      },
+      "time": {
+        "oneHour": "1 hr",
+        "min50": "50 min",
+        "min45": "45 min",
+        "min40": "40 min",
+        "min30": "30 min"
       }
     },
     "electroepilation": {
