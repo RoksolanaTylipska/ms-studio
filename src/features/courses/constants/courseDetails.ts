@@ -113,6 +113,7 @@ export const courseDetails: Course[] = [
       title: "courses.electroepilation_qualification.diploma.title",
       description: "courses.electroepilation_qualification.diploma.topics",
     },
+    price: "courses.electroepilation_qualification.price",
   },
   {
     link: "online-consultation",
