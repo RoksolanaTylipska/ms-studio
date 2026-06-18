@@ -70,7 +70,8 @@ function CourseDetails({ course }: { course: Course }) {
         )}
 
         <Price variant="bodyCaveat">
-          {t("courses.variants.price")}: {course.price}
+          {t("courses.variants.price")}:{" "}
+          {course.price ? t(course.price, { defaultValue: course.price }) : null}
         </Price>
       </Content>
     </Container>

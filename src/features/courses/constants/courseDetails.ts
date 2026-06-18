@@ -204,7 +204,7 @@ export const courseDetails: Course[] = [
         description: "courses.waxing-advanced.practice.day3.topics",
       },
     },
-    price: "Індивідуальний 16 000 грн, Груповий (2 учениці) 10 000грн",
+    price: "courses.waxing-advanced.price",
     note: "courses.waxing-advanced.note",
   },
   {
