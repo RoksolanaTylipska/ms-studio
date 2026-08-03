@@ -7,15 +7,11 @@ import {
 } from "../helpers/addFirebaseData";
 
 interface useSendTelegramMessageProps {
-  token?: string;
-  chatId?: string;
   firebaseCollection?: FirebaseCollection;
   messageType?: MessageType;
 }
 
 export const useSendTelegramMessage = ({
-  token,
-  chatId,
   firebaseCollection = FirebaseCollection.USERS,
   messageType = MessageType.APPOINTMENT,
 }: useSendTelegramMessageProps) => {
@@ -35,11 +31,15 @@ export const useSendTelegramMessage = ({
     const message = getMessage(data, messageType);
 
     try {
-      await fetch(
-        `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-          message
-        )}`
-      );
+      const response = await fetch("/api/telegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, messageType }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to send telegram message: ${response.status}`);
+      }
 
       await addToFirebase(data);
 
