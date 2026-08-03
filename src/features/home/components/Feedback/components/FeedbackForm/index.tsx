@@ -14,15 +14,10 @@ import { Form, RatingContainer } from "./styled";
 import { feedbackServices } from "../../constants/feedbackServices";
 import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 
-const chatId = process.env.NEXT_PUBLIC_TELEGRAM_FEEDBACK_chatId;
-const token = process.env.NEXT_PUBLIC_TELEGRAM_FEEDBACK_token;
-
 function FeedbackForm() {
   const { t } = useTranslation();
 
   const { success, setSuccess, onSubmit, error } = useSendTelegramMessage({
-    chatId,
-    token,
     firebaseCollection: FirebaseCollection.FEEDBACKS,
     messageType: MessageType.FEEDBACK,
   });
