@@ -12,12 +12,19 @@ import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+import { useEffect } from "react";
 
 const GA_ID = "G-4X4Y8Q1PFQ";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  // Firebase Analytics must run on every page (ad landing pages included),
+  // but is loaded after hydration so it doesn't block rendering
+  useEffect(() => {
+    import("@/lib/firebase");
+  }, []);
 
   return (
     <I18nProvider>
