@@ -22,6 +22,11 @@ export default async function handler(req, res) {
     }
 
     const result = await query.execute();
+    // Cache on the CDN so Cloudinary's rate-limited Search API isn't hit on every visit
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=3600, stale-while-revalidate=86400"
+    );
     res.status(200).json({
       resources: result.resources,
       next_cursor: result.next_cursor || null,

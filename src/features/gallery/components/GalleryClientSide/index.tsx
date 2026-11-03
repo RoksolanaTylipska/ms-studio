@@ -1,5 +1,6 @@
 import { useGallery } from "@/features/gallery/hooks/useGallery";
 import { Box, LinearProgress } from "@mui/material";
+import { cloudinaryLoader } from "@/helpers/cloudinaryLoader";
 import Image from "next/image";
 import {
   GalleryContainer,
@@ -32,6 +33,8 @@ const GalleryClientSide = ({
           {isModalOpen && (
             <ModalContainer onClick={() => toggleOpenModal()}>
               <ModalImage
+                loader={cloudinaryLoader}
+                sizes="90vw"
                 src={selectedImage || ""}
                 alt={title ? "Certificate" : "Photo"}
                 width={900}
@@ -57,11 +60,13 @@ const GalleryClientSide = ({
             }}
           >
             <Image
+              loader={cloudinaryLoader}
               src={img.secure_url}
               key={img.public_id}
-              alt={`Gallery Image`}
-              layout="fill"
-              objectFit="cover"
+              alt={title ? "Сертифікат майстра MS Laser" : "Фото студії MS Laser"}
+              fill
+              sizes="(max-width: 767px) 100vw, (max-width: 989px) 33vw, 25vw"
+              style={{ objectFit: "cover", cursor: "pointer" }}
               onClick={() => toggleOpenModal(img.secure_url)}
             />
           </Box>

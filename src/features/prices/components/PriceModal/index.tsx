@@ -23,8 +23,18 @@ function PriceModal() {
     setPriceImage("");
   };
 
+  // Start downloading the price list as soon as the user shows intent to open it
+  const preloadImage = (image: string) => {
+    if (image) new window.Image().src = image;
+  };
+
   const renderServiceItem = (name: string, image: string) => (
-    <ServicesBox key={name} onClick={() => handleOpenModal(image)}>
+    <ServicesBox
+      key={name}
+      onClick={() => handleOpenModal(image)}
+      onMouseEnter={() => preloadImage(image)}
+      onTouchStart={() => preloadImage(image)}
+    >
       <Image
         alt="Download icon"
         width={25}
@@ -40,7 +50,13 @@ function PriceModal() {
     <>
       {isModalOpen && (
         <ModalContainer onClick={handleCloseModal}>
-          <Image src={priceImage} alt="Price list" width={900} height={600} />
+          <Image
+            src={priceImage}
+            alt="Прайс MS Laser"
+            width={900}
+            height={600}
+            unoptimized
+          />
         </ModalContainer>
       )}
 
