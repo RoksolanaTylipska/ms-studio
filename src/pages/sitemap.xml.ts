@@ -1,11 +1,13 @@
 import { ROUTES } from "@/constants/routes";
 import { SITE_URL } from "@/constants/site";
 import { courseDetails } from "@/features/courses/constants/courseDetails";
+import { SERVICE_PAGES, servicePagePath } from "@/features/servicePages/constants";
 import { GetServerSideProps } from "next";
 
 const buildSitemap = () => {
   const paths = [
     ...Object.values(ROUTES),
+    ...SERVICE_PAGES.map(({ slug }) => servicePagePath(slug)),
     ...courseDetails.map((course) => `${ROUTES.courses}/${course.link}`),
   ];
 
