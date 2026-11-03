@@ -38,7 +38,6 @@ function Course({ title, variants, backgroundColor }: CourseType) {
                 fill
                 alt={t(variant.title)}
                 objectFit="cover"
-                style={{ borderRadius: "50px 50px 0px 0px" }}
               />
             </ImageContainer>
 

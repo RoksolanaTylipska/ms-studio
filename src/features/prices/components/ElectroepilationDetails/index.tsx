@@ -4,6 +4,7 @@ import { usePrices } from "@/context/PricesContext";
 import { PriceGroup, PriceNote, priceColors } from "@/features/prices/components/PriceTable";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { CARD_RADIUS } from "@/styles/card";
 
 function ElectroepilationDetails() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ function ElectroepilationDetails() {
           mb: 2,
           px: { xs: 2, sm: 3 },
           py: 1.5,
-          borderRadius: "20px",
+          borderRadius: CARD_RADIUS,
           backgroundColor: priceColors.gold,
         }}
       >

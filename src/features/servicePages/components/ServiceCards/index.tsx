@@ -5,6 +5,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { card, cardColors, cardHover } from "@/styles/card";
 
 // Links to the service pages: used on /services and under each service page
 function ServiceCards({ pages, label }: { pages: ServicePage[]; label: string }) {
@@ -33,17 +34,11 @@ function ServiceCards({ pages, label }: { pages: ServicePage[]; label: string })
             sx={{
               display: "flex",
               flexDirection: "column",
-              borderRadius: "24px",
+              ...card(cardColors.caramel),
+              ...cardHover,
               overflow: "hidden",
-              backgroundColor: "#fff",
               textDecoration: "none",
               letterSpacing: "normal",
-              boxShadow: "0 10px 40px rgba(53, 48, 45, 0.06)",
-              transition: "transform .25s, box-shadow .25s",
-              "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: "0 16px 44px rgba(53, 48, 45, 0.12)",
-              },
               "&:hover img": { transform: "scale(1.04)" },
             }}
           >

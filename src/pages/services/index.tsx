@@ -7,6 +7,7 @@ import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { CARD_RADIUS } from "@/styles/card";
 
 function Services() {
   const { t } = useTranslation();
@@ -71,7 +72,7 @@ function Services() {
             // The team photo is almost square: show it whole instead of cropping
             aspectRatio: "1 / 1",
             maxHeight: { md: 620 },
-            borderRadius: "28px",
+            borderRadius: CARD_RADIUS,
             overflow: "hidden",
             // Photo on the left on desktop, above the text on mobile
             order: -1,

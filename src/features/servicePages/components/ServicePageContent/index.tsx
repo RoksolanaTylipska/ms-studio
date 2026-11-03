@@ -17,6 +17,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import { CARD_RADIUS, card, cardColors } from "@/styles/card";
 
 const colors = {
   beige: "#F1EAE5",
@@ -80,10 +81,8 @@ const BodyText = ({ children }: { children: ReactNode }) => (
 const InfoList = ({ title, items }: { title: string; items: string[] }) => (
   <Box
     sx={{
-      backgroundColor: "#fff",
-      borderRadius: "24px",
+      ...card(cardColors.caramel),
       p: { xs: 3, md: 4 },
-      boxShadow: "0 10px 40px rgba(53, 48, 45, 0.06)",
     }}
   >
     <Typography variant="inherit"
@@ -195,7 +194,7 @@ function ServicePageContent({ page }: { page: ServicePage }) {
               maxWidth: { md: 520 },
               justifySelf: { md: "end" },
               aspectRatio: "1 / 1",
-              borderRadius: "28px",
+              borderRadius: CARD_RADIUS,
               overflow: "hidden",
             }}
           >
@@ -234,10 +233,8 @@ function ServicePageContent({ page }: { page: ServicePage }) {
                   alignItems: "center",
                   textAlign: "center",
                   gap: 2,
-                  backgroundColor: "#fff",
-                  borderRadius: "24px",
+                  ...card(cardColors.caramel),
                   p: { xs: 3, md: 4 },
-                  boxShadow: "0 10px 40px rgba(53, 48, 45, 0.06)",
                 }}
               >
                 <Box sx={{ position: "relative", width: 140, height: 140, borderRadius: "50%", overflow: "hidden" }}>
@@ -341,10 +338,8 @@ function ServicePageContent({ page }: { page: ServicePage }) {
               key={q}
               component="details"
               sx={{
-                backgroundColor: "#fff",
-                borderRadius: "20px",
+                ...card(cardColors.caramel),
                 px: { xs: 2.5, md: 3.5 },
-                boxShadow: "0 10px 40px rgba(53, 48, 45, 0.05)",
                 "&[open] summary::after": { transform: "rotate(45deg)" },
               }}
             >

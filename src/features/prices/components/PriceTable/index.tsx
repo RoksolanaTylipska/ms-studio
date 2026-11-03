@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { ReactNode } from "react";
+import { CARD_RADIUS } from "@/styles/card";
 
 // Shared building blocks of the price list: every service renders its prices
 // as white cards with aligned columns so the whole list reads the same way.
@@ -66,7 +67,7 @@ export const PriceGroup = ({
     <Box
       sx={{
         backgroundColor: priceColors.beige,
-        borderRadius: "20px",
+        borderRadius: CARD_RADIUS,
         px: { xs: 2, sm: 3, md: 4 },
         py: { xs: 1.5, sm: 2 },
         mb: 2,

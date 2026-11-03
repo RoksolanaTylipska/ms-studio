@@ -1,5 +1,6 @@
 import { Box, Typography, styled } from "@mui/material";
 import { fullBleed } from "@/styles/fullBleed";
+import { CARD_RADIUS, cardHover } from "@/styles/card";
 
 interface BackgroundColor {
   backgroundColor: string;
@@ -41,12 +42,10 @@ export const VariantContainer = styled(Box)<BackgroundColor>(
     gap: "20px",
     padding: "0 0 20px 0",
     width: "100%",
-    borderRadius: "50px",
-    transition: "all 0.3s ease-in-out",
-    "&:hover": {
-      transform: "scale(1.05)",
-      cursor: "pointer",
-    },
+    borderRadius: CARD_RADIUS,
+    overflow: "hidden",
+    cursor: "pointer",
+    ...cardHover,
   })
 );
 

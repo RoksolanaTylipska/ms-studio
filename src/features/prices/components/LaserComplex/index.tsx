@@ -4,6 +4,7 @@ import { priceColors } from "@/features/prices/components/PriceTable";
 import { Complex } from "@/features/prices/types/lazerEpilation";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { CARD_RADIUS } from "@/styles/card";
 
 interface ComplexProps {
   complexes: Complex[];
@@ -33,7 +34,7 @@ function LaserComplex({ complexes }: ComplexProps) {
               flexDirection: "column",
               gap: 1,
               p: 2.5,
-              borderRadius: "20px",
+              borderRadius: CARD_RADIUS,
               backgroundColor: priceColors.beige,
             }}
           >
