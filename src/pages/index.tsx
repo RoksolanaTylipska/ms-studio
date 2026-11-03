@@ -1,15 +1,13 @@
+import FAQ from "@/features/home/components/FAQ";
 import Feedback from "@/features/home/components/Feedback";
 import { VideoBlock } from "@/features/home/components/VideoBlock";
 import Masters from "@/features/home/components/Masters";
 import RemovalMethods from "@/features/home/components/RemovalMethods";
-import dynamic from "next/dynamic";
 import { Seo } from "@/components/Seo";
 import Photo from "../features/home/components/Photo";
 import Reviews from "../features/home/components/Reviews";
 import WelcomeCarousel from "../features/home/components/WelcomeCarousel";
 import Prices from "@/features/prices";
-
-const FAQ = dynamic(() => import("../features/home/components/FAQ/index"), { ssr: false });
 
 function Home() {
   return (
