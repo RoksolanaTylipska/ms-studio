@@ -1,7 +1,9 @@
 import { Box, styled } from "@mui/material";
+import { fullBleed } from "@/styles/fullBleed";
 
 export const PricesContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
+  ...fullBleed(theme.palette.colors.caramel),
   display: "flex",
   flexDirection: "column",
   gap: "50px",

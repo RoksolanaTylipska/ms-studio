@@ -20,6 +20,12 @@ body {
   background-color: #f1eae5;
 }
 
+/* Full-width photo blocks use 100vw, which includes the scrollbar on Windows:
+   clip that sliver instead of showing a horizontal scrollbar */
+body {
+  overflow-x: hidden;
+}
+
 body,
 ul,
 li,

@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { fullBleed } from "@/styles/fullBleed";
 
 export const Container = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -7,6 +8,7 @@ export const Container = styled(Box)(({ theme }) => ({
   alignItems: "center",
   padding: "150px 70px",
   backgroundColor: theme.palette.colors.caramel,
+  ...fullBleed(theme.palette.colors.caramel),
   [theme.breakpoints.down("sm")]: {
     padding: "60px 20px",
   },

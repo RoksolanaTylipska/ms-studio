@@ -1,6 +1,7 @@
 import { styled, keyframes } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import Link from "next/link";
+import { fullBleed } from "@/styles/fullBleed";
 
 interface HeaderContainerProps {
   isMobile: boolean;
@@ -25,10 +26,12 @@ export const HeaderContainer = styled('header')<HeaderContainerProps>(({ isMobil
   [theme.breakpoints.down("sm")]: { 
     backgroundColor: "transparent"
   },
-  // Desktop: equal side columns keep the logo exactly in the middle
+  // Desktop: equal side columns keep the logo exactly in the middle, and the
+  // background reaches the screen edges beyond the 1440px page width
   [theme.breakpoints.up("md")]: {
     display: "grid",
     gridTemplateColumns: "1fr auto 1fr",
+    ...fullBleed(theme.palette.colors.beige),
   },
 }));
 

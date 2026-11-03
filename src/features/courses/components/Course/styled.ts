@@ -1,4 +1,5 @@
 import { Box, Typography, styled } from "@mui/material";
+import { fullBleed } from "@/styles/fullBleed";
 
 interface BackgroundColor {
   backgroundColor: string;
@@ -10,6 +11,9 @@ export const CourseContainer = styled(Box)<BackgroundColor>(
       backgroundColor === "dark"
         ? theme.palette.colors.caramel
         : theme.palette.colors.beige,
+    ...fullBleed(
+      backgroundColor === "dark" ? theme.palette.colors.caramel : theme.palette.colors.beige
+    ),
     padding: "90px 70px",
     [theme.breakpoints.down("sm")]: {
       padding: "50px 20px",

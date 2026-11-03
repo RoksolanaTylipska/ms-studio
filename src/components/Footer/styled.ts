@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Link from "next/link";
+import { fullBleed } from "@/styles/fullBleed";
 
 export const FooterContainer = styled("footer")(({ theme }) => ({
   width: "100%",
@@ -10,10 +11,7 @@ export const FooterContainer = styled("footer")(({ theme }) => ({
   alignItems: "center",
   flexDirection: "column",
   backgroundColor: theme.palette.colors.chocolate,
-  // The page is capped at 1440px (globals.css): extend only the background to
-  // the full viewport width, keeping the content centred and without h-scroll
-  boxShadow: `0 0 0 100vmax ${theme.palette.colors.chocolate}`,
-  clipPath: "inset(0 -100vmax)",
+  ...fullBleed(theme.palette.colors.chocolate),
   height: "250px",
   paddingInline: "70px",
   gap: "20px",
