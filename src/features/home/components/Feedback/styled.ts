@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { CARD_RADIUS } from "@/styles/card";
 
 export const FeedbackContainer = styled(Box)(({ theme }) => ({
   padding: "75px",
@@ -15,8 +16,10 @@ export const FormsContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap", 
-  borderRadius: "10px",
-  border: `1px solid ${theme.palette.colors.chocolate}`,
+  // Filled with colour instead of a frame
+  borderRadius: CARD_RADIUS,
+  backgroundColor: theme.palette.colors.caramel,
+  overflow: "hidden",
   gap: "10px",
   alignItems: "stretch", 
   [theme.breakpoints.down("sm")]: {
