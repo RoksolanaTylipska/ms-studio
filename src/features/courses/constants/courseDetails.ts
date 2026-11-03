@@ -78,7 +78,7 @@ export const courseDetails: Course[] = [
         description: "courses.electroepilation_advance.practice.day5.topics",
       },
     },
-    price: "1100$",
+    price: "1200$",
   },
   {
     link: "electroepilation-qualification-course",
@@ -244,7 +244,7 @@ export const courseDetails: Course[] = [
         description: "courses.waxing-base.practice.day1.topics",
       },
     },
-    price: "8000 грн",
+    price: "11000 грн",
     note: "courses.waxing-advanced.note",
   },
 ];
