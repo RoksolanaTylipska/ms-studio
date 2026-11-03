@@ -3,6 +3,7 @@
 import { I18nProvider } from "@/I18n/I18nProvider";
 import { Footer, ModalWindow, PhoneAppointment } from "@/components";
 import { ModalWindowProvider } from "@/context/ModalContext";
+import { PricesProvider } from "@/context/PricesContext";
 import Header from "@/features/header";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
@@ -46,23 +47,25 @@ export default function App(props: AppProps) {
           `}
         </Script>
         <ThemeProvider theme={theme}>
-          <ModalWindowProvider>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "100vh",
-              }}
-            >
-              <Header />
-              <ModalWindow />
-              <main style={{ flex: 1 }}>
-                <Component {...pageProps} />
-                {isMobile && <PhoneAppointment />}
-              </main>
-              <Footer />
-            </div>
-          </ModalWindowProvider>
+          <PricesProvider settings={pageProps.priceSettings}>
+            <ModalWindowProvider>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  minHeight: "100vh",
+                }}
+              >
+                <Header />
+                <ModalWindow />
+                <main style={{ flex: 1 }}>
+                  <Component {...pageProps} />
+                  {isMobile && <PhoneAppointment />}
+                </main>
+                <Footer />
+              </div>
+            </ModalWindowProvider>
+          </PricesProvider>
         </ThemeProvider>
       </AppCacheProvider>
     </I18nProvider>

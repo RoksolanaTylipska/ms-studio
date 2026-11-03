@@ -2,6 +2,8 @@ import { Seo } from "@/components/Seo";
 import CourseDetails from "@/features/courses/components/CourseDetails";
 import { courseDetails } from "@/features/courses/constants/courseDetails";
 import { Course } from "@/features/courses/types/courseDetails";
+import { applyPriceSettings } from "@/features/prices/catalog";
+import { fetchPriceSettings } from "@/lib/priceOverrides";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useTranslation } from "react-i18next";
 
@@ -39,5 +41,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   if (!course) return { notFound: true };
 
-  return { props: { course } };
+  const { catalog } = applyPriceSettings(await fetchPriceSettings());
+  // An empty price set in /admin hides the price on the course page
+  const price = catalog.courses.find((c) => c.link === course.link)?.price ?? "";
+
+  return {
+    props: { course: { ...course, price } },
+    // Prices edited in /admin show up on the site within a minute
+    revalidate: 60,
+  };
 };

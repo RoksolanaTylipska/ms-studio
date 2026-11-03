@@ -13,11 +13,12 @@ import {
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { useTranslation } from "react-i18next";
-import { electroepilation } from "../../constants/electroepilation";
+import { usePrices } from "@/context/PricesContext";
 import { LabelTypography, TextTypography, TrialBox } from "./styled";
 
 function ElectroepilationDetails() {
   const { t } = useTranslation();
+  const { electroepilation } = usePrices();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (

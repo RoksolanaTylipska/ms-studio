@@ -1,6 +1,6 @@
 "use client";
 
-import { lazerEpilation } from "@/features/prices/constants/lazerEpilation";
+import { usePrices } from "@/context/PricesContext";
 import { ExpandMore } from "@mui/icons-material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -11,6 +11,7 @@ import LaserZone from "../Zones";
 
 function LaserEpilation() {
   const { t } = useTranslation();
+  const { lazerEpilation } = usePrices();
 
   return (
     <>

@@ -10,6 +10,10 @@ export const FooterContainer = styled("footer")(({ theme }) => ({
   alignItems: "center",
   flexDirection: "column",
   backgroundColor: theme.palette.colors.chocolate,
+  // The page is capped at 1440px (globals.css): extend only the background to
+  // the full viewport width, keeping the content centred and without h-scroll
+  boxShadow: `0 0 0 100vmax ${theme.palette.colors.chocolate}`,
+  clipPath: "inset(0 -100vmax)",
   height: "250px",
   paddingInline: "70px",
   gap: "20px",

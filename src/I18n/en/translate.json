@@ -106,6 +106,7 @@
         "neck": "Front neck / Nape"
       },
       "bodyList": {
+        "areola": "Areola",
         "areolaFullChest": "Areola / full chest",
         "fullChest": "Full chest",
         "stomachLine": "Stomach Line",
