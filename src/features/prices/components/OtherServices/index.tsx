@@ -1,7 +1,6 @@
 "use client";
 
-import { eyebrow } from "@/features/prices/constants/eyebrow";
-import { nails } from "@/features/prices/constants/nails";
+import { usePrices } from "@/context/PricesContext";
 import { ExpandMore } from "@mui/icons-material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -11,6 +10,7 @@ import Zones from "../Zones";
 
 function OtherServices() {
   const { t } = useTranslation();
+  const { nails, eyebrow } = usePrices();
 
   return (
     <>

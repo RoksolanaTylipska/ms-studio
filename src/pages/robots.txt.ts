@@ -6,6 +6,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.write(`User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `);

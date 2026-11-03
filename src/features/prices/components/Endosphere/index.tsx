@@ -1,6 +1,7 @@
 "use client";
 
-import { endosphere, endosphereDiscounts } from "@/features/prices/constants/endosphere";
+import { usePrices } from "@/context/PricesContext";
+import { endosphereDiscounts } from "@/features/prices/constants/endosphere";
 import {
   Box,
   Table,
@@ -23,6 +24,7 @@ import {
 
 function Endosphere() {
   const { t } = useTranslation();
+  const { endosphere } = usePrices();
 
   return (
     <AccordionDetails id="panel-endosphere" sx={{ padding: "0px" }}>

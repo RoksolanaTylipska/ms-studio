@@ -9,6 +9,8 @@ import Photo from "../features/home/components/Photo";
 import Reviews from "../features/home/components/Reviews";
 import WelcomeCarousel from "../features/home/components/WelcomeCarousel";
 import Prices from "@/features/prices";
+import { fetchPriceSettings } from "@/lib/priceOverrides";
+import { GetStaticProps } from "next";
 
 function Home() {
   return (
@@ -47,3 +49,9 @@ function Home() {
 }
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: { priceSettings: await fetchPriceSettings() },
+  // Prices edited in /admin show up on the site within a minute
+  revalidate: 60,
+});
