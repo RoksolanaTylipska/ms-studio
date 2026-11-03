@@ -4,6 +4,7 @@ import { I18nProvider } from "@/I18n/I18nProvider";
 import { Footer, ModalWindow, PhoneAppointment } from "@/components";
 import { ModalWindowProvider } from "@/context/ModalContext";
 import { PricesProvider } from "@/context/PricesContext";
+import { useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 import Header from "@/features/header";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
@@ -20,6 +21,7 @@ const GA_ID = "G-4X4Y8Q1PFQ";
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const isMobile = useMediaQuery("(max-width: 768px)");
+  useRevealOnScroll();
 
   // Firebase Analytics must run on every page (ad landing pages included),
   // but is loaded after hydration so it doesn't block rendering
