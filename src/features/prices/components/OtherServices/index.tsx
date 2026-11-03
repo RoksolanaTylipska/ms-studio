@@ -26,7 +26,7 @@ function OtherServices() {
           <AccordionDetails>
             <Accordion>
               <AccordionDetails id="panel4-header">
-                <Zones zones={nails} discounts={false} />
+                <Zones zones={nails} />
               </AccordionDetails>
             </Accordion>
           </AccordionDetails>
@@ -42,7 +42,7 @@ function OtherServices() {
           <AccordionDetails>
             <Accordion>
               <AccordionDetails id="panel4-header">
-                <Zones zones={eyebrow} discounts={false} />
+                <Zones zones={eyebrow} />
               </AccordionDetails>
             </Accordion>
           </AccordionDetails>

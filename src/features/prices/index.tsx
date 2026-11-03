@@ -74,7 +74,8 @@ function Prices({ mainTitle }: { mainTitle: string }) {
               </Box>
             </AccordionSummary>
 
-            <AccordionDetails>
+            {/* Space between the section heading's divider and the prices */}
+            <AccordionDetails sx={{ pt: { xs: 2.5, sm: 3.5 } }}>
               <Component />
             </AccordionDetails>
           </Accordion>
