@@ -25,7 +25,19 @@ export const HeaderContainer = styled('header')<HeaderContainerProps>(({ isMobil
   [theme.breakpoints.down("sm")]: { 
     backgroundColor: "transparent"
   },
+  // Desktop: equal side columns keep the logo exactly in the middle
+  [theme.breakpoints.up("md")]: {
+    display: "grid",
+    gridTemplateColumns: "1fr auto 1fr",
+  },
 }));
+
+export const HeaderSide = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  gap: "20px",
+  minWidth: 0,
+});
 
 const fadeIn = keyframes`
   from {

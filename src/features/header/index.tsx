@@ -1,6 +1,6 @@
 import { navLinks, navLinksLeft, navLinksRight } from "@/features/header/constants/navigation";
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
-import { Box, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -9,6 +9,7 @@ import LanguageSwitcher from "./components/LanguageSwitcher";
 import Navigation from "./components/Navigation";
 import {
   HeaderContainer,
+  HeaderSide,
   LanguageSwitcherContainer,
   MobileContainer,
   MobileMenu,
@@ -89,10 +90,10 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Box>
+            <HeaderSide sx={{ justifyContent: "flex-start" }}>
               <Navigation navLinks={navLinksLeft} />
-            </Box>
-            <Link href="/" style={{ margin: "auto" }}>
+            </HeaderSide>
+            <Link href="/" style={{ display: "flex", justifySelf: "center" }}>
               <Image
                 src="/assets/icons/logo-black.png"
                 alt="Logo"
@@ -100,19 +101,18 @@ const Header = () => {
                 height={85}
               />
             </Link>
-            <Box>
+            <HeaderSide sx={{ justifyContent: "flex-end" }}>
               <Navigation navLinks={navLinksRight} />
-            </Box>
-            <Button
-              children={t("button.bookAppointment")}
-              onClick={handleModalWindow}
-              type={ButtonType.PRIMARY}
-              size={ButtonSize.SMALL}
-            />
-
-            <LanguageSwitcherContainer>
-              <LanguageSwitcher />
-            </LanguageSwitcherContainer>
+              <Button
+                children={t("button.bookAppointment")}
+                onClick={handleModalWindow}
+                type={ButtonType.PRIMARY}
+                size={ButtonSize.SMALL}
+              />
+              <LanguageSwitcherContainer>
+                <LanguageSwitcher />
+              </LanguageSwitcherContainer>
+            </HeaderSide>
           </>
         )}
       </HeaderContainer>
