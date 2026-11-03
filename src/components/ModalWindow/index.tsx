@@ -4,7 +4,7 @@ import { Modal } from "@mui/material";
 import { useEffect } from "react";
 import { ModalContainer } from "./styled";
 import { MessageType } from "@/helpers/getMessages";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 import { Appointment, Loader, ThankYou } from '@/components';
 
 export const ModalWindow = () => {

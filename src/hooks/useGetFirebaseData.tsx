@@ -1,7 +1,5 @@
-import { collection, getDocs, query, Firestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "@/lib/firebase";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 
 const useGetFirebaseData = <T = unknown>(collectionName: FirebaseCollection) => {
   const [data, setData] = useState<(T & { id: string })[]>([]);
@@ -12,6 +10,11 @@ const useGetFirebaseData = <T = unknown>(collectionName: FirebaseCollection) => 
     const fetchData = async () => {
       setLoading(true);
       try {
+        // Firebase is loaded on demand to keep it out of the initial bundle
+        const [{ db }, { collection, getDocs, query }] = await Promise.all([
+          import("@/lib/firebase"),
+          import("firebase/firestore"),
+        ]);
         const q = query(collection(db, collectionName));
         const querySnapshot = await getDocs(q);
         const documents = querySnapshot.docs.map((doc) => ({
@@ -26,7 +29,7 @@ const useGetFirebaseData = <T = unknown>(collectionName: FirebaseCollection) => 
       setLoading(false);
     };
     fetchData();
-  }, [db, collectionName]);
+  }, [collectionName]);
 
   return { data, loading, error };
 };

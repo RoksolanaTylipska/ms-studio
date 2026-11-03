@@ -19,7 +19,7 @@ export const FeedbackListContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const FeedbackItem = styled(Box)(({ theme }) => ({
+export const FeedbackItem = styled("li")(({ theme }) => ({
   position: "relative",
   padding: "10px",
   backgroundColor: theme.palette.colors.white,

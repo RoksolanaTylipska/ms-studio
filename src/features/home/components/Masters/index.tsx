@@ -3,7 +3,7 @@
 import i18n from "@/I18n/i18nConfig";
 import { TitleStars } from "@/components";
 import { ROUTES } from "@/constants/routes";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 import useGetFirebaseDta from "@/hooks/useGetFirebaseData";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,6 +85,7 @@ function Masters() {
                   src={master.img}
                   alt={master.name[locale]}
                   fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   style={{
                     objectFit: "cover",
                     borderTopLeftRadius: "15px",

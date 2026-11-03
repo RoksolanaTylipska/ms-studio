@@ -17,24 +17,11 @@ export default function Document(props: DocumentProps & DocumentHeadTagsProps) {
     <Html lang="uk">
       <Head>
         <DocumentHeadTags {...props} />
-        <link rel="icon" href="/logo-gold_withoutText.png" />
-        {/* Google Analytics – load script */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4X4Y8Q1PFQ"
-        ></script>
-
-        {/* Google Analytics – config script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-4X4Y8Q1PFQ');
-            `,
-          }}
-        />
+        <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
       </Head>
 
       <body>

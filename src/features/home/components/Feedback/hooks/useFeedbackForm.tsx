@@ -1,6 +1,6 @@
 import i18n from "@/I18n/i18nConfig";
 import { Master } from "@/features/home/components/Masters/types/masters";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 import { showToast } from "@/helpers/showToast";
 import useGetFirebaseData from "@/hooks/useGetFirebaseData";
 import { useEffect } from "react";

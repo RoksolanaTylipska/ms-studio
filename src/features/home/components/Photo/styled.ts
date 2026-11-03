@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const PhotoContainer = styled(Box)(({ theme }) => ({
   height: "80vh",
-  backgroundImage: 'url("/assets/photos/touch.jpg")',
+  backgroundImage: 'url("/assets/photos/touch.webp")',
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -15,6 +15,7 @@ export const PhotoContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     alignItems: "start",
+    backgroundImage: 'url("/assets/photos/touch-mobile.webp")',
   },
 }));
 

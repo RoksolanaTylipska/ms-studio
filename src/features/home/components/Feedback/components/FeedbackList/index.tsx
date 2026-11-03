@@ -1,6 +1,6 @@
 import { Loader } from "@/components";
 import { Feedback } from "@/features/home/components/Feedback/types/feedback";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 import { formatDate } from "@/helpers/formatDate";
 import useGetFirebaseData from "@/hooks/useGetFirebaseData";
 import { useResponsive } from "@/hooks/useResponsive";

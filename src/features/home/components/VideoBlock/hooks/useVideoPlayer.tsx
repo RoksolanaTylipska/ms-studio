@@ -1,5 +1,3 @@
-
-import { useMediaQuery } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 export const useVideoPlayer = (mobileSrc: string, desktopSrc: string) => {
@@ -7,14 +5,13 @@ export const useVideoPlayer = (mobileSrc: string, desktopSrc: string) => {
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoIsInView, setVideoIsInView] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const togglePlay = () => {
     const currentVideo = videoRef.current;
     if (!currentVideo) return;
 
     if (currentVideo.paused) {
-      currentVideo.play();
+      currentVideo.play().catch(() => setIsPlaying(false));
       setIsPlaying(true);
     } else {
       currentVideo.pause();
@@ -51,15 +48,6 @@ export const useVideoPlayer = (mobileSrc: string, desktopSrc: string) => {
   }, [videoRef]);
 
   useEffect(() => {
-    const currentVideo = videoRef.current;
-    if (!currentVideo) return;
-
-    currentVideo.src = isMobile ? mobileSrc : desktopSrc;
-    currentVideo.load();
-    currentVideo.play();
-  }, [isMobile, mobileSrc, desktopSrc]);
-
-  useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const entry = entries[0];
       if (entry.isIntersecting) {
@@ -93,19 +81,25 @@ export const useVideoPlayer = (mobileSrc: string, desktopSrc: string) => {
     if (!currentVideo) return;
 
     if (videoIsInView) {
-      currentVideo.play();
-      setIsPlaying(true);
-
-      if (typeof window !== "undefined") {
-        window.dataLayer.push({
-          event: "video",
-        });
+      // Load the video only once it scrolls into view, picking the right size for the screen
+      if (!currentVideo.getAttribute("src")) {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        currentVideo.src = isMobile ? mobileSrc : desktopSrc;
       }
+
+      currentVideo
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
+
+      window.dataLayer?.push({
+        event: "video",
+      });
     } else {
       currentVideo.pause();
       setIsPlaying(false);
     }
-  }, [videoIsInView]);
+  }, [videoIsInView, mobileSrc, desktopSrc]);
 
   return {
     videoRef,

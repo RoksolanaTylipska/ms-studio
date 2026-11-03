@@ -11,6 +11,9 @@ import { AppCacheProvider } from "@mui/material-nextjs/v13-pagesRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
+
+const GA_ID = "G-4X4Y8Q1PFQ";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -22,6 +25,19 @@ export default function App(props: AppProps) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
+        {/* Google Analytics – loaded after hydration so it doesn't block rendering */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <ThemeProvider theme={theme}>
           <ModalWindowProvider>
             <div

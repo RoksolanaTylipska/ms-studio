@@ -22,8 +22,9 @@ function MethodItem({ method }: MethodItemProps) {
       <ItemImageWrapper>
         <Image
           src={method.img}
-          alt="photo"
+          alt={t(method.title)}
           fill
+          sizes="150px"
           style={{
             borderRadius: "50%",
             objectFit: "cover",
