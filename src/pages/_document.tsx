@@ -1,9 +1,22 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import {
+  DocumentHeadTags,
+  DocumentHeadTagsProps,
+  documentGetInitialProps,
+} from "@mui/material-nextjs/v13-pagesRouter";
+import {
+  DocumentContext,
+  DocumentProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 
-export default function Document() {
+export default function Document(props: DocumentProps & DocumentHeadTagsProps) {
   return (
-    <Html lang="en">
+    <Html lang="uk">
       <Head>
+        <DocumentHeadTags {...props} />
         <link rel="icon" href="/logo-gold_withoutText.png" />
         {/* Google Analytics – load script */}
         <script
@@ -47,3 +60,8 @@ export default function Document() {
     </Html>
   );
 }
+
+Document.getInitialProps = async (ctx: DocumentContext) => {
+  const finalProps = await documentGetInitialProps(ctx);
+  return finalProps;
+};

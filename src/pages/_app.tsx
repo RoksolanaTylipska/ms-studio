@@ -1,29 +1,27 @@
 "use client";
 
 import { I18nProvider } from "@/I18n/I18nProvider";
-import { Footer, Loader, ModalWindow, PhoneAppointment } from "@/components";
+import { Footer, ModalWindow, PhoneAppointment } from "@/components";
 import { ModalWindowProvider } from "@/context/ModalContext";
 import Header from "@/features/header";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
-import { Box, useMediaQuery } from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { useMediaQuery } from "@mui/material";
+import { AppCacheProvider } from "@mui/material-nextjs/v13-pagesRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
+import Head from "next/head";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 300);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <I18nProvider>
-      <AppRouterCacheProvider options={{ key: "css" }}>
+      <AppCacheProvider {...props}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <ThemeProvider theme={theme}>
           <ModalWindowProvider>
             <div
@@ -33,33 +31,17 @@ export default function App({ Component, pageProps }: AppProps) {
                 minHeight: "100vh",
               }}
             >
-              {loading ? (
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100vh",
-                  }}
-                >
-                  <Loader />
-                </Box>
-              ) : (
-                <>
-                  {" "}
-                  <Header />
-                  <ModalWindow />
-                  <main style={{ flex: 1 }}>
-                    <Component {...pageProps} />
-                    {isMobile && <PhoneAppointment />}
-                  </main>
-                  <Footer />
-                </>
-              )}
+              <Header />
+              <ModalWindow />
+              <main style={{ flex: 1 }}>
+                <Component {...pageProps} />
+                {isMobile && <PhoneAppointment />}
+              </main>
+              <Footer />
             </div>
           </ModalWindowProvider>
         </ThemeProvider>
-      </AppRouterCacheProvider>
+      </AppCacheProvider>
     </I18nProvider>
   );
 }
