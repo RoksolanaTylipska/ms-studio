@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 export const SlideContainerThird = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '100%',
-  backgroundImage: 'url("/assets/photos/carousel_3.PNG")',
+  backgroundImage: 'url("/assets/photos/carousel_3.webp")',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',

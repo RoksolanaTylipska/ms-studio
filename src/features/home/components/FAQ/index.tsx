@@ -9,6 +9,7 @@ import {
   Box,
   Typography,
 } from "@mui/material";
+import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import { FAQContainer } from "./styled";
 import { TitleStars } from "@/components";
@@ -16,16 +17,35 @@ import { TitleStars } from "@/components";
 function Faq() {
   const { t } = useTranslation();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: t(faq.question),
+      acceptedAnswer: { "@type": "Answer", text: t(faq.answer) },
+    })),
+  };
+
   return (
     <FAQContainer>
+      <Head>
+        <script
+          key="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      </Head>
       <TitleStars title={t("faq.title")} />
       <Box>
         {faqs.map((faq, index) => (
           <Accordion key={index}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel1-content`}
-              id={`panel1-header`}
+              aria-controls={`faq-${index}-content`}
+              id={`faq-${index}-header`}
             >
               {t(`${faq.question}`)}
             </AccordionSummary>

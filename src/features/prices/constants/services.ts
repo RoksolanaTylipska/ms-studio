@@ -30,22 +30,22 @@ export const modalServices = [
   {
     title: "services.lazer",
     images: {
-      womens: "/assets/photos/prices/LE_w.png",
-      mens: "/assets/photos/prices/LE_m.png",
+      womens: "/assets/photos/prices/LE_w.webp",
+      mens: "/assets/photos/prices/LE_m.webp",
     },
   },
   {
     title: "services.electroepilation",
     images: {
-      womens: "/assets/photos/prices/Electro.png",
-      mens: "/assets/photos/prices/Electro.png",
+      womens: "/assets/photos/prices/Electro.webp",
+      mens: "/assets/photos/prices/Electro.webp",
     },
   },
   {
     title: "services.waxing",
     images: {
-      womens: "/assets/photos/prices/Waxing.png",
-      mens: "/assets/photos/prices/Waxing.png",
+      womens: "/assets/photos/prices/Waxing.webp",
+      mens: "/assets/photos/prices/Waxing.webp",
     },
   },
 ];
@@ -53,10 +53,10 @@ export const modalServices = [
 export const otherServices = [
   {
     title: "services.otherServices.nails",
-    image: "/assets/photos/prices/Nails.png",
+    image: "/assets/photos/prices/Nails.webp",
   },
   {
     title: "services.otherServices.lashes_brows_makeup",
-    image: "/assets/photos/prices/Other.png",
+    image: "/assets/photos/prices/Other.webp",
   },
 ];

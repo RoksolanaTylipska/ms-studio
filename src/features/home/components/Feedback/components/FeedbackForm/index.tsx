@@ -1,7 +1,7 @@
 import { Button, InputField, InputPhone, SelectField } from "@/components";
 import { feedbackSources } from "@/features/home/components/Feedback/constants/feedbackSources";
 import { Feedback } from "@/features/home/components/Feedback/types/feedback";
-import { FirebaseCollection } from "@/helpers/addFirebaseData";
+import { FirebaseCollection } from "@/constants/firebase";
 import { MessageType } from "@/helpers/getMessages";
 import { useSendTelegramMessage } from "@/hooks/useSendTelegramMessage";
 import { Rating, Typography } from "@mui/material";

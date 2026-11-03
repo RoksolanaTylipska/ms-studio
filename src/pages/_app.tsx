@@ -1,29 +1,50 @@
 "use client";
 
 import { I18nProvider } from "@/I18n/I18nProvider";
-import { Footer, Loader, ModalWindow, PhoneAppointment } from "@/components";
+import { Footer, ModalWindow, PhoneAppointment } from "@/components";
 import { ModalWindowProvider } from "@/context/ModalContext";
 import Header from "@/features/header";
 import { theme } from "@/styles";
 import "@/styles/globals.css";
-import { Box, useMediaQuery } from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { useMediaQuery } from "@mui/material";
+import { AppCacheProvider } from "@mui/material-nextjs/v13-pagesRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
+import Head from "next/head";
+import Script from "next/script";
+import { useEffect } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+const GA_ID = "G-4X4Y8Q1PFQ";
+
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [loading, setLoading] = useState(true);
 
+  // Firebase Analytics must run on every page (ad landing pages included),
+  // but is loaded after hydration so it doesn't block rendering
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 300);
-    return () => clearTimeout(timer);
+    import("@/lib/firebase");
   }, []);
 
   return (
     <I18nProvider>
-      <AppRouterCacheProvider options={{ key: "css" }}>
+      <AppCacheProvider {...props}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+        {/* Google Analytics – loaded after hydration so it doesn't block rendering */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <ThemeProvider theme={theme}>
           <ModalWindowProvider>
             <div
@@ -33,33 +54,17 @@ export default function App({ Component, pageProps }: AppProps) {
                 minHeight: "100vh",
               }}
             >
-              {loading ? (
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100vh",
-                  }}
-                >
-                  <Loader />
-                </Box>
-              ) : (
-                <>
-                  {" "}
-                  <Header />
-                  <ModalWindow />
-                  <main style={{ flex: 1 }}>
-                    <Component {...pageProps} />
-                    {isMobile && <PhoneAppointment />}
-                  </main>
-                  <Footer />
-                </>
-              )}
+              <Header />
+              <ModalWindow />
+              <main style={{ flex: 1 }}>
+                <Component {...pageProps} />
+                {isMobile && <PhoneAppointment />}
+              </main>
+              <Footer />
             </div>
           </ModalWindowProvider>
         </ThemeProvider>
-      </AppRouterCacheProvider>
+      </AppCacheProvider>
     </I18nProvider>
   );
 }

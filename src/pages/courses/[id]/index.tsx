@@ -1,12 +1,29 @@
+import { Seo } from "@/components/Seo";
 import CourseDetails from "@/features/courses/components/CourseDetails";
 import { courseDetails } from "@/features/courses/constants/courseDetails";
 import { Course } from "@/features/courses/types/courseDetails";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useTranslation } from "react-i18next";
 
 export default function CourseDetail({ course }: { course: Course }) {
+  const { t } = useTranslation();
+
   if (!course) return <h1>Курс не знайдено</h1>;
 
-  return <CourseDetails course={course} />;
+  const name = [t(course.title), course.subTitle && t(course.subTitle)]
+    .filter(Boolean)
+    .join(" — ");
+
+  return (
+    <>
+      <Seo
+        title={`Курс: ${name} у Львові | MS Laser`}
+        description={`${name}: навчання у Львові від практикуючих майстрів MS Laser. Тривалість — ${t(course.duration)}. Теорія, практика та сертифікат.`}
+        path={`/courses/${course.link}`}
+      />
+      <CourseDetails course={course} />
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

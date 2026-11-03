@@ -27,12 +27,12 @@ export const SelectField = <T extends FieldValues>({
       rules={rules}
       render={({ field }) => (
         <FormControl fullWidth error={Boolean(errors?.[name])}>
-          <InputLabel>
+          <InputLabel id={`${name}-label`}>
           {label} {required && <span style={{ color: "red" }}>*</span>}
 
           </InputLabel>
 
-          <Select {...field} displayEmpty>
+          <Select {...field} labelId={`${name}-label`} displayEmpty>
             {options.map(({ value, label }) => (
               <MenuItem key={value} value={value}>
                 {label}

@@ -55,10 +55,10 @@ function Reviews() {
             <ImageContainer>
               <Image
                 src={`/assets/photos/reviews/review-${key}.webp`}
-                alt="review"
-                layout="fill"
-                objectFit="cover"
-                style={{ borderRadius: "15px" }}
+                alt="Відгук клієнта MS Laser"
+                fill
+                sizes="(max-width: 767px) 80vw, (max-width: 1023px) 50vw, 325px"
+                style={{ borderRadius: "15px", objectFit: "cover" }}
               />
             </ImageContainer>
           </SwiperSlide>
