@@ -2,6 +2,7 @@ import i18n from "@/I18n/i18nConfig";
 import { SITE_NAME, SITE_URL } from "@/constants/site";
 import { PriceCatalog, PriceSection, collectPriceRows } from "@/features/prices/catalog";
 import { SERVICE_PAGES, ServicePage, servicePagePath } from "@/features/servicePages/constants";
+import { CloudinaryImage } from "@/types/image";
 
 export type FaqItem = { q: string; a: string };
 type Lng = "ua" | "en";
@@ -226,7 +227,17 @@ export const contactsPageSchema = () => {
   ];
 };
 
-export const galleryPageSchema = () => {
+const imageObjects = (images: CloudinaryImage[], caption: string) =>
+  images
+    .filter(({ resource_type }) => resource_type === "image")
+    .map(({ secure_url }) => ({
+      "@type": "ImageObject",
+      contentUrl: secure_url,
+      caption,
+      creditText: STUDIO.name,
+    }));
+
+export const galleryPageSchema = (images: CloudinaryImage[]) => {
   const url = `${SITE_URL}/gallery`;
 
   return [
@@ -236,7 +247,24 @@ export const galleryPageSchema = () => {
       name: "Галерея студії та робіт майстрів",
       url,
       about: { "@id": `${SITE_URL}/#studio` },
+      image: imageObjects(images, `Фото студії ${STUDIO.name}`),
     },
     breadcrumbSchema({ name: "Галерея", url }),
+  ];
+};
+
+export const certificatesPageSchema = (images: CloudinaryImage[]) => {
+  const url = `${SITE_URL}/certificates`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      name: "Сертифікати майстрів",
+      url,
+      about: { "@id": `${SITE_URL}/#studio` },
+      image: imageObjects(images, `Сертифікат майстра ${STUDIO.name}`),
+    },
+    breadcrumbSchema({ name: "Сертифікати", url }),
   ];
 };

@@ -1,18 +1,19 @@
-import { CloudinaryImage } from "@/types/image";
+import { CloudinaryImage, GalleryPage } from "@/types/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 
-export const useGallery = (folder = 'ms-studio-gallery/gallery') => {
+export const useGallery = (folder = 'ms-studio-gallery/gallery', initial?: GalleryPage) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | undefined>("");
-  const [images, setImages] = useState<CloudinaryImage[]>([]);
-  const [nextCursor, setNextCursor] = useState(null);
+  const [images, setImages] = useState<CloudinaryImage[]>(initial?.resources ?? []);
+  const [nextCursor, setNextCursor] = useState(initial?.next_cursor ?? null);
   const [loading, setLoading] = useState(false);
 
   const sentinelRef = useRef(null);
-  const hasFetchedInitialRef = useRef(false);
+  // Photos rendered on the server need no first request from the browser
+  const hasFetchedInitialRef = useRef(Boolean(initial?.resources.length));
 
 
-  const fetchImages = useCallback(async (cursor = null) => {
+  const fetchImages = useCallback(async (cursor: string | null = null) => {
     setLoading(true);
     try {
       const folderQuery = `folder=${encodeURIComponent(`${folder}`)}`;

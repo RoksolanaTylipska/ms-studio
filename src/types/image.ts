@@ -6,3 +6,8 @@ export interface CloudinaryImage {
   height?: number;
   created_at?: string;
 }
+
+export interface GalleryPage {
+  resources: CloudinaryImage[];
+  next_cursor: string | null;
+}

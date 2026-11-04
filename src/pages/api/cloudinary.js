@@ -1,11 +1,5 @@
-import { v2 as cloudinary } from "cloudinary";
 import { GALLERY_FOLDERS, isGalleryFolder } from "@/features/gallery/constants";
-
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+import { searchGallery } from "@/lib/galleryImages";
 
 export default async function handler(req, res) {
   const { next_cursor, folder, fresh } = req.query;
@@ -17,16 +11,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    let query = cloudinary.search
-    .expression(`folder:${folderName}`)
-    .sort_by("created_at", "desc")
-      .max_results(fresh ? 30 : 8);
-
-    if (next_cursor) {
-      query = query.next_cursor(next_cursor);
-    }
-
-    const result = await query.execute();
+    const result = await searchGallery({
+      folder: folderName,
+      maxResults: fresh ? 30 : 8,
+      cursor: next_cursor,
+    });
     // Cache on the CDN so Cloudinary's rate-limited Search API isn't hit on
     // every visit, but briefly, so new uploads from /admin show up within
     // minutes; the admin panel itself asks for a fresh list

@@ -10,13 +10,16 @@ import {
   PhotosContainer,
 } from "./styled";
 import { TitleStars } from "@/components";
+import { GalleryPage } from "@/types/image";
 
 const GalleryClientSide = ({
   title = true,
   path,
+  initial,
 }: {
   title?: boolean;
   path: string;
+  initial?: GalleryPage;
 }) => {
   const {
     images,
@@ -25,7 +28,7 @@ const GalleryClientSide = ({
     toggleOpenModal,
     isModalOpen,
     selectedImage,
-  } = useGallery(path);
+  } = useGallery(path, initial);
 
   return (
     <GalleryContainer>
