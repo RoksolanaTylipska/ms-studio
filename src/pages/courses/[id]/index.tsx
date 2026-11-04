@@ -17,7 +17,7 @@ export default function CourseDetail({ course }: { course: Course }) {
   const name = [t(course.title), course.subTitle && t(course.subTitle)]
     .filter(Boolean)
     .join(" — ");
-  const description = `${name}: навчання у Львові від практикуючих майстрів MS STUDIO LASER. Тривалість — ${t(course.duration)}. Теорія, практика та сертифікат.`;
+  const description = `${name}: навчання у Львові від майстрів-практиків MS STUDIO LASER. Тривалість — ${t(course.duration)}. Теорія, практика та сертифікат.`;
   const path = `/courses/${course.link}`;
 
   return (
