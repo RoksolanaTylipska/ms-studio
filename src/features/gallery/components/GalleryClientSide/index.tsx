@@ -57,7 +57,7 @@ const GalleryClientSide = ({
         </ModalContainer>
       )}
 
-      {title && <TitleStars title={"masters.certificates"} />}
+      <TitleStars title={title ? "masters.certificates" : "header.gallery"} component="h1" />
       <PhotosContainer>
         {images.map((img, index) => (
           <Box
@@ -74,7 +74,7 @@ const GalleryClientSide = ({
               <Box
                 component="button"
                 type="button"
-                aria-label="Відео студії MS Laser"
+                aria-label="Відео студії MS STUDIO LASER"
                 onClick={() => toggleOpenModal(img.secure_url)}
                 sx={{ position: "absolute", inset: 0, p: 0, border: 0, cursor: "pointer", background: "none" }}
               >
@@ -113,7 +113,7 @@ const GalleryClientSide = ({
               <Image
                 loader={cloudinaryLoader}
                 src={img.secure_url}
-                alt={title ? "Сертифікат майстра MS Laser" : "Фото студії MS Laser"}
+                alt={title ? "Сертифікат майстра MS STUDIO LASER" : "Фото студії MS STUDIO LASER"}
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 989px) 33vw, 25vw"
                 style={{ objectFit: "cover", cursor: "pointer" }}

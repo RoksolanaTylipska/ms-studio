@@ -28,7 +28,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "laser",
     name: "services.lazer",
     image: "/assets/photos/methods/alexandrite.webp",
-    imageAlt: "Лазерна епіляція в студії MS Laser у Львові",
+    imageAlt: "Лазерна епіляція в студії MS STUDIO LASER у Львові",
     methods: [
       {
         title: "removalMethods.alexandrite_title",
@@ -49,7 +49,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       ["common.contraindications", "contraindications"],
     ],
     seo: {
-      title: "Лазерна епіляція у Львові — ціни, олександрит і діод | MS Laser",
+      title: "Лазерна епіляція у Львові — ціни, олександрит і діод | MS STUDIO LASER",
       description:
         "Лазерна епіляція у Львові на олександритовому лазері DEKA Motus AX та діодному Alvi Prague. Ціни на зони та комплекси, підготовка, догляд і протипоказання.",
     },
@@ -59,7 +59,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "electro",
     name: "services.electroepilation",
     image: "/assets/photos/services/electroepilation.webp",
-    imageAlt: "Електроепіляція в студії MS Laser у Львові",
+    imageAlt: "Електроепіляція в студії MS STUDIO LASER у Львові",
     // Portrait photo: keep the face and the needle in the square/4:3 crops
     imagePosition: "center 15%",
     // The only method card would repeat the intro, so there is no devices block
@@ -72,7 +72,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       ["common.contraindications", "contraindications"],
     ],
     seo: {
-      title: "Електроепіляція у Львові — видалення волосся назавжди | MS Laser",
+      title: "Електроепіляція у Львові — видалення волосся назавжди | MS STUDIO LASER",
       description:
         "Електроепіляція у Львові: видаляє світле, сиве та руде волосся назавжди. Ціни за хвилину, підготовка, догляд і протипоказання.",
     },
@@ -82,7 +82,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "waxing",
     name: "services.waxing",
     image: "/assets/photos/services/waxing.webp",
-    imageAlt: "Воскова депіляція та шугаринг у студії MS Laser у Львові",
+    imageAlt: "Воскова депіляція та шугаринг у студії MS STUDIO LASER у Львові",
     // Portrait photo: keep both hands and the falling wax in the crops
     imagePosition: "center 30%",
     methods: [
@@ -105,7 +105,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       ["common.contraindications", "contraindications"],
     ],
     seo: {
-      title: "Шугаринг і воскова депіляція у Львові — ціни | MS Laser",
+      title: "Шугаринг і воскова депіляція у Львові — ціни | MS STUDIO LASER",
       description:
         "Шугаринг і воскова депіляція у Львові для жінок і чоловіків. Ціни на бікіні, пахви, ноги та обличчя, підготовка до процедури, догляд і протипоказання.",
     },
@@ -115,7 +115,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "endosphere",
     name: "services.endosphere",
     image: "/assets/photos/carousel_3.webp",
-    imageAlt: "Ендосфера-терапія в студії MS Laser у Львові",
+    imageAlt: "Ендосфера-терапія в студії MS STUDIO LASER у Львові",
     methods: [],
     priceSection: "endosphere",
     priceUnit: "perSession",
@@ -125,7 +125,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       ["common.resultsTitle", "results"],
     ],
     seo: {
-      title: "Ендосфера-терапія у Львові — ціни на курси | MS Laser",
+      title: "Ендосфера-терапія у Львові — ціни на курси | MS STUDIO LASER",
       description:
         "Ендосфера-терапія у Львові: мікровібрація та лімфодренаж проти набряків і целюліту. Легкість після першого сеансу, курс 6–12 процедур. Ціни на зони.",
     },

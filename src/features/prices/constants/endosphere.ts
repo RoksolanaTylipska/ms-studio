@@ -22,7 +22,7 @@ export const endosphere: EndosphereZone[] = [
   },
   {
     name: "endosphere.zones.abdomenSides",
-    time: "endosphere.time.min40",
+    time: "endosphere.time.min30",
     prices: [800, 4320, 8160],
   },
   {

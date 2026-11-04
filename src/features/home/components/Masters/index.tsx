@@ -45,7 +45,7 @@ function Masters() {
 
   return (
     <MastersContainer>
-      <TitleStars title={t("masters.title")} />
+      <TitleStars title="masters.title" />
 
       <SwiperStyled
         slidesPerView={3}

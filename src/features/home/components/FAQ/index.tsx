@@ -38,7 +38,7 @@ function Faq() {
           }}
         />
       </Head>
-      <TitleStars title={t("faq.title")} />
+      <TitleStars title="faq.title" />
       <Box>
         {faqs.map((faq, index) => (
           <Accordion key={index}>

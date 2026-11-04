@@ -26,7 +26,7 @@ const GoogleIcon = () => (
 const CenteredCard = ({ children }: { children: ReactNode }) => (
   <AdminCard sx={{ maxWidth: 440, mx: "auto", textAlign: "center" }}>
     <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
-      <Image src="/assets/icons/logo-black.png" alt="MS Laser" width={72} height={72} />
+      <Image src="/assets/icons/logo-black.png" alt="MS STUDIO LASER" width={72} height={72} />
     </Box>
     {children}
   </AdminCard>

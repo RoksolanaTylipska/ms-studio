@@ -182,6 +182,8 @@ export const collectPriceLists = (catalog: PriceCatalog): PriceList[] => {
           ([key, value]) =>
             key !== row.labelKey &&
             key !== priceKey &&
+            // Optional: a new complex must not require a price before the discount
+            key !== "oldPrice" &&
             (typeof value === "string" || typeof value === "number")
         )
         .map(([key, example]) => ({ key, example: example as string | number })),

@@ -70,6 +70,15 @@ function LaserComplex({ complexes }: ComplexProps) {
                 borderTop: `1px solid ${priceColors.caramel}`,
               }}
             >
+              {/* Hidden if /admin raises the price to the old one or above */}
+              {complex.oldPrice && complex.oldPrice > complex.prices[0] && (
+                <Box
+                  component="s"
+                  sx={{ mr: 1, fontSize: "14px", fontWeight: 400, color: priceColors.latte }}
+                >
+                  {complex.oldPrice} ₴
+                </Box>
+              )}
               {complex.prices.map((price) => `${price} ₴`).join(" / ")}
             </Typography>
           </Box>

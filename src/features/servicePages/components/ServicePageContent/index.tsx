@@ -31,10 +31,12 @@ const bodyFont = "Comfortaa, sans-serif";
 const headingFont = "'Playfair Display SC', serif";
 
 const Section = ({
+  id,
   children,
   tint,
   first,
 }: {
+  id?: string;
   children: ReactNode;
   tint?: boolean;
   // The first section sits right under the fixed header: no big top padding
@@ -42,7 +44,9 @@ const Section = ({
 }) => (
   <Box
     component="section"
+    id={id}
     sx={{
+      scrollMarginTop: "90px",
       px: { xs: "20px", sm: "40px", md: "70px" },
       pt: first ? { xs: 2, md: 3 } : { xs: 6, md: 9 },
       pb: { xs: 6, md: 9 },
@@ -307,7 +311,7 @@ function ServicePageContent({ page }: { page: ServicePage }) {
 
       {/* Preparation / aftercare / contraindications, or procedure / for whom / results */}
       {page.infoBlocks.length > 0 && (
-        <Section>
+        <Section id="info">
           <Box
             sx={{
               display: "grid",

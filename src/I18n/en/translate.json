@@ -15,7 +15,7 @@
       "address": "8 Olena Stepanivna Street, Lviv",
       "city": "79000, Lviv, Lviv Region",
       "schedule": "Mon-Sun 9:00 AM - 8:00 PM, no days off",
-      "msStudio": "Салон краси - «MS Studio Laser»",
+      "msStudio": "Салон краси - «MS STUDIO LASER»",
       "privacy_policy": "Privacy Policy",
       "rights": "All rights reserved",
       "developed": "Developed by"
@@ -58,6 +58,8 @@
       "complex": "Complexes",
 
       "sessions10": "10 sessions",
+
+      "sessions10Discount": "10 sessions\n-20%",
       "sessions5": "5 sessions",
       "sessions1": "1 session"
     },
@@ -65,7 +67,7 @@
       "bookAppointment": "Book now"
     },
     "lazerEpilation": {
-      "payLess": "Choose complex and pay less",
+      "payLess": "Choose complex and pay less. Discounts cannot be combined.",
       "complexes": {
         "mini": "Bikini + Armpits",
         "midi": "Bikini + Armpits + Shins",
@@ -82,8 +84,7 @@
       "bikiniList": {
         "deep": "Bikini is deep",
         "average": "Bikini average",
-        "panties": "Bikini on the line of panties",
-        "pubicTriangle": "Bikini pubic triangle"
+        "panties": "Bikini on the line of panties"
       },
       "armsList": {
         "groinArea": "Groin area",
@@ -100,8 +101,6 @@
         "chin": "Chin",
         "cheeks": "Cheeks",
         "eyebrows": "Eyebrows",
-        "cheeksLine": "Cheeks along the line",
-        "cheeksFully": "Cheeks fully",
         "noseEars": "Nose / ears",
         "neck": "Front neck / Nape"
       },
@@ -145,7 +144,7 @@
     "electroepilation": {
       "trial": "Trial procedure + consultation",
       "trialTime": "45 min ",
-      "trialPrice": "600 / 700 uah -  Master / TOP Master",
+      "trialPrice": "700 uah",
       "time": "Time",
       "master": "Master",
       "expertMaster": "Expert master",
@@ -255,21 +254,21 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "question1": "How to prepare for the procedure and what care is needed afterward?",
-      "answer1": "Detailed information about preparation and post-procedure care can be found <strong><a href='/services'>here</a></strong>.",
+      "answer1": "Preparation and aftercare depend on the procedure: <a href='/services/laser-epilation#info'>laser hair removal</a>, <a href='/services/electroepilation#info'>electrolysis</a>, <a href='/services/waxing#info'>waxing and sugaring</a>.",
       "question2": "Contraindications for the procedure?",
-      "answer2": "Detailed information about contraindications for each procedure can be found <strong><a href='/services'>here</a></strong>.",
+      "answer2": "Contraindications depend on the procedure: <a href='/services/laser-epilation#info'>laser hair removal</a>, <a href='/services/electroepilation#info'>electrolysis</a>, <a href='/services/waxing#info'>waxing and sugaring</a>. Before the first procedure, the specialist will hold a consultation and check for contraindications.",
       "question3": "What to choose: electroepilation or laser hair removal?",
       "answer3": "Our specialists will help you choose the best hair removal method that suits your skin type, hair color, and the area you want to treat. <br/> <br/> <strong>Laser Hair Removal:</strong> <br/> ✔ Suitable for dark hair and fair skin (modern lasers can also work on darker skin, but there are still some limitations). <br/> ✔ The procedure is fast, especially for large areas. <br/> ✔ Less painful compared to electroepilation. <br/><br/> <strong>Electroepilation:</strong> <br/> ✔ Permanently removes hair by destroying each follicle individually. <br/> ✔ Suitable for all hair types (even light and gray hair). <br/> ✔ Can be performed on all skin phototypes.",
       "question4": "At what age can hair removal/depilation be done?",
       "answer4": "<strong>Laser Hair Removal:</strong> Officially allowed from the age of 18. In some cases, the procedure can be performed earlier, but only with written parental or guardian consent. <br /><br/> <strong>Sugaring and Wax Depilation:</strong> Regular procedures can start from the age of 12-14. If unwanted hair appears early and causes psychological discomfort, the procedure can be done earlier, with parental consent.",
       "question5": "Which device do you use?",
-      "answer5": "We use the modern European diode laser Alvi Prague DL-7000, 2024 model. This device ensures effective and safe hair removal thanks to advanced technology and high power. Its innovative cooling system guarantees comfort during the procedure, and its settings allow adaptation to different skin and hair types. This device features a short pulse – 20 joules in 25 ms! This is the optimal flash duration for effective hair removal while ensuring skin safety.",
+      "answer5": "The studio has two laser devices. The <strong>DEKA Motus AX alexandrite laser</strong> uses dynamic in-motion (Moveo) hair removal and is suitable for all hair types. The <strong>Alvi Prague DL-7000 diode laser</strong>, 2024 model, has a cooling system for comfort during the procedure and a short pulse – 20 joules in 25 ms. The specialist will choose the device during the consultation based on your skin type and hair colour. Prices for both devices are in the <a href='/prices#laser-epilation'>price list</a>, and you can read more about choosing a laser on the <a href='/services/laser-epilation'>laser hair removal page</a>.",
       "question6": "Does laser hair removal remove ingrown hairs?",
       "answer6": "Laser hair removal can help reduce the number of ingrown hairs, as it affects the hair follicle, destroying it and decreasing the likelihood of hair growing inward in the future."
     },
     "privacyPolicy": {
       "title": "Privacy Policy",
-      "intro": "We, MS Studio Laser (hereinafter referred to as the \"Company\", \"we\", \"our\"), are committed to ensuring the confidentiality and protection of the personal data of our clients and users of our website. This Privacy Policy describes how we collect, use, process, and protect your personal information.",
+      "intro": "We, MS STUDIO LASER (hereinafter referred to as the \"Company\", \"we\", \"our\"), are committed to ensuring the confidentiality and protection of the personal data of our clients and users of our website. This Privacy Policy describes how we collect, use, process, and protect your personal information.",
       "sections": {
         "dataCollectionTitle": "1. Data Collection and Use",
         "dataCollection": "We may collect and use the following categories of personal information:",
@@ -828,14 +827,14 @@
         "pricesCta": "See all prices",
         "faqTitle": "Frequently asked questions",
         "faqLocationQ": "Where is the studio and how do I book?",
-        "faqLocationA": "MS Laser studio is in Lviv at 8 Oleny Stepanivny St. We are open every day from 9:00 to 20:00. Book through the form on the website or by phone +380 98 030 3093.",
+        "faqLocationA": "MS STUDIO LASER studio is in Lviv at 8 Oleny Stepanivny St. We are open every day from 9:00 to 20:00. Book through the form on the website or by phone +380 98 030 3093.",
         "procedureTitle": "How the session goes",
         "forWhomTitle": "Who it is for",
         "resultsTitle": "Results"
       },
       "laser": {
         "title": "Laser hair removal in Lviv",
-        "intro": "Laser hair removal at MS Laser is done on two modern devices: the DEKA Motus AX alexandrite laser and the Alvi Prague DL-7000 diode laser. The specialist chooses the laser and settings for your skin type, hair colour and area, so the procedure is comfortable and the result lasts.",
+        "intro": "Laser hair removal at MS STUDIO LASER is done on two modern devices: the DEKA Motus AX alexandrite laser and the Alvi Prague DL-7000 diode laser. The specialist chooses the laser and settings for your skin type, hair colour and area, so the procedure is comfortable and the result lasts.",
         "contraindications": [
           "Cancer (regardless of the treatment area)",
           "Infectious skin diseases",
@@ -879,7 +878,7 @@
         ],
         "faq": [
           {
-            "q": "How much does laser hair removal cost at MS Laser in Lviv?",
+            "q": "How much does laser hair removal cost at MS STUDIO LASER in Lviv?",
             "a": "The price depends on the area and the laser — from {{min}} ₴ per area. There are also packages of several areas that cost less. See the current prices for all areas on the prices page."
           },
           {

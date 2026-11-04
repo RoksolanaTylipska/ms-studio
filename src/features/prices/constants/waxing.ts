@@ -31,7 +31,7 @@ export const waxing: Zone[] = [
       { label: "zones.faceList.noseEars", price: [300, 300] },
       { label: "zones.faceList.chin", price: [300, 500] },
       { label: "zones.faceList.cheeks", price: [300, 350] },
-      { label: "zones.faceList.eyebrows", price: [400, 400] },
+      { label: "zones.faceList.eyebrows", price: [400, 500] },
     ],
   },
   {

@@ -4,7 +4,7 @@ import { PricesContainer } from "./styled";
 function PricesClientSide() {
   return (
     <PricesContainer>
-      <Prices mainTitle="header.prices" />
+      <Prices mainTitle="header.prices" titleComponent="h1" />
     </PricesContainer>
   );
 }

@@ -9,13 +9,13 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { ElementType, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { PricesContainer } from "./styled";
 
 const slugFor = (title: string) => SERVICE_PAGES.find((p) => p.name === title)?.slug;
 
-function Prices({ mainTitle }: { mainTitle: string }) {
+function Prices({ mainTitle, titleComponent }: { mainTitle: string; titleComponent?: ElementType }) {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
@@ -46,7 +46,7 @@ function Prices({ mainTitle }: { mainTitle: string }) {
 
   return (
     <PricesContainer>
-      <TitleStars title={mainTitle} filledStars={true} lines={true} />
+      <TitleStars title={mainTitle} filledStars={true} lines={true} component={titleComponent} />
       <Box>
         {services.map(({ title, Component }) => (
           <Accordion

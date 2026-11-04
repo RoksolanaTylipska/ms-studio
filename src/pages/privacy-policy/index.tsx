@@ -5,8 +5,8 @@ function PrivacyPolicy() {
   return (
     <>
       <Seo
-        title="Політика конфіденційності | MS Laser"
-        description="Політика конфіденційності та обробки персональних даних студії MS Laser у Львові."
+        title="Політика конфіденційності | MS STUDIO LASER"
+        description="Політика конфіденційності та обробки персональних даних студії MS STUDIO LASER у Львові."
         path="/privacy-policy"
       />
       <PrivacyPolicyClientSide />

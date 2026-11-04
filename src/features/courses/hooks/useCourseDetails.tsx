@@ -7,6 +7,8 @@ export const useCourseDetails = ({ course }: { course: Course }) => {
   const { t } = useTranslation();
 
   const renderDayContainer = (data: CourseSection) => {
+    if (!data.title || !data.description) return null;
+
     const title = t(data.title);
     const description = t(data.description, { returnObjects: true });
 

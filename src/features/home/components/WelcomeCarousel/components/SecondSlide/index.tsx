@@ -18,7 +18,7 @@ function SecondSlide() {
   return (
     <SlideContainerSecond>
       <Wrapper selectedLanguage={selectedLanguage}>
-        <Title as="h1">
+        <Title as="h2">
           <Trans i18nKey="home.carousel.slogan"></Trans>
         </Title>
         <ButtonContainer isMobile={isMobile}>

@@ -52,7 +52,7 @@ function PriceModal() {
         <ModalContainer onClick={handleCloseModal}>
           <Image
             src={priceImage}
-            alt="Прайс MS Laser"
+            alt="Прайс MS STUDIO LASER"
             width={900}
             height={600}
             unoptimized

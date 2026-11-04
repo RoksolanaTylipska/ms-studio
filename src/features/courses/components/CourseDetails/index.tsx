@@ -17,7 +17,7 @@ import { useCourseDetails } from "../../hooks/useCourseDetails";
 
 function CourseDetails({ course }: { course: Course }) {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const { days, renderDayContainer } = useCourseDetails({ course });
 
@@ -29,7 +29,7 @@ function CourseDetails({ course }: { course: Course }) {
   return (
     <Container>
       <Content>
-        <TitleContainer>
+        <TitleContainer as="h1">
           <Typography variant="bodyCaveat">{t(course.title)}</Typography>{" "}
           {course?.subTitle && (
             <>
@@ -71,7 +71,8 @@ function CourseDetails({ course }: { course: Course }) {
 
         <Price variant="bodyCaveat">
           {t("courses.variants.price")}:{" "}
-          {course.price ? t(course.price, { defaultValue: course.price }) : null}
+          {/* Prices are either translation keys or plain values like "800$" */}
+          {course.price && (i18n.exists(course.price) ? t(course.price) : course.price)}
         </Price>
       </Content>
     </Container>

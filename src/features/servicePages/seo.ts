@@ -1,7 +1,7 @@
 import i18n from "@/I18n/i18nConfig";
 import { SITE_NAME, SITE_URL } from "@/constants/site";
 import { PriceCatalog, PriceSection, collectPriceRows } from "@/features/prices/catalog";
-import { ServicePage, servicePagePath } from "@/features/servicePages/constants";
+import { SERVICE_PAGES, ServicePage, servicePagePath } from "@/features/servicePages/constants";
 
 export type FaqItem = { q: string; a: string };
 type Lng = "ua" | "en";
@@ -60,6 +60,14 @@ export const beautySalonSchema = () => ({
   sameAs: [STUDIO.instagram, STUDIO.tiktok],
 });
 
+const breadcrumbSchema = (...crumbs: { name: string; url: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [{ name: "Головна", url: `${SITE_URL}/` }, ...crumbs].map(
+    ({ name, url }, index) => ({ "@type": "ListItem", position: index + 1, name, item: url })
+  ),
+});
+
 export const servicePageSchema = (page: ServicePage, catalog: PriceCatalog) => {
   const path = servicePagePath(page.slug);
   const url = `${SITE_URL}${path}`;
@@ -97,14 +105,113 @@ export const servicePageSchema = (page: ServicePage, catalog: PriceCatalog) => {
         acceptedAnswer: { "@type": "Answer", text: a },
       })),
     },
+    breadcrumbSchema({ name: "Послуги", url: `${SITE_URL}/services` }, { name, url }),
+  ];
+};
+
+export const pricesPageSchema = (catalog: PriceCatalog) => {
+  const url = `${SITE_URL}/prices`;
+
+  return [
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Головна", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: "Послуги", item: `${SITE_URL}/services` },
-        { "@type": "ListItem", position: 3, name, item: url },
-      ],
+      ...beautySalonSchema(),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Ціни на послуги",
+        url,
+        itemListElement: SERVICE_PAGES.flatMap((page) => {
+          const range = servicePriceRange(catalog, page.priceSection);
+          if (!range) return [];
+          return [
+            {
+              "@type": "AggregateOffer",
+              priceCurrency: "UAH",
+              lowPrice: range.min,
+              highPrice: range.max,
+              url: `${url}#${page.slug}`,
+              itemOffered: {
+                "@type": "Service",
+                name: i18n.t(page.name, { lng: "ua" }),
+                url: `${SITE_URL}${servicePagePath(page.slug)}`,
+              },
+            },
+          ];
+        }),
+      },
     },
+    breadcrumbSchema({ name: "Ціни", url }),
+  ];
+};
+
+// Only a single amount fits an Offer; ranges and hourly rates are left out
+const courseOffer = (price: string, url: string) => {
+  const text = i18n.exists(price) ? i18n.t(price, { lng: "ua" }) : price;
+  const match = text.match(/^(\d[\d\s]*)\s*(\$|грн)$/);
+  if (!match) return null;
+  return {
+    "@type": "Offer",
+    price: match[1].replace(/\s/g, ""),
+    priceCurrency: match[2] === "$" ? "USD" : "UAH",
+    url,
+  };
+};
+
+export const coursePageSchema = ({
+  name,
+  description,
+  path,
+  price = "",
+}: {
+  name: string;
+  description: string;
+  path: string;
+  price?: string;
+}) => {
+  const url = `${SITE_URL}${path}`;
+  const offer = courseOffer(price, url);
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      name,
+      description,
+      url,
+      inLanguage: "uk",
+      provider: beautySalonSchema(),
+      ...(offer && { offers: offer }),
+    },
+    breadcrumbSchema({ name: "Курси", url: `${SITE_URL}/courses` }, { name, url }),
+  ];
+};
+
+export const contactsPageSchema = () => {
+  const url = `${SITE_URL}/contacts`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Контакти",
+      url,
+      mainEntity: beautySalonSchema(),
+    },
+    breadcrumbSchema({ name: "Контакти", url }),
+  ];
+};
+
+export const galleryPageSchema = () => {
+  const url = `${SITE_URL}/gallery`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      name: "Галерея студії та робіт майстрів",
+      url,
+      about: { "@id": `${SITE_URL}/#studio` },
+    },
+    breadcrumbSchema({ name: "Галерея", url }),
   ];
 };

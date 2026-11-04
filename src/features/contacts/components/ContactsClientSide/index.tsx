@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   AddressText,
@@ -27,6 +28,10 @@ function ContactsClientSide() {
 
       <MapContainer>
         <InfoContainer>
+          <Typography variant="h2" component="h1">
+            {t("header.contacts")}
+          </Typography>
+
           <AddressText variant="bodyComfortaa">
             {t("footer.address")}
           </AddressText>

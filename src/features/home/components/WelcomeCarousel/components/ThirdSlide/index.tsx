@@ -15,7 +15,7 @@ function ThirdSlide() {
   return (
     <SlideContainerThird>
       <ContentWrapper>
-        <Title as="h1">{t("services.endosphere")}</Title>
+        <Title as="h2">{t("services.endosphere")}</Title>
         <Divider />
         <Subtitle as="p">{t("home.carousel.endosphere_subtitle")}</Subtitle>
         <Button

@@ -23,31 +23,35 @@ export const lazerEpilation = [
         time: "30 хв",
         name: "lazerEpilation.complexes.mini",
         prices: [1450],
+        oldPrice: 1650,
       },
       {
         type: "MIDI",
         time: "45 хв",
         name: "lazerEpilation.complexes.midi",
         prices: [2500],
+        oldPrice: 2750,
       },
       {
         type: "MAXI",
         time: "60 хв",
         name: "lazerEpilation.complexes.maxi",
         prices: [3300],
+        oldPrice: 3850,
       },
       {
         type: "ULTRA",
         time: "90 хв",
         name: "lazerEpilation.complexes.ultra",
         prices: [3900],
+        oldPrice: 4600,
       },
     ],
     zones: [
       {
         title: "zones.bikini",
         variants: [
-          { label: "zones.bikiniList.deep", price: [1110] },
+          { label: "zones.bikiniList.deep", price: [1100] },
           { label: "zones.bikiniList.average", price: [900] },
           { label: "zones.bikiniList.panties", price: [600] },
         ],
@@ -162,18 +166,21 @@ info:   [{
       time: "30 хв",
       name: "lazerEpilation.complexes.mini",
       prices: [1150],
+      oldPrice: 1353,
     },
     {
       type: "MIDI",
-      time: "45 хв",
+      time: "60 хв",
       name: "lazerEpilation.complexes.midi",
       prices: [1800],
+      oldPrice: 2118,
     },
     {
       type: "MAXI",
-      time: "60 хв",
+      time: "1 год 60 хв",
       name: "lazerEpilation.complexes.maxi",
       prices: [2400],
+      oldPrice: 2824,
     },
   ],
   zones: [
@@ -256,10 +263,7 @@ info:   [{
       title: "zones.bikini",
       variants: [
         { label: "zones.bikiniList.deep", price: [1000, 1250] },
-        {
-          label: "zones.bikiniList.pubicTriangle",
-          price: [800, 1000],
-        },
+        { label: "zones.bikiniList.average", price: [800, 1000] },
       ],
     },
     {
@@ -291,8 +295,8 @@ info:   [{
     {
       title: "zones.body",
       variants: [
-        { label: "zones.bodyList.chest", price: [520, 650] },
-        { label: "zones.bodyList.fullChest", price: [1000, 800] },
+        { label: "zones.bodyList.areola", price: [0, 650] },
+        { label: "zones.bodyList.fullChest", price: [520, 800] },
         { label: "zones.bodyList.stomachLine", price: [240, 300] },
         { label: "zones.bodyList.fullStomach", price: [520, 650] },
         { label: "zones.bodyList.lowerBack", price: [520, 650] },
