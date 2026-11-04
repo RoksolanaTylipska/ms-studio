@@ -263,10 +263,7 @@ info:   [{
       title: "zones.bikini",
       variants: [
         { label: "zones.bikiniList.deep", price: [1000, 1250] },
-        {
-          label: "zones.bikiniList.pubicTriangle",
-          price: [800, 1000],
-        },
+        { label: "zones.bikiniList.average", price: [800, 1000] },
       ],
     },
     {
@@ -290,8 +287,7 @@ info:   [{
         { label: "zones.faceList.upperLip", price: [320, 400] },
         { label: "zones.faceList.foreheadLine", price: [320, 400] },
         { label: "zones.faceList.chin", price: [440, 550] },
-        { label: "zones.faceList.cheeksLine", price: [320, 400] },
-        { label: "zones.faceList.cheeksFully", price: [440, 550] },
+        { label: "zones.faceList.cheeks", price: [440, 550] },
         { label: "zones.faceList.eyebrows", price: [320, 400] },
         { label: "zones.faceList.neck", price: [0, 700] },
       ],
@@ -300,12 +296,11 @@ info:   [{
       title: "zones.body",
       variants: [
         { label: "zones.bodyList.areola", price: [0, 650] },
-        { label: "zones.bodyList.chest", price: [520, 650] },
-        { label: "zones.bodyList.fullChest", price: [0, 800] },
+        { label: "zones.bodyList.fullChest", price: [520, 800] },
         { label: "zones.bodyList.stomachLine", price: [240, 300] },
         { label: "zones.bodyList.fullStomach", price: [520, 650] },
         { label: "zones.bodyList.lowerBack", price: [520, 650] },
-        { label: "zones.bodyList.back", price: [800, 1000] },
+        { label: "zones.bodyList.back", price: [800, 1300] },
         { label: "zones.bodyList.buttocks", price: [600, 800] },
       ],
     },
