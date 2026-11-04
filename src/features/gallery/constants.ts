@@ -13,6 +13,8 @@ export const isGalleryFolder = (folder: unknown): folder is string =>
 export const MAX_IMAGE_MB = 10;
 export const MAX_VIDEO_MB = 100;
 
+export const MAX_DESCRIPTION_LENGTH = 150;
+
 // Small, fast versions of Cloudinary media for previews and the site
 export const videoPoster = (url: string, width = 800) =>
   url

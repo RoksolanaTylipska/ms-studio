@@ -5,4 +5,10 @@ export interface CloudinaryImage {
   width?: number;
   height?: number;
   created_at?: string;
+  description?: string;
+}
+
+export interface GalleryPage {
+  resources: CloudinaryImage[];
+  next_cursor: string | null;
 }

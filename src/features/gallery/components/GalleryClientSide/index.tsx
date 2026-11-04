@@ -10,13 +10,16 @@ import {
   PhotosContainer,
 } from "./styled";
 import { TitleStars } from "@/components";
+import { GalleryPage } from "@/types/image";
 
 const GalleryClientSide = ({
   title = true,
   path,
+  initial,
 }: {
   title?: boolean;
   path: string;
+  initial?: GalleryPage;
 }) => {
   const {
     images,
@@ -25,7 +28,7 @@ const GalleryClientSide = ({
     toggleOpenModal,
     isModalOpen,
     selectedImage,
-  } = useGallery(path);
+  } = useGallery(path, initial);
 
   return (
     <GalleryContainer>
@@ -74,7 +77,7 @@ const GalleryClientSide = ({
               <Box
                 component="button"
                 type="button"
-                aria-label="Відео студії MS STUDIO LASER"
+                aria-label={img.description || "Відео студії MS STUDIO LASER"}
                 onClick={() => toggleOpenModal(img.secure_url)}
                 sx={{ position: "absolute", inset: 0, p: 0, border: 0, cursor: "pointer", background: "none" }}
               >
@@ -113,7 +116,7 @@ const GalleryClientSide = ({
               <Image
                 loader={cloudinaryLoader}
                 src={img.secure_url}
-                alt={title ? "Сертифікат майстра MS STUDIO LASER" : "Фото студії MS STUDIO LASER"}
+                alt={img.description || (title ? "Сертифікат майстра MS STUDIO LASER" : "Фото студії MS STUDIO LASER")}
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 989px) 33vw, 25vw"
                 style={{ objectFit: "cover", cursor: "pointer" }}

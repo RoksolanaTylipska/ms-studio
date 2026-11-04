@@ -9,6 +9,7 @@ import {
 import {
   GALLERY_FOLDERS,
   GalleryKey,
+  MAX_DESCRIPTION_LENGTH,
   MAX_IMAGE_MB,
   MAX_VIDEO_MB,
   videoPoster,
@@ -19,7 +20,7 @@ import { CloudinaryImage } from "@/types/image";
 import { Alert, Box, CircularProgress, LinearProgress, Typography } from "@mui/material";
 import { getAuth } from "firebase/auth";
 import Image from "next/image";
-import { DragEvent, useCallback, useEffect, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, useCallback, useEffect, useRef, useState } from "react";
 
 type Upload = { id: string; name: string; progress: number; error?: string };
 
@@ -75,6 +76,80 @@ const tooBig = (file: File) => {
   const isVideo = file.type.startsWith("video/");
   const limit = isVideo ? MAX_VIDEO_MB : MAX_IMAGE_MB;
   return file.size > limit * 1024 * 1024 ? `Завеликий файл: до ${limit} МБ для ${isVideo ? "відео" : "фото"}` : null;
+};
+
+// Saved when the field loses focus, so there is no extra button per photo
+const DescriptionField = ({
+  item,
+  onError,
+}: {
+  item: CloudinaryImage;
+  onError: (message: string) => void;
+}) => {
+  const [value, setValue] = useState(item.description ?? "");
+  const [savedValue, setSavedValue] = useState(item.description ?? "");
+  const [status, setStatus] = useState<"idle" | "saving" | "saved">("idle");
+
+  const save = async () => {
+    const description = value.trim();
+    if (description === savedValue) return;
+    setStatus("saving");
+    try {
+      const res = await fetch("/api/gallery/describe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(await authHeader()) },
+        body: JSON.stringify({
+          publicId: item.public_id,
+          resourceType: item.resource_type ?? "image",
+          description,
+        }),
+      });
+      if (!res.ok) throw new Error();
+      setSavedValue(description);
+      setStatus("saved");
+    } catch {
+      setStatus("idle");
+      onError("Не вдалося зберегти опис. Спробуйте ще раз.");
+    }
+  };
+
+  return (
+    <>
+      <Box
+        component="textarea"
+        rows={2}
+        value={value}
+        maxLength={MAX_DESCRIPTION_LENGTH}
+        placeholder="Що на фото?"
+        aria-label="Опис фото"
+        onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
+          setValue(event.target.value);
+          setStatus("idle");
+        }}
+        onBlur={save}
+        sx={{
+          display: "block",
+          boxSizing: "border-box",
+          width: "100%",
+          mt: 1,
+          px: 1.25,
+          py: 0.75,
+          border: `1px solid ${adminColors.caramel}`,
+          borderRadius: "10px",
+          resize: "vertical",
+          fontFamily: bodyFont,
+          fontSize: "13px",
+          lineHeight: 1.4,
+          color: adminColors.chocolate,
+          backgroundColor: "#fff",
+          "&:focus": { outline: `2px solid ${adminColors.camel}`, outlineOffset: -1 },
+        }}
+      />
+      <Typography variant="inherit" sx={{ minHeight: 18, fontFamily: bodyFont, fontSize: "12px", color: adminColors.latte, mt: 0.25 }}>
+        {status === "saving" ? "Зберігаю…" : status === "saved" ? "Збережено" : ""}
+      </Typography>
+    </>
+  );
 };
 
 function GalleryManager() {
@@ -284,81 +359,90 @@ function GalleryManager() {
         </Alert>
       )}
 
+      {items.length > 0 && (
+        <Typography variant="inherit" sx={{ fontFamily: bodyFont, fontSize: "13px", color: adminColors.latte, mt: 3, lineHeight: 1.7 }}>
+          Опис допомагає Google зрозуміти, що на фото. Напишіть коротко й конкретно, наприклад «Кабінет лазерної епіляції».
+          Зберігається автоматично, на сайті з'явиться протягом кількох хвилин.
+        </Typography>
+      )}
+
       <Box
         sx={{
-          mt: 3,
+          mt: 2,
           display: "grid",
           gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(3, 1fr)", md: "repeat(4, 1fr)" },
           gap: { xs: 1.5, sm: 2 },
         }}
       >
         {items.map((item) => (
-          <Box
-            key={item.public_id}
-            sx={{
-              position: "relative",
-              aspectRatio: "1 / 1",
-              borderRadius: "16px",
-              overflow: "hidden",
-              backgroundColor: adminColors.beige,
-              opacity: deleting === item.public_id ? 0.4 : 1,
-            }}
-          >
-            {item.resource_type === "video" ? (
-              <Image unoptimized src={videoPoster(item.secure_url, 400)} alt="" fill style={{ objectFit: "cover" }} />
-            ) : (
-              <Image
-                loader={cloudinaryLoader}
-                src={item.secure_url}
-                alt=""
-                fill
-                sizes="(max-width: 767px) 50vw, 25vw"
-                style={{ objectFit: "cover" }}
-              />
-            )}
-            {item.resource_type === "video" && (
-              <Box
-                sx={{
-                  position: "absolute",
-                  left: 8,
-                  bottom: 8,
-                  px: 1,
-                  py: 0.25,
-                  borderRadius: "999px",
-                  backgroundColor: "rgba(53, 48, 45, 0.7)",
-                  color: "#fff",
-                  fontFamily: bodyFont,
-                  fontSize: "11px",
-                }}
-              >
-                ▶ Відео
-              </Box>
-            )}
+          <Box key={item.public_id}>
             <Box
-              component="button"
-              type="button"
-              aria-label="Видалити"
-              disabled={deleting === item.public_id}
-              onClick={() => remove(item)}
               sx={{
-                position: "absolute",
-                top: 8,
-                right: 8,
-                width: 32,
-                height: 32,
-                border: 0,
-                borderRadius: "50%",
-                cursor: "pointer",
-                backgroundColor: "rgba(255, 255, 255, 0.92)",
-                color: adminColors.error,
-                fontSize: "18px",
-                lineHeight: 1,
-                boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-                "&:hover": { backgroundColor: "#fff" },
+                position: "relative",
+                aspectRatio: "1 / 1",
+                borderRadius: "16px",
+                overflow: "hidden",
+                backgroundColor: adminColors.beige,
+                opacity: deleting === item.public_id ? 0.4 : 1,
               }}
             >
-              ×
+              {item.resource_type === "video" ? (
+                <Image unoptimized src={videoPoster(item.secure_url, 400)} alt="" fill style={{ objectFit: "cover" }} />
+              ) : (
+                <Image
+                  loader={cloudinaryLoader}
+                  src={item.secure_url}
+                  alt=""
+                  fill
+                  sizes="(max-width: 767px) 50vw, 25vw"
+                  style={{ objectFit: "cover" }}
+                />
+              )}
+              {item.resource_type === "video" && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    left: 8,
+                    bottom: 8,
+                    px: 1,
+                    py: 0.25,
+                    borderRadius: "999px",
+                    backgroundColor: "rgba(53, 48, 45, 0.7)",
+                    color: "#fff",
+                    fontFamily: bodyFont,
+                    fontSize: "11px",
+                  }}
+                >
+                  ▶ Відео
+                </Box>
+              )}
+              <Box
+                component="button"
+                type="button"
+                aria-label="Видалити"
+                disabled={deleting === item.public_id}
+                onClick={() => remove(item)}
+                sx={{
+                  position: "absolute",
+                  top: 8,
+                  right: 8,
+                  width: 32,
+                  height: 32,
+                  border: 0,
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  backgroundColor: "rgba(255, 255, 255, 0.92)",
+                  color: adminColors.error,
+                  fontSize: "18px",
+                  lineHeight: 1,
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                  "&:hover": { backgroundColor: "#fff" },
+                }}
+              >
+                ×
+              </Box>
             </Box>
+            <DescriptionField item={item} onError={setError} />
           </Box>
         ))}
       </Box>
