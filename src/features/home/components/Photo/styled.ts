@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { fullBleedMedia } from "@/styles/fullBleed";
 
 export const PhotoContainer = styled(Box)(({ theme }) => ({
+  ...fullBleedMedia,
   height: "80vh",
   backgroundImage: 'url("/assets/photos/touch.webp")',
   backgroundRepeat: "no-repeat",

@@ -240,7 +240,7 @@
       "alexandrite_description": "The world's only Alexandrite laser that operates using the latest dynamic hair removal technology 'in motion' – MOVEO! Painless and suitable for all hair types.",
       "diode_title": "Diode Laser Alvi Prague DL-7000",
       "diode_description": "The modern European diode laser Alvi Prague DL-7000, 2024 model, ensures maximum efficiency and comfort during the procedure.",
-      "electroepilation_title": "Electroepilation with Hebe and Flash Devices",
+      "electroepilation_title": "Electrolysis",
       "electroepilation_description": "The only hair removal method that can permanently remove hair of any color (light, black, gray, blonde, or red)!",
       "sugaring_title": "Sugaring",
       "sugaring_description": "A method of removing unwanted hair using sugar paste. The procedure involves applying warm paste against the direction of hair growth and removing it in the direction of growth.",
@@ -805,6 +805,253 @@
           "tiktok": "TikTok",
           "ads": "Online advertising"
         }
+      }
+    },
+    "servicePages": {
+      "common": {
+        "breadcrumbServices": "Services",
+        "prices": "Prices",
+        "contraindications": "Contraindications",
+        "preparation": "Before your session",
+        "aftercare": "Aftercare",
+        "otherServices": "Other studio services",
+        "more": "Learn more",
+        "ctaTitle": "Book a session",
+        "ctaText": "Leave a request — we will call you back, find a convenient time and answer all your questions.",
+        "devicesTitle": "Devices and methods",
+        "consultNote": "Before your first session the specialist will consult you and check for contraindications.",
+        "perZone": "per area",
+        "perMinute": "per minute",
+        "perSession": "per session",
+        "priceFrom": "from {{min}} ₴",
+        "pricesText": "The price depends on the area, duration and number of sessions. See the full price list with all areas on the prices page.",
+        "pricesCta": "See all prices",
+        "faqTitle": "Frequently asked questions",
+        "faqLocationQ": "Where is the studio and how do I book?",
+        "faqLocationA": "MS Laser studio is in Lviv at 8 Oleny Stepanivny St. We are open every day from 9:00 to 20:00. Book through the form on the website or by phone +380 98 030 3093.",
+        "procedureTitle": "How the session goes",
+        "forWhomTitle": "Who it is for",
+        "resultsTitle": "Results"
+      },
+      "laser": {
+        "title": "Laser hair removal in Lviv",
+        "intro": "Laser hair removal at MS Laser is done on two modern devices: the DEKA Motus AX alexandrite laser and the Alvi Prague DL-7000 diode laser. The specialist chooses the laser and settings for your skin type, hair colour and area, so the procedure is comfortable and the result lasts.",
+        "contraindications": [
+          "Cancer (regardless of the treatment area)",
+          "Infectious skin diseases",
+          "Diabetes",
+          "Varicose veins, thrombophlebitis (for leg treatments)",
+          "Cellulite treatment in the treated area",
+          "Very dark or tanned skin (no solarium for at least 2 weeks)",
+          "Pregnancy, breastfeeding",
+          "Acne medication, retinoids",
+          "Certain groups of antibiotics",
+          "Photosensitivity",
+          "Active herpes in the treated area",
+          "Chronic skin diseases: psoriasis, eczema, lupus",
+          "Epilepsy",
+          "Heart disease, hypertension",
+          "History of keloid scars",
+          "Tuberculosis",
+          "Immunodeficiency disorders",
+          "History of coagulopathic bleeding",
+          "Anticoagulant medication",
+          "Photodermatoses",
+          "Systemic blood disorders"
+        ],
+        "preparation": [
+          "Shave the area thoroughly 2–6 hours before the procedure",
+          "Do not wax, sugar or tweeze for 3–4 weeks before the procedure",
+          "No tanning or solarium for 2 weeks before and after the procedure",
+          "No antibiotics (tetracyclines, sulfonamides, fluoroquinolones) for 2 weeks before the procedure",
+          "Do not take retinoids or use acne creams containing retinoids on the treated area",
+          "Do not use alcohol-based deodorants or antiperspirants for 24 hours before the procedure"
+        ],
+        "aftercare": [
+          "For 3–4 days apply panthenol-based products to soothe and heal the skin",
+          "Avoid scrubs and peels for 3–4 days",
+          "For 3 days avoid the gym, pool, sauna and heavy physical activity",
+          "Avoid direct sunlight and solarium for 2 weeks",
+          "Protect treated areas with SPF 50+ sunscreen when going outside",
+          "Keep the skin clean and away from dirt and germs",
+          "Do not take hot baths on the day of the procedure",
+          "For 2 days do not apply alcohol-based deodorants, toners or other cosmetics"
+        ],
+        "faq": [
+          {
+            "q": "How much does laser hair removal cost at MS Laser in Lviv?",
+            "a": "The price depends on the area and the laser — from {{min}} ₴ per area. There are also packages of several areas that cost less. See the current prices for all areas on the prices page."
+          },
+          {
+            "q": "Which laser should I choose: alexandrite or diode?",
+            "a": "The studio has two devices: the DEKA Motus AX alexandrite laser with the dynamic in-motion (Moveo) technology suitable for all hair types, and the 2024 Alvi Prague DL-7000 diode laser. The specialist will choose the laser during the consultation based on your skin type and hair colour."
+          },
+          {
+            "q": "How do I prepare for laser hair removal?",
+            "a": "Shave the area 2–6 hours before the procedure. Do not wax, sugar or tweeze for 3–4 weeks and avoid tanning and solarium for 2 weeks before."
+          },
+          {
+            "q": "Can I tan after laser hair removal?",
+            "a": "For 2 weeks after the procedure avoid direct sunlight and solarium, and protect treated areas with SPF 50+ when going outside."
+          },
+          {
+            "q": "Do you offer laser hair removal for men?",
+            "a": "Yes, the studio has separate prices for men's areas."
+          }
+        ],
+        "card": "Alexandrite and diode lasers — for any skin type"
+      },
+      "electro": {
+        "title": "Electrolysis in Lviv",
+        "intro": "Electrolysis is the only method that permanently removes hair of any colour: blonde, black, grey, light brown or red. The specialist treats every hair individually, so the method suits the face, bikini line and any other area.",
+        "contraindications": [
+          "Pacemaker",
+          "Any skin diseases",
+          "Any blood disorders",
+          "Pregnancy, breastfeeding",
+          "Allergy to the metals and alloys the electrodes are made of",
+          "Cancer and benign tumours",
+          "Flare-ups of chronic diseases, inflammation in the body",
+          "Heart attack, stroke",
+          "Severe hypertension",
+          "Epilepsy",
+          "Mental illnesses",
+          "Diabetes",
+          "Individual intolerance to electric current",
+          "High sensitivity — not a contraindication, but please tell your specialist",
+          "Retinoids",
+          "Vitamin A (consult your doctor)",
+          "Antibiotics (depending on the type)"
+        ],
+        "preparation": [
+          "Let the hair grow to 4–6 mm — 7–10 days after shaving or 3–4 weeks after waxing",
+          "Moisturise the area before the procedure",
+          "Avoid tanning for 7 days before and 14 days after the session",
+          "Do a gentle peel 3 days before the procedure to remove dead skin cells"
+        ],
+        "aftercare": [
+          "Slight redness and swelling are a normal reaction after the procedure",
+          "Do not wet the skin for 12 hours after the procedure",
+          "For 3 days use chlorhexidine or salicylic alcohol to soothe and heal the area",
+          "Moisturise the area for 3–4 days",
+          "In sunny seasons apply SPF 50+ sunscreen to treated areas",
+          "For 3 days avoid saunas, baths, pools, open water, gyms, hot baths and heavy physical activity",
+          "Avoid scrubs, peels and make-up on the face for 3–4 days",
+          "Keep the skin clean and away from dirt and germs",
+          "No tanning or solarium for 14 days after the procedure"
+        ],
+        "faq": [
+          {
+            "q": "How much does electrolysis cost in Lviv?",
+            "a": "You pay for the specialist's time: from {{min}} ₴ per minute. You can also book two specialists working at once to make the session shorter."
+          },
+          {
+            "q": "What hair does electrolysis remove?",
+            "a": "Electrolysis is the only method that permanently removes hair of any colour: blonde, black, grey, light brown or red. Every hair is treated individually, so it suits the face, bikini line and other areas."
+          },
+          {
+            "q": "How do I prepare for electrolysis?",
+            "a": "Let the hair grow to 4–6 mm — 7–10 days after shaving or 3–4 weeks after waxing. Do a gentle peel 3 days before and avoid tanning for 7 days before the session."
+          },
+          {
+            "q": "What should I do after electrolysis?",
+            "a": "Slight redness and swelling are normal. Do not wet the skin for 12 hours, moisturise the area for 3–4 days and avoid tanning for 14 days."
+          }
+        ],
+        "card": "Permanently removes hair of any colour"
+      },
+      "waxing": {
+        "title": "Waxing and sugaring in Lviv",
+        "intro": "Sugaring and waxing remove hair from the root, so the skin stays smooth longer and hair growth slows down over time. Sugaring uses sugar paste, while wax is great for a quick procedure on large areas. We work with women and men.",
+        "contraindications": [
+          "Chronic diseases (diabetes, AIDS, epilepsy)",
+          "High sensitivity",
+          "Fresh scars",
+          "Sunburn or a recent solarium visit",
+          "Skin diseases",
+          "Pregnancy — only with your doctor's approval",
+          "Retinoids (consult our specialist)",
+          "Vitamin A (consult our specialist)",
+          "Antibiotics (depending on the type)"
+        ],
+        "preparation": [
+          "After shaving, wait at least: bikini — 2 weeks, underarms — 1–1.5 weeks, legs — 3–4 weeks",
+          "Shower 24 hours before without shower creams, soap, intimate gels or other oily products that keep the paste from gripping the hair",
+          "The best time is the first 5 days after your period (the least sensitive time)",
+          "For bikini waxing bring a change of natural cotton underwear",
+          "Do not use deodorants or antiperspirants for 24 hours before underarm waxing — the procedure will be quicker and less painful"
+        ],
+        "aftercare": [
+          "Keep the skin clean and away from dirt and germs",
+          "For 3–5 days avoid pools, saunas, spas and hot baths",
+          "Wear loose clothing made of natural fabrics for the first 2 days",
+          "For 2 days do not apply alcohol-based deodorants, toners or other cosmetics (shower gels, creams)"
+        ],
+        "faq": [
+          {
+            "q": "How much do sugaring and waxing cost in Lviv?",
+            "a": "From {{min}} ₴ per area. Prices differ for women and men — see all areas on the prices page."
+          },
+          {
+            "q": "What is the difference between sugaring and waxing?",
+            "a": "Sugaring uses sugar paste applied against hair growth and removed with it. Wax is great for treating large areas quickly. Both remove hair from the root, so the skin stays smooth longer and hair growth slows down."
+          },
+          {
+            "q": "How long after shaving should I wait?",
+            "a": "At least: bikini — 2 weeks, underarms — 1–1.5 weeks, legs — 3–4 weeks."
+          },
+          {
+            "q": "How do I prepare for sugaring or waxing?",
+            "a": "Shower 24 hours before without shower creams, soap or other oily products. The best time is the first 5 days after your period. Skip deodorant for 24 hours before underarm waxing."
+          }
+        ],
+        "card": "Smooth skin for longer — for women and men"
+      },
+      "endosphere": {
+        "title": "Endosphere therapy in Lviv",
+        "intro": "Endosphere therapy is a body and face treatment based on compressive micro-vibration. A rotating cylinder with spheres gently works on the tissues, which is why it is chosen for body contouring, reducing cellulite, improving skin tone and lymphatic drainage.",
+        "howItWorks": "A course of 6 to 12 sessions gives the best and lasting result. The specialist will choose the areas and number of sessions for you.",
+        "faq": [
+          {
+            "q": "How much does endosphere therapy cost in Lviv?",
+            "a": "From {{min}} ₴ per session depending on the area. See course prices on the prices page."
+          },
+          {
+            "q": "Is endosphere therapy painful?",
+            "a": "No, it feels pleasant. The device power is adjusted individually for you."
+          },
+          {
+            "q": "How many sessions do I need for a lasting effect?",
+            "a": "We recommend a course of 6 to 12 sessions. Lighter legs and drained fluid are noticeable after the first session, and after the course — fewer centimetres, firmer skin and a smoother contour."
+          },
+          {
+            "q": "Who is endosphere therapy for?",
+            "a": "For swelling (especially in the morning), cellulite or loss of skin firmness; for those who eat little but don't lose weight; and for recovery after workouts."
+          },
+          {
+            "q": "How long does a session take?",
+            "a": "From 30 to 60 minutes depending on the area."
+          }
+        ],
+        "procedure": [
+          "A glass of water and a cosy atmosphere",
+          "Oil is applied for smooth gliding",
+          "Micro-vibration and lymphatic drainage with the handpiece",
+          "Power adjusted to you",
+          "The result — a light body and less swelling"
+        ],
+        "forWhom": [
+          "Swelling, especially in the morning",
+          "Those who eat little but don't lose weight",
+          "Cellulite",
+          "Loss of skin firmness",
+          "Recovery after workouts"
+        ],
+        "results": [
+          "After the first session — lighter legs and excess fluid drained",
+          "After the course — fewer centimetres, firmer skin and a smoother contour"
+        ],
+        "card": "Micro-vibration and lymphatic drainage against swelling and cellulite"
       }
     }
   }

@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Link from "next/link";
+import { CARD_RADIUS } from "@/styles/card";
 
 export const ContactsContainer = styled(Box)(({ theme }) => ({
   margin: "150px 60px",
@@ -18,7 +19,7 @@ export const ContactsContainer = styled(Box)(({ theme }) => ({
 
 export const MapContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
-  borderRadius: "35px",
+  borderRadius: CARD_RADIUS,
   padding: "25px;",
   width: "80%",
   display: "flex",

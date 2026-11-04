@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Swiper } from "swiper/react";
+import { CARD_RADIUS } from "@/styles/card";
 
 export const MastersContainer = styled(Box)(({ theme }) => ({
   padding: "100px 0",
@@ -21,8 +22,8 @@ export const SwiperStyled = styled(Swiper)({
 
 export const MasterCard = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,
-  borderRadius: "25px",
-  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+  borderRadius: CARD_RADIUS,
+  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

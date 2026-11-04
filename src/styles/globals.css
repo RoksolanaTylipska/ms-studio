@@ -20,6 +20,12 @@ body {
   background-color: #f1eae5;
 }
 
+/* Full-width photo blocks use 100vw, which includes the scrollbar on Windows:
+   clip that sliver instead of showing a horizontal scrollbar */
+body {
+  overflow-x: hidden;
+}
+
 body,
 ul,
 li,
@@ -86,4 +92,21 @@ h1 {
 }
 .Toastify__progress-bar--success {
   background: #83694E !important;
+}
+/* Gentle reveal on scroll (see src/hooks/useRevealOnScroll.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

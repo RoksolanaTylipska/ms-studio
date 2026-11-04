@@ -1,111 +1,64 @@
 "use client";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import { useTranslation } from "react-i18next";
 import { usePrices } from "@/context/PricesContext";
-import { LabelTypography, TextTypography, TrialBox } from "./styled";
+import { PriceGroup, PriceNote, priceColors } from "@/features/prices/components/PriceTable";
+import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { CARD_RADIUS } from "@/styles/card";
 
 function ElectroepilationDetails() {
   const { t } = useTranslation();
   const { electroepilation } = usePrices();
-  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <Accordion>
-      <AccordionDetails>
-        <TrialBox>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.trial")}
-          </Typography>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.trialTime")}
-          </Typography>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.trialPrice")}
-          </Typography>
-        </TrialBox>
+    <Box>
+      {/* Trial session: highlighted above the price list */}
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 1,
+          mb: 2,
+          px: { xs: 2, sm: 3 },
+          py: 1.5,
+          borderRadius: CARD_RADIUS,
+          backgroundColor: priceColors.gold,
+        }}
+      >
+        <Typography
+          variant="inherit"
+          sx={{ fontFamily: "Comfortaa, sans-serif", fontSize: { xs: "13px", sm: "15px" }, fontWeight: 700, color: priceColors.chocolate }}
+        >
+          {t("electroepilation.trial")} · {t("electroepilation.trialTime").trim()}
+        </Typography>
+        <Typography
+          variant="inherit"
+          sx={{ fontFamily: "Comfortaa, sans-serif", fontSize: { xs: "13px", sm: "14px" }, color: priceColors.chocolate }}
+        >
+          {t("electroepilation.trialPrice")}
+        </Typography>
+      </Box>
 
-        <TableContainer sx={{ overflow: "hidden" }}>
-          {electroepilation.map((item, i) => (
-            <Table key={i}>
-              <TableHead sx={{ borderColor: "transparent" }}>
-                <TableRow>
-                  <TableCell
-                    sx={{
-                      width: "70%",
-                      borderColor: "transparent",
-                      padding: "0px",
-                    }}
-                  >
-                    <LabelTypography>{t(`${item.masterQnt}`)}</LabelTypography>
-                  </TableCell>
-                  {item.values.map((value, i) => (
-                    <TableCell key={i}
-                      sx={{
-                        borderColor: "transparent",
-                        padding: isMobile ? "0px" : "16px",
-                      }}
-                    >
-                      <LabelTypography variant="bodyComfortaa">
-                        {t(`${value}`)}
-                      </LabelTypography>
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {item.variants.map((variant, j) => (
-                  <TableRow key={j}>
-                    <TableCell
-                      sx={{ padding: "0px", borderColor: "transparent" }}
-                    >
-                      <TextTypography>{t(variant.label)}</TextTypography>
-                    </TableCell>
-                    <TableCell sx={{ borderColor: "transparent" }}>
-                      <TextTypography>
-                        {variant.time} {t("general.min")}
-                      </TextTypography>
-                    </TableCell>
-                    <TableCell
-                      sx={{ textAlign: "center", borderColor: "transparent" }}
-                    >
-                      <TextTypography>{variant.price[0]} ₴</TextTypography>
-                    </TableCell>
-                    <TableCell
-                      sx={{ textAlign: "center", borderColor: "transparent" }}
-                    >
-                      <TextTypography>{variant.price[1]} ₴</TextTypography>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          ))}
-        </TableContainer>
-        <TrialBox>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.billedSeparately")}
-          </Typography>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.needle")}
-          </Typography>
-          <Typography variant="bodyCaveat">
-            {t("electroepilation.anesthesia")}
-          </Typography>
-        </TrialBox>
-      </AccordionDetails>
-    </Accordion>
+      {electroepilation.map((item, i) => (
+        <PriceGroup
+          key={i}
+          title={t(item.masterQnt)}
+          columns={item.values.map((value) => t(value))}
+          rows={item.variants.map((variant) => ({
+            label: t(variant.label),
+            cells: [`${variant.time} ${t("general.min")}`, ...variant.price],
+          }))}
+        />
+      ))}
+
+      <Box sx={{ px: { xs: 1, sm: 1.5 }, display: "flex", flexDirection: "column", gap: 0.5 }}>
+        <PriceNote>{t("electroepilation.billedSeparately")}:</PriceNote>
+        <PriceNote>• {t("electroepilation.needle")}</PriceNote>
+        <PriceNote>• {t("electroepilation.anesthesia")}</PriceNote>
+      </Box>
+    </Box>
   );
 }
 

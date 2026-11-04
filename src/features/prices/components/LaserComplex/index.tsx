@@ -1,116 +1,81 @@
 "use client";
 
-import { discountsComplexes } from "@/features/prices/constants/lazerEpilation";
+import { priceColors } from "@/features/prices/components/PriceTable";
 import { Complex } from "@/features/prices/types/lazerEpilation";
-import {
-  Box,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableSortLabel,
-  Typography,
-} from "@mui/material";
-import AccordionDetails from "@mui/material/AccordionDetails";
+import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import {
-  ComplexNameContainer,
-  ComplexPrice,
-  ComplexTime,
-  ComplexTimeContainer,
-  ComplexType,
-  ComplexZone
-} from "./styled";
+import { CARD_RADIUS } from "@/styles/card";
 
 interface ComplexProps {
   complexes: Complex[];
 }
+
+// Laser packages as cards: package name, duration, included zones and price
 function LaserComplex({ complexes }: ComplexProps) {
   const { t } = useTranslation();
 
-  const isOlexandrut = complexes[0].prices.length === 1;
-  const discount = isOlexandrut ? Array(discountsComplexes[1]) : discountsComplexes
-
   return (
-    <>
-      <AccordionDetails id="panel4-header" sx={{ padding: "0px" }}>
-        <TableContainer sx={{ padding: "0px", overflow: "hidden" }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell
-                  sx={{
-                    padding: "0px",
-                    borderColor: "transparent",
-                    width: "70%",
-                    paddingBottom: "20px",
-                  }}
-                >
-                  <TableSortLabel>
-                    <Typography variant="bodyCaveat">
-                      {t("lazerEpilation.payLess")}{" "}
-                    </Typography>
-                  </TableSortLabel>
-                </TableCell>
-                {/* {discount.map((discount, i) => (
-                  <TableCell key={i} sx={{ borderColor: "transparent" }}>
-                    <Discounts>
-                      <Box key={i} textAlign="center">
-                        <DiscountNumber>{discount.label}</DiscountNumber>
-                      </Box>
-                      {!isOlexandrut && (
-                        <SessionsNumber>
-                          {t(`${discount.sessions}`)}
-                        </SessionsNumber>
-                      )}
-                    </Discounts>
-                  </TableCell>
-                ))} */}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {complexes.map((complex, i) => (
-                <TableRow key={i}>
-                  <TableCell
-                    sx={{ padding: "0px", borderColor: "transparent" }}
-                  >
-                    <ComplexNameContainer key={i}>
-                      <ComplexTimeContainer>
-                        <ComplexType variant="bodyComfortaa">
-                          {complex.type}
-                        </ComplexType>
-                        <ComplexTime variant="bodyComfortaa">
-                          {complex.time}
-                        </ComplexTime>
-                      </ComplexTimeContainer>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <ComplexZone variant="bodyComfortaa">
-                          {t(`${complex.name}`)}
-                        </ComplexZone>
-                      </Box>
-                    </ComplexNameContainer>
-                  </TableCell>
-                  {complex.prices.map((price, i) => (
-                    <TableCell key={i} sx={{ borderColor: "transparent", textAlign: "right", paddingRight: "50px" }}>
-                      <ComplexPrice variant="bodyComfortaa" key={i}>
-                        {price}₴
-                      </ComplexPrice>
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </AccordionDetails>
-    </>
+    <Box sx={{ mb: 3 }}>
+      <Typography variant="bodyCaveat" sx={{ display: "block", mb: 1.5, px: 0.5 }}>
+        {t("lazerEpilation.payLess")}
+      </Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: `repeat(${Math.min(complexes.length, 4)}, 1fr)` },
+          gap: 1.5,
+        }}
+      >
+        {complexes.map((complex) => (
+          <Box
+            key={complex.type + complex.name}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+              p: 2.5,
+              borderRadius: CARD_RADIUS,
+              backgroundColor: priceColors.beige,
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 1 }}>
+              <Typography
+                variant="inherit"
+                sx={{ fontFamily: "'Playfair Display SC', serif", fontSize: "22px", color: priceColors.chocolate }}
+              >
+                {complex.type}
+              </Typography>
+              <Typography
+                variant="inherit"
+                sx={{ fontFamily: "Comfortaa, sans-serif", fontSize: "12px", color: priceColors.camel, whiteSpace: "nowrap" }}
+              >
+                {complex.time}
+              </Typography>
+            </Box>
+            <Typography
+              variant="inherit"
+              sx={{ fontFamily: "Comfortaa, sans-serif", fontSize: "13px", lineHeight: 1.55, color: priceColors.latte, flex: 1 }}
+            >
+              {t(complex.name)}
+            </Typography>
+            <Typography
+              variant="inherit"
+              sx={{
+                fontFamily: "Comfortaa, sans-serif",
+                fontSize: "20px",
+                fontWeight: 700,
+                fontVariantNumeric: "tabular-nums",
+                color: priceColors.chocolate,
+                pt: 1,
+                borderTop: `1px solid ${priceColors.caramel}`,
+              }}
+            >
+              {complex.prices.map((price) => `${price} ₴`).join(" / ")}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 }
 

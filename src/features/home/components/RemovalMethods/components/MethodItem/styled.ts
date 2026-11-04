@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { CARD_RADIUS } from "@/styles/card";
 
 export const ItemContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.caramel,  
   height: '460px',
-  borderRadius: '30px',
+  borderRadius: CARD_RADIUS,
   padding: '30px 19px',
   width: "300px",
   display: 'flex',

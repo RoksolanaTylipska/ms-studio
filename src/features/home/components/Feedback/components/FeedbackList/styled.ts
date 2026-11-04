@@ -3,19 +3,22 @@ import { styled } from "@mui/material/styles";
 
 export const FeedbackListContainer = styled(Box)(({ theme }) => ({
   flex: 1,
-  backgroundImage: "url('/assets/photos/feedback.webp')",
+  // The photo fades in from the block's colour so there is no hard edge
+  backgroundImage: `linear-gradient(to right, ${theme.palette.colors.caramel}, rgba(224, 214, 208, 0) 30%), url('/assets/photos/feedback.webp')`,
   backgroundSize: "cover",
   backgroundPosition: "bottom",
   backgroundRepeat: "no-repeat",
   backgroundColor: "rgba(255, 255, 255, 0.6)",
   padding: "20px",
 
-  borderRadius: "0px 10px 10px 0px",
+  borderRadius: 0,
   width: "100%",
   maxHeight: "670px",
   overflow: "auto",
   [theme.breakpoints.down("md")]: {
-    borderRadius: "0px 0px 10px 10px",
+    borderRadius: 0,
+    // Stacked under the form on narrow screens: fade from the top instead
+    backgroundImage: `linear-gradient(to bottom, ${theme.palette.colors.caramel}, rgba(224, 214, 208, 0) 15%), url('/assets/photos/feedback.webp')`,
   },
 }));
 

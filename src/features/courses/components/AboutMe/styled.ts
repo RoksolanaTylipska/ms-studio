@@ -1,11 +1,13 @@
 import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
+import { fullBleed, pageOverhang } from "@/styles/fullBleed";
 
 export const AboutMeContainer = styled(Box)(({ theme }) => ({
   width: '100%',
   display: "flex",
   justifyContent: "space-between",
   backgroundColor: theme.palette.colors.caramel,
+  ...fullBleed(theme.palette.colors.caramel),
   marginTop: "85px",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column-reverse",
@@ -62,7 +64,10 @@ export const CreateBeautyContainer = styled(Box)(({ theme }) => ({
 export const ImageBackground = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.colors.beige,
   borderRadius: "60% 0% 0% 60%",
-  width: "40%",
+  // The photo sits at the right edge of the page: on wide screens it runs on
+  // to the screen edge instead of stopping at the 1440px column
+  width: `calc(40% + ${pageOverhang})`,
+  marginRight: `calc(-1 * ${pageOverhang})`,
   height: "600px",
   position: "relative", 
   [theme.breakpoints.down("sm")]: {

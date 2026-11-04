@@ -46,6 +46,14 @@ function Faq() {
               expandIcon={<ExpandMoreIcon />}
               aria-controls={`faq-${index}-content`}
               id={`faq-${index}-header`}
+              // Same look the theme gives to #panel1-header (ids are unique now)
+              sx={(theme) => ({
+                fontSize: "22px",
+                textTransform: "uppercase",
+                borderBottom: "1px solid rgba(0, 0, 0, .125)",
+                [theme.breakpoints.down("md")]: { fontSize: "20px" },
+                [theme.breakpoints.down("sm")]: { fontSize: "18px" },
+              })}
             >
               {t(`${faq.question}`)}
             </AccordionSummary>

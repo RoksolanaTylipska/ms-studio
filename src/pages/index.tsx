@@ -9,7 +9,11 @@ import Photo from "../features/home/components/Photo";
 import Reviews from "../features/home/components/Reviews";
 import WelcomeCarousel from "../features/home/components/WelcomeCarousel";
 import Prices from "@/features/prices";
+import { SITE_URL } from "@/constants/site";
+import { SERVICE_PAGES, servicePagePath } from "@/features/servicePages/constants";
+import { beautySalonSchema } from "@/features/servicePages/seo";
 import { fetchPriceSettings } from "@/lib/priceOverrides";
+import i18n from "@/I18n/i18nConfig";
 import { GetStaticProps } from "next";
 
 function Home() {
@@ -21,6 +25,29 @@ function Home() {
         path="/"
       />
       <Head>
+        {/* The studio as a local business, with links to every service page */}
+        <script
+          key="studio-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              ...beautySalonSchema(),
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Послуги студії",
+                itemListElement: SERVICE_PAGES.map((page) => ({
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: i18n.t(page.name, { lng: "ua" }),
+                    url: `${SITE_URL}${servicePagePath(page.slug)}`,
+                  },
+                })),
+              },
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         {/* Hero slide background is the LCP element: start loading it before CSS is parsed */}
         <link
           rel="preload"
