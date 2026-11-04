@@ -44,7 +44,7 @@
         "lashes_brows_makeup": "Lashes / brows / makeup"
       },
       "intro": {
-        "title": "Beauty That Inspires",
+        "title": "MS STUDIO LASER services — laser hair removal, electrolysis, waxing, sugaring and endosphere therapy",
         "subtitle": "Experience the magic of transformation with our masters and discover our services.",
         "create_beauty": "Creating beauty with love"
       },
@@ -236,11 +236,11 @@
     "removalMethods": {
       "title": "Monostudio in all hair removal methods",
       "alexandrite_title": "Alexandrite Laser DEKA Motus AX",
-      "alexandrite_description": "The world's only Alexandrite laser that operates using the latest dynamic hair removal technology 'in motion' – MOVEO! Painless and suitable for all hair types.",
+      "alexandrite_description": "DEKA Motus AX with Moveo technology is an alexandrite laser for a comfortable procedure. Whether it can be used and which settings are right are decided individually after assessing your skin and hair.",
       "diode_title": "Diode Laser Alvi Prague DL-7000",
       "diode_description": "The modern European diode laser Alvi Prague DL-7000, 2024 model, ensures maximum efficiency and comfort during the procedure.",
       "electroepilation_title": "Electrolysis",
-      "electroepilation_description": "The only hair removal method that can permanently remove hair of any color (light, black, gray, blonde, or red)!",
+      "electroepilation_description": "Works on hair of any colour: light, black, grey, blonde or red. A lasting result comes from a course of sessions.",
       "sugaring_title": "Sugaring",
       "sugaring_description": "A method of removing unwanted hair using sugar paste. The procedure involves applying warm paste against the direction of hair growth and removing it in the direction of growth.",
       "wax_title": "Wax Depilation",
@@ -258,11 +258,11 @@
       "question2": "Contraindications for the procedure?",
       "answer2": "Contraindications depend on the procedure: <a href='/services/laser-epilation#info'>laser hair removal</a>, <a href='/services/electroepilation#info'>electrolysis</a>, <a href='/services/waxing#info'>waxing and sugaring</a>. Before the first procedure, the specialist will hold a consultation and check for contraindications.",
       "question3": "What to choose: electroepilation or laser hair removal?",
-      "answer3": "Our specialists will help you choose the best hair removal method that suits your skin type, hair color, and the area you want to treat. <br/> <br/> <strong>Laser Hair Removal:</strong> <br/> ✔ Suitable for dark hair and fair skin (modern lasers can also work on darker skin, but there are still some limitations). <br/> ✔ The procedure is fast, especially for large areas. <br/> ✔ Less painful compared to electroepilation. <br/><br/> <strong>Electroepilation:</strong> <br/> ✔ Permanently removes hair by destroying each follicle individually. <br/> ✔ Suitable for all hair types (even light and gray hair). <br/> ✔ Can be performed on all skin phototypes.",
+      "answer3": "Our specialists will help you choose the best hair removal method that suits your skin type, hair color, and the area you want to treat. <br/> <br/> <strong>Laser Hair Removal:</strong> <br/> ✔ Suitable for dark hair and fair skin (modern lasers can also work on darker skin, but there are still some limitations). <br/> ✔ The procedure is fast, especially for large areas. <br/> ✔ Less painful compared to electroepilation. <br/><br/> <strong>Electroepilation:</strong> <br/> ✔ Treats each follicle individually, and a lasting result comes from a course of sessions. <br/> ✔ Suitable for all hair types (even light and gray hair). <br/> ✔ Can be performed on all skin phototypes.",
       "question4": "At what age can hair removal/depilation be done?",
       "answer4": "<strong>Laser Hair Removal:</strong> Officially allowed from the age of 18. In some cases, the procedure can be performed earlier, but only with written parental or guardian consent. <br /><br/> <strong>Sugaring and Wax Depilation:</strong> Regular procedures can start from the age of 12-14. If unwanted hair appears early and causes psychological discomfort, the procedure can be done earlier, with parental consent.",
       "question5": "Which device do you use?",
-      "answer5": "The studio has two laser devices. The <strong>DEKA Motus AX alexandrite laser</strong> uses dynamic in-motion (Moveo) hair removal and is suitable for all hair types. The <strong>Alvi Prague DL-7000 diode laser</strong>, 2024 model, has a cooling system for comfort during the procedure and a short pulse – 20 joules in 25 ms. The specialist will choose the device during the consultation based on your skin type and hair colour. Prices for both devices are in the <a href='/prices#laser-epilation'>price list</a>, and you can read more about choosing a laser on the <a href='/services/laser-epilation'>laser hair removal page</a>.",
+      "answer5": "The studio has two laser devices. The <strong>DEKA Motus AX alexandrite laser</strong> uses dynamic in-motion (Moveo) hair removal. The <strong>Alvi Prague DL-7000 diode laser</strong>, 2024 model, has a cooling system for comfort during the procedure and a short pulse – 20 joules in 25 ms. The specialist will choose the device during the consultation based on your skin type and hair colour. Prices for both devices are in the <a href='/prices#laser-epilation'>price list</a>, and you can read more about choosing a laser on the <a href='/services/laser-epilation'>laser hair removal page</a>.",
       "question6": "Does laser hair removal remove ingrown hairs?",
       "answer6": "Laser hair removal can help reduce the number of ingrown hairs, as it affects the hair follicle, destroying it and decreasing the likelihood of hair growing inward in the future."
     },
@@ -883,7 +883,7 @@
           },
           {
             "q": "Which laser should I choose: alexandrite or diode?",
-            "a": "The studio has two devices: the DEKA Motus AX alexandrite laser with the dynamic in-motion (Moveo) technology suitable for all hair types, and the 2024 Alvi Prague DL-7000 diode laser. The specialist will choose the laser during the consultation based on your skin type and hair colour."
+            "a": "The studio has two devices: the DEKA Motus AX alexandrite laser with the dynamic in-motion (Moveo) technology and the 2024 Alvi Prague DL-7000 diode laser. The specialist will choose the laser during the consultation based on your skin type and hair colour."
           },
           {
             "q": "How do I prepare for laser hair removal?",
@@ -902,7 +902,7 @@
       },
       "electro": {
         "title": "Electrolysis in Lviv",
-        "intro": "Electrolysis is the only method that permanently removes hair of any colour: blonde, black, grey, light brown or red. The specialist treats every hair individually, so the method suits the face, bikini line and any other area.",
+        "intro": "Electrolysis works on hair of any colour: blonde, black, grey, light brown or red, so it is chosen where laser is less effective. The specialist treats every hair individually, so the method suits the face, bikini line and any other area. A lasting result comes from a course of sessions and depends on precise treatment of the follicle, the hair growth cycle and regular visits.",
         "contraindications": [
           "Pacemaker",
           "Any skin diseases",
@@ -946,7 +946,19 @@
           },
           {
             "q": "What hair does electrolysis remove?",
-            "a": "Electrolysis is the only method that permanently removes hair of any colour: blonde, black, grey, light brown or red. Every hair is treated individually, so it suits the face, bikini line and other areas."
+            "a": "Electrolysis works on hair of any colour: blonde, black, grey, light brown or red, because unlike laser it does not depend on the pigment in the hair. Every hair is treated individually, so it suits the face, bikini line and other areas."
+          },
+          {
+            "q": "Why do I need a course rather than one session?",
+            "a": "Hair grows in cycles: at any moment hairs in the skin are at different stages, and some have not reached the surface yet. That is why everything cannot be treated at once. Some follicles also need repeat treatment before the hair stops growing."
+          },
+          {
+            "q": "How long does an electrolysis course take?",
+            "a": "Usually from a few months to a year and a half, sometimes longer. It depends on the area, hair density and whether the hair was previously removed by waxing, sugaring or tweezing. The specialist sets the number of sessions and the intervals at the consultation."
+          },
+          {
+            "q": "What affects the result of electrolysis?",
+            "a": "Precise treatment of the follicle, the hair growth stage, hair density and thickness, hormones, regular sessions and aftercare. Hormonal changes can bring new hair later on, which is then treated separately."
           },
           {
             "q": "How do I prepare for electrolysis?",
@@ -957,7 +969,7 @@
             "a": "Slight redness and swelling are normal. Do not wet the skin for 12 hours, moisturise the area for 3–4 days and avoid tanning for 14 days."
           }
         ],
-        "card": "Permanently removes hair of any colour"
+        "card": "Works on hair of any colour, the result comes from a course"
       },
       "waxing": {
         "title": "Waxing and sugaring in Lviv",

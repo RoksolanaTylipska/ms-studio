@@ -40,8 +40,8 @@ function Services() {
             component="h1"
             sx={{
               fontFamily: "'Playfair Display SC', serif",
-              fontSize: { xs: "34px", sm: "44px", md: "52px" },
-              lineHeight: 1.15,
+              fontSize: { xs: "27px", sm: "34px", md: "38px" },
+              lineHeight: 1.2,
               color: "#35302D",
             }}
           >
