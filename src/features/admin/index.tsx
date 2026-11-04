@@ -1,4 +1,5 @@
 import AdminsManager from "@/features/admin/components/AdminsManager";
+import GalleryManager from "@/features/admin/components/GalleryManager";
 import PriceEditor, { PriceEditorView } from "@/features/admin/components/PriceEditor";
 import { useAdminAuth } from "@/features/admin/hooks/useAdminAuth";
 import {
@@ -54,7 +55,7 @@ const Muted = ({ children }: { children: ReactNode }) => (
 
 function AdminPanel() {
   const { state, signIn, logOut } = useAdminAuth();
-  const [tab, setTab] = useState<PriceEditorView | "access">("services");
+  const [tab, setTab] = useState<PriceEditorView | "gallery" | "access">("services");
   const [signInError, setSignInError] = useState<string | null>(null);
 
   const handleSignIn = () => {
@@ -86,7 +87,7 @@ function AdminPanel() {
       {state.status === "signedOut" && (
         <CenteredCard>
           <Title>Адмінка</Title>
-          <Muted>Тут можна змінювати ціни на сайті. Увійдіть через Google-акаунт, якому надали доступ.</Muted>
+          <Muted>Тут можна змінювати ціни й галерею на сайті. Увійдіть через Google-акаунт, якому надали доступ.</Muted>
           <PrimaryButton
             onClick={handleSignIn}
             startIcon={
@@ -186,8 +187,9 @@ function AdminPanel() {
               [
                 ["services", "Послуги"],
                 ["courses", "Курси"],
+                ["gallery", "Галерея"],
                 ...(state.role === "owner" ? [["access", "Доступ"]] : []),
-              ] as [PriceEditorView | "access", string][]
+              ] as [PriceEditorView | "gallery" | "access", string][]
             ).map(([value, label]) => (
               <Box
                 key={value}
@@ -214,10 +216,11 @@ function AdminPanel() {
             ))}
           </Box>
 
-          {/* Kept mounted while on "Доступ" so unsaved price edits survive switching tabs */}
-          <Box sx={{ display: tab === "access" ? "none" : "block" }}>
+          {/* Kept mounted on other tabs so unsaved price edits survive switching */}
+          <Box sx={{ display: tab === "services" || tab === "courses" ? "block" : "none" }}>
             <PriceEditor email={state.email} view={tab === "courses" ? "courses" : "services"} />
           </Box>
+          {tab === "gallery" && <GalleryManager />}
           {tab === "access" && state.role === "owner" && <AdminsManager currentEmail={state.email} />}
         </>
       )}
