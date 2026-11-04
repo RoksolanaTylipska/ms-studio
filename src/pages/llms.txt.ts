@@ -3,7 +3,7 @@ import { ROUTES } from "@/constants/routes";
 import { SITE_URL } from "@/constants/site";
 import { applyPriceSettings } from "@/features/prices/catalog";
 import { SERVICE_PAGES, servicePagePath } from "@/features/servicePages/constants";
-import { STUDIO, servicePriceRange } from "@/features/servicePages/seo";
+import { STUDIO, servicePriceRange, singleSessionMinPrice } from "@/features/servicePages/seo";
 import { fetchPriceSettings } from "@/lib/priceOverrides";
 import { GetServerSideProps } from "next";
 
@@ -14,7 +14,13 @@ const buildLlmsTxt = async () => {
 
   const services = SERVICE_PAGES.map((page) => {
     const range = servicePriceRange(catalog, page.priceSection);
-    const price = range ? ` Ціна: від ${range.min} ₴ ${ua(`servicePages.common.${page.priceUnit}`)}.` : "";
+    const unit = ua(`servicePages.common.${page.priceUnit}`);
+    const single = singleSessionMinPrice(catalog, page.priceSection);
+    const price = !range
+      ? ""
+      : page.priceSection === "lazerEpilation" && single
+        ? ` Ціна: від ${single} ₴ ${unit} за один сеанс, у курсі з 10 сеансів — від ${range.min} ₴ ${unit} за сеанс.`
+        : ` Ціна: від ${range.min} ₴ ${unit}.`;
     return `- [${ua(`servicePages.${page.key}.title`)}](${SITE_URL}${servicePagePath(page.slug)}): ${ua(`servicePages.${page.key}.intro`)}${price}`;
   }).join("\n");
 
@@ -26,6 +32,7 @@ const buildLlmsTxt = async () => {
 - Графік: ${STUDIO.hoursDisplay}, без вихідних
 - Телефон: ${STUDIO.phoneDisplay}
 - Запис: форма на сайті ${SITE_URL}/ або за телефоном
+- Карта: ${STUDIO.googleMaps}
 - Instagram: ${STUDIO.instagram}
 
 ## Послуги
