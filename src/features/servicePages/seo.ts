@@ -14,10 +14,14 @@ export const STUDIO = {
   street: "вул. Олени Степанівни, 8",
   city: "Львів",
   postalCode: "79000",
-  hours: "Mo-Su 09:00-20:00",
+  latitude: 49.8442009,
+  longitude: 24.0097199,
+  opens: "09:00",
+  closes: "20:00",
   hoursDisplay: "щодня з 9:00 до 20:00",
   instagram: "https://www.instagram.com/ms_studio_laser",
   tiktok: "https://www.tiktok.com/@ms_studio_epil",
+  googleMaps: "https://www.google.com/maps?cid=16386841920656184017",
 };
 
 // Lowest/highest price currently on the site for a service (after /admin edits)
@@ -28,6 +32,15 @@ export const servicePriceRange = (catalog: PriceCatalog, section: PriceSection) 
     // 0 marks a price that doesn't apply (e.g. diode laser, neck: [0, 500])
     .filter((price) => price > 0);
   return prices.length > 0 ? { min: Math.min(...prices), max: Math.max(...prices) } : null;
+};
+
+// Lowest price of one session: zone rows list [10 sessions, 1 session]
+export const singleSessionMinPrice = (catalog: PriceCatalog, section: PriceSection) => {
+  const prices = collectPriceRows(catalog)
+    .filter((row) => row.section === section && Array.isArray(row.value))
+    .map((row) => (row.value as number[])[(row.value as number[]).length - 1])
+    .filter((price) => price > 0);
+  return prices.length > 0 ? Math.min(...prices) : null;
 };
 
 export const serviceFaq = (page: ServicePage, lng: Lng, minPrice?: number): FaqItem[] => {
@@ -48,6 +61,7 @@ export const beautySalonSchema = () => ({
   url: `${SITE_URL}/`,
   telephone: STUDIO.phone,
   image: `${SITE_URL}/assets/photos/carousel_1.webp`,
+  logo: `${SITE_URL}/assets/icons/logo-black.png`,
   address: {
     "@type": "PostalAddress",
     streetAddress: STUDIO.street,
@@ -55,9 +69,20 @@ export const beautySalonSchema = () => ({
     postalCode: STUDIO.postalCode,
     addressCountry: "UA",
   },
-  openingHours: STUDIO.hours,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: STUDIO.latitude,
+    longitude: STUDIO.longitude,
+  },
+  hasMap: STUDIO.googleMaps,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: STUDIO.opens,
+    closes: STUDIO.closes,
+  },
   priceRange: "₴₴",
-  sameAs: [STUDIO.instagram, STUDIO.tiktok],
+  sameAs: [STUDIO.instagram, STUDIO.tiktok, STUDIO.googleMaps],
 });
 
 const breadcrumbSchema = (...crumbs: { name: string; url: string }[]) => ({
