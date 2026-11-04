@@ -8,7 +8,7 @@ function AdminPage() {
   return (
     <>
       <Head>
-        <title>Адмінка | MS Laser</title>
+        <title>Адмінка | MS STUDIO LASER</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <AdminPanel />

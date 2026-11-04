@@ -16,7 +16,7 @@ function Services() {
   return (
     <>
       <Seo
-        title="Послуги: лазерна епіляція, електроепіляція, депіляція | MS Laser Львів"
+        title="Послуги: лазерна епіляція, електроепіляція, депіляція | MS STUDIO LASER Львів"
         description="Лазерна епіляція, електроепіляція, воскова депіляція, шугаринг та ендосфера-терапія у Львові. Підберемо метод під ваш тип шкіри та волосся."
         path="/services"
       />
@@ -80,7 +80,7 @@ function Services() {
         >
           <Image
             src="/assets/photos/services_intro.webp"
-            alt="Майстри студії MS Laser у Львові"
+            alt="Майстри студії MS STUDIO LASER у Львові"
             fill
             priority
             sizes="(max-width: 989px) 100vw, 50vw"

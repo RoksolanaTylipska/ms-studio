@@ -46,7 +46,7 @@ export const Appointment = ({
       {!isMobile ? (
         <Image
           src="/assets/photos/modal-window.webp"
-          alt="MS Laser"
+          alt="MS STUDIO LASER"
           width={300}
           height={400}
           style={{ borderRadius: "15px" }}
@@ -55,7 +55,7 @@ export const Appointment = ({
         <ImageContainerMobile>
           <Image
             src="/assets/photos/modal-window-mobile.webp"
-            alt="MS Laser"
+            alt="MS STUDIO LASER"
             fill
             style={{
               objectFit: "contain",
@@ -94,7 +94,7 @@ export const Appointment = ({
             <InputPhone
               control={control}
               name="phone"
-              label={t("modalWindow.input.phone_label")}
+              label={t("modalWindow.input.phone")}
             />
             <Button
               children={t("button.bookAppointment")}

@@ -6,8 +6,8 @@ function Certificates() {
   return (
     <>
       <Seo
-        title="Сертифікати майстрів | MS Laser Львів"
-        description="Сертифікати та дипломи майстрів студії MS Laser у Львові з лазерної епіляції, електроепіляції та депіляції."
+        title="Сертифікати майстрів | MS STUDIO LASER Львів"
+        description="Сертифікати та дипломи майстрів студії MS STUDIO LASER у Львові з лазерної епіляції, електроепіляції та депіляції."
         path="/certificates"
       />
       <Box>

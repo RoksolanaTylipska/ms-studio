@@ -53,7 +53,7 @@ function FeedbackForm() {
         <InputPhone
           name="phone"
           control={control}
-          label={t("modalWindow.input.phone_label")}
+          label={t("modalWindow.input.phone")}
           required
         />
 

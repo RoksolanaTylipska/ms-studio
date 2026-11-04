@@ -18,6 +18,10 @@ function LaserEpilation() {
   const type = lazerEpilation[Math.min(typeIndex, lazerEpilation.length - 1)];
   if (!type) return null;
   const group = type.info[Math.min(groupIndex, type.info.length - 1)];
+  // Diode prices come in two columns: a course of 10 sessions and a single session
+  const zoneColumns = group?.zones.some((zone) => zone.variants.some((v) => v.price.length > 1))
+    ? ["services.sessions10Discount", "services.sessions1"]
+    : [];
 
   return (
     <Box>
@@ -44,7 +48,7 @@ function LaserEpilation() {
       {group && (
         <>
           {group.complexes && group.complexes.length > 0 && <LaserComplex complexes={group.complexes} />}
-          <LaserZone zones={group.zones} />
+          <LaserZone zones={group.zones} columns={zoneColumns} />
         </>
       )}
     </Box>

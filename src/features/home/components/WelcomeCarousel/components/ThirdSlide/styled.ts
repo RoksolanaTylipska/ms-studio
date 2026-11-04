@@ -42,6 +42,7 @@ export const ContentWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "'Playfair Display SC', sans-serif",
   fontSize: '90px',
   fontWeight: 400,
   lineHeight: '1',

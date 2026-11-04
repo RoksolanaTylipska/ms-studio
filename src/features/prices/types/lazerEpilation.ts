@@ -5,6 +5,8 @@ export interface Complex {
   time: string;
   name: string;
   prices: number[];
+  // Price before the discount, shown crossed out
+  oldPrice?: number;
 }
 
 export interface LazerEpilation {

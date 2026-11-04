@@ -1,8 +1,10 @@
+import { JsonLd } from "@/components/JsonLd";
 import { Seo } from "@/components/Seo";
 import CourseDetails from "@/features/courses/components/CourseDetails";
 import { courseDetails } from "@/features/courses/constants/courseDetails";
 import { Course } from "@/features/courses/types/courseDetails";
 import { applyPriceSettings } from "@/features/prices/catalog";
+import { coursePageSchema } from "@/features/servicePages/seo";
 import { fetchPriceSettings } from "@/lib/priceOverrides";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useTranslation } from "react-i18next";
@@ -15,13 +17,19 @@ export default function CourseDetail({ course }: { course: Course }) {
   const name = [t(course.title), course.subTitle && t(course.subTitle)]
     .filter(Boolean)
     .join(" — ");
+  const description = `${name}: навчання у Львові від практикуючих майстрів MS STUDIO LASER. Тривалість — ${t(course.duration)}. Теорія, практика та сертифікат.`;
+  const path = `/courses/${course.link}`;
 
   return (
     <>
       <Seo
-        title={`Курс: ${name} у Львові | MS Laser`}
-        description={`${name}: навчання у Львові від практикуючих майстрів MS Laser. Тривалість — ${t(course.duration)}. Теорія, практика та сертифікат.`}
-        path={`/courses/${course.link}`}
+        title={`Курс: ${name} у Львові | MS STUDIO LASER`}
+        description={description}
+        path={path}
+      />
+      <JsonLd
+        id="course-schema"
+        data={coursePageSchema({ name, description, path, price: course.price })}
       />
       <CourseDetails course={course} />
     </>

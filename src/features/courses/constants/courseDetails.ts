@@ -26,7 +26,6 @@ export const courseDetails: Course[] = [
         description: "courses.electroepilation_base.practice.day3.topics",
       },
     },
-    note: "courses.electroepilation_base.note",
     price: "800$",
   },
   {

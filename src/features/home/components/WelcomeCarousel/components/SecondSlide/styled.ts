@@ -37,6 +37,8 @@ export const Wrapper = styled(Box)<SlideContainerSecondProps>(({ selectedLanguag
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
+  fontFamily: "'Playfair Display SC', sans-serif",
+  fontWeight: 400,
   fontSize: "80px",
   margin: "auto",
   textTransform: "uppercase",

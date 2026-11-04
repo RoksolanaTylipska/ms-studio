@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
@@ -13,13 +12,12 @@ import { TitleStars } from "@/components";
 import { useMemo } from "react";
 
 function Reviews() {
-  const { t } = useTranslation();
 
   const reviewImageKeys = useMemo(() => Array.from({ length: 16 }, (_, i) => i + 1), []);
 
   return (
     <ReviewsContainer>
-      <TitleStars title={t("home.reviews")} />
+      <TitleStars title="home.reviews" />
       <SwiperStyled
         slidesPerView={4}
         centeredSlides={true}
@@ -55,7 +53,7 @@ function Reviews() {
             <ImageContainer>
               <Image
                 src={`/assets/photos/reviews/review-${key}.webp`}
-                alt="Відгук клієнта MS Laser"
+                alt="Відгук клієнта MS STUDIO LASER"
                 fill
                 sizes="(max-width: 767px) 80vw, (max-width: 1023px) 50vw, 325px"
                 style={{ borderRadius: "15px", objectFit: "cover" }}
