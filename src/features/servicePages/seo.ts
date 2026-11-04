@@ -230,10 +230,10 @@ export const contactsPageSchema = () => {
 const imageObjects = (images: CloudinaryImage[], caption: string) =>
   images
     .filter(({ resource_type }) => resource_type === "image")
-    .map(({ secure_url }) => ({
+    .map(({ secure_url, description }) => ({
       "@type": "ImageObject",
       contentUrl: secure_url,
-      caption,
+      caption: description || caption,
       creditText: STUDIO.name,
     }));
 

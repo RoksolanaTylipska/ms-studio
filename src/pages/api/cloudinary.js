@@ -1,5 +1,5 @@
 import { GALLERY_FOLDERS, isGalleryFolder } from "@/features/gallery/constants";
-import { searchGallery } from "@/lib/galleryImages";
+import { searchGallery, toGalleryImage } from "@/lib/galleryImages";
 
 export default async function handler(req, res) {
   const { next_cursor, folder, fresh } = req.query;
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       fresh ? "no-store" : "public, s-maxage=300, stale-while-revalidate=86400"
     );
     res.status(200).json({
-      resources: result.resources,
+      resources: result.resources.map(toGalleryImage),
       next_cursor: result.next_cursor || null,
     });
   } catch (error) {
