@@ -119,7 +119,7 @@ export const courseDetails: Course[] = [
     title: "courses.variants.electroepilation.online",
     duration: "courses.variants.days.hours",
     note: "courses.online-consultation.note",
-    price: "1 година - 50$",
+    price: "1 година — 50$",
   },
   {
     link: "laser-basic-course",
