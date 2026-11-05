@@ -106,6 +106,36 @@ const PricesLink = ({ href, children }: { href: string; children: ReactNode }) =
   </Box>
 );
 
+const BulletList = ({ items }: { items: string[] }) => (
+  <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1.5 }}>
+    {items.map((item) => (
+      <Box
+        component="li"
+        key={item}
+        sx={{
+          display: "flex",
+          gap: 1.5,
+          fontFamily: bodyFont,
+          fontSize: "14px",
+          lineHeight: 1.7,
+          color: colors.chocolate,
+          "&::before": {
+            content: '""',
+            flexShrink: 0,
+            width: 7,
+            height: 7,
+            mt: "9px",
+            borderRadius: "50%",
+            backgroundColor: colors.camel,
+          },
+        }}
+      >
+        {item}
+      </Box>
+    ))}
+  </Box>
+);
+
 const InfoList = ({ title, items }: { title: string; items: string[] }) => (
   <Box
     sx={{
@@ -119,33 +149,7 @@ const InfoList = ({ title, items }: { title: string; items: string[] }) => (
     >
       {title}
     </Typography>
-    <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1.5 }}>
-      {items.map((item) => (
-        <Box
-          component="li"
-          key={item}
-          sx={{
-            display: "flex",
-            gap: 1.5,
-            fontFamily: bodyFont,
-            fontSize: "14px",
-            lineHeight: 1.7,
-            color: colors.chocolate,
-            "&::before": {
-              content: '""',
-              flexShrink: 0,
-              width: 7,
-              height: 7,
-              mt: "9px",
-              borderRadius: "50%",
-              backgroundColor: colors.camel,
-            },
-          }}
-        >
-          {item}
-        </Box>
-      ))}
-    </Box>
+    <BulletList items={items} />
   </Box>
 );
 
@@ -162,7 +166,12 @@ function ServicePageContent({ page }: { page: ServicePage }) {
 
   // Longer pages can carry their own lead and article
   const sections = t(`${base}.sections`, { returnObjects: true }) as unknown;
-  const article = (Array.isArray(sections) ? sections : []) as { title: string; paragraphs: string[] }[];
+  const article = (Array.isArray(sections) ? sections : []) as {
+    title: string;
+    paragraphs: string[];
+    items?: string[];
+    notes?: string[];
+  }[];
   const hasLead = i18n.exists(`${base}.lead`);
 
   const bookButton = (
@@ -256,13 +265,17 @@ function ServicePageContent({ page }: { page: ServicePage }) {
         </Box>
       </Section>
 
-      {article.map(({ title, paragraphs }, index) => (
+      {article.map(({ title, paragraphs, items, notes = [] }, index) => (
         <Section key={title} tint={index % 2 === 1}>
           <Box sx={{ maxWidth: 820, mx: "auto" }}>
             <SectionTitle>{title}</SectionTitle>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
               {paragraphs.map((paragraph) => (
                 <BodyText key={paragraph}>{paragraph}</BodyText>
+              ))}
+              {items && <BulletList items={items} />}
+              {notes.map((note) => (
+                <BodyText key={note}>{note}</BodyText>
               ))}
             </Box>
           </Box>
@@ -324,7 +337,9 @@ function ServicePageContent({ page }: { page: ServicePage }) {
           }}
         >
           <SectionTitle>
-            {t("servicePages.common.prices")}: {t(page.name).toLowerCase()}
+            {t(`${base}.pricesTitle`, {
+              defaultValue: `${t("servicePages.common.prices")}: ${t(page.name).toLowerCase()}`,
+            })}
           </SectionTitle>
           {priceRange && (
             <Typography
@@ -337,7 +352,7 @@ function ServicePageContent({ page }: { page: ServicePage }) {
               </Box>
             </Typography>
           )}
-          <BodyText>{t("servicePages.common.pricesText")}</BodyText>
+          <BodyText>{t(`${base}.pricesText`, { defaultValue: t("servicePages.common.pricesText") })}</BodyText>
           <Box sx={{ mt: 1 }}>
             <PricesLink href={servicePricesPath(page)}>{t("servicePages.common.pricesCta")} →</PricesLink>
           </Box>

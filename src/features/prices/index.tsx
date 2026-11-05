@@ -2,19 +2,24 @@
 
 import { TitleStars } from "@/components";
 import { services } from "@/features/prices/constants/services";
-import { SERVICE_PAGES } from "@/features/servicePages/constants";
+import { SERVICE_PAGES, servicePagePath } from "@/features/servicePages/constants";
 import { ExpandMore } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Image from "next/image";
+import Link from "next/link";
 import { ElementType, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { PricesContainer } from "./styled";
 
 const slugFor = (title: string) =>
   SERVICE_PAGES.find((p) => p.name === title || p.pricesTitle === title)?.slug;
+
+// Service pages whose prices sit in this accordion
+const pagesFor = (title: string) =>
+  SERVICE_PAGES.filter((p) => !p.overview && (p.pricesAnchor ?? p.slug) === slugFor(title));
 
 function Prices({ mainTitle, titleComponent }: { mainTitle: string; titleComponent?: ElementType }) {
   const { t } = useTranslation();
@@ -77,6 +82,18 @@ function Prices({ mainTitle, titleComponent }: { mainTitle: string; titleCompone
 
             {/* Space between the section heading's divider and the prices */}
             <AccordionDetails sx={{ pt: { xs: 2.5, sm: 3.5 } }}>
+              <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: "8px 24px", mb: 2.5 }}>
+                {pagesFor(title).map((page) => (
+                  <Box
+                    key={page.slug}
+                    component={Link}
+                    href={servicePagePath(page.slug)}
+                    sx={{ fontFamily: "'Comfortaa', sans-serif", fontSize: "13px", color: "#83694E" }}
+                  >
+                    {t("servicePages.common.more")}: {t(page.name).toLowerCase()} →
+                  </Box>
+                ))}
+              </Box>
               <Component />
             </AccordionDetails>
           </Accordion>
