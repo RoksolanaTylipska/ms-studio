@@ -1,5 +1,6 @@
 import { isGalleryFolder } from "@/features/gallery/constants";
 import { verifyAdmin } from "@/lib/adminAuth";
+import { galleryFolderOf } from "@/lib/galleryAsset";
 import { v2 as cloudinary } from "cloudinary";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -17,8 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!email) return res.status(403).json({ error: "No access" });
 
   const { publicId, resourceType } = req.body ?? {};
-  const folder = typeof publicId === "string" ? publicId.slice(0, publicId.lastIndexOf("/")) : null;
-  if (!isGalleryFolder(folder) || !["image", "video"].includes(resourceType)) {
+  const folder = await galleryFolderOf(publicId, resourceType);
+  if (!isGalleryFolder(folder)) {
     return res.status(400).json({ error: "Bad request" });
   }
 
