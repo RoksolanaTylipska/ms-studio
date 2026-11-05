@@ -1,7 +1,14 @@
 import CoursesClientSide from "@/features/courses/components/CoursesClientSide";
 import { Seo } from "@/components/Seo";
+import PageGallery from "@/features/gallery/components/PageGallery";
+import { fetchPagePhotos } from "@/lib/galleryImages";
+import { CloudinaryImage } from "@/types/image";
+import { GetStaticProps } from "next";
+import { useTranslation } from "react-i18next";
 
-function Courses() {
+function Courses({ photos }: { photos: CloudinaryImage[] }) {
+  const { t } = useTranslation();
+
   return (
     <>
       <Seo
@@ -10,8 +17,15 @@ function Courses() {
         path="/courses"
       />
       <CoursesClientSide />
+      <PageGallery title={t("courses.photosTitle")} photos={photos} />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: { photos: await fetchPagePhotos("courses") },
+  // Photos added in /admin show up on the site within minutes
+  revalidate: 300,
+});
 
 export default Courses;

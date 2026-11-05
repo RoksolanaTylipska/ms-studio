@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       folder: folderName,
       maxResults: fresh ? 30 : 8,
       cursor: next_cursor,
+      includeHidden: Boolean(fresh),
     });
     // Cache on the CDN so Cloudinary's rate-limited Search API isn't hit on
     // every visit, but briefly, so new uploads from /admin show up within

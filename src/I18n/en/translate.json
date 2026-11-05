@@ -774,7 +774,8 @@
           ]
         },
         "note": "Internationally recognized certificates; Discount on all products for students; Starter kit for beginners; Helping the best students with employment; Providing all necessary materials during the course! Lunch and coffee breaks included."
-      }
+      },
+      "photosTitle": "Photos from our courses"
     },
     "feedback": {
       "title": "Have you used our services? Leave a review",
@@ -829,7 +830,8 @@
         "procedureTitle": "How the session goes",
         "forWhomTitle": "Who it is for",
         "resultsTitle": "Results",
-        "viewPrices": "View prices"
+        "viewPrices": "View prices",
+        "photosTitle": "Procedure photos"
       },
       "laser": {
         "title": "Laser hair removal in Lviv",
