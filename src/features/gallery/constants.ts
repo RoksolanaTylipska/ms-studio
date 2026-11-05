@@ -15,6 +15,9 @@ export const MAX_VIDEO_MB = 100;
 
 export const MAX_DESCRIPTION_LENGTH = 150;
 
+// Anchor of the note about photo rights on the gallery pages
+export const PHOTO_RIGHTS_ID = "photo-rights";
+
 // Small, fast versions of Cloudinary media for previews and the site
 export const videoPoster = (url: string, width = 800) =>
   url

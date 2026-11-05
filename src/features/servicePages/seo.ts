@@ -1,5 +1,6 @@
 import i18n from "@/I18n/i18nConfig";
 import { SITE_NAME, SITE_URL } from "@/constants/site";
+import { PHOTO_RIGHTS_ID } from "@/features/gallery/constants";
 import { PriceCatalog, collectPriceRows } from "@/features/prices/catalog";
 import { SERVICE_PAGES, ServicePage, servicePagePath, servicePricesPath } from "@/features/servicePages/constants";
 import { CloudinaryImage } from "@/types/image";
@@ -241,6 +242,10 @@ const imageObjects = (images: CloudinaryImage[], caption: string) =>
       contentUrl: secure_url,
       caption: description || caption,
       creditText: STUDIO.name,
+      creator: { "@type": "Organization", name: STUDIO.name, url: SITE_URL },
+      copyrightNotice: `© ${STUDIO.name}`,
+      license: `${SITE_URL}/gallery#${PHOTO_RIGHTS_ID}`,
+      acquireLicensePage: `${SITE_URL}/contacts`,
     }));
 
 export const galleryPageSchema = (images: CloudinaryImage[]) => {
