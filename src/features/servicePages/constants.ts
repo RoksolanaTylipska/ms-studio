@@ -5,7 +5,9 @@ export type ServiceMethod = { title: string; description: string; img: string };
 export type ServicePage = {
   slug: string;
   // Key under "servicePages" in translate.json
-  key: "laser" | "electro" | "waxing" | "endosphere";
+  key: "laser" | "alexandrite" | "diode" | "electro" | "sugaring" | "waxing" | "endosphere";
+  // Page whose preparation/aftercare/contraindications lists are shared with this one
+  listsFrom?: ServicePage["key"];
   // Key of the service name, as in the prices list
   name: string;
   image: string;
@@ -15,6 +17,14 @@ export type ServicePage = {
   methods: ServiceMethod[];
   // Where this service's prices live in the price catalog / on /prices
   priceSection: PriceSection;
+  // Label that narrows the prices down when a section covers several services
+  priceLabel?: string;
+  // Accordion on /prices, when it is not the page's own slug
+  pricesAnchor?: string;
+  // Title of the accordion on /prices that this page's slug opens
+  pricesTitle?: string;
+  // General page: reachable by link, but not listed among the service cards
+  overview?: boolean;
   // What one price is for, e.g. "за зону" (key under servicePages.common)
   priceUnit: "perZone" | "perMinute" | "perSession";
   // Card lists under the intro: [title key, items key] (both under servicePages)
@@ -27,6 +37,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: "laser-epilation",
     key: "laser",
     name: "services.lazer",
+    overview: true,
     image: "/assets/photos/methods/alexandrite.webp",
     imageAlt: "Лазерна епіляція в студії MS STUDIO LASER у Львові",
     methods: [
@@ -55,6 +66,52 @@ export const SERVICE_PAGES: ServicePage[] = [
     },
   },
   {
+    slug: "alexandrite-laser",
+    key: "alexandrite",
+    listsFrom: "laser",
+    name: "services.lazer_oleksandryt",
+    image: "/assets/photos/methods/alexandrite.webp",
+    imageAlt: "Лазерна епіляція олександритовим лазером у студії MS STUDIO LASER у Львові",
+    methods: [],
+    priceSection: "lazerEpilation",
+    priceLabel: "services.lazer_oleksandryt_name",
+    pricesAnchor: "laser-epilation",
+    priceUnit: "perZone",
+    infoBlocks: [
+      ["common.preparation", "preparation"],
+      ["common.aftercare", "aftercare"],
+      ["common.contraindications", "contraindications"],
+    ],
+    seo: {
+      title: "Олександритова лазерна епіляція DEKA Motus AX у Львові | MS STUDIO LASER",
+      description:
+        "Лазерна епіляція на олександритовому лазері DEKA Motus AX із технологією Moveo у Львові. Як проходить процедура, ціни, підготовка, догляд і протипоказання.",
+    },
+  },
+  {
+    slug: "diode-laser",
+    key: "diode",
+    listsFrom: "laser",
+    name: "services.lazer_diod",
+    image: "/assets/photos/methods/diode.webp",
+    imageAlt: "Лазерна епіляція діодним лазером у студії MS STUDIO LASER у Львові",
+    methods: [],
+    priceSection: "lazerEpilation",
+    priceLabel: "services.lazer_diod_name",
+    pricesAnchor: "laser-epilation",
+    priceUnit: "perZone",
+    infoBlocks: [
+      ["common.preparation", "preparation"],
+      ["common.aftercare", "aftercare"],
+      ["common.contraindications", "contraindications"],
+    ],
+    seo: {
+      title: "Лазерна епіляція діодним лазером у Львові | MS STUDIO LASER",
+      description:
+        "Епіляція діодним лазером Alvi Prague DL-7000 2024 року у Львові. Ціни на зони та комплекси для жінок і чоловіків, підготовка, догляд і протипоказання.",
+    },
+  },
+  {
     slug: "electroepilation",
     key: "electro",
     name: "services.electroepilation",
@@ -78,26 +135,15 @@ export const SERVICE_PAGES: ServicePage[] = [
     },
   },
   {
-    slug: "waxing",
-    key: "waxing",
-    name: "services.waxing",
-    image: "/assets/photos/services/waxing.webp",
-    imageAlt: "Воскова депіляція та шугаринг у студії MS STUDIO LASER у Львові",
-    // Portrait photo: keep both hands and the falling wax in the crops
-    imagePosition: "center 30%",
-    methods: [
-      {
-        title: "removalMethods.sugaring_title",
-        description: "removalMethods.sugaring_description",
-        img: "/assets/photos/methods/sugar.webp",
-      },
-      {
-        title: "removalMethods.wax_title",
-        description: "removalMethods.wax_description",
-        img: "/assets/photos/methods/waxing.webp",
-      },
-    ],
+    slug: "sugaring",
+    key: "sugaring",
+    listsFrom: "waxing",
+    name: "removalMethods.sugaring_title",
+    image: "/assets/photos/methods/sugar.webp",
+    imageAlt: "Шугаринг у студії MS STUDIO LASER у Львові",
+    methods: [],
     priceSection: "waxing",
+    pricesAnchor: "waxing",
     priceUnit: "perZone",
     infoBlocks: [
       ["common.preparation", "preparation"],
@@ -105,9 +151,32 @@ export const SERVICE_PAGES: ServicePage[] = [
       ["common.contraindications", "contraindications"],
     ],
     seo: {
-      title: "Шугаринг і воскова депіляція у Львові — ціни | MS STUDIO LASER",
+      title: "Шугаринг у Львові — ціни | MS STUDIO LASER",
       description:
-        "Шугаринг і воскова депіляція у Львові для жінок і чоловіків. Ціни на бікіні, пахви, ноги та обличчя, підготовка до процедури, догляд і протипоказання.",
+        "Шугаринг у Львові для жінок і чоловіків. Ціни на бікіні, пахви, ноги та обличчя, підготовка до процедури, догляд і протипоказання.",
+    },
+  },
+  {
+    slug: "waxing",
+    key: "waxing",
+    name: "removalMethods.wax_title",
+    image: "/assets/photos/services/waxing.webp",
+    imageAlt: "Воскова депіляція у студії MS STUDIO LASER у Львові",
+    // Portrait photo: keep both hands and the falling wax in the crops
+    imagePosition: "center 30%",
+    methods: [],
+    priceSection: "waxing",
+    pricesTitle: "services.waxing",
+    priceUnit: "perZone",
+    infoBlocks: [
+      ["common.preparation", "preparation"],
+      ["common.aftercare", "aftercare"],
+      ["common.contraindications", "contraindications"],
+    ],
+    seo: {
+      title: "Воскова депіляція у Львові — ціни | MS STUDIO LASER",
+      description:
+        "Воскова депіляція у Львові для жінок і чоловіків. Ціни на бікіні, пахви, ноги та обличчя, підготовка до процедури, догляд і протипоказання.",
     },
   },
   {
@@ -135,4 +204,4 @@ export const SERVICE_PAGES: ServicePage[] = [
 export const servicePagePath = (slug: string) => `/services/${slug}`;
 
 // Link to /prices with this service's accordion opened
-export const servicePricesPath = (slug: string) => `/prices#${slug}`;
+export const servicePricesPath = (page: ServicePage) => `/prices#${page.pricesAnchor ?? page.slug}`;

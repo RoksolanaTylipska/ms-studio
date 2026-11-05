@@ -82,6 +82,30 @@ const BodyText = ({ children }: { children: ReactNode }) => (
   </Typography>
 );
 
+const PricesLink = ({ href, children }: { href: string; children: ReactNode }) => (
+  <Box
+    component={Link}
+    href={href}
+    sx={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 1,
+      px: 4,
+      py: 1.5,
+      borderRadius: "999px",
+      border: `1px solid ${colors.chocolate}`,
+      color: colors.chocolate,
+      fontFamily: bodyFont,
+      fontSize: "14px",
+      textDecoration: "none",
+      transition: "background-color .2s, color .2s",
+      "&:hover": { backgroundColor: colors.chocolate, color: "#fff" },
+    }}
+  >
+    {children}
+  </Box>
+);
+
 const InfoList = ({ title, items }: { title: string; items: string[] }) => (
   <Box
     sx={{
@@ -130,10 +154,16 @@ function ServicePageContent({ page }: { page: ServicePage }) {
   const catalog = usePrices();
   const { handleModalWindow } = useModalWindowContext();
   const base = `servicePages.${page.key}`;
-  const list = (key: string) => t(`${base}.${key}`, { returnObjects: true }) as unknown as string[];
-  const others = SERVICE_PAGES.filter((p) => p.slug !== page.slug);
-  const priceRange = servicePriceRange(catalog, page.priceSection);
+  const listsBase = `servicePages.${page.listsFrom ?? page.key}`;
+  const list = (key: string) => t(`${listsBase}.${key}`, { returnObjects: true }) as unknown as string[];
+  const others = SERVICE_PAGES.filter((p) => p.slug !== page.slug && !p.overview);
+  const priceRange = servicePriceRange(catalog, page);
   const faq = serviceFaq(page, i18n.language === "en" ? "en" : "ua", priceRange?.min);
+
+  // Longer pages can carry their own lead and article
+  const sections = t(`${base}.sections`, { returnObjects: true }) as unknown;
+  const article = (Array.isArray(sections) ? sections : []) as { title: string; paragraphs: string[] }[];
+  const hasLead = i18n.exists(`${base}.lead`);
 
   const bookButton = (
     <Button
@@ -186,9 +216,20 @@ function ServicePageContent({ page }: { page: ServicePage }) {
             >
               {t(`${base}.title`)}
             </Typography>
+            {hasLead && (
+              <Typography
+                variant="inherit"
+                sx={{ fontFamily: headingFont, fontSize: { xs: "20px", md: "24px" }, lineHeight: 1.4, color: colors.camel }}
+              >
+                {t(`${base}.lead`)}
+              </Typography>
+            )}
             <BodyText>{t(`${base}.intro`)}</BodyText>
             {page.key === "endosphere" && <BodyText>{t(`${base}.howItWorks`)}</BodyText>}
-            {bookButton}
+            <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 2 }}>
+              {bookButton}
+              <PricesLink href={servicePricesPath(page)}>{t("servicePages.common.viewPrices")}</PricesLink>
+            </Box>
           </Box>
           <Box
             sx={{
@@ -214,6 +255,19 @@ function ServicePageContent({ page }: { page: ServicePage }) {
           </Box>
         </Box>
       </Section>
+
+      {article.map(({ title, paragraphs }, index) => (
+        <Section key={title} tint={index % 2 === 1}>
+          <Box sx={{ maxWidth: 820, mx: "auto" }}>
+            <SectionTitle>{title}</SectionTitle>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
+              {paragraphs.map((paragraph) => (
+                <BodyText key={paragraph}>{paragraph}</BodyText>
+              ))}
+            </Box>
+          </Box>
+        </Section>
+      ))}
 
       {/* Devices / methods */}
       {page.methods.length > 0 && (
@@ -284,27 +338,8 @@ function ServicePageContent({ page }: { page: ServicePage }) {
             </Typography>
           )}
           <BodyText>{t("servicePages.common.pricesText")}</BodyText>
-          <Box
-            component={Link}
-            href={servicePricesPath(page.slug)}
-            sx={{
-              mt: 1,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 1,
-              px: 4,
-              py: 1.5,
-              borderRadius: "999px",
-              border: `1px solid ${colors.chocolate}`,
-              color: colors.chocolate,
-              fontFamily: bodyFont,
-              fontSize: "14px",
-              textDecoration: "none",
-              transition: "background-color .2s, color .2s",
-              "&:hover": { backgroundColor: colors.chocolate, color: "#fff" },
-            }}
-          >
-            {t("servicePages.common.pricesCta")} →
+          <Box sx={{ mt: 1 }}>
+            <PricesLink href={servicePricesPath(page)}>{t("servicePages.common.pricesCta")} →</PricesLink>
           </Box>
         </Box>
       </Section>
@@ -389,7 +424,7 @@ function ServicePageContent({ page }: { page: ServicePage }) {
         <Box sx={{ maxWidth: 640, mx: "auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2.5 }}>
           <SectionTitle>{t("servicePages.common.ctaTitle")}</SectionTitle>
           <Box sx={{ mt: { xs: -1.5, md: -3 } }}>
-            <BodyText>{t("servicePages.common.ctaText")}</BodyText>
+            <BodyText>{t(`${base}.ctaText`, { defaultValue: t("servicePages.common.ctaText") })}</BodyText>
           </Box>
           {bookButton}
         </Box>

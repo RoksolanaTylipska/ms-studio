@@ -13,7 +13,8 @@ import { ElementType, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { PricesContainer } from "./styled";
 
-const slugFor = (title: string) => SERVICE_PAGES.find((p) => p.name === title)?.slug;
+const slugFor = (title: string) =>
+  SERVICE_PAGES.find((p) => p.name === title || p.pricesTitle === title)?.slug;
 
 function Prices({ mainTitle, titleComponent }: { mainTitle: string; titleComponent?: ElementType }) {
   const { t } = useTranslation();

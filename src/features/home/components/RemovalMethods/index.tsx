@@ -36,7 +36,7 @@ function RemovalMethods() {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                height: "410px",
+                height: "470px",
               }}
             >
               <MethodItem key={index} method={method} />

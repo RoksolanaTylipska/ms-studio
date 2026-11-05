@@ -56,9 +56,7 @@
       },
       "zone": "Separate Zones",
       "complex": "Complexes",
-
       "sessions10": "10 sessions",
-
       "sessions10Discount": "10 sessions\n-20%",
       "sessions5": "5 sessions",
       "sessions1": "1 session"
@@ -199,23 +197,18 @@
       "lasting_styling": "Long-lasting eyebrow styling",
       "lasting_styling_correction": "Long-lasting eyebrow styling + correction",
       "lasting_styling_correction_tinting": "Long-lasting eyebrow styling + correction + tinting",
-
       "makeup": "Makeup",
       "day": "Day makeup",
       "evening": "Evening makeup",
       "express": "Express makeup",
-
       "complexes": "Packages",
-
       "lamination_eyebrows": "Lash lamination + eyebrows (correction + tinting)",
       "lamination_eyebrows_correction": "Lash lamination + long-lasting eyebrow styling + correction",
       "lamination_eyebrows_correction_tinting": "Lash lamination + long-lasting eyebrow styling + correction + tinting",
       "lamination_eyebrows_without": "Lash lamination + long-lasting eyebrow styling (without correction and tinting)",
-
       "man_eyebrows": "Man eyebrows",
       "man_correction": "Men's shape correction",
       "man_correction_thin": "Men's shape correction + thinning",
-
       "permanent": "Permanent makeup",
       "initial_procedure": "Initial procedure",
       "correction": "Correction"
@@ -322,7 +315,6 @@
     "descriptionMetaData": {
       "home": "Professional services in laser hair removal, electroepilation, sugaring, and waxing in Lviv. We guarantee safety, quality, and comfort. Book your procedure today!"
     },
-
     "courses": {
       "title": "Author's Courses",
       "aboutMe": {
@@ -404,11 +396,15 @@
           },
           "day2": {
             "title": "PRACTICAL PART: DAY 2",
-            "topics": ["Epilation of the classic bikini area."]
+            "topics": [
+              "Epilation of the classic bikini area."
+            ]
           },
           "day3": {
             "title": "PRACTICAL PART: DAY 3",
-            "topics": ["Epilation of the armpit area + injectable anesthesia."]
+            "topics": [
+              "Epilation of the armpit area + injectable anesthesia."
+            ]
           },
           "day4": {
             "title": "PRACTICAL PART: DAY 4",
@@ -830,7 +826,8 @@
         "faqLocationA": "MS STUDIO LASER studio is in Lviv at 8 Oleny Stepanivny St. We are open every day from 9:00 to 20:00. Book through the form on the website or by phone +380 98 030 3093.",
         "procedureTitle": "How the session goes",
         "forWhomTitle": "Who it is for",
-        "resultsTitle": "Results"
+        "resultsTitle": "Results",
+        "viewPrices": "View prices"
       },
       "laser": {
         "title": "Laser hair removal in Lviv",
@@ -899,6 +896,89 @@
           }
         ],
         "card": "Alexandrite and diode lasers — for any skin type"
+      },
+      "alexandrite": {
+        "title": "DEKA Motus AX alexandrite laser hair removal in Lviv",
+        "lead": "Smooth skin and a comfortable procedure with Moveo technology.",
+        "intro": "Less daily shaving, more freedom in how you care for yourself. At MS STUDIO LASER in Lviv we perform laser hair removal on the Italian DEKA Motus AX alexandrite laser with Moveo technology. It combines a 755 nm wavelength with gradual energy delivery and skin cooling.",
+        "sections": [
+          {
+            "title": "Moveo: alexandrite hair removal over gel",
+            "paragraphs": [
+              "The key feature of Moveo is smooth work in motion. The specialist applies a clear gel and treats the area with repeated passes of a cooled sapphire handpiece. Energy builds up gradually, heating the hair, while contact cooling helps reduce discomfort.",
+              "This makes the procedure practically painless. You may feel warmth or light tingling; how strong it is depends on the area and your individual sensitivity."
+            ]
+          },
+          {
+            "title": "How the DEKA Motus AX works",
+            "paragraphs": [
+              "An alexandrite laser emits light that is absorbed by melanin, the pigment in hair. The light energy turns into heat and acts on the hair follicle, gradually reducing further hair growth.",
+              "Long-term hair reduction takes a course of procedures. Its length and intervals are chosen individually, because hair grows unevenly and is at different stages of development. Maintenance sessions may be needed later on."
+            ]
+          },
+          {
+            "title": "Alexandrite hair removal at MS STUDIO LASER",
+            "paragraphs": [
+              "Before the procedure we assess your skin and the colour and thickness of your hair, take contraindications into account and choose the settings. The laser works through pigment, so for grey, white or very light hair we recommend considering electrolysis.",
+              "Our studio treats the underarms, bikini line, legs, arms and other areas. You will find current prices for individual areas and packages in the price list."
+            ]
+          }
+        ],
+        "ctaText": "Book alexandrite laser hair removal in Lviv: we will help you choose the area and plan your course.",
+        "faq": [
+          {
+            "q": "How much does alexandrite laser hair removal cost?",
+            "a": "From {{min}} ₴ per area. There are also multi-area packages that work out cheaper. See current prices for all areas on the prices page."
+          },
+          {
+            "q": "Who is the alexandrite laser suitable for?",
+            "a": "The result depends on hair pigment, skin phototype and the area. That is why the specialist first assesses your skin and hair, then decides whether the procedure is possible and with which settings."
+          },
+          {
+            "q": "Alexandrite or diode laser: which should I choose?",
+            "a": "The studio has both devices. The specialist will recommend a laser during the consultation based on your skin type and hair colour."
+          },
+          {
+            "q": "How do I prepare for laser hair removal?",
+            "a": "Shave the area 2–6 hours before the procedure. Do not wax, sugar or tweeze for 3–4 weeks and avoid tanning and solarium for 2 weeks before."
+          },
+          {
+            "q": "Can I tan after laser hair removal?",
+            "a": "For 2 weeks after the procedure avoid direct sunlight and solarium, and protect treated areas with SPF 50+ when going outside."
+          },
+          {
+            "q": "Do you offer laser hair removal for men?",
+            "a": "Yes, the studio has separate prices for men's areas."
+          }
+        ],
+        "card": "Moveo technology, settings chosen individually"
+      },
+      "diode": {
+        "title": "Diode laser hair removal in Lviv",
+        "intro": "Laser hair removal with the 2024 Alvi Prague DL-7000 diode laser. The device has a cooling system for comfort during the procedure and a short pulse — 20 joules in 25 ms. The specialist chooses the settings for your skin type, hair colour and area.",
+        "faq": [
+          {
+            "q": "How much does diode laser hair removal cost?",
+            "a": "In a course of 10 sessions — from {{min}} ₴ per area per session. There are also multi-area packages that work out cheaper. See single-session prices and all areas on the prices page."
+          },
+          {
+            "q": "Diode or alexandrite laser: which should I choose?",
+            "a": "The studio has both devices. The specialist will recommend a laser during the consultation based on your skin type and hair colour."
+          },
+          {
+            "q": "How do I prepare for laser hair removal?",
+            "a": "Shave the area 2–6 hours before the procedure. Do not wax, sugar or tweeze for 3–4 weeks and avoid tanning and solarium for 2 weeks before."
+          },
+          {
+            "q": "Can I tan after laser hair removal?",
+            "a": "For 2 weeks after the procedure avoid direct sunlight and solarium, and protect treated areas with SPF 50+ when going outside."
+          },
+          {
+            "q": "Do you offer laser hair removal for men?",
+            "a": "Yes, the studio has separate prices for men's areas."
+          }
+        ],
+        "card": "2024 device with a cooling system"
       },
       "electro": {
         "title": "Electrolysis in Lviv",
@@ -971,9 +1051,32 @@
         ],
         "card": "Works on hair of any colour, the result comes from a course"
       },
+      "sugaring": {
+        "title": "Sugaring in Lviv",
+        "intro": "Sugaring removes hair from the root with sugar paste, so the skin stays smooth longer and hair growth slows down over time. The paste is applied against hair growth and removed with it. We work with women and men.",
+        "faq": [
+          {
+            "q": "How much does sugaring cost in Lviv?",
+            "a": "From {{min}} ₴ per area. Prices differ for women and men — see all areas on the prices page."
+          },
+          {
+            "q": "What is the difference between sugaring and waxing?",
+            "a": "Sugaring uses sugar paste applied against hair growth and removed with it. Wax is great for treating large areas quickly. Both remove hair from the root."
+          },
+          {
+            "q": "How long after shaving should I wait?",
+            "a": "At least: bikini — 2 weeks, underarms — 1–1.5 weeks, legs — 3–4 weeks."
+          },
+          {
+            "q": "How do I prepare for sugaring?",
+            "a": "Shower 24 hours before without shower creams, soap or other oily products. The best time is the first 5 days after your period. Skip deodorant for 24 hours before underarm sugaring."
+          }
+        ],
+        "card": "Hair removal with sugar paste"
+      },
       "waxing": {
-        "title": "Waxing and sugaring in Lviv",
-        "intro": "Sugaring and waxing remove hair from the root, so the skin stays smooth longer and hair growth slows down over time. Sugaring uses sugar paste, while wax is great for a quick procedure on large areas. We work with women and men.",
+        "title": "Waxing in Lviv",
+        "intro": "Waxing removes hair from the root, so the skin stays smooth longer and hair growth slows down over time. Wax is the choice for a quick procedure on large areas. We work with women and men.",
         "contraindications": [
           "Chronic diseases (diabetes, AIDS, epilepsy)",
           "High sensitivity",
@@ -1000,23 +1103,23 @@
         ],
         "faq": [
           {
-            "q": "How much do sugaring and waxing cost in Lviv?",
+            "q": "How much does waxing cost in Lviv?",
             "a": "From {{min}} ₴ per area. Prices differ for women and men — see all areas on the prices page."
           },
           {
-            "q": "What is the difference between sugaring and waxing?",
-            "a": "Sugaring uses sugar paste applied against hair growth and removed with it. Wax is great for treating large areas quickly. Both remove hair from the root, so the skin stays smooth longer and hair growth slows down."
+            "q": "What is the difference between waxing and sugaring?",
+            "a": "Wax is great for treating large areas quickly. Sugaring uses sugar paste applied against hair growth and removed with it. Both remove hair from the root."
           },
           {
             "q": "How long after shaving should I wait?",
             "a": "At least: bikini — 2 weeks, underarms — 1–1.5 weeks, legs — 3–4 weeks."
           },
           {
-            "q": "How do I prepare for sugaring or waxing?",
+            "q": "How do I prepare for waxing?",
             "a": "Shower 24 hours before without shower creams, soap or other oily products. The best time is the first 5 days after your period. Skip deodorant for 24 hours before underarm waxing."
           }
         ],
-        "card": "Smooth skin for longer — for women and men"
+        "card": "Treats large areas quickly"
       },
       "endosphere": {
         "title": "Endosphere therapy in Lviv",

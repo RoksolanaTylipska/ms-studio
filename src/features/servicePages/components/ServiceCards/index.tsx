@@ -20,7 +20,7 @@ function ServiceCards({ pages, label }: { pages: ServicePage[]; label: string })
         gridTemplateColumns: {
           xs: "1fr",
           sm: "repeat(2, 1fr)",
-          md: `repeat(${Math.min(pages.length, 4)}, 1fr)`,
+          md: `repeat(${pages.length > 4 ? 3 : pages.length}, 1fr)`,
         },
         gap: 3,
       }}
