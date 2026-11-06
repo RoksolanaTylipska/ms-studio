@@ -1,5 +1,5 @@
 import { videoPoster } from "@/features/gallery/constants";
-import { cloudinaryLoader } from "@/helpers/cloudinaryLoader";
+import { cloudinaryLoader, preloadModalImage } from "@/helpers/cloudinaryLoader";
 import { CloudinaryImage } from "@/types/image";
 import { Box } from "@mui/material";
 import Image from "next/image";
@@ -71,6 +71,7 @@ const GalleryTile = ({
         fill
         sizes={sizes}
         style={{ objectFit: "cover", cursor: "pointer" }}
+        onPointerEnter={() => preloadModalImage(img.secure_url)}
         onClick={onOpen}
       />
     )}
