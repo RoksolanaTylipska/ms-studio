@@ -93,7 +93,7 @@ function Services() {
       <Box component="section" sx={{ px: { xs: "20px", sm: "40px", md: "70px" }, pb: { xs: 7, md: 10 } }}>
         <TitleStars title="header.services" />
         <Box sx={{ mt: { xs: 3, md: 5 } }}>
-          <ServiceCards pages={SERVICE_PAGES} label="Послуги студії" />
+          <ServiceCards pages={SERVICE_PAGES.filter((page) => !page.overview)} label="Послуги студії" />
         </Box>
       </Box>
     </>

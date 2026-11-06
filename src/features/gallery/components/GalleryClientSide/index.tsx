@@ -1,8 +1,11 @@
 import { useGallery } from "@/features/gallery/hooks/useGallery";
-import { Box, LinearProgress } from "@mui/material";
+import { Box, LinearProgress, Typography } from "@mui/material";
 import { cloudinaryLoader } from "@/helpers/cloudinaryLoader";
 import Image from "next/image";
-import { videoPoster, videoSource } from "@/features/gallery/constants";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { ROUTES } from "@/constants/routes";
+import { PHOTO_RIGHTS_ID, videoPoster, videoSource } from "@/features/gallery/constants";
 import {
   GalleryContainer,
   ModalContainer,
@@ -21,6 +24,7 @@ const GalleryClientSide = ({
   path: string;
   initial?: GalleryPage;
 }) => {
+  const { t } = useTranslation();
   const {
     images,
     loading,
@@ -128,6 +132,10 @@ const GalleryClientSide = ({
         <div ref={sentinelRef} style={{ height: "1px" }} />
       </PhotosContainer>
       {loading && <LinearProgress color="inherit" />}
+      {/* The license link in the photos' structured data points here */}
+      <Typography id={PHOTO_RIGHTS_ID} variant="bodyComfortaa" component="p" sx={{ mt: 5, fontSize: "13px", textAlign: "center" }}>
+        {t("footer.photoRights")} <Link href={ROUTES.contacts}>{t("footer.photoRightsContact")}</Link>
+      </Typography>
     </GalleryContainer>
   );
 };

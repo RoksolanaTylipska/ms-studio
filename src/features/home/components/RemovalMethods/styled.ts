@@ -23,6 +23,11 @@ export const RemovalMethodsList = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   gap: "20px",
   marginInline: "65px",
+  // Five cards stop fitting in one row here: long words won't let them shrink more
+  "@media (max-width: 1279px)": {
+    flexWrap: "wrap",
+    marginInline: "20px",
+  },
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
     margin: "auto",

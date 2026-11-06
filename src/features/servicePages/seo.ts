@@ -1,7 +1,8 @@
 import i18n from "@/I18n/i18nConfig";
 import { SITE_NAME, SITE_URL } from "@/constants/site";
-import { PriceCatalog, PriceSection, collectPriceRows } from "@/features/prices/catalog";
-import { SERVICE_PAGES, ServicePage, servicePagePath } from "@/features/servicePages/constants";
+import { PHOTO_RIGHTS_ID } from "@/features/gallery/constants";
+import { PriceCatalog, collectPriceRows } from "@/features/prices/catalog";
+import { SERVICE_PAGES, ServicePage, servicePagePath, servicePricesPath } from "@/features/servicePages/constants";
 import { CloudinaryImage } from "@/types/image";
 
 export type FaqItem = { q: string; a: string };
@@ -25,10 +26,17 @@ export const STUDIO = {
   googleMaps: "https://www.google.com/maps?cid=16386841920656184017",
 };
 
+const pagePriceRows = (catalog: PriceCatalog, { priceSection, priceLabel }: ServicePage) =>
+  collectPriceRows(catalog).filter(
+    (row) =>
+      row.section === priceSection &&
+      Array.isArray(row.value) &&
+      (!priceLabel || row.labels.includes(priceLabel))
+  );
+
 // Lowest/highest price currently on the site for a service (after /admin edits)
-export const servicePriceRange = (catalog: PriceCatalog, section: PriceSection) => {
-  const prices = collectPriceRows(catalog)
-    .filter((row) => row.section === section && Array.isArray(row.value))
+export const servicePriceRange = (catalog: PriceCatalog, page: ServicePage) => {
+  const prices = pagePriceRows(catalog, page)
     .flatMap((row) => row.value as number[])
     // 0 marks a price that doesn't apply (e.g. diode laser, neck: [0, 500])
     .filter((price) => price > 0);
@@ -36,9 +44,8 @@ export const servicePriceRange = (catalog: PriceCatalog, section: PriceSection) 
 };
 
 // Lowest price of one session: zone rows list [10 sessions, 1 session]
-export const singleSessionMinPrice = (catalog: PriceCatalog, section: PriceSection) => {
-  const prices = collectPriceRows(catalog)
-    .filter((row) => row.section === section && Array.isArray(row.value))
+export const singleSessionMinPrice = (catalog: PriceCatalog, page: ServicePage) => {
+  const prices = pagePriceRows(catalog, page)
     .map((row) => (row.value as number[])[(row.value as number[]).length - 1])
     .filter((price) => price > 0);
   return prices.length > 0 ? Math.min(...prices) : null;
@@ -98,7 +105,7 @@ export const servicePageSchema = (page: ServicePage, catalog: PriceCatalog) => {
   const path = servicePagePath(page.slug);
   const url = `${SITE_URL}${path}`;
   const name = i18n.t(`servicePages.${page.key}.title`, { lng: "ua" });
-  const range = servicePriceRange(catalog, page.priceSection);
+  const range = servicePriceRange(catalog, page);
   const faq = serviceFaq(page, "ua", range?.min);
 
   return [
@@ -118,7 +125,7 @@ export const servicePageSchema = (page: ServicePage, catalog: PriceCatalog) => {
           priceCurrency: "UAH",
           lowPrice: range.min,
           highPrice: range.max,
-          url: `${SITE_URL}/prices#${page.slug}`,
+          url: `${SITE_URL}${servicePricesPath(page)}`,
         },
       }),
     },
@@ -147,7 +154,7 @@ export const pricesPageSchema = (catalog: PriceCatalog) => {
         name: "Ціни на послуги",
         url,
         itemListElement: SERVICE_PAGES.flatMap((page) => {
-          const range = servicePriceRange(catalog, page.priceSection);
+          const range = servicePriceRange(catalog, page);
           if (!range) return [];
           return [
             {
@@ -235,6 +242,10 @@ const imageObjects = (images: CloudinaryImage[], caption: string) =>
       contentUrl: secure_url,
       caption: description || caption,
       creditText: STUDIO.name,
+      creator: { "@type": "Organization", name: STUDIO.name, url: SITE_URL },
+      copyrightNotice: `© ${STUDIO.name}`,
+      license: `${SITE_URL}/gallery#${PHOTO_RIGHTS_ID}`,
+      acquireLicensePage: `${SITE_URL}/contacts`,
     }));
 
 export const galleryPageSchema = (images: CloudinaryImage[]) => {

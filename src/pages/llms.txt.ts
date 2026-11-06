@@ -13,12 +13,12 @@ const buildLlmsTxt = async () => {
   const ua = (key: string) => i18n.t(key, { lng: "ua" });
 
   const services = SERVICE_PAGES.map((page) => {
-    const range = servicePriceRange(catalog, page.priceSection);
+    const range = servicePriceRange(catalog, page);
     const unit = ua(`servicePages.common.${page.priceUnit}`);
-    const single = singleSessionMinPrice(catalog, page.priceSection);
+    const single = singleSessionMinPrice(catalog, page);
     const price = !range
       ? ""
-      : page.priceSection === "lazerEpilation" && single
+      : page.priceSection === "lazerEpilation" && single && single !== range.min
         ? ` Ціна: від ${single} ₴ ${unit} за один сеанс, у курсі з 10 сеансів — від ${range.min} ₴ ${unit} за сеанс.`
         : ` Ціна: від ${range.min} ₴ ${unit}.`;
     return `- [${ua(`servicePages.${page.key}.title`)}](${SITE_URL}${servicePagePath(page.slug)}): ${ua(`servicePages.${page.key}.intro`)}${price}`;
