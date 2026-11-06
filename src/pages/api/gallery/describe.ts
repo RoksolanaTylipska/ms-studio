@@ -1,5 +1,6 @@
 import { MAX_DESCRIPTION_LENGTH, isGalleryFolder } from "@/features/gallery/constants";
 import { verifyAdmin } from "@/lib/adminAuth";
+import { galleryFolderOf } from "@/lib/galleryAsset";
 import { v2 as cloudinary } from "cloudinary";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -18,10 +19,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!email) return res.status(403).json({ error: "No access" });
 
   const { publicId, resourceType, description } = req.body ?? {};
-  const folder = typeof publicId === "string" ? publicId.slice(0, publicId.lastIndexOf("/")) : null;
+  const folder = await galleryFolderOf(publicId, resourceType);
   if (
     !isGalleryFolder(folder) ||
-    !["image", "video"].includes(resourceType) ||
     typeof description !== "string" ||
     description.length > MAX_DESCRIPTION_LENGTH
   ) {

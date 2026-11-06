@@ -1,15 +1,17 @@
 import { Seo } from "@/components/Seo";
+import { fetchPagePhotos } from "@/lib/galleryImages";
 import { PriceSettings, applyPriceSettings } from "@/features/prices/catalog";
 import ServicePageContent from "@/features/servicePages/components/ServicePageContent";
 import { SERVICE_PAGES, servicePagePath } from "@/features/servicePages/constants";
 import { servicePageSchema } from "@/features/servicePages/seo";
 import { fetchPriceSettings } from "@/lib/priceOverrides";
+import { CloudinaryImage } from "@/types/image";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
-type Props = { slug: string; priceSettings: PriceSettings };
+type Props = { slug: string; priceSettings: PriceSettings; photos: CloudinaryImage[] };
 
-export default function ServicePage({ slug, priceSettings }: Props) {
+export default function ServicePage({ slug, priceSettings, photos }: Props) {
   const page = SERVICE_PAGES.find((p) => p.slug === slug)!;
   const structuredData = servicePageSchema(page, applyPriceSettings(priceSettings).catalog);
 
@@ -30,7 +32,7 @@ export default function ServicePage({ slug, priceSettings }: Props) {
           }}
         />
       </Head>
-      <ServicePageContent page={page} />
+      <ServicePageContent page={page} photos={photos} />
     </>
   );
 }
@@ -45,8 +47,9 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   if (!SERVICE_PAGES.some((p) => p.slug === slug)) return { notFound: true };
 
   return {
-    props: { slug, priceSettings: await fetchPriceSettings() },
-    // Prices edited in /admin show up on the site within a few minutes
-    revalidate: 60,
+    props: { slug, priceSettings: await fetchPriceSettings(), photos: await fetchPagePhotos(slug) },
+    // Prices and photos from /admin show up within minutes without hitting
+    // Cloudinary's rate-limited Search API on every visit
+    revalidate: 300,
   };
 };

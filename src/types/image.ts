@@ -6,6 +6,10 @@ export interface CloudinaryImage {
   height?: number;
   created_at?: string;
   description?: string;
+  // Pages this photo also appears on (PHOTO_PAGES ids)
+  pages?: string[];
+  // Left out of the general gallery
+  hidden?: boolean;
 }
 
 export interface GalleryPage {

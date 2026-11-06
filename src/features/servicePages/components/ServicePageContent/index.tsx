@@ -2,6 +2,7 @@
 
 import { Button } from "@/components";
 import { ROUTES } from "@/constants/routes";
+import PageGallery from "@/features/gallery/components/PageGallery";
 import ServiceCards from "@/features/servicePages/components/ServiceCards";
 import { usePrices } from "@/context/PricesContext";
 import {
@@ -12,6 +13,7 @@ import {
 import { serviceFaq, servicePriceRange } from "@/features/servicePages/seo";
 import { useModalWindowContext } from "@/hooks/useModalWindowContext";
 import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
+import { CloudinaryImage } from "@/types/image";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -153,7 +155,7 @@ const InfoList = ({ title, items }: { title: string; items: string[] }) => (
   </Box>
 );
 
-function ServicePageContent({ page }: { page: ServicePage }) {
+function ServicePageContent({ page, photos }: { page: ServicePage; photos: CloudinaryImage[] }) {
   const { t, i18n } = useTranslation();
   const catalog = usePrices();
   const { handleModalWindow } = useModalWindowContext();
@@ -433,6 +435,8 @@ function ServicePageContent({ page }: { page: ServicePage }) {
           ))}
         </Box>
       </Section>
+
+      <PageGallery title={t("servicePages.common.photosTitle")} photos={photos} />
 
       {/* Booking */}
       <Section tint>

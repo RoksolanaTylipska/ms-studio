@@ -12,6 +12,7 @@ import {
   MAX_DESCRIPTION_LENGTH,
   MAX_IMAGE_MB,
   MAX_VIDEO_MB,
+  PHOTO_PAGES,
   videoPoster,
 } from "@/features/gallery/constants";
 import { cloudinaryLoader } from "@/helpers/cloudinaryLoader";
@@ -23,6 +24,7 @@ import Image from "next/image";
 import { ChangeEvent, DragEvent, useCallback, useEffect, useRef, useState } from "react";
 
 type Upload = { id: string; name: string; progress: number; error?: string };
+type Placement = { pages: string[]; hidden: boolean };
 
 const SECTIONS: [GalleryKey, string][] = [
   ["gallery", "Галерея"],
@@ -149,6 +151,100 @@ const DescriptionField = ({
         {status === "saving" ? "Зберігаю…" : status === "saved" ? "Збережено" : ""}
       </Typography>
     </>
+  );
+};
+
+const CheckRow = ({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}) => (
+  <Box
+    component="label"
+    sx={{ display: "inline-flex", alignItems: "center", gap: 0.75, cursor: "pointer", fontFamily: bodyFont, fontSize: "13px", color: adminColors.chocolate }}
+  >
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={(event) => onChange(event.target.checked)}
+      style={{ accentColor: adminColors.camel }}
+    />
+    {label}
+  </Box>
+);
+
+const PlacementFields = ({ value, onChange }: { value: Placement; onChange: (next: Placement) => void }) => (
+  <>
+    <CheckRow
+      label="Показувати в загальній галереї"
+      checked={!value.hidden}
+      onChange={(checked) => onChange({ ...value, hidden: !checked })}
+    />
+    {PHOTO_PAGES.map(([id, label]) => (
+      <CheckRow
+        key={id}
+        label={label}
+        checked={value.pages.includes(id)}
+        onChange={(checked) =>
+          onChange({
+            ...value,
+            pages: checked ? [...value.pages, id] : value.pages.filter((page) => page !== id),
+          })
+        }
+      />
+    ))}
+    {value.hidden && value.pages.length === 0 && (
+      <Typography variant="inherit" sx={{ width: "100%", fontFamily: bodyFont, fontSize: "12px", color: adminColors.error }}>
+        Таке фото ніде не показуватиметься на сайті.
+      </Typography>
+    )}
+  </>
+);
+
+// Saved on every change, so there is no extra button per photo
+const PlacementField = ({
+  item,
+  onError,
+}: {
+  item: CloudinaryImage;
+  onError: (message: string) => void;
+}) => {
+  const [value, setValue] = useState<Placement>({ pages: item.pages ?? [], hidden: Boolean(item.hidden) });
+  const [saving, setSaving] = useState(false);
+
+  const save = async (next: Placement) => {
+    const previous = value;
+    setValue(next);
+    setSaving(true);
+    try {
+      const res = await fetch("/api/gallery/placement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(await authHeader()) },
+        body: JSON.stringify({ publicId: item.public_id, resourceType: item.resource_type ?? "image", ...next }),
+      });
+      if (!res.ok) throw new Error();
+    } catch {
+      setValue(previous);
+      onError("Не вдалося зберегти, де показувати фото. Спробуйте ще раз.");
+    }
+    setSaving(false);
+  };
+
+  return (
+    <Box component="details" sx={{ fontFamily: bodyFont, fontSize: "12px", color: adminColors.latte }}>
+      <Box component="summary" sx={{ cursor: "pointer" }}>
+        Де показувати{value.pages.length > 0 ? ` (сторінок: ${value.pages.length})` : ""}
+        {value.hidden ? ", не в галереї" : ""}
+        {saving ? " · зберігаю…" : ""}
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 0.5, mt: 1 }}>
+        <PlacementFields value={value} onChange={save} />
+      </Box>
+    </Box>
   );
 };
 
@@ -443,6 +539,7 @@ function GalleryManager() {
               </Box>
             </Box>
             <DescriptionField item={item} onError={setError} />
+            {section === "gallery" && <PlacementField item={item} onError={setError} />}
           </Box>
         ))}
       </Box>
