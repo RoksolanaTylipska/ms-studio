@@ -24,6 +24,8 @@ export const STUDIO = {
   instagram: "https://www.instagram.com/ms_studio_laser",
   tiktok: "https://www.tiktok.com/@ms_studio_epil",
   googleMaps: "https://www.google.com/maps?cid=16386841920656184017",
+  // Opens the studio on Google Maps straight on the reviews tab
+  googleReviews: "https://www.google.com/maps/place/MS+LASER+STUDIO/@49.8442009,24.0097199,17z/data=!4m8!3m7!1s0x473add73ddc375c5:0xe369c1e7d73112d1!8m2!3d49.8442009!4d24.0097199!9m1!1b1!16s%2Fg%2F11gfddhp0h",
 };
 
 const pagePriceRows = (catalog: PriceCatalog, { priceSection, priceLabel }: ServicePage) =>

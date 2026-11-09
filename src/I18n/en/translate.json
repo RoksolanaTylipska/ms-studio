@@ -781,6 +781,14 @@
       "title": "Have you used our services? Leave a review",
       "star": "Service rating:",
       "submit": "Submit review",
+      "googleRating": "Google rating",
+      "reviewsCount": "Google reviews: {{count}}",
+      "writeGoogle": "Review us on Google",
+      "writeSite": "Leave a review on the site",
+      "hideForm": "Hide the form",
+      "readMore": "Read more",
+      "readLess": "Show less",
+      "viewOnGoogle": "View on Google",
       "form": {
         "name": "Enter your name",
         "name_label": "Your name",
@@ -803,7 +811,9 @@
           "tiktok": "TikTok",
           "ads": "Online advertising"
         }
-      }
+      },
+      "allOnGoogle": "All reviews on Google",
+      "showMore": "Show more"
     },
     "servicePages": {
       "common": {
