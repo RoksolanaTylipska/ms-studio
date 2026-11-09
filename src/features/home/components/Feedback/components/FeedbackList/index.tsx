@@ -6,7 +6,8 @@ import { FirebaseCollection } from "@/constants/firebase";
 import { STUDIO } from "@/features/servicePages/seo";
 import useGetFirebaseData from "@/hooks/useGetFirebaseData";
 import type { GoogleReviews } from "@/lib/googleReviews";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import useFilterFeedback from "../../hooks/useFilterFeedback";
@@ -36,6 +37,8 @@ function FeedbackList({ googleReviews }: { googleReviews: GoogleReviews | null }
   const { data: feedbacks, loading, error } = useGetFirebaseData<Feedback>(FirebaseCollection.FEEDBACKS);
   const { t } = useTranslation();
   const [shown, setShown] = useState(PAGE);
+  // Phones swipe through every review instead of paging the grid
+  const isPhone = useMediaQuery(useTheme().breakpoints.down("sm"));
 
   const siteReviews = useFilterFeedback(feedbacks);
   // Google reviews first: visitors trust them more than ones on the site itself
@@ -58,6 +61,8 @@ function FeedbackList({ googleReviews }: { googleReviews: GoogleReviews | null }
     [googleReviews, siteReviews]
   );
 
+  const visible = isPhone ? reviews.length : shown;
+
   if (loading && reviews.length === 0) return <Loader />;
   if (error && reviews.length === 0) return null;
 
@@ -65,19 +70,34 @@ function FeedbackList({ googleReviews }: { googleReviews: GoogleReviews | null }
     <Box>
       <Box
         sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
+          display: { xs: "flex", sm: "grid" },
+          gridTemplateColumns: { sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
           gap: { xs: 2, md: 2.5 },
           // Every row as tall as the tallest card, so all cards match
           gridAutoRows: "1fr",
+          // Phones: a swipeable row with the next card peeking in
+          overflowX: { xs: "auto", sm: "visible" },
+          scrollSnapType: { xs: "x mandatory", sm: "none" },
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
+          // Lets the row run to the screen edges past the section padding
+          mx: { xs: "-30px", sm: 0 },
+          px: { xs: "30px", sm: 0 },
+          scrollPaddingInline: { xs: "30px", sm: 0 },
+          py: { xs: 1, sm: 0 },
         }}
       >
-        {reviews.slice(0, shown).map((review) => (
-          <ReviewCard key={`${review.fromGoogle ? "g" : "s"}-${review.date}-${review.name}`} review={review} />
+        {reviews.slice(0, visible).map((review) => (
+          <Box
+            key={`${review.fromGoogle ? "g" : "s"}-${review.date}-${review.name}`}
+            sx={{ flex: { xs: "0 0 85%", sm: "initial" }, scrollSnapAlign: "start", minWidth: 0 }}
+          >
+            <ReviewCard review={review} />
+          </Box>
         ))}
       </Box>
       <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 1.5, mt: 4 }}>
-        {shown < reviews.length && (
+        {visible < reviews.length && (
           <Box component="button" type="button" onClick={() => setShown(shown + PAGE)} sx={pill}>
             {t("feedback.showMore")}
           </Box>
