@@ -787,7 +787,6 @@
       "writeSite": "Leave a review on the site",
       "hideForm": "Hide the form",
       "readMore": "Read more",
-      "readLess": "Show less",
       "viewOnGoogle": "View on Google",
       "form": {
         "name": "Enter your name",
@@ -813,7 +812,8 @@
         }
       },
       "allOnGoogle": "All reviews on Google",
-      "showMore": "Show more"
+      "showMore": "Show more",
+      "close": "Close"
     },
     "servicePages": {
       "common": {

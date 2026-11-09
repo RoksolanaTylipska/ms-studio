@@ -781,7 +781,6 @@
       "writeSite": "Залишити відгук на сайті",
       "hideForm": "Сховати форму",
       "readMore": "Читати далі",
-      "readLess": "Згорнути",
       "viewOnGoogle": "Переглянути в Google",
       "form": {
         "name": "Введіть ваше ім'я",
@@ -807,7 +806,8 @@
         }
       },
       "allOnGoogle": "Усі відгуки в Google",
-      "showMore": "Показати ще"
+      "showMore": "Показати ще",
+      "close": "Закрити"
     },
     "servicePages": {
       "common": {
