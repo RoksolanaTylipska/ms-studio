@@ -1,20 +1,25 @@
 
 import { ButtonColor, ButtonSize, ButtonType } from "@/types/button";
+import Link from "next/link";
 import { StyledPrimaryButton, StyledSecondaryButton } from "./styled";
 
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  // A real link that search engines can follow, styled the same as the button
+  href?: string;
   type?: ButtonType;
   size?: ButtonSize;
   color?: ButtonColor;
 }
 
-export const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, color }: ButtonProps) => {
+export const Button = ({ children, onClick, href, type = ButtonType.PRIMARY, size, color }: ButtonProps) => {
+  const link = href ? { as: Link, href } : {};
+
   return (
     <>
       {type === "primary" ? (
-        <StyledPrimaryButton onClick={onClick} size={size}>
+        <StyledPrimaryButton {...link} onClick={onClick} size={size}>
           {children}
           <svg
             width="10"
@@ -33,7 +38,7 @@ export const Button = ({ children, onClick, type = ButtonType.PRIMARY, size, col
           </svg>
         </StyledPrimaryButton>
       ) : (
-        <StyledSecondaryButton onClick={onClick} color={color} size={size}>
+        <StyledSecondaryButton {...link} onClick={onClick} color={color} size={size}>
           {children}
           <svg
             width="10"
