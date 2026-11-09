@@ -2,8 +2,8 @@ import { CloudinaryImage, GalleryPage } from "@/types/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 export const useGallery = (folder = 'ms-studio-gallery/gallery', initial?: GalleryPage) => {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | undefined>("");
+  // Index of the photo open in the modal
+  const [opened, setOpened] = useState<number | null>(null);
   const [images, setImages] = useState<CloudinaryImage[]>(initial?.resources ?? []);
   const [nextCursor, setNextCursor] = useState(initial?.next_cursor ?? null);
   const [loading, setLoading] = useState(false);
@@ -64,10 +64,10 @@ export const useGallery = (folder = 'ms-studio-gallery/gallery', initial?: Galle
     };
   }, [loading, nextCursor, fetchImages]);
 
-  const toggleOpenModal = (image?: string) => {
-    setSelectedImage(image || "");
-    setModalOpen(!isModalOpen);
-  };
+  // Paging through the modal near the end loads the next photos too
+  useEffect(() => {
+    if (opened !== null && opened >= images.length - 2 && nextCursor && !loading) fetchImages(nextCursor);
+  }, [opened, images.length, nextCursor, loading, fetchImages]);
 
-  return { images, loading, sentinelRef, toggleOpenModal, isModalOpen, selectedImage };
+  return { images, loading, sentinelRef, opened, setOpened };
 };

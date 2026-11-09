@@ -20,19 +20,18 @@ const GalleryClientSide = ({
   initial?: GalleryPage;
 }) => {
   const { t } = useTranslation();
-  const {
-    images,
-    loading,
-    sentinelRef,
-    toggleOpenModal,
-    isModalOpen,
-    selectedImage,
-  } = useGallery(path, initial);
+  const { images, loading, sentinelRef, opened, setOpened } = useGallery(path, initial);
 
   return (
     <GalleryContainer>
-      {isModalOpen && (
-        <GalleryModal media={selectedImage} alt={title ? "Certificate" : "Photo"} onClose={() => toggleOpenModal()} />
+      {opened !== null && (
+        <GalleryModal
+          items={images.map((img) => img.secure_url)}
+          index={opened}
+          onIndexChange={setOpened}
+          alt={images[opened]?.description || (title ? "Certificate" : "Photo")}
+          onClose={() => setOpened(null)}
+        />
       )}
 
       <TitleStars title={title ? "masters.certificates" : "header.gallery"} component="h1" />
@@ -43,7 +42,7 @@ const GalleryClientSide = ({
             img={img}
             alt={img.description || (title ? "Сертифікат майстра MS STUDIO LASER" : "Фото студії MS STUDIO LASER")}
             sizes="(max-width: 767px) 100vw, (max-width: 989px) 33vw, 25vw"
-            onOpen={() => toggleOpenModal(img.secure_url)}
+            onOpen={() => setOpened(index)}
           />
         ))}
         <div ref={sentinelRef} style={{ height: "1px" }} />
