@@ -25,7 +25,10 @@ export type GoogleReviews = {
 // Each Places request is billed. Only /api/google-reviews may call this, behind
 // the CDN cache; this one covers a warm server instance
 const CACHE_TTL = 24 * 60 * 60 * 1000;
-let cache: { at: number; data: GoogleReviews | null } | null = null;
+// Kept on globalThis so reloads of this module in development don't spend requests
+const store = globalThis as typeof globalThis & { googleReviewsCache?: { at: number; data: GoogleReviews } };
+
+export const googleReviewsConfigured = () => Boolean(process.env.GOOGLE_PLACES_API_KEY && process.env.GOOGLE_PLACE_ID);
 
 // Google's own "write a review" form for the place (asks to sign in first)
 const writeReviewUrl = (placeId: string) =>
@@ -51,6 +54,7 @@ export const fetchGoogleReviews = async (): Promise<GoogleReviews | null> => {
   if (!key && process.env.NODE_ENV === "development") return { ...SAMPLE, writeUrl: placeId ? writeReviewUrl(placeId) : null };
   if (!key || !placeId) return null;
 
+  const cache = store.googleReviewsCache;
   if (cache && Date.now() - cache.at < CACHE_TTL) return cache.data;
 
   try {
@@ -82,7 +86,7 @@ export const fetchGoogleReviews = async (): Promise<GoogleReviews | null> => {
         }))
         .filter((review: GoogleReview) => review.text && review.publishTime),
     };
-    cache = { at: Date.now(), data };
+    store.googleReviewsCache = { at: Date.now(), data };
     return data;
   } catch (error) {
     console.error("Failed to load Google reviews:", error);
