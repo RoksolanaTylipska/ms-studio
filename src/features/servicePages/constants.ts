@@ -38,13 +38,13 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "laser",
     name: "services.lazer",
     overview: true,
-    image: "/assets/photos/methods/alexandrite.webp",
+    image: "/assets/photos/methods/alexandrite-moveo.webp",
     imageAlt: "Лазерна епіляція в студії MS STUDIO LASER у Львові",
     methods: [
       {
         title: "removalMethods.alexandrite_title",
         description: "removalMethods.alexandrite_description",
-        img: "/assets/photos/methods/alexandrite.webp",
+        img: "/assets/photos/methods/alexandrite-moveo.webp",
       },
       {
         title: "removalMethods.diode_title",
@@ -70,7 +70,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     key: "alexandrite",
     listsFrom: "laser",
     name: "services.lazer_oleksandryt",
-    image: "/assets/photos/methods/alexandrite.webp",
+    // Wide crop with the laser in the middle, for the card and the page
+    image: "/assets/photos/methods/alexandrite-moveo-wide.webp",
     imageAlt: "Лазерна епіляція олександритовим лазером у студії MS STUDIO LASER у Львові",
     methods: [],
     priceSection: "lazerEpilation",

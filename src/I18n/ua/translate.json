@@ -775,6 +775,13 @@
       "title": "Користувались нашими послугами? Залиште відгук",
       "star": "Оцінка послуги:",
       "submit": "Надіслати відгук",
+      "googleRating": "Рейтинг у Google",
+      "reviewsCount": "Відгуків у Google: {{count}}",
+      "writeGoogle": "Залишити відгук у Google",
+      "writeSite": "Залишити відгук на сайті",
+      "hideForm": "Сховати форму",
+      "readMore": "Читати далі",
+      "viewOnGoogle": "Переглянути в Google",
       "form": {
         "name": "Введіть ваше ім'я",
         "name_label": "Ваше ім'я",
@@ -797,7 +804,10 @@
           "tiktok": "TikTok",
           "ads": "Реклама в інтернеті"
         }
-      }
+      },
+      "allOnGoogle": "Усі відгуки в Google",
+      "showMore": "Показати ще",
+      "close": "Закрити"
     },
     "servicePages": {
       "common": {

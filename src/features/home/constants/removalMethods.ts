@@ -2,7 +2,7 @@ export const removalMethods = [
   {
     title: "removalMethods.alexandrite_title",
     description: "removalMethods.alexandrite_description",
-    img: "/assets/photos/methods/alexandrite.webp",
+    img: "/assets/photos/methods/alexandrite-moveo.webp",
     slug: "alexandrite-laser",
   },
   {
