@@ -7,11 +7,22 @@ interface ButtonProps {
   theme?: Theme;
 }
 
+// Undoes the global link styles when the button is rendered as a link
+const asLink = {
+  "&:is(a)": {
+    fontFamily: '"Comfortaa", sans-serif',
+    fontWeight: 300,
+    letterSpacing: "normal",
+    textDecoration: "none",
+  },
+};
+
 export const StyledPrimaryButton = styled("button")<ButtonProps>(({ theme, size }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   gap: "6px",
+  ...asLink,
   backgroundColor: "#35302D",
   color: "#F1EAE5",
   height: "40px",
@@ -85,6 +96,7 @@ export const StyledSecondaryButton = styled("button")<ButtonProps>(({ theme, siz
   alignItems: "center",
   justifyContent: "center",
   gap: "6px",
+  ...asLink,
   backgroundColor: "transparent",
   color: (() => {
     switch (color) {

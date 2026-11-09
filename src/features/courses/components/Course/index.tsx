@@ -15,13 +15,11 @@ import {
   Variants,
 } from "./styled";
 import { Button } from "@/components";
-import { useCourse } from "../../hooks/useCourse";
 import { ButtonSize, ButtonType } from "@/types/button";
 
 function Course({ title, variants, backgroundColor }: CourseType) {
   const { t } = useTranslation();
   const { handleModalWindow } = useModalWindowContext();
-  const { handleMoreDetails } = useCourse({ handleModalWindow });
 
   return (
     <CourseContainer backgroundColor={backgroundColor}>
@@ -51,7 +49,8 @@ function Course({ title, variants, backgroundColor }: CourseType) {
                 children={t("courses.more")}
                 type={ButtonType.PRIMARY}
                 size={ButtonSize.MEDIUM}
-                onClick={() => handleMoreDetails(variant.link || "")}
+                href={variant.link && `/courses${variant.link}`}
+                onClick={variant.link ? undefined : handleModalWindow}
               />
             </ButtonContainer>
           </VariantContainer>
