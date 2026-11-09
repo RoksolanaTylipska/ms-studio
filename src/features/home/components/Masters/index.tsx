@@ -82,7 +82,8 @@ function Masters() {
             <MasterCard>
               <ImageContainer>
                 <Image
-                  src={master.img}
+                  // A master added without a photo link uses the file named after their id
+                  src={master.img || `/assets/photos/masters/${master.id.toLowerCase()}.webp`}
                   alt={master.name[locale]}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
