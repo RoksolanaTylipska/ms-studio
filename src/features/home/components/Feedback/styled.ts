@@ -3,13 +3,13 @@ import { styled } from "@mui/material/styles";
 import { CARD_RADIUS } from "@/styles/card";
 
 export const FeedbackContainer = styled(Box)(({ theme }) => ({
-  padding: "75px",
+  padding: "56px 75px 75px",
   height: "auto",
   width: "100%",
   maxWidth: "1300px",
   margin: "0 auto",
   [theme.breakpoints.down("sm")]: {
-    padding: "40px 30px",
+    padding: "48px 30px 40px",
   },
 }));
 

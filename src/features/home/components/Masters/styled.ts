@@ -4,12 +4,13 @@ import { Swiper } from "swiper/react";
 import { CARD_RADIUS } from "@/styles/card";
 
 export const MastersContainer = styled(Box)(({ theme }) => ({
-  padding: "100px 0",
+  // Less room below: the reviews follow straight after the team
+  padding: "100px 0 60px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   [theme.breakpoints.down("sm")]: {
-    padding: "70px 0",
+    padding: "70px 0 56px",
   },
 }));
 

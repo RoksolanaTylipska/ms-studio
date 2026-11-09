@@ -778,7 +778,7 @@
       "photosTitle": "Photos from our courses"
     },
     "feedback": {
-      "title": "Have you used our services? Leave a review",
+      "title": "Client reviews",
       "star": "Service rating:",
       "submit": "Submit review",
       "googleRating": "Google rating",
@@ -812,8 +812,9 @@
         }
       },
       "allOnGoogle": "All reviews on Google",
-      "showMore": "Show more",
-      "close": "Close"
+      "close": "Close",
+      "prev": "Previous reviews",
+      "next": "Next reviews"
     },
     "servicePages": {
       "common": {

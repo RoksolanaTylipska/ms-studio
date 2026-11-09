@@ -66,11 +66,12 @@ function Home() {
       <RemovalMethods />
       <Prices mainTitle="header.services&prices" />
       <Masters />
+      {/* Google rating and reviews right after the team, while trust is being built */}
+      <Feedback />
       <Photo />
       <VideoBlock />
       <Reviews />
       <FAQ />
-      <Feedback />
     </>
   );
 }
