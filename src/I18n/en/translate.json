@@ -1395,6 +1395,11 @@
         ],
         "card": "Micro-vibration and lymphatic drainage against swelling and cellulite"
       }
+    },
+    "gallery": {
+      "prev": "Previous photo",
+      "next": "Next photo",
+      "more": "More"
     }
   }
 }
