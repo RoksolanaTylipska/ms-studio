@@ -812,8 +812,9 @@
         }
       },
       "allOnGoogle": "All reviews on Google",
-      "showMore": "Show more",
-      "close": "Close"
+      "close": "Close",
+      "prev": "Previous reviews",
+      "next": "Next reviews"
     },
     "servicePages": {
       "common": {

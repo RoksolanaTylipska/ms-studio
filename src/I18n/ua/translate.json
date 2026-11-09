@@ -806,8 +806,9 @@
         }
       },
       "allOnGoogle": "Усі відгуки в Google",
-      "showMore": "Показати ще",
-      "close": "Закрити"
+      "close": "Закрити",
+      "prev": "Попередні відгуки",
+      "next": "Наступні відгуки"
     },
     "servicePages": {
       "common": {
