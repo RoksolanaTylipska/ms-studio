@@ -1,8 +1,10 @@
 import { AdminRole } from "@/features/admin/hooks/useAdminAuth";
 import {
   AdminCard,
+  ConfirmDialog,
   IconAction,
   PrimaryButton,
+  SegmentedPicker,
   TextInput,
   adminColors,
   bodyFont,
@@ -11,29 +13,35 @@ import {
 import { db } from "@/lib/firebase";
 import { DeleteOutline, ErrorOutline } from "@mui/icons-material";
 import { Avatar, Box, CircularProgress, Tooltip, Typography, alpha } from "@mui/material";
-import {
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  serverTimestamp,
-  setDoc,
-} from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, serverTimestamp, setDoc } from "firebase/firestore";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
 type Admin = { email: string; role: AdminRole };
+
+const ROLE_OPTIONS: { value: AdminRole; label: string }[] = [
+  { value: "editor", label: "Редактор" },
+  { value: "owner", label: "Власник" },
+];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function AdminsManager({ currentEmail }: { currentEmail: string }) {
   const [admins, setAdmins] = useState<Admin[] | null>(null);
   const [newEmail, setNewEmail] = useState("");
+  const [newRole, setNewRole] = useState<AdminRole>("editor");
+  // Kept after closing so the email doesn't vanish during the fade-out
+  const [removalTarget, setRemovalTarget] = useState<string | null>(null);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [removing, setRemoving] = useState(false);
   const [adding, setAdding] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     const snap = await getDocs(collection(db, "admins"));
-    const list = snap.docs.map((d) => ({ email: d.id, role: d.data().role as AdminRole }));
+    const list = snap.docs.map((d) => ({
+      email: d.id,
+      role: d.data().role as AdminRole,
+    }));
     // Owners first, then alphabetically
     list.sort((a, b) => (a.role === b.role ? a.email.localeCompare(b.email) : a.role === "owner" ? -1 : 1));
     setAdmins(list);
@@ -57,11 +65,12 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
     setAdding(true);
     try {
       await setDoc(doc(db, "admins", email), {
-        role: "editor",
+        role: newRole,
         addedBy: currentEmail,
         addedAt: serverTimestamp(),
       });
       setNewEmail("");
+      setNewRole("editor");
       setError(null);
       await load();
     } catch {
@@ -71,14 +80,18 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
     }
   };
 
-  const removeAdmin = async (email: string) => {
-    if (email === currentEmail) return;
-    if (!window.confirm(`Забрати доступ у ${email}?`)) return;
+  const removeAdmin = async () => {
+    const email = removalTarget;
+    if (!email || email === currentEmail) return;
+    setRemoving(true);
     try {
       await deleteDoc(doc(db, "admins", email));
       await load();
     } catch {
       setError("Не вдалося забрати доступ.");
+    } finally {
+      setRemoving(false);
+      setConfirmOpen(false);
     }
   };
 
@@ -96,26 +109,54 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
       >
         Хто може змінювати ціни
       </Typography>
-      <Typography sx={{ fontFamily: bodyFont, fontSize: "13px", color: adminColors.latte, mb: 3, lineHeight: 1.7 }}>
-        Додайте Gmail — і людина одразу зможе ввійти в адмінку.
+      <Typography
+        sx={{
+          fontFamily: bodyFont,
+          fontSize: "13px",
+          color: adminColors.latte,
+          mb: 3,
+          lineHeight: 1.7,
+        }}
+      >
+        Додайте Gmail — і людина одразу зможе ввійти в адмінку. Редактор змінює ціни, курси й галерею, власник — ще й
+        керує доступами.
       </Typography>
 
       <Box
         component="form"
         onSubmit={addAdmin}
-        sx={{ display: "flex", gap: 1.5, alignItems: "flex-end", flexWrap: { xs: "wrap", sm: "nowrap" }, mb: 3 }}
+        sx={{
+          display: "flex",
+          gap: 1.5,
+          alignItems: "flex-end",
+          flexWrap: { xs: "wrap", md: "nowrap" },
+          mb: 3,
+        }}
       >
-        <TextInput
-          label="Email (Google-акаунт)"
-          ariaLabel="Email нового редактора"
-          type="email"
-          value={newEmail}
-          onChange={(v) => {
-            setNewEmail(v);
-            setError(null);
+        <Box
+          sx={{
+            flex: { xs: "1 1 100%", md: "1 1 0" },
+            minWidth: 0,
+            display: "flex",
           }}
-        />
-        <PrimaryButton type="submit" disabled={adding || !newEmail.trim()} sx={{ flexShrink: 0, width: { xs: "100%", sm: "auto" } }}>
+        >
+          <TextInput
+            label="Email (Google-акаунт)"
+            ariaLabel="Email нового редактора"
+            type="email"
+            value={newEmail}
+            onChange={(v) => {
+              setNewEmail(v);
+              setError(null);
+            }}
+          />
+        </Box>
+        <SegmentedPicker label="Роль" value={newRole} options={ROLE_OPTIONS} onChange={setNewRole} />
+        <PrimaryButton
+          type="submit"
+          disabled={adding || !newEmail.trim()}
+          sx={{ flexShrink: 0, flexGrow: { xs: 1, md: 0 } }}
+        >
           {adding ? "Додаю…" : "Дати доступ"}
         </PrimaryButton>
       </Box>
@@ -157,7 +198,15 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
                 "&:hover": { backgroundColor: adminColors.beige },
               }}
             >
-              <Avatar sx={{ width: 36, height: 36, fontSize: 14, bgcolor: role === "owner" ? adminColors.chocolate : adminColors.gold, color: role === "owner" ? "#fff" : adminColors.chocolate }}>
+              <Avatar
+                sx={{
+                  width: 36,
+                  height: 36,
+                  fontSize: 14,
+                  bgcolor: role === "owner" ? adminColors.chocolate : adminColors.gold,
+                  color: role === "owner" ? "#fff" : adminColors.chocolate,
+                }}
+              >
                 {email[0]?.toUpperCase()}
               </Avatar>
               <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -173,7 +222,10 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
                 >
                   {email}
                   {email === currentEmail && (
-                    <Box component="span" sx={{ color: adminColors.latte }}> (ви)</Box>
+                    <Box component="span" sx={{ color: adminColors.latte }}>
+                      {" "}
+                      (ви)
+                    </Box>
                   )}
                 </Typography>
               </Box>
@@ -196,8 +248,16 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
                 <Tooltip title="Забрати доступ">
                   <IconAction
                     aria-label={`Забрати доступ у ${email}`}
-                    onClick={() => removeAdmin(email)}
-                    sx={{ "&:hover": { color: adminColors.error, backgroundColor: alpha(adminColors.error, 0.08) } }}
+                    onClick={() => {
+                      setRemovalTarget(email);
+                      setConfirmOpen(true);
+                    }}
+                    sx={{
+                      "&:hover": {
+                        color: adminColors.error,
+                        backgroundColor: alpha(adminColors.error, 0.08),
+                      },
+                    }}
                   >
                     <DeleteOutline fontSize="small" />
                   </IconAction>
@@ -209,6 +269,21 @@ function AdminsManager({ currentEmail }: { currentEmail: string }) {
           ))}
         </Box>
       )}
+
+      <ConfirmDialog
+        open={confirmOpen}
+        title="Забрати доступ?"
+        confirmLabel="Забрати доступ"
+        danger
+        busy={removing}
+        onConfirm={removeAdmin}
+        onClose={() => setConfirmOpen(false)}
+      >
+        <Box component="span" sx={{ color: adminColors.chocolate, wordBreak: "break-all" }}>
+          {removalTarget}
+        </Box>{" "}
+        більше не зможе ввійти в адмінку. Доступ можна буде видати знову.
+      </ConfirmDialog>
     </AdminCard>
   );
 }
