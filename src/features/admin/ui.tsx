@@ -1,4 +1,5 @@
-import { Box, BoxProps, Button, ButtonProps, InputBase, Typography, alpha } from "@mui/material";
+import { Box, BoxProps, Button, ButtonProps, Dialog, InputBase, Typography, alpha } from "@mui/material";
+import { ReactNode } from "react";
 
 // Site palette (see src/styles/theme.ts)
 export const adminColors = {
@@ -41,7 +42,10 @@ export const PrimaryButton = ({ sx, ...props }: ButtonProps) => (
       fontSize: "14px",
       textTransform: "none",
       "&:hover": { backgroundColor: "#4a433f" },
-      "&.Mui-disabled": { backgroundColor: adminColors.caramel, color: adminColors.latte },
+      "&.Mui-disabled": {
+        backgroundColor: adminColors.caramel,
+        color: adminColors.latte,
+      },
       ...sx,
     }}
     {...props}
@@ -72,7 +76,10 @@ export const IconAction = ({ sx, ...props }: ButtonProps) => (
       height: 36,
       borderRadius: "50%",
       color: adminColors.latte,
-      "&:hover": { backgroundColor: alpha(adminColors.gold, 0.35), color: adminColors.chocolate },
+      "&:hover": {
+        backgroundColor: alpha(adminColors.gold, 0.35),
+        color: adminColors.chocolate,
+      },
       "&.Mui-disabled": { color: alpha(adminColors.latte, 0.3) },
       ...sx,
     }}
@@ -98,7 +105,14 @@ const inputSx = (error: boolean) => ({
 });
 
 export const FieldCaption = ({ children }: { children: React.ReactNode }) => (
-  <Typography sx={{ fontFamily: bodyFont, fontSize: "11px", color: adminColors.latte, mb: 0.5 }}>
+  <Typography
+    sx={{
+      fontFamily: bodyFont,
+      fontSize: "11px",
+      color: adminColors.latte,
+      mb: 0.5,
+    }}
+  >
     {children}
   </Typography>
 );
@@ -122,10 +136,12 @@ export const PriceInput = ({
       fullWidth
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      inputProps={{ inputMode: "numeric", "aria-label": ariaLabel, "aria-invalid": error }}
-      endAdornment={
-        <Typography sx={{ color: adminColors.latte, fontSize: "14px", ml: 0.5 }}>₴</Typography>
-      }
+      inputProps={{
+        inputMode: "numeric",
+        "aria-label": ariaLabel,
+        "aria-invalid": error,
+      }}
+      endAdornment={<Typography sx={{ color: adminColors.latte, fontSize: "14px", ml: 0.5 }}>₴</Typography>}
       sx={inputSx(error)}
     />
   </Box>
@@ -163,4 +179,155 @@ export const TextInput = ({
       sx={inputSx(!!error)}
     />
   </Box>
+);
+
+export const SegmentedPicker = <T extends string>({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label?: string;
+  value: T;
+  options: { value: T; label: string }[];
+  onChange: (value: T) => void;
+}) => (
+  <Box sx={{ flexShrink: 0 }}>
+    {label && <FieldCaption>{label}</FieldCaption>}
+    <Box
+      role="radiogroup"
+      aria-label={label}
+      sx={{
+        display: "flex",
+        p: 0.5,
+        gap: 0.5,
+        borderRadius: "999px",
+        backgroundColor: adminColors.beige,
+      }}
+    >
+      {options.map((option) => {
+        const active = option.value === value;
+        return (
+          <Button
+            key={option.value}
+            role="radio"
+            aria-checked={active}
+            onClick={() => onChange(option.value)}
+            sx={{
+              flex: 1,
+              minWidth: 0,
+              px: 2,
+              py: 0.75,
+              borderRadius: "999px",
+              fontFamily: bodyFont,
+              fontSize: "13px",
+              textTransform: "none",
+              whiteSpace: "nowrap",
+              color: active ? "#fff" : adminColors.latte,
+              backgroundColor: active ? adminColors.chocolate : "transparent",
+              "&:hover": {
+                backgroundColor: active ? adminColors.chocolate : alpha(adminColors.gold, 0.35),
+              },
+            }}
+          >
+            {option.label}
+          </Button>
+        );
+      })}
+    </Box>
+  </Box>
+);
+
+export const ConfirmDialog = ({
+  open,
+  title,
+  children,
+  confirmLabel,
+  busy,
+  danger,
+  onConfirm,
+  onClose,
+}: {
+  open: boolean;
+  title: string;
+  children?: ReactNode;
+  confirmLabel: string;
+  busy?: boolean;
+  danger?: boolean;
+  onConfirm: () => void;
+  onClose: () => void;
+}) => (
+  <Dialog
+    open={open}
+    onClose={busy ? undefined : onClose}
+    aria-labelledby="confirm-dialog-title"
+    PaperProps={{
+      sx: {
+        borderRadius: "24px",
+        p: { xs: 3, sm: 4 },
+        width: "100%",
+        maxWidth: 420,
+        m: 2,
+        boxShadow: "0 20px 60px rgba(53, 48, 45, 0.18)",
+      },
+    }}
+    slotProps={{
+      backdrop: { sx: { backgroundColor: alpha(adminColors.chocolate, 0.4) } },
+    }}
+  >
+    <Typography
+      id="confirm-dialog-title"
+      component="h2"
+      sx={{
+        fontFamily: headingFont,
+        fontSize: "22px",
+        lineHeight: 1.3,
+        color: adminColors.chocolate,
+        mb: 1.5,
+      }}
+    >
+      {title}
+    </Typography>
+    {children && (
+      <Typography
+        component="div"
+        sx={{
+          fontFamily: bodyFont,
+          fontSize: "14px",
+          lineHeight: 1.7,
+          color: adminColors.latte,
+          mb: 3,
+        }}
+      >
+        {children}
+      </Typography>
+    )}
+    <Box
+      sx={{
+        display: "flex",
+        gap: 1,
+        justifyContent: "flex-end",
+        flexWrap: "wrap",
+      }}
+    >
+      <GhostButton onClick={onClose} disabled={busy} sx={{ px: 2.5, py: 1.25, fontSize: "14px" }}>
+        Скасувати
+      </GhostButton>
+      <PrimaryButton
+        onClick={onConfirm}
+        disabled={busy}
+        autoFocus
+        sx={
+          danger
+            ? {
+                backgroundColor: adminColors.error,
+                "&:hover": { backgroundColor: "#8f1e18" },
+              }
+            : undefined
+        }
+      >
+        {busy ? "Зачекайте…" : confirmLabel}
+      </PrimaryButton>
+    </Box>
+  </Dialog>
 );
